@@ -54,7 +54,7 @@ export default function MedicationManagementArticle() {
 
         <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
           <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-            <Image src="/images/blog/medication-management-getting-the-most-from-your-prescriptio.jpg" alt="Hands sorting pills into a weekly pill organizer" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+            <Image src="/images/blog/medication-management-getting-the-most-from-your-prescriptio.jpg" alt="Hands sorting pills into a weekly pill organizer" fill priority className="object-cover object-bottom" sizes="(max-width: 896px) 100vw, 896px" />
           </div>
         </div>
 

@@ -50,7 +50,7 @@ export default function ComparePage() {
               src="/images/stock/compare-direct-primary-care-vs-traditional-insurance.jpg"
               alt="Couple reviewing household paperwork together at their kitchen table"
               fill
-              className="object-cover"
+              className="object-cover object-[50%_20%]"
               sizes="(max-width: 896px) 100vw, 896px"
               priority
             />

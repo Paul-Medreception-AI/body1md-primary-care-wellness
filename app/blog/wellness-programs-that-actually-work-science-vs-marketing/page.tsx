@@ -60,7 +60,7 @@ export default function WellnessProgramsArticle() {
         {/* Hero image */}
         <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
           <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-            <Image src="/images/blog/wellness-programs-that-actually-work-science-vs-marketing.jpg" alt="Adults of different ages standing in a yoga class with hands pressed together" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+            <Image src="/images/blog/wellness-programs-that-actually-work-science-vs-marketing.jpg" alt="Adults of different ages standing in a yoga class with hands pressed together" fill priority className="object-cover object-[center_20%]" sizes="(max-width: 896px) 100vw, 896px" />
           </div>
         </div>
 

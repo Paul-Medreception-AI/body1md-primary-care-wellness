@@ -53,7 +53,7 @@ export default function BlogPost() {
 
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr.jpg" alt="Older man talking with a physician about his health" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr.jpg" alt="Older man talking with a physician about his health" fill priority className="object-cover object-top" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

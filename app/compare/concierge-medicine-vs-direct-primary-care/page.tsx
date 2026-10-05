@@ -48,7 +48,7 @@ export default function ComparePage() {
               src="/images/stock/compare-concierge-medicine-vs-direct-primary-care.jpg"
               alt="Physician talking with an older male patient across a desk in a medical office"
               fill
-              className="object-cover"
+              className="object-cover object-[10%_15%]"
               sizes="(max-width: 896px) 100vw, 896px"
               priority
             />

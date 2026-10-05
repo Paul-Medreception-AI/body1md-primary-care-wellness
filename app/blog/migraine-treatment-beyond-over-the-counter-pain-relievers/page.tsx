@@ -73,8 +73,8 @@ export default function MigraineTreatmentArticle() {
 
       {/* Hero image */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
-        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/migraine-treatment-beyond-over-the-counter-pain-relievers.jpg" alt="Woman with closed eyes pressing her temples during a migraine" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        <div className="relative w-full h-64 md:h-[480px] rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/migraine-treatment-beyond-over-the-counter-pain-relievers.jpg" alt="Woman with closed eyes pressing her temples during a migraine" fill priority className="object-cover object-[center_20%]" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

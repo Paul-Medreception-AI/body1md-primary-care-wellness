@@ -61,8 +61,8 @@ export default function PneumoniaPreventionArticle() {
 
         {/* Hero image */}
         <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
-          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-            <Image src="/images/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults.jpg" alt="Physician reviewing a chest X-ray with a patient in an exam room" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <div className="relative w-full h-64 md:h-[480px] rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults.jpg" alt="Physician reviewing a chest X-ray with a patient in an exam room" fill priority className="object-cover object-top" sizes="(max-width: 896px) 100vw, 896px" />
           </div>
         </div>
 

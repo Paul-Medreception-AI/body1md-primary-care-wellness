@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import PageHero from '@/components/PageHero'
+import ContactForm from '@/components/ContactForm'
 import { SITE } from '@/lib/site'
 
 const TITLE = 'Contact Body1MD | Los Ranchos de Albuquerque, NM'
@@ -14,9 +15,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESC, images: ['/images/office-reception.jpg'] },
 }
 
-// No web form on purpose: the generated form posted to a placeholder endpoint, so every message
-// would have been lost. Calls and email reach the practice today. Swap in the practice's real
-// form (GHL embed) here once it exists.
+// The form posts to /api/contact, which files it on Body1MD's MedReception Studio board.
 export default function ContactPage() {
   return (
     <>
@@ -29,6 +28,25 @@ export default function ContactPage() {
       />
 
       <section className="bg-[var(--color-cream)] py-24">
+        <div id="message" className="max-w-6xl mx-auto px-6 mb-14 scroll-mt-28">
+          <div className="bg-white rounded-2xl border border-[var(--color-border)] shadow-sm p-6 sm:p-8 lg:p-12 grid lg:grid-cols-5 gap-10 lg:gap-14">
+            <div className="lg:col-span-2">
+              <p className="text-xs uppercase tracking-widest text-[var(--color-muted)]">Send a message</p>
+              <h2 className="font-cormorant text-4xl text-[var(--color-ink)] mt-2 leading-tight">Questions about membership or becoming a patient?</h2>
+              <p className="text-[var(--color-muted)] leading-relaxed mt-4">
+                Leave your name and a phone number or email address, and Body1MD will call or email you back.
+              </p>
+              <p className="text-[var(--color-muted)] leading-relaxed mt-4">
+                Prefer to talk now? Call <a href={SITE.phoneHref} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">{SITE.phone}</a>.
+              </p>
+              <p className="text-sm text-[var(--color-muted)] mt-4">If you are having a medical emergency, call 911.</p>
+            </div>
+            <div className="lg:col-span-3">
+              <ContactForm phone={SITE.phone} phoneHref={SITE.phoneHref} />
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-start">
           <div className="space-y-6">
             <a href={SITE.phoneHref} className="block bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:shadow-lg transition-shadow">

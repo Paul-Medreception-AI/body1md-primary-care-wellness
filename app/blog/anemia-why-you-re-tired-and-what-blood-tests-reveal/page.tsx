@@ -55,7 +55,7 @@ export default function AnemiaArticlePage() {
 
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal.jpg" alt="Tired woman rubbing her eyes from fatigue" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal.jpg" alt="Tired woman rubbing her eyes from fatigue" fill priority className="object-cover object-top" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

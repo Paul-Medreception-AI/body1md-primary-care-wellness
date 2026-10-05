@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import './globals.css'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
@@ -73,6 +74,9 @@ export default function RootLayout({
         <main>{children}</main>
 
         <SiteFooter />
+        {/* MedReception patient widget: callback, appointment request and the AI chat, all filed on
+            Body1MD's Studio board (qa-api lambdaWidget, client id 'body1md', STUDIO_ONLY). */}
+        <Script src="https://widget.medreception.ai/embed.js" data-client-id="body1md" strategy="afterInteractive" />
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
 

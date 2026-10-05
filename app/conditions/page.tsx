@@ -35,9 +35,9 @@ export default function ConditionsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {CONDITIONS.map((c) => (
               <Link key={c.slug} href={`/conditions/${c.slug}`} className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="relative w-full h-48 bg-[var(--color-light)]">
+                <div className="relative w-full h-64 bg-[var(--color-light)]">
                   {c.heroImage && (
-                    <Image src={c.heroImage.src} alt={c.heroImage.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={c.heroImage.src} alt={c.heroImage.alt} fill style={{ objectPosition: c.heroImage.focus }} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover origin-top group-hover:scale-105 transition-transform duration-500" />
                   )}
                 </div>
                 <div className="p-7">

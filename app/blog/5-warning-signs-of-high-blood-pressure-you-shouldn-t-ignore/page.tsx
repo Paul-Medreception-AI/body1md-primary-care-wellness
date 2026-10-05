@@ -50,7 +50,7 @@ export default function BlogPost() {
 
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore.jpg" alt="Clinician measuring a patient's blood pressure with an arm cuff and stethoscope" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore.jpg" alt="Clinician measuring a patient's blood pressure with an arm cuff and stethoscope" fill priority className="object-cover object-[center_20%]" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

@@ -51,7 +51,7 @@ export default function TelemedicinePrimaryCareArticle() {
       {/* Hero image */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/telemedicine-for-primary-care-what-works-well-virtually.jpg" alt="Physician in a white coat on a video call with a patient on a laptop" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/telemedicine-for-primary-care-what-works-well-virtually.jpg" alt="Physician in a white coat on a video call with a patient on a laptop" fill priority className="object-cover object-top" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

@@ -53,7 +53,7 @@ export default function BlogPost() {
 
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids.jpg" alt="Adult patient receiving a vaccine in the upper arm" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids.jpg" alt="Adult patient receiving a vaccine in the upper arm" fill priority className="object-cover object-[center_10%]" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

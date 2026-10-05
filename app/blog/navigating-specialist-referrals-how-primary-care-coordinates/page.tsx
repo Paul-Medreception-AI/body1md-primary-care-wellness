@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/navigating-specialist-referrals-how-primary-care-coordinates',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg', alt: 'Physician reviewing a patient lab report with a pen at a desk' }]
+    images: [{ url: '/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg', alt: 'Physician in a white coat writing notes at a desk beside her laptop' }]
   },
   twitter: {
     card: 'summary_large_image',
@@ -67,7 +67,7 @@ export default function BlogPost() {
       {/* Hero image */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg" alt="Physician reviewing a patient lab report with a pen at a desk" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg" alt="Physician in a white coat writing notes at a desk beside her laptop" fill priority className="object-cover object-[center_20%]" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

@@ -50,7 +50,7 @@ export default function TeleMedicineVsInPersonPage() {
               src="/images/stock/compare-telemedicine-vs-in-person-visits.jpg"
               alt="Smiling man in glasses talking on his phone at home"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 896px) 100vw, 896px"
               priority
             />

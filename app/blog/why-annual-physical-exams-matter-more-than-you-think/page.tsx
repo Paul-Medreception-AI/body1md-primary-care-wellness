@@ -61,7 +61,7 @@ export default function BlogPost() {
       {/* Hero image */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/images/blog/why-annual-physical-exams-matter-more-than-you-think.jpg" alt="Physician listening to an older man heart with a stethoscope in an exam room" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          <Image src="/images/blog/why-annual-physical-exams-matter-more-than-you-think.jpg" alt="Physician listening to an older man heart with a stethoscope in an exam room" fill priority className="object-cover object-[center_25%]" sizes="(max-width: 896px) 100vw, 896px" />
         </div>
       </div>
 

@@ -55,7 +55,7 @@ export default function ServicesPage() {
               <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="relative w-full h-52 bg-[var(--color-light)]">
                   {s.heroImage && (
-                    <Image src={s.heroImage.src} alt={s.heroImage.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={s.heroImage.src} alt={s.heroImage.alt} fill style={{ objectPosition: s.heroImage.focus }} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   )}
                 </div>
                 <div className="p-8">

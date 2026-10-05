@@ -50,9 +50,9 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((p) => (
             <Link key={p.slug} href={`/blog/${p.slug}`} className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="relative w-full h-48 bg-[var(--color-light)]">
+              <div className="relative w-full h-64 bg-[var(--color-light)]">
                 {p.image && (
-                  <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover origin-top group-hover:scale-105 transition-transform duration-500" />
                 )}
               </div>
               <div className="p-7">
