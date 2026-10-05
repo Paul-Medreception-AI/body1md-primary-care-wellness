@@ -8,18 +8,19 @@ const Chevron = ({ className = '' }: { className?: string }) => (
   </svg>
 )
 
-// Server component. Desktop dropdowns open on hover AND on keyboard focus (CSS :focus-within in
+// Server component. Full menu from 1280px up (below that six menus, the phone and the button do
+// not fit beside the logo and the page scrolled sideways at 1024px). Desktop dropdowns open on hover AND on keyboard focus (CSS :focus-within in
 // globals.css), and every top-level title is itself a link to its hub page. Mobile uses
 // <details>, so the menu works without any client JavaScript.
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between gap-6">
         <Link href="/" className="flex-shrink-0" aria-label="Body1MD Primary Care & Wellness, home">
-          <Image src="/logo.png" alt="Body1MD Primary Care & Wellness" width={505} height={271} priority className="h-14 w-auto" />
+          <Image src="/logo.png" alt="Body1MD Primary Care & Wellness" width={505} height={271} priority className="h-[84px] w-auto" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+        <nav className="hidden xl:flex items-center gap-1" aria-label="Main">
           {NAV.map((g) =>
             g.items ? (
               <div key={g.href} className="nav-dd">
@@ -50,20 +51,20 @@ export default function SiteHeader() {
           )}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+        <div className="hidden xl:flex items-center gap-4 flex-shrink-0">
           <a href={SITE.phoneHref} className="text-sm font-semibold text-[var(--color-primary)] whitespace-nowrap">{SITE.phone}</a>
           <Link href="/contact" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap">
             Become a Member
           </Link>
         </div>
 
-        <details className="m-dd lg:hidden">
+        <details className="m-dd xl:hidden">
           <summary className="cursor-pointer p-2 rounded-lg text-[var(--color-ink)]" aria-label="Open menu">
             <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </summary>
-          <div className="absolute left-0 right-0 top-20 bg-white border-b border-[var(--color-border)] shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto">
+          <div className="absolute left-0 right-0 top-24 bg-white border-b border-[var(--color-border)] shadow-xl max-h-[calc(100vh-6rem)] overflow-y-auto">
             <div className="px-4 py-4 space-y-1">
               {NAV.map((g) =>
                 g.items ? (
