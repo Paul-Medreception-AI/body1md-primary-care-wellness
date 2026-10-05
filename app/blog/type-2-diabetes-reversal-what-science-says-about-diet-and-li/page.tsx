@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Type 2 Diabetes Reversal: What Science Says | Body1MD',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/type-2-diabetes-reversal-what-science-says-about-diet-and-li',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/type-2-diabetes-reversal-what-science-says-about-diet-and-li.jpg', alt: 'Fresh tomatoes, cucumbers, lettuce, onions and herbs on a wooden cutting board' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Type 2 Diabetes Reversal: What Science Says | Body1MD',
     description: 'Explore the evidence-based research on reversing type 2 diabetes through diet and lifestyle changes. Learn practical strategies for better blood sugar control.',
-    images: ['/og-image.png']
+    images: ['/images/blog/type-2-diabetes-reversal-what-science-says-about-diet-and-li.jpg']
   }
 }
 
@@ -40,20 +41,27 @@ export default function BlogPost() {
             Type 2 Diabetes Reversal: What Science Says About Diet and Lifestyle
           </h1>
           <div className="flex justify-center items-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/type-2-diabetes-reversal-what-science-says-about-diet-and-li.jpg" alt="Fresh tomatoes, cucumbers, lettuce, onions and herbs on a wooden cutting board" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl leading-relaxed mb-6">
-              For decades, type 2 diabetes has been described as a chronic, progressive disease—one that only worsens over time. But emerging research is challenging this narrative. Studies now show that for many people, type 2 diabetes can be reversed through intentional diet and lifestyle changes. Not just managed, but reversed—meaning blood sugar levels return to normal ranges without the need for medication.
+              For decades, type 2 diabetes has been described as a chronic, progressive disease, one that only worsens over time. But emerging research is challenging this narrative. Studies now show that for many people, type 2 diabetes can be reversed through intentional diet and lifestyle changes. Not just managed, but reversed, meaning blood sugar levels return to normal ranges without the need for medication.
             </p>
             <p className="mb-6">
               This shift in understanding offers hope to millions living with diabetes, but it also raises important questions: What does reversal really mean? What does the science actually say? And what practical steps can people take to pursue this outcome?
@@ -63,10 +71,10 @@ export default function BlogPost() {
               What Does "Reversal" Actually Mean?
             </h2>
             <p className="mb-6">
-              Diabetes reversal, also called remission, occurs when blood sugar levels return to non-diabetic ranges (HbA1c below 6.5%) for at least three months without the use of diabetes medications. It doesn't mean the disease is cured—if old habits return, blood sugar levels can rise again. But it does mean that the underlying metabolic dysfunction has been significantly improved.
+              Diabetes reversal, also called remission, occurs when blood sugar levels return to non-diabetic ranges (HbA1c below 6.5%) for at least three months without the use of diabetes medications. It doesn't mean the disease is cured. If old habits return, blood sugar levels can rise again. But it does mean that the underlying metabolic dysfunction has been significantly improved.
             </p>
             <p className="mb-6">
-              Reversal is most achievable in people who have had diabetes for a shorter time, typically less than six years. The longer someone has had elevated blood sugar, the more damage occurs to insulin-producing cells in the pancreas, making reversal more difficult—though not impossible.
+              Reversal is most achievable in people who have had diabetes for a shorter time, typically less than six years. The longer someone has had elevated blood sugar, the more damage occurs to insulin-producing cells in the pancreas, making reversal more difficult, though not impossible.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -129,7 +137,7 @@ export default function BlogPost() {
               Exercise is a powerful complement to dietary changes. Physical activity helps muscles use glucose more efficiently, improves insulin sensitivity, and supports weight loss. Both aerobic exercise (like walking, cycling, or swimming) and resistance training (like weightlifting or bodyweight exercises) have been shown to lower HbA1c levels.
             </p>
             <p className="mb-6">
-              The American Diabetes Association recommends at least 150 minutes of moderate-intensity aerobic activity per week, along with two or more days of resistance training. But even small amounts of movement—like a 15-minute walk after meals—can have meaningful effects on blood sugar control.
+              The American Diabetes Association recommends at least 150 minutes of moderate-intensity aerobic activity per week, along with two or more days of resistance training. But even small amounts of movement (like a 15-minute walk after meals) can have meaningful effects on blood sugar control.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -165,7 +173,7 @@ export default function BlogPost() {
               </div>
             </div>
             <p className="mb-6">
-              That said, even people with longer-standing diabetes can see significant improvements in blood sugar control, medication needs, and overall health through diet and lifestyle changes—even if full remission isn't achieved.
+              That said, even people with longer-standing diabetes can see significant improvements in blood sugar control, medication needs, and overall health through diet and lifestyle changes, even if full remission isn't achieved.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -178,7 +186,7 @@ export default function BlogPost() {
               The most important step is to work with a healthcare provider who understands the nuances of diabetes reversal and can tailor a plan to your specific situation. This might include a structured diet program, regular monitoring of blood sugar and medications, and support for long-term habit change.
             </p>
             <p className="mb-6">
-              At Body1MD Primary Care & Wellness in Austin, TX, we partner with patients to create personalized, evidence-based plans for managing and reversing type 2 diabetes. Whether you're newly diagnosed or have been living with diabetes for years, there are steps you can take today to improve your metabolic health. You don't have to do this alone—we're here to guide you every step of the way.
+              At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, we partner with patients to create personalized, evidence-based plans for managing and reversing type 2 diabetes. Whether you're newly diagnosed or have been living with diabetes for years, there are steps you can take today to improve your metabolic health. You don't have to do this alone. We're here to guide you every step of the way.
             </p>
           </div>
         </div>
@@ -193,9 +201,9 @@ export default function BlogPost() {
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</p>
+              <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</p>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing evidence-based, compassionate care that empowers patients to take control of their health. We believe in treating the whole person, not just the diagnosis, and in making the latest research accessible and actionable.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -240,7 +248,7 @@ export default function BlogPost() {
               </div>
             </Link>
 
-            <Link href="/services/wellness-counseling" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-up">
+            <Link href="/services" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-up">
               <div className="aspect-[16/9] bg-gradient-to-br from-[var(--color-light)] to-[var(--color-cream)] flex items-center justify-center">
                 <svg className="w-12 h-12 text-[var(--color-primary)]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -249,10 +257,10 @@ export default function BlogPost() {
               <div className="p-6">
                 <div className="text-xs uppercase tracking-wider text-[var(--color-accent)] mb-2">Services</div>
                 <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  Wellness Counseling
+                  Nutrition Optimization
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  Nutrition guidance, lifestyle coaching, and support for lasting health transformation.
+                  Guidance on nutrition, supplements, and lifestyle habits that support better blood sugar control.
                 </p>
               </div>
             </Link>
@@ -263,7 +271,7 @@ export default function BlogPost() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-lg mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-lg mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link
             href="/contact"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"

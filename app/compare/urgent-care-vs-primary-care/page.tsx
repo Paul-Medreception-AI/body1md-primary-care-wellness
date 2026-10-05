@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Urgent Care vs Primary Care: Where to Go When Sick | Body1MD',
-  description: 'Comparing urgent care and primary care for illness treatment in Austin, TX. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
+  description: 'Comparing urgent care and primary care for illness treatment in Albuquerque, NM. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
   alternates: { canonical: '/compare/urgent-care-vs-primary-care' },
   openGraph: {
     title: 'Urgent Care vs Primary Care: Where to Go When Sick | Body1MD',
-    description: 'Comparing urgent care and primary care for illness treatment in Austin, TX. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
+    description: 'Comparing urgent care and primary care for illness treatment in Albuquerque, NM. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
     url: 'https://body1md.com/compare/urgent-care-vs-primary-care',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Urgent Care vs Primary Care: Where to Go When Sick | Body1MD',
-    description: 'Comparing urgent care and primary care for illness treatment in Austin, TX. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
+    description: 'Comparing urgent care and primary care for illness treatment in Albuquerque, NM. Learn which option is best for your symptoms, costs, wait times, and continuity of care.',
     images: ['/og-image.png'],
   },
 }
@@ -30,15 +31,13 @@ export default function UrgentCareVsPrimaryCarePage() {
           <nav className="flex justify-center gap-2 text-sm text-white/80 mb-8 font-light">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>›</span>
-            <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
-            <span>›</span>
             <span className="text-white">Comparison</span>
           </nav>
           <h1 className="font-cormorant text-5xl md:text-6xl font-light mb-6 leading-tight">
             Urgent Care vs Primary Care: Where Should You Go When Sick?
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Understanding the differences between urgent care and primary care helps you make the right choice for faster recovery, better outcomes, and more cost-effective treatment in Austin, TX.
+            Understanding the differences between urgent care and primary care helps you make the right choice for faster recovery, better outcomes, and more cost-effective treatment in Albuquerque, NM.
           </p>
         </div>
       </section>
@@ -46,6 +45,16 @@ export default function UrgentCareVsPrimaryCarePage() {
       {/* Comparison Table */}
       <section className="bg-[var(--color-cream)] py-24">
         <div className="max-w-4xl mx-auto px-6">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl mb-16">
+            <Image
+              src="/images/stock/compare-urgent-care-vs-primary-care.jpg"
+              alt="Bright, empty medical waiting room with blue chairs"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+              priority
+            />
+          </div>
           <h2 className="font-cormorant text-4xl font-light text-[var(--color-ink)] text-center mb-12">
             Side-by-Side Comparison
           </h2>
@@ -69,28 +78,28 @@ export default function UrgentCareVsPrimaryCarePage() {
             <div className="grid grid-cols-3 border-b border-[var(--color-border)] bg-[var(--color-cream)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Availability</div>
               <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Walk-in, evenings & weekends</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Scheduled appointments, same-day available</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Scheduled appointments; same- or next-day often available</div>
             </div>
             
             {/* Wait Time */}
             <div className="grid grid-cols-3 border-b border-[var(--color-border)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Wait Time</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">30 minutes to 2+ hours</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Often 30 minutes to 2+ hours</div>
               <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Minimal with appointment</div>
             </div>
             
             {/* Cost */}
             <div className="grid grid-cols-3 border-b border-[var(--color-border)] bg-[var(--color-cream)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Typical Cost</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">$150–$300+ per visit</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">$100–$200 or flat DPC fee</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Often $150 to $300+ per visit</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Varies by plan; at Body1MD, a flat membership ($100/month under 50, $150/month age 50+)</div>
             </div>
             
             {/* Continuity */}
             <div className="grid grid-cols-3 border-b border-[var(--color-border)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Continuity of Care</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Different provider each visit</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Same provider knows your history</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Often a different clinician each visit</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Same physician knows your history</div>
             </div>
             
             {/* Medical Records */}
@@ -104,7 +113,7 @@ export default function UrgentCareVsPrimaryCarePage() {
             <div className="grid grid-cols-3 border-b border-[var(--color-border)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Follow-Up Care</div>
               <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Typically refers to primary care</div>
-              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Built-in with same provider</div>
+              <div className="p-4 text-[var(--color-ink)] border-l border-[var(--color-border)]">Built in with the same physician</div>
             </div>
             
             {/* Treatment Approach */}
@@ -142,7 +151,7 @@ export default function UrgentCareVsPrimaryCarePage() {
               </p>
               
               <p>
-                Urgent care works best as a supplement to—not a replacement for—primary care. The providers excel at treating isolated acute problems but lack the longitudinal relationship needed to manage chronic conditions, coordinate specialty care, or provide preventive health guidance. Most urgent care visits end with a recommendation to follow up with your primary care physician, creating an additional appointment and potential gap in care continuity.
+                Urgent care works best as a supplement to primary care, not a replacement for it. The providers excel at treating isolated acute problems but lack the longitudinal relationship needed to manage chronic conditions, coordinate specialty care, or provide preventive health guidance. Most urgent care visits end with a recommendation to follow up with your primary care physician, creating an additional appointment and potential gap in care continuity.
               </p>
             </div>
           </div>
@@ -161,15 +170,15 @@ export default function UrgentCareVsPrimaryCarePage() {
             
             <div className="space-y-4 text-[var(--color-muted)] leading-relaxed">
               <p>
-                Primary care physicians serve as your medical home—the central hub for all your healthcare needs. A good primary care relationship means your doctor knows your complete medical history, family history, medications, allergies, lifestyle factors, and health goals. This deep knowledge enables more accurate diagnosis, personalized treatment plans, and proactive prevention of future health problems.
+                Primary care physicians serve as your medical home, the central hub for all your healthcare needs. A good primary care relationship means your doctor knows your complete medical history, family history, medications, allergies, lifestyle factors, and health goals. This deep knowledge enables more accurate diagnosis, personalized treatment plans, and proactive prevention of future health problems.
               </p>
               
               <p>
-                When you're sick, primary care offers distinct advantages over urgent care. Your physician can compare current symptoms to your baseline, access years of medical records instantly, adjust existing medications safely, and coordinate with specialists already familiar with your case. Many primary care practices now offer same-day sick visits, telehealth options, and extended hours, narrowing the convenience gap with urgent care while maintaining superior continuity.
+                When you're sick, primary care offers distinct advantages over urgent care. Your physician can compare current symptoms to your baseline, access years of medical records instantly, adjust existing medications safely, and coordinate with specialists already familiar with your case. Many primary care practices now offer prompt sick visits, phone access to the physician, and extended hours, narrowing the convenience gap with urgent care while maintaining superior continuity.
               </p>
               
               <p>
-                Beyond acute illness, primary care encompasses preventive screenings, chronic disease management, mental health support, care coordination, and health coaching. This comprehensive approach leads to better long-term outcomes, fewer emergency visits, lower overall healthcare costs, and higher patient satisfaction. In Austin, direct primary care models like Body1MD enhance these benefits by offering unlimited visits, extended appointment times, and 24/7 provider access for a flat monthly fee.
+                Beyond acute illness, primary care encompasses preventive screenings, chronic disease management, mental health support, care coordination, and lifestyle counseling. A strong primary care relationship is associated with better long-term outcomes, fewer emergency visits, and lower overall healthcare costs. At Body1MD in Los Ranchos de Albuquerque, the direct primary care model builds on these benefits: visits designed to last up to an hour, same- or next-day appointments in most cases, and direct phone and text access to Dr. Hemmen, for a flat monthly membership of $100 under age 50 or $150 at 50 and up.
               </p>
             </div>
           </div>
@@ -262,7 +271,7 @@ export default function UrgentCareVsPrimaryCarePage() {
                     <svg className="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>You value seeing the same provider who knows your complete history</span>
+                    <span>You value seeing the same physician who knows your complete history</span>
                   </li>
                   <li className="flex items-start gap-3 text-[var(--color-muted)]">
                     <svg className="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -312,19 +321,19 @@ export default function UrgentCareVsPrimaryCarePage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                Urgent care visits typically cost $150–$300 or more depending on testing and procedures, plus insurance copays often higher than primary care. Traditional primary care sick visits range from $100–$200, with lower copays for established patients. Direct primary care models like Body1MD offer unlimited visits including sick care for a flat monthly membership fee (typically $75–$150), making primary care the most cost-effective option for anyone needing care more than once or twice per year.
+                Nationally, urgent care visits typically cost $150 to $300 or more without insurance, depending on testing and procedures, and insurance copays are often higher than for primary care. The cost of a traditional primary care sick visit depends on your plan and deductible. Body1MD works differently: it does not bill insurance, and members pay a flat monthly membership ($100 per month under age 50, $150 per month at 50 and up), month-to-month. Whether that costs less than paying per visit depends on how often you need care and what your plan covers.
               </div>
             </details>
 
             <details className="bg-white rounded-lg shadow-sm overflow-hidden group">
               <summary className="cursor-pointer list-none p-6 font-semibold text-[var(--color-ink)] hover:bg-[var(--color-light)] transition-colors flex items-center justify-between">
-                <span>Can I get same-day appointments with primary care in Austin?</span>
+                <span>Can I get same-day appointments with primary care in Albuquerque?</span>
                 <svg className="w-5 h-5 text-[var(--color-accent)] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                Yes, many primary care practices in Austin reserve same-day appointment slots for acute illnesses. Direct primary care practices often provide same-day or next-day access with minimal wait times, along with telehealth options for urgent questions. This narrows the convenience gap with urgent care while maintaining the benefits of seeing your own physician who knows your medical history. Call your primary care office first when you're sick—you may be surprised how quickly they can see you.
+                Often, yes. Many primary care practices reserve some same-day appointment slots for acute illnesses. At Body1MD, same- or next-day appointments are available in most cases, and members can reach Dr. Hemmen directly by phone and text with urgent questions. This narrows the convenience gap with urgent care while keeping the benefit of seeing your own physician who knows your medical history. Call your primary care office first when you're sick; you may be surprised how quickly they can see you.
               </div>
             </details>
 
@@ -336,7 +345,7 @@ export default function UrgentCareVsPrimaryCarePage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                Many primary care practices offer after-hours nurse lines, telehealth consultations, or on-call physician access for established patients. Direct primary care practices often provide 24/7 text or phone access to your physician. If your issue truly requires in-person evaluation outside office hours, urgent care is a reasonable option. However, always inform your primary care physician about the visit so they can follow up appropriately and maintain continuity of your records.
+                Many primary care practices offer some form of after-hours phone access or an on-call physician for established patients. Body1MD members have direct phone and text access to Dr. Hemmen, who is available 24/7 most of the year and can advise whether you need to be seen. If your issue truly requires in-person evaluation outside office hours, urgent care is a reasonable option. However, always inform your primary care physician about the visit so they can follow up appropriately and maintain continuity of your records.
               </div>
             </details>
 
@@ -365,7 +374,7 @@ export default function UrgentCareVsPrimaryCarePage() {
             Discuss Your Healthcare Options
           </h2>
           <p className="text-lg text-[var(--color-muted)] mb-8 leading-relaxed max-w-2xl mx-auto">
-            Whether you need urgent care guidance or want to establish a primary care relationship with comprehensive access and continuity, we're here to help you make informed decisions about your health in Austin, TX.
+            Whether you need urgent care guidance or want to establish a primary care relationship with comprehensive access and continuity, we're here to help you make informed decisions about your health in the Albuquerque area. Call (505) 645-5451.
           </p>
           <Link 
             href="/contact" 

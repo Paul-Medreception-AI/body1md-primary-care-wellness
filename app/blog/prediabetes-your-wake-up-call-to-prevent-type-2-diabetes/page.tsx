@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Prediabetes: Your Wake-Up Call to Prevent Type 2 Diabetes',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/prediabetes-your-wake-up-call-to-prevent-type-2-diabetes',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/prediabetes-your-wake-up-call-to-prevent-type-2-diabetes.jpg', alt: 'Hands using a lancet pen and glucose meter for a fingerstick blood sugar test' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Prediabetes: Your Wake-Up Call to Prevent Type 2 Diabetes',
     description: 'Learn how prediabetes serves as a critical warning sign and discover evidence-based strategies to reverse course and prevent type 2 diabetes through lifestyle changes.',
-    images: ['/og-image.png']
+    images: ['/images/blog/prediabetes-your-wake-up-call-to-prevent-type-2-diabetes.jpg']
   }
 }
 
@@ -52,7 +53,7 @@ export default function PrediabetesArticle() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,22 +65,29 @@ export default function PrediabetesArticle() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/prediabetes-your-wake-up-call-to-prevent-type-2-diabetes.jpg" alt="Hands using a lancet pen and glucose meter for a fingerstick blood sugar test" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           {/* Opening Hook */}
           <p className="text-[var(--color-ink)] leading-loose text-lg mb-6">
-            Imagine your body sending you a warning signal—a message that says, "Pay attention now, and you can change your future." That's exactly what prediabetes is: a critical opportunity to prevent type 2 diabetes before it develops. For the millions of Americans living with prediabetes, many don't even know they have it. But understanding this condition and taking action can literally change the trajectory of your health.
+            Imagine your body sending you a warning signal, a message that says, "Pay attention now, and you can change your future." That's exactly what prediabetes is: a critical opportunity to prevent type 2 diabetes before it develops. For the millions of Americans living with prediabetes, many don't even know they have it. But understanding this condition and taking action can literally change the trajectory of your health.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Prediabetes isn't a diagnosis to fear—it's a gift of time. It's your body's way of giving you a chance to make meaningful changes before blood sugar levels cross into diabetes territory. With the right knowledge and support, you can reverse prediabetes and significantly reduce your risk of developing type 2 diabetes and its associated complications.
+            Prediabetes isn't a diagnosis to fear. It's a gift of time. It's your body's way of giving you a chance to make meaningful changes before blood sugar levels cross into diabetes territory. With the right knowledge and support, you can reverse prediabetes and significantly reduce your risk of developing type 2 diabetes and its associated complications.
           </p>
 
           {/* Section 1 */}
@@ -88,11 +96,11 @@ export default function PrediabetesArticle() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Prediabetes is a health condition where blood sugar levels are higher than normal but not yet high enough to be classified as type 2 diabetes. Think of it as the warning zone on a gauge—you're not in the danger zone yet, but you're close enough that action is needed.
+            Prediabetes is a health condition where blood sugar levels are higher than normal but not yet high enough to be classified as type 2 diabetes. Think of it as the warning zone on a gauge: you're not in the danger zone yet, but you're close enough that action is needed.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            According to the Centers for Disease Control and Prevention (CDC), more than 98 million American adults—approximately one in three—have prediabetes. Even more concerning, about 80% of people with prediabetes don't know they have it because it often has no symptoms.
+            According to the Centers for Disease Control and Prevention (CDC), more than 98 million American adults (approximately one in three) have prediabetes. Even more concerning, about 80% of people with prediabetes don't know they have it because it often has no symptoms.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -220,7 +228,7 @@ export default function PrediabetesArticle() {
           </ul>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            The good news? Research consistently shows that lifestyle interventions can reduce the risk of progression to type 2 diabetes by up to 58%. For people over 60, that reduction can be even higher—up to 71%. These aren't small numbers; they represent real, achievable protection for your future health.
+            The good news? Research consistently shows that lifestyle interventions can reduce the risk of progression to type 2 diabetes by up to 58%. For people over 60, that reduction can be even higher, up to 71%. These aren't small numbers; they represent real, achievable protection for your future health.
           </p>
 
           {/* Section 4 */}
@@ -245,7 +253,7 @@ export default function PrediabetesArticle() {
           </h3>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            That's 30 minutes a day, five days a week, of moderate-intensity activity like brisk walking. Physical activity helps your cells use insulin more effectively and lowers blood sugar. You don't need a gym membership—a daily walk around your Austin neighborhood counts.
+            That's 30 minutes a day, five days a week, of moderate-intensity activity like brisk walking. Physical activity helps your cells use insulin more effectively and lowers blood sugar. You don't need a gym membership. A daily walk around your neighborhood or along the bosque trail counts.
           </p>
 
           <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mt-8 mb-3">
@@ -253,7 +261,7 @@ export default function PrediabetesArticle() {
           </h3>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Focus on vegetables, whole grains, lean proteins, and healthy fats. Limit refined carbohydrates, sugary drinks, and processed foods. You don't have to follow a restrictive diet—simply choosing nutrient-dense foods most of the time makes a difference.
+            Focus on vegetables, whole grains, lean proteins, and healthy fats. Limit refined carbohydrates, sugary drinks, and processed foods. You don't have to follow a restrictive diet. Simply choosing nutrient-dense foods most of the time makes a difference.
           </p>
 
           <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mt-8 mb-3">
@@ -269,7 +277,7 @@ export default function PrediabetesArticle() {
           </h3>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Chronic stress raises cortisol levels, which can increase blood sugar. Find stress-management techniques that work for you—whether that's meditation, yoga, time in nature, or talking with a counselor.
+            Chronic stress raises cortisol levels, which can increase blood sugar. Find stress-management techniques that work for you, whether that's meditation, yoga, time in nature, or talking with a counselor.
           </p>
 
           {/* Section 5 */}
@@ -295,7 +303,7 @@ export default function PrediabetesArticle() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Once you know where you stand, you can take meaningful action. Remember that small, consistent changes add up to significant results over time. You don't have to overhaul your entire life overnight. Start with one sustainable change—maybe a daily 20-minute walk or swapping sugary drinks for water—and build from there.
+            Once you know where you stand, you can take meaningful action. Remember that small, consistent changes add up to significant results over time. You don't have to overhaul your entire life overnight. Start with one sustainable change (maybe a daily 20-minute walk or swapping sugary drinks for water) and build from there.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -303,7 +311,7 @@ export default function PrediabetesArticle() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            At Body1MD Primary Care & Wellness in Austin, we're committed to helping you understand your risk, create a personalized prevention plan, and support you every step of the way. Prediabetes doesn't have to become diabetes—let's work together to write a healthier story.
+            At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, we're committed to helping you understand your risk, create a personalized prevention plan, and support you every step of the way. Prediabetes doesn't have to become diabetes. Let's work together to write a healthier story.
           </p>
         </div>
       </article>
@@ -319,10 +327,10 @@ export default function PrediabetesArticle() {
             </div>
             <div>
               <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Our practice provides comprehensive primary care for patients in Austin, TX, with a focus on preventive medicine, chronic disease management, and personalized health optimization.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -383,7 +391,7 @@ export default function PrediabetesArticle() {
             </Link>
 
             {/* Card 3 */}
-            <Link href="/services/weight-management" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+            <Link href="/services" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
               <div className="bg-gradient-to-br from-[var(--color-light)] to-[var(--color-cream)] p-8 flex items-center justify-center h-48">
                 <svg className="w-16 h-16 text-[var(--color-primary)] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -415,7 +423,7 @@ export default function PrediabetesArticle() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

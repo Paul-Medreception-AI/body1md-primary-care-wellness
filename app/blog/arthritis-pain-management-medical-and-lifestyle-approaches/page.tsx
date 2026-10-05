@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Arthritis Pain Management: Medical and Lifestyle Approaches',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/arthritis-pain-management-medical-and-lifestyle-approaches',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/arthritis-pain-management-medical-and-lifestyle-approaches.jpg', alt: 'Older adult hands squeezing a soft therapy ball to ease joint stiffness' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Arthritis Pain Management: Medical and Lifestyle Approaches',
     description: 'Comprehensive guide to managing arthritis pain through medical treatments, lifestyle modifications, and holistic approaches for improved quality of life.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/arthritis-pain-management-medical-and-lifestyle-approaches.jpg'],
   },
 }
 
@@ -48,14 +49,20 @@ export default function ArthritisPainManagementPage() {
 
           {/* Meta Info */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/arthritis-pain-management-medical-and-lifestyle-approaches.jpg" alt="Older adult hands squeezing a soft therapy ball to ease joint stiffness" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -63,7 +70,7 @@ export default function ArthritisPainManagementPage() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Imagine waking up each morning with stiff, aching joints that make simple tasks like turning a doorknob or climbing stairs feel overwhelming. For millions of Americans living with arthritis, this isn't imagination—it's daily reality. Arthritis affects more than 54 million adults in the United States, making it the leading cause of disability. But here's the encouraging truth: with the right combination of medical treatment and lifestyle modifications, most people with arthritis can significantly reduce their pain and reclaim their quality of life.
+              Imagine waking up each morning with stiff, aching joints that make simple tasks like turning a doorknob or climbing stairs feel overwhelming. For millions of Americans living with arthritis, this isn't imagination. It's daily reality. Arthritis affects more than 54 million adults in the United States, making it the leading cause of disability. But here's the encouraging truth: with the right combination of medical treatment and lifestyle modifications, most people with arthritis can significantly reduce their pain and reclaim their quality of life.
             </p>
             <p>
               Understanding your options for arthritis pain management is the first step toward finding relief. From evidence-based medical interventions to simple daily habits, a comprehensive approach offers the best chance for long-term improvement.
@@ -79,7 +86,7 @@ export default function ArthritisPainManagementPage() {
               Arthritis isn't a single condition but rather an umbrella term for over 100 different types of joint disease. The two most common forms are osteoarthritis (OA), which results from wear-and-tear damage to joint cartilage, and rheumatoid arthritis (RA), an autoimmune condition where the body attacks its own joint tissues.
             </p>
             <p className="mb-6">
-              Both types cause inflammation, pain, stiffness, and reduced range of motion. Left unmanaged, arthritis can progress to joint damage and deformity, significantly impacting your ability to work, exercise, and perform everyday activities. The chronic pain often leads to sleep disruption, fatigue, and emotional stress—creating a cycle that affects overall well-being.
+              Both types cause inflammation, pain, stiffness, and reduced range of motion. Left unmanaged, arthritis can progress to joint damage and deformity, significantly impacting your ability to work, exercise, and perform everyday activities. The chronic pain often leads to sleep disruption, fatigue, and emotional stress, creating a cycle that affects overall well-being.
             </p>
             <p>
               The good news? Early intervention and consistent management can slow progression, reduce symptoms, and help you maintain an active, fulfilling life.
@@ -98,7 +105,7 @@ export default function ArthritisPainManagementPage() {
               <strong>Over-the-counter medications</strong> like acetaminophen can provide relief for mild to moderate pain, while nonsteroidal anti-inflammatory drugs (NSAIDs) such as ibuprofen or naproxen reduce both pain and inflammation. For many people, these are the first line of defense and can be quite effective when used appropriately.
             </p>
             <p className="mb-6">
-              <strong>Prescription medications</strong> include stronger NSAIDs, COX-2 inhibitors, and topical analgesics that target pain at its source. For rheumatoid arthritis and other inflammatory types, disease-modifying antirheumatic drugs (DMARDs) and biologic agents can actually slow disease progression—not just mask symptoms.
+              <strong>Prescription medications</strong> include stronger NSAIDs, COX-2 inhibitors, and topical analgesics that target pain at its source. For rheumatoid arthritis and other inflammatory types, disease-modifying antirheumatic drugs (DMARDs) and biologic agents can actually slow disease progression, not just mask symptoms.
             </p>
             <p className="mb-6">
               <strong>Corticosteroid injections</strong> delivered directly into affected joints provide targeted, often dramatic relief for acute flare-ups. While not suitable for frequent use, they can be invaluable during particularly difficult periods.
@@ -110,7 +117,7 @@ export default function ArthritisPainManagementPage() {
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "Managing arthritis effectively requires a partnership between medical treatment and daily lifestyle choices—neither alone is as powerful as both together."
+            "Managing arthritis effectively requires a partnership between medical treatment and daily lifestyle choices. Neither alone is as powerful as both together."
           </blockquote>
 
           {/* Section 3 */}
@@ -119,7 +126,7 @@ export default function ArthritisPainManagementPage() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              It might seem counterintuitive, but one of the best things you can do for arthritic joints is to keep them moving. Exercise strengthens the muscles that support your joints, maintains flexibility, and helps control weight—all crucial factors in pain management.
+              It might seem counterintuitive, but one of the best things you can do for arthritic joints is to keep them moving. Exercise strengthens the muscles that support your joints, maintains flexibility, and helps control weight, all crucial factors in pain management.
             </p>
             <p className="mb-6">
               <strong>Low-impact aerobic activities</strong> like swimming, water aerobics, cycling, and walking are particularly beneficial. Swimming is especially valuable because the water's buoyancy reduces stress on joints while providing resistance for muscle strengthening.
@@ -128,7 +135,7 @@ export default function ArthritisPainManagementPage() {
               <strong>Flexibility exercises</strong> including gentle stretching and yoga help maintain and improve range of motion. Many people with arthritis find that starting the day with 10-15 minutes of gentle stretching reduces morning stiffness significantly.
             </p>
             <p className="mb-6">
-              <strong>Strength training</strong> doesn't require heavy weights—even light resistance bands or body-weight exercises can build the muscle support your joints need. Focus on proper form rather than intensity, and always work within a pain-free range.
+              <strong>Strength training</strong> doesn't require heavy weights. Even light resistance bands or body-weight exercises can build the muscle support your joints need. Focus on proper form rather than intensity, and always work within a pain-free range.
             </p>
             <p>
               The key is consistency and pacing. Start slowly, listen to your body, and gradually increase activity as tolerated. Many patients benefit from working with a physical therapist initially to develop a safe, effective exercise program.
@@ -147,7 +154,7 @@ export default function ArthritisPainManagementPage() {
               <strong>Anti-inflammatory foods</strong> should form the foundation of your diet. These include fatty fish rich in omega-3 fatty acids (salmon, mackerel, sardines), colorful fruits and vegetables loaded with antioxidants, whole grains, nuts, and olive oil. The Mediterranean diet, which emphasizes these foods, has shown particular promise in research studies for reducing arthritis symptoms.
             </p>
             <p className="mb-6">
-              <strong>Foods to limit</strong> include processed foods, refined sugars, saturated fats, and excessive alcohol—all of which can promote inflammation. Some people also find that nightshade vegetables (tomatoes, peppers, eggplant) trigger symptoms, though scientific evidence for this is limited.
+              <strong>Foods to limit</strong> include processed foods, refined sugars, saturated fats, and excessive alcohol, all of which can promote inflammation. Some people also find that nightshade vegetables (tomatoes, peppers, eggplant) trigger symptoms, though scientific evidence for this is limited.
             </p>
             <p>
               <strong>Weight management</strong> deserves special attention. Every extra pound you carry puts approximately four pounds of additional pressure on your knees. Losing even 10-15 pounds can dramatically reduce pain and slow joint damage progression in weight-bearing joints. Work with your healthcare provider to develop a sustainable approach that combines healthy eating with appropriate exercise.
@@ -168,7 +175,7 @@ export default function ArthritisPainManagementPage() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Use your larger, stronger joints</strong> whenever possible—carry bags on your forearm rather than gripping with your hands, push doors open with your hip or shoulder instead of your hands.</span>
+                <span><strong>Use your larger, stronger joints</strong> whenever possible: carry bags on your forearm rather than gripping with your hands, push doors open with your hip or shoulder instead of your hands.</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -180,13 +187,13 @@ export default function ArthritisPainManagementPage() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Alternate activities</strong> to avoid prolonged stress on any single joint—take breaks during repetitive tasks, change positions frequently, and avoid gripping anything too tightly for extended periods.</span>
+                <span><strong>Alternate activities</strong> to avoid prolonged stress on any single joint: take breaks during repetitive tasks, change positions frequently, and avoid gripping anything too tightly for extended periods.</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Apply heat and cold strategically</strong>—warm showers or heating pads ease morning stiffness, while ice packs reduce inflammation after activity.</span>
+                <span><strong>Apply heat and cold strategically</strong>: warm showers or heating pads ease morning stiffness, while ice packs reduce inflammation after activity.</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -198,7 +205,7 @@ export default function ArthritisPainManagementPage() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Manage stress</strong> through meditation, deep breathing, or other relaxation techniques—stress can amplify pain perception and trigger inflammatory responses.</span>
+                <span><strong>Manage stress</strong> through meditation, deep breathing, or other relaxation techniques, since stress can amplify pain perception and trigger inflammatory responses.</span>
               </li>
             </ul>
 
@@ -232,10 +239,10 @@ export default function ArthritisPainManagementPage() {
           {/* Closing */}
           <div className="text-[var(--color-ink)] leading-loose text-base mt-12 pt-8 border-t border-[var(--color-border)]">
             <p className="mb-6">
-              Living with arthritis presents real challenges, but you have more control over your symptoms than you might realize. The most effective pain management combines appropriate medical treatment with consistent lifestyle modifications—each reinforcing the other.
+              Living with arthritis presents real challenges, but you have more control over your symptoms than you might realize. The most effective pain management combines appropriate medical treatment with consistent lifestyle modifications, each reinforcing the other.
             </p>
             <p className="mb-6">
-              Start where you are. You don't need to implement every strategy at once. Pick one or two changes that feel manageable—perhaps adding a 10-minute walk to your routine or swapping refined snacks for anti-inflammatory foods—and build from there. Small, sustainable changes accumulate into meaningful improvement over time.
+              Start where you are. You don't need to implement every strategy at once. Pick one or two changes that feel manageable, perhaps adding a 10-minute walk to your routine or swapping refined snacks for anti-inflammatory foods, and build from there. Small, sustainable changes accumulate into meaningful improvement over time.
             </p>
             <p>
               Your journey with arthritis is unique, and your pain management plan should be too. Working with a knowledgeable healthcare provider who takes time to understand your specific situation, listens to your concerns, and partners with you to find the right combination of treatments can make all the difference. You deserve comprehensive care that addresses not just your symptoms, but your overall quality of life. Don't hesitate to reach out for the support you need.
@@ -252,10 +259,10 @@ export default function ArthritisPainManagementPage() {
           </div>
           <div>
             <div className="font-semibold text-[var(--color-ink)] mb-2">
-              Reviewed by Body1MD Primary Care & Wellness
+              Reviewed by Dr. Andrew Hemmen, MD
             </div>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-              Our team is dedicated to providing evidence-based, compassionate care that helps you achieve optimal health and wellness. We believe in partnering with patients to develop personalized treatment plans that fit your unique needs and lifestyle.
+              Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. He partners with each patient on a personalized treatment plan that fits their needs and lifestyle.
             </p>
           </div>
         </div>
@@ -323,7 +330,7 @@ export default function ArthritisPainManagementPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

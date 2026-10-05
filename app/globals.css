@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0070c0;
-  --color-dark: #00497d;
-  --color-light: #d9eaf6;
-  --color-ink: #1a2030;
-  --color-cream: #f7fbfd;
-  --color-muted: #64748b;
-  --color-border: #cce5f7;
-  --color-accent: #0070c0;
-  --color-accent-dark: #00497d;
+  /* Body1MD brand, sampled from body1md.com (Elementor globals) and the logo. */
+  --color-primary: #0B2D64;   /* navy: headings, links, icons */
+  --color-dark: #06142C;      /* deep navy: dark sections, footer */
+  --color-light: #E4F4FC;     /* pale cyan tint */
+  --color-ink: #06152E;
+  --color-cream: #F7F8F5;
+  --color-muted: #55606F;
+  --color-border: #D5E6F1;
+  --color-teal: #1AA7E3;      /* logo cyan: small highlights only */
+  /* Restricted accent: CTA buttons, small icons and highlights ONLY, never a large background. */
+  --color-accent: #E76F25;
+  --color-accent-dark: #C85A17;
 }
 
 * { box-sizing: border-box; }
@@ -27,3 +30,11 @@ body { background-color: var(--color-cream); color: var(--color-ink); }
   animation-timeline: view();
   animation-range: entry 0% entry 35%;
 }
+
+/* Header dropdowns: CSS only, so the header stays a server component. */
+.nav-dd { position: relative; }
+.nav-dd > .nav-panel { visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity .15s ease, transform .15s ease, visibility .15s; }
+.nav-dd:hover > .nav-panel, .nav-dd:focus-within > .nav-panel { visibility: visible; opacity: 1; transform: translateY(0); }
+details.m-dd > summary { list-style: none; }
+details.m-dd > summary::-webkit-details-marker { display: none; }
+details.m-dd[open] > summary .m-chev { transform: rotate(180deg); }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Anemia: Why You\'re Tired and What Blood Tests Reveal',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal.jpg', alt: 'Tired woman rubbing her eyes from fatigue' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Anemia: Why You\'re Tired and What Blood Tests Reveal',
     description: 'Discover why anemia causes fatigue, what blood tests reveal about iron levels, and how primary care can help diagnose and treat this common condition.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal.jpg'],
   },
 }
 
@@ -43,27 +44,33 @@ export default function AnemiaArticlePage() {
           </h1>
           
           <div className="flex justify-center items-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/anemia-why-you-re-tired-and-what-blood-tests-reveal.jpg" alt="Tired woman rubbing her eyes from fatigue" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-8">
-              You&apos;re exhausted all the time, no matter how much sleep you get. Your heart races when you climb stairs. You feel dizzy, irritable, and cold when everyone else is comfortable. These aren&apos;t just signs of a busy life—they could be symptoms of anemia, one of the most common blood disorders affecting millions of Americans. The good news? A simple blood test can reveal what&apos;s happening, and treatment can restore your energy and vitality.
+              You&apos;re exhausted all the time, no matter how much sleep you get. Your heart races when you climb stairs. You feel dizzy, irritable, and cold when everyone else is comfortable. These aren&apos;t just signs of a busy life. They could be symptoms of anemia, one of the most common blood disorders affecting millions of Americans. The good news? A simple blood test can reveal what&apos;s happening, and treatment can restore your energy and vitality.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
               What Is Anemia?
             </h2>
             <p className="mb-6">
-              Anemia occurs when your blood doesn&apos;t have enough healthy red blood cells or hemoglobin—the protein that carries oxygen throughout your body. Without adequate oxygen delivery, your organs and tissues struggle to function properly, leaving you feeling perpetually exhausted.
+              Anemia occurs when your blood doesn&apos;t have enough healthy red blood cells or hemoglobin, the protein that carries oxygen throughout your body. Without adequate oxygen delivery, your organs and tissues struggle to function properly, leaving you feeling perpetually exhausted.
             </p>
             <p className="mb-6">
               There are several types of anemia, but iron-deficiency anemia is by far the most common, accounting for nearly half of all cases worldwide. Other forms include vitamin B12 deficiency anemia, folate deficiency anemia, and anemia of chronic disease. Each type has different causes, but they all share the hallmark symptom: profound fatigue that doesn&apos;t improve with rest.
@@ -79,12 +86,12 @@ export default function AnemiaArticlePage() {
               Your brain, which consumes about 20% of your body&apos;s oxygen despite being only 2% of your body weight, is particularly sensitive to oxygen deprivation. This explains the cognitive symptoms many anemia patients experience: difficulty concentrating, memory problems, and persistent brain fog that makes even simple tasks feel overwhelming.
             </p>
             <p className="mb-6">
-              The fatigue of anemia is different from ordinary tiredness. It&apos;s a bone-deep exhaustion that sleep doesn&apos;t fix—a heaviness that makes getting through the day feel like an endurance test.
+              The fatigue of anemia is different from ordinary tiredness. It&apos;s a bone-deep exhaustion that sleep doesn&apos;t fix, a heaviness that makes getting through the day feel like an endurance test.
             </p>
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                &quot;Anemia isn&apos;t just about feeling tired—it affects your quality of life, your ability to work, exercise, and enjoy daily activities. But with proper diagnosis and treatment, most people see dramatic improvement within weeks.&quot;
+                &quot;Anemia isn&apos;t just about feeling tired. It affects your quality of life, your ability to work, exercise, and enjoy daily activities. But with proper diagnosis and treatment, most people see dramatic improvement within weeks.&quot;
               </p>
             </div>
 
@@ -176,10 +183,10 @@ export default function AnemiaArticlePage() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team provides comprehensive primary care services in Austin, TX, including diagnostic blood work, anemia treatment, and ongoing wellness support. We&apos;re dedicated to uncovering the root causes of your symptoms and helping you feel your best.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His care includes diagnostic blood work, anemia evaluation and treatment, and ongoing wellness support aimed at uncovering the root causes of your symptoms.
               </p>
             </div>
           </div>
@@ -206,7 +213,7 @@ export default function AnemiaArticlePage() {
               </p>
             </Link>
 
-            <Link href="/services/direct-primary-care" className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group animate-fade-up">
+            <Link href="/new-patients" className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group animate-fade-up">
               <div className="w-12 h-12 bg-[var(--color-light)] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                 <svg className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -243,7 +250,7 @@ export default function AnemiaArticlePage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

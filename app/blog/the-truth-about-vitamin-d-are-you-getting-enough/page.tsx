@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'The Truth About Vitamin D: Are You Getting Enough?',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/the-truth-about-vitamin-d-are-you-getting-enough',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/the-truth-about-vitamin-d-are-you-getting-enough.jpg', alt: 'Woman walking on a wooden boardwalk through a sunlit forest' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Truth About Vitamin D: Are You Getting Enough?',
     description: 'Learn about vitamin D deficiency, its impact on your health, and how to ensure you\'re getting adequate levels through sunlight, diet, and supplementation.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/the-truth-about-vitamin-d-are-you-getting-enough.jpg'],
   },
 }
 
@@ -52,7 +53,7 @@ export default function VitaminDBlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,18 +65,25 @@ export default function VitaminDBlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/the-truth-about-vitamin-d-are-you-getting-enough.jpg" alt="Woman walking on a wooden boardwalk through a sunlit forest" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           {/* Opening Paragraph */}
           <p className="text-[var(--color-ink)] leading-loose text-lg mb-6">
-            You've probably heard that vitamin D is important—but do you know just how crucial it is to your overall health? Often called the "sunshine vitamin," vitamin D plays a vital role in everything from bone strength to immune function. Yet despite its importance, vitamin D deficiency remains surprisingly common, affecting nearly 42% of adults in the United States. If you spend most of your day indoors, live in a northern climate, or have darker skin, you may be at even higher risk.
+            You've probably heard that vitamin D is important, but do you know just how crucial it is to your overall health? Often called the "sunshine vitamin," vitamin D plays a vital role in everything from bone strength to immune function. Yet despite its importance, vitamin D deficiency remains surprisingly common, affecting nearly 42% of adults in the United States. If you spend most of your day indoors, live in a northern climate, or have darker skin, you may be at even higher risk.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-lg mb-8">
@@ -88,11 +96,11 @@ export default function VitaminDBlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Vitamin D is a fat-soluble vitamin that functions more like a hormone in your body. Unlike most vitamins that we must obtain through food, our bodies can produce vitamin D when our skin is exposed to sunlight—specifically, ultraviolet B (UVB) rays.
+            Vitamin D is a fat-soluble vitamin that functions more like a hormone in your body. Unlike most vitamins that we must obtain through food, our bodies can produce vitamin D when our skin is exposed to sunlight, specifically ultraviolet B (UVB) rays.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Once produced or consumed, vitamin D undergoes two conversion steps—first in the liver, then in the kidneys—to become its active form, calcitriol. This active form helps regulate calcium and phosphorus absorption, supporting bone health and skeletal structure. But its benefits extend far beyond bones.
+            Once produced or consumed, vitamin D undergoes two conversion steps (first in the liver, then in the kidneys) to become its active form, calcitriol. This active form helps regulate calcium and phosphorus absorption, supporting bone health and skeletal structure. But its benefits extend far beyond bones.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
@@ -214,11 +222,11 @@ export default function VitaminDBlogPost() {
           </h3>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Your skin produces vitamin D when exposed to UVB rays from the sun. For many people, 10–30 minutes of midday sun exposure several times per week is sufficient, though this varies based on skin tone, geographic location, and season. People with darker skin may need more time in the sun to produce the same amount of vitamin D.
+            Your skin produces vitamin D when exposed to UVB rays from the sun. For many people, 10 to 30 minutes of midday sun exposure several times per week is sufficient, though this varies based on skin tone, geographic location, and season. People with darker skin may need more time in the sun to produce the same amount of vitamin D.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Keep in mind that sunscreen, while critical for preventing skin cancer, does block vitamin D production. Balancing sun exposure with skin protection is key—consider brief, unprotected exposure followed by sunscreen application.
+            Keep in mind that sunscreen, while critical for preventing skin cancer, does block vitamin D production. Balancing sun exposure with skin protection is key: consider brief, unprotected exposure followed by sunscreen application.
           </p>
 
           <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mt-8 mb-3">
@@ -246,11 +254,11 @@ export default function VitaminDBlogPost() {
           </h3>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            For many people—especially those at higher risk—supplementation is the most reliable way to maintain adequate vitamin D levels. Vitamin D3 (cholecalciferol) is generally more effective at raising blood levels than vitamin D2 (ergocalciferol).
+            For many people, especially those at higher risk, supplementation is the most reliable way to maintain adequate vitamin D levels. Vitamin D3 (cholecalciferol) is generally more effective at raising blood levels than vitamin D2 (ergocalciferol).
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            The recommended daily allowance varies by age, health status, and baseline levels. Many adults benefit from 1,000–2,000 IU per day, but higher doses may be needed to correct a deficiency. It's important to work with your healthcare provider to determine the right dose for you, as too much vitamin D can lead to toxicity, though this is rare.
+            The recommended daily allowance varies by age, health status, and baseline levels. Many adults benefit from 1,000 to 2,000 IU per day, but higher doses may be needed to correct a deficiency. It's important to work with your healthcare provider to determine the right dose for you, as too much vitamin D can lead to toxicity, though this is rare.
           </p>
 
           {/* Section 5 */}
@@ -263,11 +271,11 @@ export default function VitaminDBlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Optimal levels are generally considered to be between 30–50 ng/mL, though some experts recommend aiming for the higher end of that range. Levels below 20 ng/mL are considered deficient, and levels between 20–30 ng/mL are considered insufficient.
+            Optimal levels are generally considered to be between 30 and 50 ng/mL, though some experts recommend aiming for the higher end of that range. Levels below 20 ng/mL are considered deficient, and levels between 20 and 30 ng/mL are considered insufficient.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            If you've never had your vitamin D checked—or if you have risk factors for deficiency—it's worth discussing testing with your doctor. Regular monitoring can help ensure you're maintaining healthy levels, especially if you're taking supplements.
+            If you've never had your vitamin D checked, or if you have risk factors for deficiency, it's worth discussing testing with your doctor. Regular monitoring can help ensure you're maintaining healthy levels, especially if you're taking supplements.
           </p>
 
           {/* Section 6 */}
@@ -276,7 +284,7 @@ export default function VitaminDBlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Vitamin D is essential for bone health, immune function, mood regulation, and overall wellness—yet deficiency is incredibly common. Whether due to limited sun exposure, dietary habits, or individual risk factors, many people simply aren't getting enough.
+            Vitamin D is essential for bone health, immune function, mood regulation, and overall wellness, yet deficiency is incredibly common. Whether due to limited sun exposure, dietary habits, or individual risk factors, many people simply aren't getting enough.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -284,7 +292,7 @@ export default function VitaminDBlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            If you're experiencing fatigue, frequent illness, mood changes, or other symptoms that might be linked to low vitamin D—or if you simply want to know where you stand—reach out to your healthcare provider. A simple blood test and personalized guidance can make all the difference in how you feel, today and for years to come.
+            If you're experiencing fatigue, frequent illness, mood changes, or other symptoms that might be linked to low vitamin D, or if you simply want to know where you stand, reach out to your healthcare provider. A simple blood test and personalized guidance can make all the difference in how you feel, today and for years to come.
           </p>
         </div>
       </article>
@@ -300,10 +308,10 @@ export default function VitaminDBlogPost() {
             </div>
             <div>
               <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Our team is dedicated to providing evidence-based, compassionate care to help you achieve optimal health and wellness. We focus on preventive medicine, chronic disease management, and personalized treatment plans tailored to your unique needs.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -388,7 +396,7 @@ export default function VitaminDBlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help you optimize your health and wellness.
+            Dr. Hemmen is here to help you optimize your health and wellness.
           </p>
           <Link
             href="/contact"

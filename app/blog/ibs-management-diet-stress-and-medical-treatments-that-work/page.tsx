@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'IBS Management: Diet, Stress, and Medical Treatments That Work',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/ibs-management-diet-stress-and-medical-treatments-that-work',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/ibs-management-diet-stress-and-medical-treatments-that-work.jpg', alt: 'Woman lying on a couch holding her stomach in discomfort' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'IBS Management: Diet, Stress, and Medical Treatments That Work',
     description: 'Discover evidence-based strategies for managing IBS including dietary changes, stress reduction techniques, and proven medical treatments for lasting relief.',
-    images: ['/og-image.png']
+    images: ['/images/blog/ibs-management-diet-stress-and-medical-treatments-that-work.jpg']
   }
 }
 
@@ -38,20 +39,26 @@ export default function IBSManagementArticle() {
             IBS Management: Diet, Stress, and Medical Treatments That Work
           </h1>
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/ibs-management-diet-stress-and-medical-treatments-that-work.jpg" alt="Woman lying on a couch holding her stomach in discomfort" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6 font-light">
-              You're not imagining it, and you're not alone. That unpredictable cramping, the urgent bathroom trips, the constant worry about when symptoms will strike next—irritable bowel syndrome affects 10-15% of adults worldwide, yet many people suffer in silence, unsure where to turn for real relief.
+              You're not imagining it, and you're not alone. That unpredictable cramping, the urgent bathroom trips, the constant worry about when symptoms will strike next: irritable bowel syndrome affects 10-15% of adults worldwide, yet many people suffer in silence, unsure where to turn for real relief.
             </p>
             
             <p className="mb-6">
@@ -63,7 +70,7 @@ export default function IBSManagementArticle() {
             </h2>
             
             <p className="mb-6">
-              Irritable bowel syndrome is a functional gastrointestinal disorder, meaning the digestive tract looks normal but doesn't work properly. It's characterized by recurring abdominal pain associated with changes in bowel habits—whether constipation, diarrhea, or alternating between both.
+              Irritable bowel syndrome is a functional gastrointestinal disorder, meaning the digestive tract looks normal but doesn't work properly. It's characterized by recurring abdominal pain associated with changes in bowel habits, whether constipation, diarrhea, or alternating between both.
             </p>
             
             <p className="mb-6">
@@ -75,13 +82,13 @@ export default function IBSManagementArticle() {
             </h2>
             
             <p className="mb-6">
-              Diet is often the first—and most impactful—place to start with IBS management. Certain foods can trigger symptoms by affecting gut motility, causing gas production, or irritating the intestinal lining. The challenge is that triggers vary significantly from person to person.
+              Diet is often the first, and most impactful, place to start with IBS management. Certain foods can trigger symptoms by affecting gut motility, causing gas production, or irritating the intestinal lining. The challenge is that triggers vary significantly from person to person.
             </p>
 
             <p className="mb-4 font-semibold text-[var(--color-ink)]">The Low FODMAP Approach:</p>
             
             <p className="mb-6">
-              One of the most researched dietary interventions for IBS is the low FODMAP diet. FODMAPs (Fermentable Oligosaccharides, Disaccharides, Monosaccharides, and Polyols) are short-chain carbohydrates that are poorly absorbed in the small intestine. When they reach the colon, they're rapidly fermented by gut bacteria, producing gas and drawing water into the intestines—triggering IBS symptoms.
+              One of the most researched dietary interventions for IBS is the low FODMAP diet. FODMAPs (Fermentable Oligosaccharides, Disaccharides, Monosaccharides, and Polyols) are short-chain carbohydrates that are poorly absorbed in the small intestine. When they reach the colon, they're rapidly fermented by gut bacteria, producing gas and drawing water into the intestines, triggering IBS symptoms.
             </p>
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
@@ -103,7 +110,7 @@ export default function IBSManagementArticle() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Keep a detailed food and symptom diary to identify patterns—timing matters as much as the food itself</span>
+                <span>Keep a detailed food and symptom diary to identify patterns, since timing matters as much as the food itself</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -140,11 +147,11 @@ export default function IBSManagementArticle() {
             </h2>
             
             <p className="mb-6">
-              The relationship between stress and IBS is not just correlation—it's causation. The gut and brain communicate constantly through the vagus nerve and chemical messengers. When you're stressed, your brain sends signals that can alter gut motility, increase pain sensitivity, and change the gut's barrier function.
+              The relationship between stress and IBS is not just correlation. It's causation. The gut and brain communicate constantly through the vagus nerve and chemical messengers. When you're stressed, your brain sends signals that can alter gut motility, increase pain sensitivity, and change the gut's barrier function.
             </p>
             
             <p className="mb-6">
-              Many IBS patients notice their symptoms worsen during stressful periods or that anxiety about symptoms actually triggers those very symptoms—creating a vicious cycle. Breaking this cycle requires addressing both the psychological and physiological aspects of stress.
+              Many IBS patients notice their symptoms worsen during stressful periods or that anxiety about symptoms actually triggers those very symptoms, creating a vicious cycle. Breaking this cycle requires addressing both the psychological and physiological aspects of stress.
             </p>
 
             <p className="mb-4 font-semibold text-[var(--color-ink)]">Evidence-based stress management techniques:</p>
@@ -183,7 +190,7 @@ export default function IBSManagementArticle() {
             </ul>
 
             <p className="mb-6">
-              Don't underestimate the power of these interventions—they're not just "complementary" therapies but core components of comprehensive IBS treatment, often as effective as medication for many patients.
+              Don't underestimate the power of these interventions. They're not just "complementary" therapies but core components of comprehensive IBS treatment, often as effective as medication for many patients.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -278,7 +285,7 @@ export default function IBSManagementArticle() {
             </p>
             
             <p className="mb-6">
-              Multi-strain probiotics containing Bifidobacterium and Lactobacillus species appear most effective, though responses vary individually. It typically takes 4-8 weeks of consistent use to see benefits. Quality matters—look for products with research backing specific strains at appropriate doses (typically in the billions of CFUs).
+              Multi-strain probiotics containing Bifidobacterium and Lactobacillus species appear most effective, though responses vary individually. It typically takes 4-8 weeks of consistent use to see benefits. Quality matters: look for products with research backing specific strains at appropriate doses (typically in the billions of CFUs).
             </p>
 
             <p className="mb-6">
@@ -298,7 +305,7 @@ export default function IBSManagementArticle() {
             </p>
 
             <p className="mb-6">
-              Living with IBS can be challenging, but it doesn't have to control your life. With the right combination of dietary awareness, stress management, and medical support, most people achieve significant symptom relief and return to activities they've been avoiding. You deserve compassionate, comprehensive care that addresses all aspects of this complex condition—not just a prescription and a dismissive "it's just IBS."
+              Living with IBS can be challenging, but it doesn't have to control your life. With the right combination of dietary awareness, stress management, and medical support, most people achieve significant symptom relief and return to activities they've been avoiding. You deserve compassionate, comprehensive care that addresses all aspects of this complex condition, not just a prescription and a dismissive "it's just IBS."
             </p>
 
             <p className="text-lg mt-8 font-semibold text-[var(--color-ink)]">
@@ -316,7 +323,7 @@ export default function IBSManagementArticle() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </p>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article is for informational purposes and does not constitute medical advice. Always consult with a qualified healthcare provider for diagnosis and treatment recommendations specific to your condition.
@@ -359,7 +366,7 @@ export default function IBSManagementArticle() {
                 </svg>
               </div>
               <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2">Schedule a Visit</h4>
-              <p className="text-[var(--color-muted)] text-sm mb-4">Get personalized care from our experienced team</p>
+              <p className="text-[var(--color-muted)] text-sm mb-4">Get personalized care from Dr. Hemmen</p>
               <span className="text-[var(--color-accent)] text-sm font-medium hover:underline">Book Appointment →</span>
             </Link>
           </div>
@@ -369,7 +376,7 @@ export default function IBSManagementArticle() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-3 rounded-lg font-medium hover:bg-[var(--color-cream)] transition-colors"

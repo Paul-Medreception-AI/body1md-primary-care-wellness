@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Telemedicine vs In-Person Visits: When Virtual Care Is Appropriate',
-  description: 'Compare telemedicine and in-person primary care visits. Learn which option is best for your health needs, cost considerations, and when virtual care is most effective.',
+  description: 'Compare telemedicine and in-person primary care visits in Albuquerque, NM. Learn which option fits your health needs and when virtual care is most effective.',
   alternates: { canonical: '/compare/telemedicine-vs-in-person-visits' },
   openGraph: {
     title: 'Telemedicine vs In-Person Visits: When Virtual Care Is Appropriate',
-    description: 'Compare telemedicine and in-person primary care visits. Learn which option is best for your health needs, cost considerations, and when virtual care is most effective.',
+    description: 'Compare telemedicine and in-person primary care visits in Albuquerque, NM. Learn which option fits your health needs and when virtual care is most effective.',
     url: 'https://body1md.com/compare/telemedicine-vs-in-person-visits',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Telemedicine vs In-Person Visits: When Virtual Care Is Appropriate',
-    description: 'Compare telemedicine and in-person primary care visits. Learn which option is best for your health needs, cost considerations, and when virtual care is most effective.',
+    description: 'Compare telemedicine and in-person primary care visits in Albuquerque, NM. Learn which option fits your health needs and when virtual care is most effective.',
     images: ['/og-image.png']
   }
 }
@@ -29,8 +30,6 @@ export default function TeleMedicineVsInPersonPage() {
         <div className="max-w-4xl mx-auto px-6">
           <nav className="flex items-center justify-center gap-2 text-sm mb-8 opacity-90">
             <Link href="/" className="hover:underline">Home</Link>
-            <span>›</span>
-            <Link href="/resources" className="hover:underline">Resources</Link>
             <span>›</span>
             <span>Comparison</span>
           </nav>
@@ -46,6 +45,16 @@ export default function TeleMedicineVsInPersonPage() {
       {/* Comparison Table */}
       <section className="bg-[var(--color-cream)] py-24">
         <div className="max-w-4xl mx-auto px-6">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl mb-16">
+            <Image
+              src="/images/stock/compare-telemedicine-vs-in-person-visits.jpg"
+              alt="Smiling man in glasses talking on his phone at home"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+              priority
+            />
+          </div>
           <h2 className="font-cormorant text-4xl font-light text-[var(--color-ink)] text-center mb-12 animate-fade-up">
             Side-by-Side Comparison
           </h2>
@@ -73,14 +82,14 @@ export default function TeleMedicineVsInPersonPage() {
             
             <div className="grid grid-cols-3 border-b border-[var(--color-border)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Effectiveness</div>
-              <div className="p-4 border-l border-[var(--color-border)]">85-90% of primary care visits can be handled virtually with same outcomes</div>
+              <div className="p-4 border-l border-[var(--color-border)]">Works well for many follow-ups and straightforward concerns when your history tells most of the story</div>
               <div className="p-4 border-l border-[var(--color-border)]">Complete diagnostic capabilities, hands-on assessment, immediate interventions</div>
             </div>
             
             <div className="grid grid-cols-3 border-b border-[var(--color-border)] bg-[var(--color-cream)]">
               <div className="p-4 font-semibold text-[var(--color-ink)] bg-[var(--color-light)]">Time Commitment</div>
-              <div className="p-4 border-l border-[var(--color-border)]">15-30 minutes total (including appointment), no commute</div>
-              <div className="p-4 border-l border-[var(--color-border)]">1-2 hours total (including travel and waiting), varies by location</div>
+              <div className="p-4 border-l border-[var(--color-border)]">Often shorter overall, with no commute</div>
+              <div className="p-4 border-l border-[var(--color-border)]">Includes travel and any waiting time, which varies by location</div>
             </div>
             
             <div className="grid grid-cols-3 border-b border-[var(--color-border)]">
@@ -127,15 +136,15 @@ export default function TeleMedicineVsInPersonPage() {
             
             <div className="space-y-4 text-[var(--color-muted)] leading-relaxed">
               <p>
-                Telemedicine has evolved from a convenience feature to a clinically validated care delivery model. Research published in major medical journals shows that for the majority of primary care encounters—particularly follow-up visits, medication management, and common acute illnesses—virtual visits produce outcomes equivalent to traditional office visits. The key advantage lies not just in convenience, but in increased access to care when symptoms first appear, reducing the tendency to delay treatment.
+                Telemedicine has evolved from a convenience feature to a clinically validated care delivery model. Research suggests that for many primary care encounters, particularly follow-up visits, medication management, and common acute illnesses, virtual visits can work about as well as traditional office visits. The key advantage lies not just in convenience, but in increased access to care when symptoms first appear, reducing the tendency to delay treatment.
               </p>
               
               <p>
-                Virtual visits excel in managing chronic conditions like diabetes, hypertension, and anxiety. Patients can check in regularly without the burden of travel, making it easier to maintain consistent monitoring. Your provider can review home blood pressure readings, discuss medication adjustments, and provide counseling—all the core elements of effective chronic disease management. Many patients find they're more relaxed and communicative in their home environment, leading to more productive conversations about lifestyle factors and treatment adherence.
+                Virtual visits excel in managing chronic conditions like diabetes, hypertension, and anxiety. Patients can check in regularly without the burden of travel, making it easier to maintain consistent monitoring. A physician can review home blood pressure readings, discuss medication adjustments, and provide counseling, all core elements of effective chronic disease management. Many patients find they're more relaxed and communicative in their home environment, leading to more productive conversations about lifestyle factors and treatment adherence.
               </p>
               
               <p>
-                The ideal telemedicine candidate is someone comfortable with basic technology, has a stable internet connection, and is dealing with conditions that don't require hands-on examination. Common telemedicine visits in Austin include: upper respiratory infections, urinary symptoms, skin rashes (easily visible on camera), anxiety and depression management, medication refills, pre-travel consultations, and follow-ups after procedures or hospital stays. The technology barrier is lower than many assume—most platforms work seamlessly on smartphones with no software installation required.
+                The ideal telemedicine candidate is someone comfortable with basic technology, has a stable internet connection, and is dealing with conditions that don't require hands-on examination. Common telemedicine visits include: upper respiratory infections, urinary symptoms, skin rashes (easily visible on camera), anxiety and depression management, medication refills, pre-travel consultations, and follow-ups after procedures or hospital stays. The technology barrier is lower than many assume, since most platforms work on smartphones with no software installation required.
               </p>
             </div>
           </div>
@@ -155,15 +164,15 @@ export default function TeleMedicineVsInPersonPage() {
             
             <div className="space-y-4 text-[var(--color-muted)] leading-relaxed">
               <p>
-                In-person visits remain the gold standard when physical examination findings drive clinical decisions. Listening to heart and lung sounds, palpating the abdomen, examining joints through range of motion, assessing skin lesions by texture and depth—these diagnostic maneuvers simply cannot be replicated virtually. Annual wellness exams, which include comprehensive physical assessments and often incorporate screenings like EKGs or point-of-care testing, are best conducted in person to capture the full clinical picture.
+                In-person visits remain the gold standard when physical examination findings drive clinical decisions. Listening to heart and lung sounds, palpating the abdomen, examining joints through range of motion, assessing skin lesions by texture and depth: these diagnostic maneuvers simply cannot be replicated virtually. Annual wellness exams, which include comprehensive physical assessments and often lead to ordered lab work or screening tests, are best conducted in person to capture the full clinical picture.
               </p>
               
               <p>
-                Certain symptoms demand hands-on evaluation. Chest pain, severe abdominal pain, neurological changes, suspected fractures, and any condition where the physical exam might change management urgently requires in-person assessment. The office visit also allows for immediate interventions—wound care, joint injections, IUD placement, lesion removal—that would otherwise require a separate appointment if initially evaluated virtually. For patients new to a practice, the initial comprehensive visit is typically best conducted in person to establish a thorough baseline.
+                Certain symptoms demand hands-on evaluation. Chest pain, severe abdominal pain, neurological changes, suspected fractures, and any condition where the physical exam might change management urgently requires in-person assessment. An office visit also lets the physician examine you directly and arrange the right testing, treatment, or referral without the second appointment that often follows a visit that started virtually. For patients new to a practice, the initial comprehensive visit is typically best conducted in person to establish a thorough baseline.
               </p>
               
               <p>
-                The in-person format suits patients who prefer face-to-face interaction, lack reliable technology access, or have complex medical situations requiring coordination between multiple examination findings. In Austin, where traffic and parking can be challenging, practices like Body1MD Primary Care & Wellness design in-office experiences to minimize wait times and maximize the value of your travel commitment. The dedicated appointment time allows for unhurried conversation, relationship building with your provider, and the comfort some patients feel in a clinical environment designed for healing.
+                The in-person format suits patients who prefer face-to-face interaction, lack reliable technology access, or have complex medical situations requiring coordination between multiple examination findings. At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, office visits are designed to last up to an hour, and the private exam rooms have large-format displays where you and Dr. Hemmen review imaging and results together. The dedicated appointment time allows for unhurried conversation, relationship building with your physician, and the comfort some patients feel in a clinical environment designed for healing.
               </p>
             </div>
           </div>
@@ -236,7 +245,7 @@ export default function TeleMedicineVsInPersonPage() {
                     <svg stroke="currentColor" strokeWidth={2} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-[var(--color-muted)]">This is your first visit with a new provider</span>
+                    <span className="text-[var(--color-muted)]">This is your first visit with a new physician</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg stroke="currentColor" strokeWidth={2} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5">
@@ -260,7 +269,7 @@ export default function TeleMedicineVsInPersonPage() {
                     <svg stroke="currentColor" strokeWidth={2} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-[var(--color-muted)]">A procedure is needed (injections, wound care, etc.)</span>
+                    <span className="text-[var(--color-muted)]">You may need a procedure or hands-on treatment</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg stroke="currentColor" strokeWidth={2} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5">
@@ -280,7 +289,7 @@ export default function TeleMedicineVsInPersonPage() {
             
             <div className="mt-12 p-6 bg-white rounded-xl border-l-4 border-[var(--color-accent)]">
               <p className="text-[var(--color-muted)] leading-relaxed">
-                <strong className="text-[var(--color-ink)]">Not sure which to choose?</strong> Start with a telemedicine visit. Your provider can assess whether an in-person follow-up would be beneficial or if virtual care is sufficient for your situation. At Body1MD Primary Care & Wellness in Austin, we offer both options and can help you make the best choice for your individual needs.
+                <strong className="text-[var(--color-ink)]">Not sure which to choose?</strong> Ask your physician first. At Body1MD Primary Care & Wellness, patients can reach Dr. Hemmen directly by phone and text, and he will advise whether a virtual check-in fits or you should come in. When you do need to be seen, same- or next-day office appointments are available in most cases.
               </p>
             </div>
           </div>
@@ -303,19 +312,19 @@ export default function TeleMedicineVsInPersonPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                <p>For the majority of primary care visits—estimated at 75-85%—telemedicine produces outcomes clinically equivalent to in-person care. Studies show similar patient satisfaction, diagnostic accuracy, and treatment success rates for conditions like upper respiratory infections, urinary tract infections, medication management, and mental health counseling. The key is appropriate case selection: virtual care excels when the diagnosis relies primarily on history and visual assessment rather than hands-on physical examination.</p>
+                <p>For many primary care concerns, research suggests telemedicine can produce results similar to in-person care. Studies have found similar patient satisfaction, diagnostic accuracy, and treatment success for conditions like upper respiratory infections, urinary tract infections, medication management, and mental health counseling. The key is appropriate case selection: virtual care excels when the diagnosis relies primarily on history and visual assessment rather than hands-on physical examination.</p>
               </div>
             </details>
             
             <details className="bg-white rounded-lg shadow-sm overflow-hidden group">
               <summary className="p-6 cursor-pointer font-semibold text-[var(--color-ink)] flex items-center justify-between hover:bg-[var(--color-light)] transition-colors">
-                Can I switch between telemedicine and in-person visits?
+                Can I reach Dr. Hemmen between office visits?
                 <svg stroke="currentColor" strokeWidth={2} fill="none" viewBox="0 0 24 24" className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                <p>Absolutely. Most patients use a hybrid approach based on their specific needs for each visit. You might have an annual wellness exam in person, manage a chronic condition through quarterly telemedicine check-ins, then come in-office if symptoms change or testing is needed. At Body1MD Primary Care & Wellness, your care plan can flex between both formats seamlessly—your provider has access to your complete record regardless of visit type.</p>
+                <p>Yes. At Body1MD, care is built around unhurried office visits, with direct access in between: patients can reach Dr. Hemmen directly by phone and text, and he will advise whether a virtual check-in fits or you should come in. Many people elsewhere use a similar mix: an annual exam in person, quick check-ins about a chronic condition between visits, and an office visit when symptoms change or testing is needed. Because one physician knows your whole record, continuity is built in.</p>
               </div>
             </details>
             
@@ -327,7 +336,7 @@ export default function TeleMedicineVsInPersonPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                <p>You need a device with a camera and microphone (smartphone, tablet, or computer) and a reliable internet connection. Most telemedicine platforms work through a web browser with no app download required, though mobile apps are available for convenience. You'll receive a link before your appointment that you simply click to join the video visit. A private, quiet space with good lighting ensures the best experience. Technical support is available if you encounter any issues connecting.</p>
+                <p>For a video visit with a telemedicine service, you generally need a device with a camera and microphone (smartphone, tablet, or computer) and a reliable internet connection. Most platforms work through a web browser with no app download required, and services usually send a link before the appointment. A private, quiet space with good lighting helps. If a service offers video visits, ask what help is available if you have trouble connecting. For Body1MD patients, a phone is all you need to reach Dr. Hemmen between visits.</p>
               </div>
             </details>
             
@@ -339,7 +348,7 @@ export default function TeleMedicineVsInPersonPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                <p>Most insurance plans now cover telemedicine visits at the same rate as in-person visits, though coverage details vary by plan and state. Texas has strong telemedicine parity laws requiring insurers to cover virtual visits when they would cover the same service in person. For direct primary care patients at Body1MD, telemedicine visits are included in your membership with no additional fees. We recommend checking your specific plan's telemedicine benefits, but the vast majority of patients now have coverage.</p>
+                <p>Many insurance plans now cover telemedicine visits, though coverage details vary by plan and state, so check your specific plan's telemedicine benefits. Body1MD works differently: it does not bill insurance. Members pay a flat monthly membership ($100 per month under age 50, $150 per month at 50 and up), and direct phone and text access to Dr. Hemmen is part of that membership.</p>
               </div>
             </details>
             
@@ -351,7 +360,7 @@ export default function TeleMedicineVsInPersonPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed">
-                <p>Choose in-person care when your symptoms require hands-on examination (abdominal pain, joint issues, chest pain), when you need diagnostic testing or procedures, for your annual comprehensive physical, or when your provider recommends an in-office assessment during a virtual visit. If you're uncertain, start with telemedicine—your provider can determine if you need to come in based on your symptoms and history. Trust your instincts: if something feels serious or you're worried about your symptoms, err on the side of in-person evaluation.</p>
+                <p>Choose in-person care when your symptoms require hands-on examination (abdominal pain, joint issues, chest pain), when you need diagnostic testing or procedures, for your annual comprehensive physical, or when your physician recommends an in-office assessment after a phone or virtual check-in. If you're uncertain, contact your physician first; he or she can determine whether you need to come in based on your symptoms and history. Trust your instincts: if something feels serious or you're worried about your symptoms, err on the side of in-person evaluation.</p>
               </div>
             </details>
           </div>
@@ -365,7 +374,7 @@ export default function TeleMedicineVsInPersonPage() {
             Discuss Your Care Options
           </h2>
           <p className="text-lg mb-8 opacity-95 animate-fade-up">
-            Whether you prefer virtual visits or in-person care, Body1MD Primary Care & Wellness in Austin offers both options tailored to your needs.
+            At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, you get unhurried office visits and direct phone and text access to Dr. Hemmen between them.
           </p>
           <Link 
             href="/contact"

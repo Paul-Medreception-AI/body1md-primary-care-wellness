@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Depression in Primary Care: Why Your Doctor Should Be Your First Call',
-  description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive mental health care in Austin, TX.',
+  description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive care in Albuquerque, NM.',
   alternates: { canonical: '/blog/depression-in-primary-care-why-your-doctor-should-be-your-fi' },
   openGraph: {
     title: 'Depression in Primary Care: Why Your Doctor Should Be Your First Call',
-    description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive mental health care in Austin, TX.',
+    description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive care in Albuquerque, NM.',
     url: 'https://body1md.com/blog/depression-in-primary-care-why-your-doctor-should-be-your-fi',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/depression-in-primary-care-why-your-doctor-should-be-your-fi.jpg', alt: 'Man sitting alone at a dining table with his head down' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Depression in Primary Care: Why Your Doctor Should Be Your First Call',
-    description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive mental health care in Austin, TX.',
-    images: ['/og-image.png'],
+    description: 'Learn why your primary care doctor is often the best first contact for depression treatment. Evidence-based insights on accessible, comprehensive care in Albuquerque, NM.',
+    images: ['/images/blog/depression-in-primary-care-why-your-doctor-should-be-your-fi.jpg'],
   },
 }
 
@@ -52,10 +53,16 @@ export default function BlogPost() {
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/depression-in-primary-care-why-your-doctor-should-be-your-fi.jpg" alt="Man sitting alone at a dining table with his head down" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -66,7 +73,7 @@ export default function BlogPost() {
               When depression takes hold, it can feel overwhelming to know where to turn. Many people assume they need to see a psychiatrist or therapist immediately, but there's another path that's often faster, more accessible, and surprisingly effective: calling your primary care doctor. In fact, research shows that primary care physicians manage the majority of depression cases in the United States, and for good reason.
             </p>
             <p className="mb-6">
-              Your primary care doctor isn't just there for physical ailments—they're equipped to address mental health concerns like depression, often providing the continuity of care and holistic approach that can make all the difference in your recovery journey.
+              Your primary care doctor isn't just there for physical ailments. They're equipped to address mental health concerns like depression, often providing the continuity of care and holistic approach that can make all the difference in your recovery journey.
             </p>
           </div>
 
@@ -79,7 +86,7 @@ export default function BlogPost() {
               Depression affects more than 21 million adults in the United States each year, making it one of the most common mental health conditions. Yet despite its prevalence, nearly two-thirds of people with depression don't seek treatment. Stigma, confusion about where to start, and long wait times for specialists all contribute to this treatment gap.
             </p>
             <p className="mb-6">
-              Here's what many people don't realize: depression isn't just a mental health issue—it's a whole-body condition. It can manifest as chronic fatigue, unexplained aches and pains, changes in appetite, sleep disturbances, and even increased susceptibility to other illnesses. Your primary care doctor is trained to recognize these connections and treat the whole person, not just isolated symptoms.
+              Here's what many people don't realize: depression isn't just a mental health issue. It's a whole-body condition. It can manifest as chronic fatigue, unexplained aches and pains, changes in appetite, sleep disturbances, and even increased susceptibility to other illnesses. Your primary care doctor is trained to recognize these connections and treat the whole person, not just isolated symptoms.
             </p>
           </div>
 
@@ -96,7 +103,7 @@ export default function BlogPost() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                   <path d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Accessibility and Speed:</strong> Wait times to see a psychiatrist can stretch for months in many areas, including Austin. Your primary care doctor can often see you within days or even the same week, allowing you to start treatment when you need it most.</span>
+                <span><strong>Accessibility and Speed:</strong> Wait times to see a psychiatrist can stretch for months in many communities. Your primary care doctor can often see you within days or even the same week, allowing you to start treatment when you need it most.</span>
               </li>
               <li className="flex gap-3 items-start">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -161,7 +168,7 @@ export default function BlogPost() {
               </li>
             </ul>
             <p className="mb-6">
-              Many primary care doctors are comfortable prescribing antidepressant medications for mild to moderate depression. They can also provide counseling on evidence-based lifestyle interventions—regular exercise, sleep hygiene, nutrition, and stress management—that research shows can be as effective as medication for some patients.
+              Many primary care doctors are comfortable prescribing antidepressant medications for mild to moderate depression. They can also provide counseling on evidence-based lifestyle interventions (regular exercise, sleep hygiene, nutrition, and stress management) that research shows can be as effective as medication for some patients.
             </p>
           </div>
 
@@ -249,13 +256,13 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              If you're experiencing symptoms of depression—persistent sadness, loss of interest in activities you once enjoyed, changes in sleep or appetite, difficulty concentrating, or feelings of hopelessness—don't wait to reach out. Your primary care doctor is there to help, and there's no need to have everything figured out before making that call.
+              If you're experiencing symptoms of depression (persistent sadness, loss of interest in activities you once enjoyed, changes in sleep or appetite, difficulty concentrating, or feelings of hopelessness), don't wait to reach out. Your primary care doctor is there to help, and there's no need to have everything figured out before making that call.
             </p>
             <p className="mb-6">
               Depression is a medical condition, just like diabetes or high blood pressure. It's not a character flaw, and it's not something you should try to power through alone. Treatment works, and starting with your primary care doctor gives you the fastest path to feeling better while ensuring your overall health is addressed.
             </p>
             <p className="mb-6">
-              In Austin, TX and beyond, primary care physicians are increasingly recognizing their crucial role in mental health care. By making your doctor your first call, you're taking an important step toward recovery—one that's accessible, comprehensive, and backed by evidence.
+              In Albuquerque and beyond, primary care physicians are increasingly recognizing their crucial role in mental health care. By making your doctor your first call, you're taking an important step toward recovery, one that's accessible, comprehensive, and backed by evidence.
             </p>
           </div>
         </div>
@@ -272,10 +279,10 @@ export default function BlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our practice is dedicated to providing comprehensive, patient-centered care that addresses both physical and mental health. We believe in treating the whole person and supporting our patients through every aspect of their wellness journey.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His care addresses both physical and mental health and treats the whole person.
               </p>
             </div>
           </div>
@@ -359,7 +366,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

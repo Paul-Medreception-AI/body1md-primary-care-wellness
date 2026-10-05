@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Immunizations for Adults: Vaccines Aren\'t Just for Kids',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids.jpg', alt: 'Adult patient receiving a vaccine in the upper arm' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Immunizations for Adults: Vaccines Aren\'t Just for Kids',
     description: 'Adult vaccines protect against serious diseases like flu, pneumonia, shingles, and COVID-19. Learn which immunizations you need and why they matter at every age.',
-    images: ['/og-image.png']
+    images: ['/images/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids.jpg']
   }
 }
 
@@ -41,20 +42,26 @@ export default function BlogPost() {
           </h1>
           
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/immunizations-for-adults-vaccines-aren-t-just-for-kids.jpg" alt="Adult patient receiving a vaccine in the upper arm" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="mb-6">
-              When you think of vaccines, childhood immunizations likely come to mind—those routine shots that protect against measles, mumps, and polio. But the truth is, vaccination isn't something you outgrow. Adults need vaccines too, and staying current with your immunizations is one of the most important steps you can take to protect your health as you age.
+              When you think of vaccines, childhood immunizations likely come to mind: those routine shots that protect against measles, mumps, and polio. But the truth is, vaccination isn't something you outgrow. Adults need vaccines too, and staying current with your immunizations is one of the most important steps you can take to protect your health as you age.
             </p>
             
             <p className="mb-6">
@@ -66,7 +73,7 @@ export default function BlogPost() {
             </h2>
             
             <p className="mb-6">
-              Immunity from childhood vaccines can fade over time, and as we age, our immune systems naturally become less robust. This makes adults—especially those over 50—more vulnerable to certain infections. Additionally, new vaccines have been developed since many adults completed their childhood immunizations, offering protection against diseases that weren't preventable decades ago.
+              Immunity from childhood vaccines can fade over time, and as we age, our immune systems naturally become less robust. This makes adults, especially those over 50, more vulnerable to certain infections. Additionally, new vaccines have been developed since many adults completed their childhood immunizations, offering protection against diseases that weren't preventable decades ago.
             </p>
             
             <p className="mb-6">
@@ -74,7 +81,7 @@ export default function BlogPost() {
             </p>
             
             <p className="mb-6">
-              Beyond personal and public health benefits, staying up to date with vaccines can save you time, money, and significant discomfort. Many vaccine-preventable diseases require hospitalization, lead to lost workdays, and can result in long-term complications. Prevention is always easier—and less expensive—than treatment.
+              Beyond personal and public health benefits, staying up to date with vaccines can save you time, money, and significant discomfort. Many vaccine-preventable diseases require hospitalization, lead to lost workdays, and can result in long-term complications. Prevention is always easier, and less expensive, than treatment.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -152,7 +159,7 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Vaccines are one of the most effective tools we have to prevent disease and protect health across the lifespan. Staying up to date isn't just smart—it's essential."
+                "Vaccines are one of the most effective tools we have to prevent disease and protect health across the lifespan. Staying up to date isn't just smart. It's essential."
               </p>
             </div>
 
@@ -197,7 +204,7 @@ export default function BlogPost() {
             
             <p className="mb-4">
               <strong>Myth: "I had the disease as a child, so I'm protected."</strong><br />
-              Natural immunity can wane over time, and some diseases—like tetanus—don't provide lasting immunity even after infection. Vaccines offer reliable, long-term protection.
+              Natural immunity can wane over time, and some diseases, like tetanus, don't provide lasting immunity even after infection. Vaccines offer reliable, long-term protection.
             </p>
             
             <p className="mb-6">
@@ -269,7 +276,7 @@ export default function BlogPost() {
             </p>
             
             <p className="mb-6">
-              At Body1MD Primary Care & Wellness in Austin, TX, we believe that prevention is the best medicine. Our team is here to help you understand which vaccines you need, answer your questions, and make immunizations convenient and stress-free. Don't wait until you're sick to think about your health—be proactive and protect yourself today.
+              At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM, prevention is the foundation of care. Dr. Hemmen can review your vaccination history, help you understand which vaccines you need, and answer your questions. Don't wait until you're sick to think about your health. Be proactive and protect yourself today.
             </p>
             
             <p className="mb-6">
@@ -287,9 +294,9 @@ export default function BlogPost() {
             </svg>
           </div>
           <div>
-            <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+            <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
             <p className="text-sm text-[var(--color-muted)] leading-relaxed">
-              Our experienced providers are dedicated to delivering comprehensive, patient-centered primary care that focuses on prevention, wellness, and building lasting relationships with every patient.
+              Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His care focuses on prevention, wellness, and lasting relationships with every patient.
             </p>
           </div>
         </div>
@@ -372,7 +379,7 @@ export default function BlogPost() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl text-white/90 mb-8">Our team is here to help.</p>
+          <p className="text-xl text-white/90 mb-8">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact" 
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"

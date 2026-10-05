@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Direct Primary Care vs Traditional Insurance: Which Saves More?',
-  description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Austin, TX.',
+  description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Albuquerque, NM.',
   alternates: { canonical: '/blog/direct-primary-care-vs-traditional-insurance-which-saves-you' },
   openGraph: {
     title: 'Direct Primary Care vs Traditional Insurance: Which Saves More?',
-    description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Austin, TX.',
+    description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Albuquerque, NM.',
     url: 'https://body1md.com/blog/direct-primary-care-vs-traditional-insurance-which-saves-you',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/direct-primary-care-vs-traditional-insurance-which-saves-you.jpg', alt: 'Hand using a calculator next to a fanned stack of dollar bills' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Direct Primary Care vs Traditional Insurance: Which Saves More?',
-    description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Compare Direct Primary Care and traditional insurance costs. Discover transparent pricing, hidden fees, and which model saves you more money in Albuquerque, NM.',
+    images: ['/images/blog/direct-primary-care-vs-traditional-insurance-which-saves-you.jpg']
   }
 }
 
@@ -48,14 +49,20 @@ export default function BlogPost() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/direct-primary-care-vs-traditional-insurance-which-saves-you.jpg" alt="Hand using a calculator next to a fanned stack of dollar bills" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -64,10 +71,10 @@ export default function BlogPost() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              When Sarah opened her explanation of benefits after a routine doctor's visit, she was stunned. Despite paying $800 a month in premiums, she owed $320 out of pocket. Her high-deductible plan meant she was essentially paying twice—once for insurance she couldn't use, and again for the care itself. It's a story playing out across America as healthcare costs spiral and insurance becomes less about access and more about catastrophic coverage.
+              When Sarah opened her explanation of benefits after a routine doctor's visit, she was stunned. Despite paying $800 a month in premiums, she owed $320 out of pocket. Her high-deductible plan meant she was essentially paying twice: once for insurance she couldn't use, and again for the care itself. It's a story playing out across America as healthcare costs spiral and insurance becomes less about access and more about catastrophic coverage.
             </p>
             <p className="mb-6">
-              But there's another model gaining traction: Direct Primary Care (DPC). With transparent monthly fees and unlimited access to your doctor, DPC promises to cut through the complexity and expense of traditional insurance. But does it actually save you money? Let's break down the numbers.
+              But there's another model gaining traction: Direct Primary Care (DPC). With transparent monthly fees and direct access to your doctor, DPC promises to cut through the complexity and expense of traditional insurance. But does it actually save you money? Let's break down the numbers.
             </p>
           </div>
 
@@ -77,10 +84,10 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Traditional health insurance operates on a complex web of premiums, deductibles, copays, and coinsurance. The average individual paying for their own coverage spends approximately $477 per month in premiums alone—that's $5,724 annually before you've even seen a doctor.
+              Traditional health insurance operates on a complex web of premiums, deductibles, copays, and coinsurance. The average individual paying for their own coverage spends approximately $477 per month in premiums alone. That's $5,724 annually before you've even seen a doctor.
             </p>
             <p className="mb-6">
-              But the costs don't stop there. Most plans carry deductibles ranging from $1,500 to $8,000 that must be met before insurance begins to pay. Even after your deductible, you'll typically face copays of $25-$75 per visit and coinsurance of 20-30% for many services. For a family using moderate healthcare services—say, 8-10 doctor visits, some lab work, and a few prescriptions—out-of-pocket costs can easily reach $3,000-$5,000 beyond premiums.
+              But the costs don't stop there. Most plans carry deductibles ranging from $1,500 to $8,000 that must be met before insurance begins to pay. Even after your deductible, you'll typically face copays of $25-$75 per visit and coinsurance of 20-30% for many services. For a family using moderate healthcare services (say, 8-10 doctor visits, some lab work, and a few prescriptions), out-of-pocket costs can easily reach $3,000-$5,000 beyond premiums.
             </p>
             <p className="mb-6">
               There are also hidden costs: time spent navigating insurance bureaucracy, surprise bills from out-of-network providers, and delayed care while waiting for authorization. Many patients put off preventive care because they simply can't afford the copay that month, leading to more expensive problems down the road.
@@ -93,13 +100,13 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Direct Primary Care flips the script. Instead of insurance, you pay a monthly membership fee directly to your primary care practice—typically ranging from $50-$150 per month depending on age and location. This flat fee covers unlimited visits, same-day or next-day appointments, extended visit times (usually 30-60 minutes), direct communication with your doctor via phone, text, or email, and often in-office procedures like EKGs, breathing treatments, and minor skin procedures.
+              Direct Primary Care flips the script. Instead of insurance, you pay a monthly membership fee directly to your primary care practice, typically ranging from $50-$150 per month depending on age and location. At many DPC practices this flat fee covers routine visits, same-day or next-day appointments, extended visit times (usually 30-60 minutes), direct communication with your doctor via phone, text, or email, and often in-office procedures like EKGs, breathing treatments, and minor skin procedures.
             </p>
             <p className="mb-6">
               Many DPC practices also offer wholesale-priced medications (often 80-90% cheaper than pharmacy retail), discounted lab work, and direct pricing for imaging. There are no copays, no surprise bills, and no insurance paperwork. If it's within the scope of primary care, it's covered by your membership.
             </p>
             <p className="mb-6">
-              Let's look at a real-world example. A 40-year-old in Austin might pay $100/month for DPC membership—$1,200 annually. If they maintain a catastrophic insurance plan for major medical events (around $300-$400/month), their total annual cost is approximately $4,800 in premiums plus the $1,200 DPC fee, totaling $6,000. Compare that to traditional insurance at $5,724 in premiums plus $3,000-$5,000 in out-of-pocket costs, totaling $8,724-$10,724 annually.
+              Let's look at a real-world example. A 40-year-old in Albuquerque might pay $100/month for DPC membership, or $1,200 annually. If they maintain a catastrophic insurance plan for major medical events (around $300-$400/month), their total annual cost is approximately $4,800 in premiums plus the $1,200 DPC fee, totaling $6,000. Compare that to traditional insurance at $5,724 in premiums plus $3,000-$5,000 in out-of-pocket costs, totaling $8,724-$10,724 annually.
             </p>
           </div>
 
@@ -127,7 +134,7 @@ export default function BlogPost() {
                 <svg className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>People with chronic conditions</strong> who need frequent visits benefit from unlimited access without copay anxiety.</span>
+                <span><strong>People with chronic conditions</strong> who need frequent visits benefit from direct access without copay anxiety.</span>
               </li>
               <li className="flex gap-3">
                 <svg className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -185,20 +192,20 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              The decision between Direct Primary Care and traditional insurance comes down to your individual circumstances. Start by calculating your total annual healthcare spending under your current plan—premiums plus deductible plus typical out-of-pocket costs. Then price out DPC membership plus a catastrophic plan for comparison.
+              The decision between Direct Primary Care and traditional insurance comes down to your individual circumstances. Start by calculating your total annual healthcare spending under your current plan: premiums plus deductible plus typical out-of-pocket costs. Then price out DPC membership plus a catastrophic plan for comparison.
             </p>
             <p className="mb-6">
               But don't make this decision on cost alone. Consider the value of your time, the quality of the doctor-patient relationship you want, and how you prefer to interact with the healthcare system. If you're tired of fighting insurance bureaucracy, if you value deep relationships with your doctor, or if you want to be proactive about your health without worrying about copays, DPC may be worth it even if the raw numbers are close.
             </p>
             <p className="mb-6">
-              The healthcare landscape is changing, and patients are demanding better. Direct Primary Care represents one path forward—a model that prioritizes relationship, accessibility, and transparency over the complexity and frustration that has come to define American healthcare. For many people, it's not just saving money. It's reclaiming their health.
+              The healthcare landscape is changing, and patients are demanding better. Direct Primary Care represents one path forward: a model that prioritizes relationship, accessibility, and transparency over the complexity and frustration that has come to define American healthcare. For many people, it's not just saving money. It's reclaiming their health.
             </p>
           </div>
 
           {/* Closing CTA */}
           <div className="bg-[var(--color-light)] rounded-2xl p-8 my-12">
             <p className="text-[var(--color-ink)] leading-loose text-base">
-              If you're interested in exploring whether Direct Primary Care could work for you, we're here to help. Our team can walk you through the numbers, answer your questions, and help you understand what membership includes. <Link href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors font-medium">Schedule a no-obligation consultation</Link> to learn more about a better way to experience primary care in Austin.
+              If you're interested in exploring whether Direct Primary Care could work for you, Body1MD can help. Membership is month to month with no annual contract: $100 per month if you are under 50 and $150 per month if you are 50 or older. Dr. Hemmen can walk you through the numbers, answer your questions, and help you understand what membership includes. <Link href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors font-medium">Contact the office</Link> to learn more about a better way to experience primary care in Albuquerque.
             </p>
           </div>
 
@@ -216,10 +223,10 @@ export default function BlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <div className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our approach focuses on building long-term relationships with patients, providing accessible and personalized healthcare that puts you first. We believe in transparent pricing, unhurried appointments, and care that fits your life.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His practice is built on long-term relationships, transparent monthly pricing, and unhurried visits designed to last up to an hour.
               </div>
             </div>
           </div>
@@ -272,10 +279,10 @@ export default function BlogPost() {
                 </svg>
               </div>
               <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                Meet Our Team
+                Meet Dr. Hemmen
               </h4>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Learn about our approach to personalized, accessible primary care in Austin.
+                Learn about Dr. Andrew Hemmen and his approach to personalized, accessible primary care in Albuquerque.
               </p>
             </Link>
 
@@ -290,7 +297,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-lg text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link 
             href="/contact"

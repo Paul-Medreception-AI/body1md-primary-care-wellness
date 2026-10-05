@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Eczema and Atopic Dermatitis: Beyond Moisturizer',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/eczema-and-atopic-dermatitis-beyond-moisturizer',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/eczema-and-atopic-dermatitis-beyond-moisturizer.jpg', alt: 'Man scratching an itchy patch of skin on his forearm' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Eczema and Atopic Dermatitis: Beyond Moisturizer',
     description: 'Discover comprehensive eczema and atopic dermatitis treatment strategies beyond basic moisturizing, from identifying triggers to medical therapies that restore skin health.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/eczema-and-atopic-dermatitis-beyond-moisturizer.jpg'],
   },
 }
 
@@ -43,24 +44,30 @@ export default function EczemaAtopicDermatitisPage() {
           </h1>
           
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/eczema-and-atopic-dermatitis-beyond-moisturizer.jpg" alt="Man scratching an itchy patch of skin on his forearm" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              You've tried every cream on the drugstore shelf. You carry travel-sized tubes in your purse, desk drawer, and car. Yet the itching returns, the red patches spread, and you find yourself scratching unconsciously during meetings or waking at 2 a.m. with raw, bleeding skin. If this sounds familiar, you're not alone—and more importantly, moisturizer alone isn't the answer.
+              You've tried every cream on the drugstore shelf. You carry travel-sized tubes in your purse, desk drawer, and car. Yet the itching returns, the red patches spread, and you find yourself scratching unconsciously during meetings or waking at 2 a.m. with raw, bleeding skin. If this sounds familiar, you're not alone, and more importantly, moisturizer alone isn't the answer.
             </p>
             
             <p className="mb-6">
-              Eczema, particularly atopic dermatitis, affects over 31 million Americans and can profoundly impact quality of life. While keeping skin hydrated remains essential, effective management requires understanding the complex immune and barrier dysfunction driving your symptoms—and implementing strategies that address the root causes.
+              Eczema, particularly atopic dermatitis, affects over 31 million Americans and can profoundly impact quality of life. While keeping skin hydrated remains essential, effective management requires understanding the complex immune and barrier dysfunction driving your symptoms, and implementing strategies that address the root causes.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -68,7 +75,7 @@ export default function EczemaAtopicDermatitisPage() {
             </h2>
             
             <p className="mb-6">
-              Atopic dermatitis is a chronic inflammatory skin condition characterized by intensely itchy, red, scaly patches that typically appear on the hands, feet, inner elbows, behind knees, and on the face and scalp. Unlike simple dry skin, atopic dermatitis involves both a compromised skin barrier—imagine a brick wall with crumbling mortar—and an overactive immune response that creates persistent inflammation.
+              Atopic dermatitis is a chronic inflammatory skin condition characterized by intensely itchy, red, scaly patches that typically appear on the hands, feet, inner elbows, behind knees, and on the face and scalp. Unlike simple dry skin, atopic dermatitis involves both a compromised skin barrier (imagine a brick wall with crumbling mortar) and an overactive immune response that creates persistent inflammation.
             </p>
             
             <p className="mb-6">
@@ -80,16 +87,16 @@ export default function EczemaAtopicDermatitisPage() {
             </h2>
             
             <p className="mb-6">
-              Traditional moisturizers work by adding water to the outer skin layer and creating an occlusive barrier to prevent evaporation. This helps—but it doesn't address the immune dysfunction that perpetuates inflammation, the bacterial overgrowth that often complicates eczema, or the environmental triggers that spark flares.
+              Traditional moisturizers work by adding water to the outer skin layer and creating an occlusive barrier to prevent evaporation. This helps, but it doesn't address the immune dysfunction that perpetuates inflammation, the bacterial overgrowth that often complicates eczema, or the environmental triggers that spark flares.
             </p>
             
             <p className="mb-6">
-              Think of atopic dermatitis like a house fire. Moisturizer is the water hose—necessary, but not sufficient. You also need to eliminate the fuel source (triggers), repair the structural damage (barrier restoration), and prevent re-ignition (immune modulation).
+              Think of atopic dermatitis like a house fire. Moisturizer is the water hose: necessary, but not sufficient. You also need to eliminate the fuel source (triggers), repair the structural damage (barrier restoration), and prevent re-ignition (immune modulation).
             </p>
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Effective eczema management requires a comprehensive approach that addresses inflammation, rebuilds the skin barrier, and identifies individual triggers—moisturizer is just one piece of a larger therapeutic puzzle."
+                "Effective eczema management requires a comprehensive approach that addresses inflammation, rebuilds the skin barrier, and identifies individual triggers. Moisturizer is just one piece of a larger therapeutic puzzle."
               </p>
             </div>
 
@@ -153,7 +160,7 @@ export default function EczemaAtopicDermatitisPage() {
             </h2>
             
             <p className="mb-6">
-              Food allergies contribute to eczema in approximately 30% of children with moderate to severe disease, though the relationship is less common in adults. Common culprits include milk, eggs, peanuts, wheat, soy, and shellfish. However, restrictive diets should never be initiated without proper allergy testing—eliminating foods unnecessarily can lead to nutritional deficiencies without improving skin symptoms.
+              Food allergies contribute to eczema in approximately 30% of children with moderate to severe disease, though the relationship is less common in adults. Common culprits include milk, eggs, peanuts, wheat, soy, and shellfish. However, restrictive diets should never be initiated without proper allergy testing, since eliminating foods unnecessarily can lead to nutritional deficiencies without improving skin symptoms.
             </p>
             
             <p className="mb-6">
@@ -183,7 +190,7 @@ export default function EczemaAtopicDermatitisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
-                  Use cool compresses during intense itch episodes rather than scratching—the cooling sensation can temporarily override itch signals.
+                  Use cool compresses during intense itch episodes rather than scratching, since the cooling sensation can temporarily override itch signals.
                 </div>
               </div>
               
@@ -201,7 +208,7 @@ export default function EczemaAtopicDermatitisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
-                  Address psychological stress, which can both trigger flares and intensify itch perception—mind-body techniques like cognitive behavioral therapy have shown benefit.
+                  Address psychological stress, which can both trigger flares and intensify itch perception. Mind-body techniques like cognitive behavioral therapy have shown benefit.
                 </div>
               </div>
             </div>
@@ -215,11 +222,11 @@ export default function EczemaAtopicDermatitisPage() {
             </p>
             
             <p className="mb-6">
-              Severe atopic dermatitis is not a cosmetic inconvenience—it's a chronic disease with profound quality-of-life impacts that deserves proper medical management. Modern treatments offer dramatic improvement for patients who've struggled for years, but they require proper diagnosis, individualized treatment planning, and ongoing monitoring to optimize outcomes.
+              Severe atopic dermatitis is not a cosmetic inconvenience. It's a chronic disease with profound quality-of-life impacts that deserves proper medical management. Modern treatments offer dramatic improvement for patients who've struggled for years, but they require proper diagnosis, individualized treatment planning, and ongoing monitoring to optimize outcomes.
             </p>
 
             <p className="mb-6">
-              You don't have to live with relentless itching, embarrassing skin lesions, and the exhaustion that comes from disturbed sleep. Effective treatment exists beyond the moisturizer aisle—it starts with understanding your unique disease triggers and accessing the full spectrum of evidence-based therapies available today.
+              You don't have to live with relentless itching, embarrassing skin lesions, and the exhaustion that comes from disturbed sleep. Effective treatment exists beyond the moisturizer aisle. It starts with understanding your unique disease triggers and accessing the full spectrum of evidence-based therapies available today.
             </p>
           </div>
         </div>
@@ -233,10 +240,10 @@ export default function EczemaAtopicDermatitisPage() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing patient-centered primary care in Austin, TX. We partner with you to understand your unique health concerns and develop personalized treatment plans that address root causes, not just symptoms.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. He partners with you to understand your health concerns and develop personalized treatment plans that address root causes, not just symptoms.
               </p>
             </div>
           </div>
@@ -293,7 +300,7 @@ export default function EczemaAtopicDermatitisPage() {
                   Schedule a Consultation
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm">
-                  Ready to discuss your skin health? Book an appointment with our team today.
+                  Ready to discuss your skin health? Contact the office to schedule a visit with Dr. Hemmen.
                 </p>
               </div>
             </Link>
@@ -307,7 +314,7 @@ export default function EczemaAtopicDermatitisPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

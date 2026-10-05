@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Navigating Specialist Referrals: How Primary Care Coordinates Your Care',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/navigating-specialist-referrals-how-primary-care-coordinates',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg', alt: 'Physician reviewing a patient lab report with a pen at a desk' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Navigating Specialist Referrals: How Primary Care Coordinates Your Care',
     description: 'Learn how your primary care physician coordinates specialist referrals, manages your health information, and ensures continuity of care across multiple providers.',
-    images: ['/og-image.png']
+    images: ['/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg']
   }
 }
 
@@ -45,7 +46,7 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -57,17 +58,24 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/navigating-specialist-referrals-how-primary-care-coordinates.jpg" alt="Physician reviewing a patient lab report with a pen at a desk" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
+
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl leading-relaxed mb-8">
-              You leave your primary care appointment with a referral to see a cardiologist, an orthopedist, or perhaps an endocrinologist. What happens next? For many patients, the process feels like stepping into a maze—scheduling appointments, repeating your medical history, wondering if your doctors are talking to each other. The truth is, when specialty care works well, it's because your primary care physician is orchestrating behind the scenes, ensuring every piece of your healthcare puzzle fits together seamlessly.
+              You leave your primary care appointment with a referral to see a cardiologist, an orthopedist, or perhaps an endocrinologist. What happens next? For many patients, the process feels like stepping into a maze: scheduling appointments, repeating your medical history, wondering if the doctors involved are talking to each other. The truth is, when specialty care works well, it's because your primary care physician is orchestrating behind the scenes, ensuring every piece of your healthcare puzzle fits together seamlessly.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -77,7 +85,7 @@ export default function BlogPost() {
               Primary care physicians are trained to diagnose and treat a wide range of conditions, but modern medicine has become increasingly specialized. When you face a complex cardiac issue, need surgical intervention, or require advanced diagnostic procedures, specialists bring focused expertise that can be critical to your recovery and long-term health.
             </p>
             <p className="mb-6">
-              However, seeing multiple providers without coordination can lead to fragmented care—duplicate tests, conflicting medication lists, and no single physician who understands your complete health picture. This is where your primary care physician becomes your healthcare quarterback, coordinating referrals and ensuring continuity across all your medical encounters.
+              However, seeing multiple providers without coordination can lead to fragmented care: duplicate tests, conflicting medication lists, and no single physician who understands your complete health picture. This is where your primary care physician becomes your healthcare quarterback, coordinating referrals and ensuring continuity across all your medical encounters.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -103,7 +111,7 @@ export default function BlogPost() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <p><strong>Clarifying the Question:</strong> The referral includes a clear clinical question—what does the primary care physician need the specialist to evaluate, confirm, or rule out?</p>
+                <p><strong>Clarifying the Question:</strong> The referral includes a clear clinical question: what does the primary care physician need the specialist to evaluate, confirm, or rule out?</p>
               </div>
               <div className="flex gap-3 items-start">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -115,7 +123,7 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Your primary care physician serves as the central hub of your healthcare team, translating specialist recommendations into a unified treatment plan that makes sense for your whole life—not just one organ system."
+                "Your primary care physician serves as the central hub of your healthcare team, translating specialist recommendations into a unified treatment plan that makes sense for your whole life, not just one organ system."
               </p>
             </div>
 
@@ -206,7 +214,7 @@ export default function BlogPost() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <p><strong>Communicate Changes:</strong> If a specialist starts or stops a medication, let your primary care physician know immediately—don't assume the information has been shared.</p>
+                <p><strong>Communicate Changes:</strong> If a specialist starts or stops a medication, let your primary care physician know immediately. Don't assume the information has been shared.</p>
               </div>
             </div>
 
@@ -214,10 +222,10 @@ export default function BlogPost() {
               The Bottom Line: Continuity Matters
             </h2>
             <p className="mb-6">
-              Healthcare is not a series of isolated appointments—it's an ongoing relationship. Research consistently shows that patients with a consistent primary care physician experience better health outcomes, fewer emergency room visits, and lower overall healthcare costs. When specialist care is needed, that continuity becomes even more critical.
+              Healthcare is not a series of isolated appointments. It's an ongoing relationship. Research consistently shows that patients with a consistent primary care physician experience better health outcomes, fewer emergency room visits, and lower overall healthcare costs. When specialist care is needed, that continuity becomes even more critical.
             </p>
             <p className="mb-6">
-              Your primary care physician isn't just a gatekeeper—they're your advocate, translator, and strategic partner in navigating an increasingly complex medical system. They ensure that every specialist visit, every test, and every treatment recommendation aligns with your values, goals, and overall health trajectory.
+              Your primary care physician isn't just a gatekeeper. They're your advocate, translator, and strategic partner in navigating an increasingly complex medical system. They ensure that every specialist visit, every test, and every treatment recommendation aligns with your values, goals, and overall health trajectory.
             </p>
             <p className="mb-6">
               If you've felt lost in the shuffle between specialists, or if you're facing a new diagnosis that requires coordinated care across multiple providers, a strong primary care relationship is your foundation. The right physician will not only refer you to excellent specialists but will remain actively involved in your care every step of the way.
@@ -236,9 +244,9 @@ export default function BlogPost() {
             </svg>
           </div>
           <div>
-            <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+            <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-              Our team is dedicated to delivering evidence-based, patient-centered care that empowers you to take control of your health. We combine medical expertise with a commitment to listening, educating, and supporting every patient on their wellness journey.
+              Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
             </p>
           </div>
         </div>
@@ -249,7 +257,7 @@ export default function BlogPost() {
           <h3 className="font-cormorant text-3xl text-[var(--color-ink)] mb-8 text-center">Related Resources</h3>
           <div className="grid md:grid-cols-3 gap-8">
             
-            <Link href="/blog/understanding-direct-primary-care-is-it-right-for-you" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <Link href="/blog/direct-primary-care-vs-traditional-insurance-which-saves-you" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] h-48 flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -257,7 +265,7 @@ export default function BlogPost() {
               </div>
               <div className="p-6">
                 <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  Understanding Direct Primary Care: Is It Right for You?
+                  Direct Primary Care vs Traditional Insurance
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed mb-4">
                   Explore how direct primary care models prioritize accessibility, personalized attention, and coordinated care.
@@ -322,7 +330,7 @@ export default function BlogPost() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact" 
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"

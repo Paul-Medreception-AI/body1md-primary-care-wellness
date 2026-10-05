@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Seasonal Allergies vs Sinus Infections: How to Tell the Difference',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/seasonal-allergies-vs-sinus-infections-how-to-tell-the-diffe',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/seasonal-allergies-vs-sinus-infections-how-to-tell-the-diffe.jpg', alt: 'Man blowing his nose into a tissue' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Seasonal Allergies vs Sinus Infections: How to Tell the Difference',
     description: 'Learn to distinguish between seasonal allergies and sinus infections with expert guidance on symptoms, duration, treatment options, and when to seek medical care.',
-    images: ['/og-image.png']
+    images: ['/images/blog/seasonal-allergies-vs-sinus-infections-how-to-tell-the-diffe.jpg']
   }
 }
 
@@ -48,21 +49,28 @@ export default function BlogPost() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Reviewed by Body1MD Primary Care & Wellness</span>
+            <span>Reviewed by Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/seasonal-allergies-vs-sinus-infections-how-to-tell-the-diffe.jpg" alt="Man blowing his nose into a tissue" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           {/* Opening Hook */}
           <p className="text-[var(--color-ink)] leading-loose text-lg mb-6">
-            You wake up with a pounding headache, your nose is congested, and your face feels heavy with pressure. Is it just seasonal allergies acting up again, or have you developed a sinus infection? This is one of the most common questions patients ask, and for good reason—the symptoms can overlap significantly, making it difficult to know whether you need allergy medication, antibiotics, or simply more rest and fluids.
+            You wake up with a pounding headache, your nose is congested, and your face feels heavy with pressure. Is it just seasonal allergies acting up again, or have you developed a sinus infection? This is one of the most common questions patients ask, and for good reason: the symptoms can overlap significantly, making it difficult to know whether you need allergy medication, antibiotics, or simply more rest and fluids.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -75,7 +83,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Seasonal allergies, also called allergic rhinitis or hay fever, occur when your immune system overreacts to harmless substances in the environment—typically pollen from trees, grasses, and weeds. This immune response triggers inflammation in your nasal passages, leading to the familiar symptoms of sneezing, itching, and congestion.
+            Seasonal allergies, also called allergic rhinitis or hay fever, occur when your immune system overreacts to harmless substances in the environment, typically pollen from trees, grasses, and weeds. This immune response triggers inflammation in your nasal passages, leading to the familiar symptoms of sneezing, itching, and congestion.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -182,7 +190,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Duration is another crucial clue in distinguishing between these conditions. Seasonal allergies tend to persist as long as you're exposed to the allergen—this could be weeks or even months during pollen season. Your symptoms may fluctuate based on daily pollen counts and weather conditions, often feeling worse on windy days when pollen is more widespread.
+            Duration is another crucial clue in distinguishing between these conditions. Seasonal allergies tend to persist as long as you're exposed to the allergen, which could be weeks or even months during pollen season. Your symptoms may fluctuate based on daily pollen counts and weather conditions, often feeling worse on windy days when pollen is more widespread.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -266,7 +274,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            It's important to understand that allergies and sinus infections aren't mutually exclusive—in fact, they're closely related. Allergic inflammation can cause swelling in the nasal passages and sinuses, blocking normal mucus drainage. This creates the perfect environment for bacteria to multiply, potentially leading to a secondary bacterial infection.
+            It's important to understand that allergies and sinus infections aren't mutually exclusive. In fact, they're closely related. Allergic inflammation can cause swelling in the nasal passages and sinuses, blocking normal mucus drainage. This creates the perfect environment for bacteria to multiply, potentially leading to a secondary bacterial infection.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -279,7 +287,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            At Body1MD Primary Care & Wellness in Austin, TX, we understand how frustrating these conditions can be. Our team is here to provide accurate diagnosis, personalized treatment plans, and ongoing support to help you breathe easier and feel better.
+            At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, we understand how frustrating these conditions can be, especially when spring juniper and cottonwood pollen is in the air. Dr. Hemmen is here to provide accurate diagnosis, personalized treatment plans, and ongoing support to help you breathe easier and feel better.
           </p>
         </div>
 
@@ -292,10 +300,10 @@ export default function BlogPost() {
           </div>
           <div>
             <div className="font-semibold text-[var(--color-ink)] mb-1">
-              Reviewed by Body1MD Primary Care & Wellness
+              Reviewed by Dr. Andrew Hemmen, MD
             </div>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-              Our team is dedicated to providing personalized, evidence-based care to help you achieve optimal health. We take the time to listen, understand your unique needs, and develop comprehensive treatment plans tailored to your goals.
+              Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
             </p>
           </div>
         </div>
@@ -349,7 +357,7 @@ export default function BlogPost() {
                 Schedule an Appointment
               </h4>
               <p className="text-[var(--color-muted)] text-sm">
-                Get personalized care from our experienced team
+                Get personalized care from Dr. Hemmen
               </p>
             </Link>
           </div>
@@ -363,7 +371,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

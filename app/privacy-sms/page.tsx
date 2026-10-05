@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Body1MD Primary Care &amp; Wellness',
-  description: 'Body1MD Primary Care &amp; Wellness - Privacy Policy, including SMS, TCPA and HIPAA disclosures.',
+  title: 'Privacy Policy | Body1MD Primary Care & Wellness',
+  description: 'Body1MD Primary Care & Wellness Privacy Policy, including SMS, TCPA and HIPAA disclosures.',
   alternates: { canonical: 'https://body1md.com/privacy-sms' },
 }
 
@@ -11,7 +11,7 @@ export default function PrivacySmsPage() {
     <main className="min-h-screen bg-white font-opensans">
       <div className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className="font-cormorant text-5xl font-bold mb-4">Body1MD Primary Care &amp; Wellness - Privacy Policy</h1>
+          <h1 className="font-cormorant text-5xl font-bold mb-4">Body1MD Primary Care &amp; Wellness Privacy Policy</h1>
           <p className="text-lg text-white/90">Body1MD Primary Care &amp; Wellness</p>
         </div>
       </div>

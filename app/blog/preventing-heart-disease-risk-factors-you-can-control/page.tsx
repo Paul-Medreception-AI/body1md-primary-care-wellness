@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Preventing Heart Disease: Risk Factors You Can Control',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/preventing-heart-disease-risk-factors-you-can-control',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/preventing-heart-disease-risk-factors-you-can-control.jpg', alt: 'Clinician in scrubs with a stethoscope and a red paper heart in her pocket' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Preventing Heart Disease: Risk Factors You Can Control',
     description: 'Learn about controllable heart disease risk factors including blood pressure, cholesterol, smoking, diet, and exercise. Evidence-based strategies for heart health from Body1MD.',
-    images: ['/og-image.png']
+    images: ['/images/blog/preventing-heart-disease-risk-factors-you-can-control.jpg']
   }
 }
 
@@ -48,14 +49,21 @@ export default function BlogPost() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published December 2024</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Reviewed by Body1MD Primary Care & Wellness</span>
+            <span>Reviewed by Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/preventing-heart-disease-risk-factors-you-can-control.jpg" alt="Clinician in scrubs with a stethoscope and a red paper heart in her pocket" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -66,7 +74,7 @@ export default function BlogPost() {
             </p>
 
             <p className="mb-6">
-              Understanding which risk factors you can influence—and taking action to address them—is one of the most important steps you can take for your long-term health. Let's explore the controllable risk factors and the evidence-based strategies that can help protect your heart.
+              Understanding which risk factors you can influence, and taking action to address them, is one of the most important steps you can take for your long-term health. Let's explore the controllable risk factors and the evidence-based strategies that can help protect your heart.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -74,7 +82,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              High blood pressure, or hypertension, affects nearly half of American adults and often has no symptoms—earning it the nickname "the silent killer." When blood pressure remains elevated over time, it damages artery walls, forces your heart to work harder, and significantly increases your risk of heart attack and stroke.
+              High blood pressure, or hypertension, affects nearly half of American adults and often has no symptoms, earning it the nickname "the silent killer." When blood pressure remains elevated over time, it damages artery walls, forces your heart to work harder, and significantly increases your risk of heart attack and stroke.
             </p>
 
             <p className="mb-6">
@@ -128,7 +136,7 @@ export default function BlogPost() {
             </p>
 
             <p className="mb-6">
-              The American Heart Association recommends at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous activity per week, plus muscle-strengthening activities on two or more days. But any movement is better than none—even small increases in physical activity provide benefits.
+              The American Heart Association recommends at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous activity per week, plus muscle-strengthening activities on two or more days. But any movement is better than none, and even small increases in physical activity provide benefits.
             </p>
 
             <div className="my-8">
@@ -162,7 +170,7 @@ export default function BlogPost() {
                   <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Find activities you enjoy—dancing, gardening, swimming, cycling</span>
+                  <span>Find activities you enjoy: dancing, gardening, swimming, cycling</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -178,11 +186,11 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              Maintaining a healthy weight reduces strain on your heart, improves cholesterol levels, helps control blood pressure and blood sugar, and decreases inflammation throughout your body. Even modest weight loss—5-10% of your body weight—can significantly reduce heart disease risk.
+              Maintaining a healthy weight reduces strain on your heart, improves cholesterol levels, helps control blood pressure and blood sugar, and decreases inflammation throughout your body. Even modest weight loss (5 to 10% of your body weight) can significantly reduce heart disease risk.
             </p>
 
             <p className="mb-6">
-              Rather than focusing on restrictive diets, aim for sustainable eating patterns that emphasize whole, minimally processed foods. The Mediterranean diet—rich in fruits, vegetables, whole grains, legumes, nuts, olive oil, and fish—has been extensively studied and shown to reduce heart disease risk by up to 30%.
+              Rather than focusing on restrictive diets, aim for sustainable eating patterns that emphasize whole, minimally processed foods. The Mediterranean diet, rich in fruits, vegetables, whole grains, legumes, nuts, olive oil, and fish, has been extensively studied and shown to reduce heart disease risk by up to 30%.
             </p>
 
             <p className="mb-6">
@@ -198,7 +206,7 @@ export default function BlogPost() {
             </p>
 
             <p className="mb-6">
-              Developing healthy stress management techniques—whether through meditation, yoga, deep breathing exercises, time in nature, or engaging in hobbies—can have measurable benefits for heart health. Aim for 7-9 hours of quality sleep per night, and talk to your provider if you have symptoms of sleep apnea, a condition that significantly increases cardiovascular risk.
+              Developing healthy stress management techniques (whether through meditation, yoga, deep breathing exercises, time in nature, or engaging in hobbies) can have measurable benefits for heart health. Aim for 7-9 hours of quality sleep per night, and talk to your provider if you have symptoms of sleep apnea, a condition that significantly increases cardiovascular risk.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -206,7 +214,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              The controllable risk factors for heart disease are interconnected—positive changes in one area often lead to improvements in others. You don't need to address everything at once. Start with one or two changes that feel most achievable, build those into sustainable habits, and then add more over time.
+              The controllable risk factors for heart disease are interconnected: positive changes in one area often lead to improvements in others. You don't need to address everything at once. Start with one or two changes that feel most achievable, build those into sustainable habits, and then add more over time.
             </p>
 
             <p className="mb-6">
@@ -214,7 +222,7 @@ export default function BlogPost() {
             </p>
 
             <p className="mb-6">
-              Remember: it's never too early—or too late—to start taking better care of your heart. The choices you make today have the power to shape your health for decades to come. If you're ready to take control of your heart disease risk factors, we're here to support you every step of the way.
+              Remember: it's never too early (or too late) to start taking better care of your heart. The choices you make today have the power to shape your health for decades to come. If you're ready to take control of your heart disease risk factors, we're here to support you every step of the way.
             </p>
           </div>
         </div>
@@ -231,10 +239,10 @@ export default function BlogPost() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Our team provides comprehensive primary care services in Austin, TX, with a focus on preventive medicine and building lasting relationships with our patients. We partner with you to create personalized health plans that address your unique needs and goals.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -286,7 +294,7 @@ export default function BlogPost() {
                 Schedule a Visit
               </h4>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Ready to take control of your heart health? Contact us to schedule a comprehensive cardiovascular risk assessment.
+                Ready to take control of your heart health? Contact us to schedule a visit with Dr. Hemmen to review your cardiovascular risk.
               </p>
             </Link>
           </div>
@@ -300,7 +308,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help you create a personalized heart health plan.
+            Dr. Hemmen is here to help you create a personalized heart health plan.
           </p>
           <Link
             href="/contact"

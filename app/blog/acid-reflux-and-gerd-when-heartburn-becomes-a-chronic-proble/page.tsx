@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Acid Reflux and GERD: When Heartburn Becomes a Chronic Problem',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/acid-reflux-and-gerd-when-heartburn-becomes-a-chronic-proble',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/acid-reflux-and-gerd-when-heartburn-becomes-a-chronic-proble.jpg', alt: 'Man pressing a hand to his upper abdomen and chest from heartburn discomfort' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Acid Reflux and GERD: When Heartburn Becomes a Chronic Problem',
     description: 'Learn about acid reflux and GERD, including symptoms, causes, and treatment options. Discover when heartburn requires medical attention and how to manage chronic reflux.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/acid-reflux-and-gerd-when-heartburn-becomes-a-chronic-proble.jpg'],
   },
 }
 
@@ -52,7 +53,7 @@ export default function AcidRefluxGERDArticle() {
               <svg stroke="currentColor" fill="none" strokeWidth={1.5} viewBox="0 0 24 24" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg stroke="currentColor" fill="none" strokeWidth={1.5} viewBox="0 0 24 24" className="w-5 h-5">
@@ -64,11 +65,17 @@ export default function AcidRefluxGERDArticle() {
               <svg stroke="currentColor" fill="none" strokeWidth={1.5} viewBox="0 0 24 24" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/acid-reflux-and-gerd-when-heartburn-becomes-a-chronic-proble.jpg" alt="Man pressing a hand to his upper abdomen and chest from heartburn discomfort" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -76,7 +83,7 @@ export default function AcidRefluxGERDArticle() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-lg mb-8">
             <p className="mb-6">
-              That burning sensation in your chest after a heavy meal might seem like a minor inconvenience—something everyone experiences from time to time. But when heartburn becomes a frequent visitor, showing up several times a week or disrupting your sleep, it may signal something more serious: gastroesophageal reflux disease, or GERD. Understanding the difference between occasional acid reflux and chronic GERD is crucial for protecting your long-term digestive health and quality of life.
+              That burning sensation in your chest after a heavy meal might seem like a minor inconvenience, something everyone experiences from time to time. But when heartburn becomes a frequent visitor, showing up several times a week or disrupting your sleep, it may signal something more serious: gastroesophageal reflux disease, or GERD. Understanding the difference between occasional acid reflux and chronic GERD is crucial for protecting your long-term digestive health and quality of life.
             </p>
           </div>
 
@@ -92,7 +99,7 @@ export default function AcidRefluxGERDArticle() {
               Most people experience acid reflux occasionally, especially after eating large meals, spicy foods, or lying down too soon after eating. This is normal and usually resolves on its own without intervention.
             </p>
             <p>
-              GERD, however, is diagnosed when acid reflux happens frequently—typically twice a week or more—over an extended period. It's a chronic condition that requires medical attention and management. Left untreated, GERD can lead to complications including esophageal inflammation, ulcers, strictures, and even an increased risk of esophageal cancer.
+              GERD, however, is diagnosed when acid reflux happens frequently (typically twice a week or more) over an extended period. It's a chronic condition that requires medical attention and management. Left untreated, GERD can lead to complications including esophageal inflammation, ulcers, strictures, and even an increased risk of esophageal cancer.
             </p>
           </div>
 
@@ -170,7 +177,7 @@ export default function AcidRefluxGERDArticle() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base space-y-4">
             <p>
-              GERD typically develops when the lower esophageal sphincter (LES)—a ring of muscle that acts as a valve between the esophagus and stomach—weakens or relaxes abnormally. This allows stomach contents to flow back up into the esophagus.
+              GERD typically develops when the lower esophageal sphincter (LES), a ring of muscle that acts as a valve between the esophagus and stomach, weakens or relaxes abnormally. This allows stomach contents to flow back up into the esophagus.
             </p>
             <p>
               Several factors can contribute to LES dysfunction and increase your risk of GERD:
@@ -327,7 +334,7 @@ export default function AcidRefluxGERDArticle() {
               Living with chronic heartburn doesn't have to be your norm. GERD is a manageable condition, and with the right combination of lifestyle modifications, dietary changes, and medical treatment when needed, most people achieve significant symptom relief. The key is recognizing when occasional heartburn has become a chronic problem and taking action to protect your esophageal health.
             </p>
             <p>
-              If you're struggling with frequent heartburn or acid reflux, don't wait for complications to develop. A comprehensive evaluation can identify the underlying causes of your symptoms and create a personalized treatment plan that works for your lifestyle. Your digestive health matters—and relief is within reach.
+              If you're struggling with frequent heartburn or acid reflux, don't wait for complications to develop. A comprehensive evaluation can identify the underlying causes of your symptoms and create a personalized treatment plan that works for your lifestyle. Your digestive health matters, and relief is within reach.
             </p>
           </div>
         </div>
@@ -342,10 +349,10 @@ export default function AcidRefluxGERDArticle() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is committed to providing evidence-based patient education that empowers you to make informed decisions about your health. This article reflects current medical understanding and clinical best practices in primary care.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. This article reflects current medical understanding and clinical best practices in primary care.
               </p>
             </div>
           </div>
@@ -420,7 +427,7 @@ export default function AcidRefluxGERDArticle() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

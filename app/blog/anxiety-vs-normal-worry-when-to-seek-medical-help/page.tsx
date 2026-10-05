@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Anxiety vs Normal Worry: When to Seek Medical Help',
-  description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Austin, TX.',
+  description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Albuquerque, NM.',
   alternates: { canonical: '/blog/anxiety-vs-normal-worry-when-to-seek-medical-help' },
   openGraph: {
     title: 'Anxiety vs Normal Worry: When to Seek Medical Help',
-    description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Austin, TX.',
+    description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Albuquerque, NM.',
     url: 'https://body1md.com/blog/anxiety-vs-normal-worry-when-to-seek-medical-help',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/anxiety-vs-normal-worry-when-to-seek-medical-help.jpg', alt: 'Worried woman sitting with her hand pressed to her forehead' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Anxiety vs Normal Worry: When to Seek Medical Help',
-    description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Learn the difference between everyday worry and clinical anxiety. Understand when it\'s time to seek professional help for anxiety symptoms in Albuquerque, NM.',
+    images: ['/images/blog/anxiety-vs-normal-worry-when-to-seek-medical-help.jpg']
   }
 }
 
@@ -51,10 +52,16 @@ export default function AnxietyVsWorryPage() {
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/anxiety-vs-normal-worry-when-to-seek-medical-help.jpg" alt="Worried woman sitting with her hand pressed to her forehead" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -62,7 +69,7 @@ export default function AnxietyVsWorryPage() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              We all worry. It's a natural human response to stress, uncertainty, and life's challenges. That flutter in your stomach before a big presentation, the racing thoughts when paying bills, or the concern about a loved one's health—these are normal experiences shared by nearly everyone. But when does ordinary worry cross the line into something more serious?
+              We all worry. It's a natural human response to stress, uncertainty, and life's challenges. That flutter in your stomach before a big presentation, the racing thoughts when paying bills, or the concern about a loved one's health: these are normal experiences shared by nearly everyone. But when does ordinary worry cross the line into something more serious?
             </p>
             <p className="mb-6">
               Understanding the difference between normal worry and clinical anxiety is crucial for your wellbeing. While worry is typically tied to specific situations and fades when the stressor passes, anxiety can persist without clear cause and significantly interfere with daily life. If you've been wondering whether your feelings are "just stress" or something that warrants professional attention, this guide will help you recognize the signs and understand when it's time to seek help.
@@ -100,7 +107,7 @@ export default function AnxietyVsWorryPage() {
               Unlike situational worry, clinical anxiety is often excessive and disproportionate to actual threats. You might find yourself catastrophizing about unlikely events or feeling intense dread about everyday situations that others handle with minimal stress. The "what ifs" become relentless and difficult to control, even when you logically know your fears are overblown.
             </p>
             <p className="mb-6">
-              Perhaps most significantly, clinical anxiety persists over time—typically six months or longer. It's not tied to a single event but feels like a constant companion. Even on days when nothing particularly stressful is happening, the anxiety remains, creating a baseline state of tension and unease.
+              Perhaps most significantly, clinical anxiety persists over time, typically six months or longer. It's not tied to a single event but feels like a constant companion. Even on days when nothing particularly stressful is happening, the anxiety remains, creating a baseline state of tension and unease.
             </p>
             <p className="mb-6">
               The physical symptoms of clinical anxiety can be particularly distressing. These may include persistent muscle tension, frequent headaches, gastrointestinal problems, rapid heartbeat, chest tightness, difficulty breathing, trembling, sweating, and chronic fatigue. These physical manifestations can themselves become sources of worry, creating a self-reinforcing cycle.
@@ -109,7 +116,7 @@ export default function AnxietyVsWorryPage() {
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "The question isn't whether you experience worry—it's whether worry is interfering with your ability to live the life you want to live."
+            "The question isn't whether you experience worry. It's whether worry is interfering with your ability to live the life you want to live."
           </blockquote>
 
           {/* Section 3 */}
@@ -181,7 +188,7 @@ export default function AnxietyVsWorryPage() {
               Untreated anxiety also increases the risk of developing additional mental health conditions, particularly depression. The constant stress of living with anxiety takes a physical toll as well, potentially contributing to cardiovascular problems, weakened immune function, and chronic pain conditions.
             </p>
             <p className="mb-6">
-              Perhaps most importantly, you simply don't have to suffer. Effective treatments exist, and there's no virtue in enduring symptoms that significantly diminish your quality of life. Seeking help isn't a sign of weakness—it's a practical step toward reclaiming your wellbeing.
+              Perhaps most importantly, you simply don't have to suffer. Effective treatments exist, and there's no virtue in enduring symptoms that significantly diminish your quality of life. Seeking help isn't a sign of weakness. It's a practical step toward reclaiming your wellbeing.
             </p>
           </div>
 
@@ -216,13 +223,13 @@ export default function AnxietyVsWorryPage() {
               The gap between recognizing you need help and actually reaching out can feel vast. You might worry about being judged, fear that your concerns aren't "serious enough," or feel overwhelmed by the process of finding care.
             </p>
             <p className="mb-6">
-              Remember that healthcare providers see anxiety regularly—it's one of the most common reasons people seek medical care. Your concerns are valid, regardless of how "severe" they might seem compared to others' experiences. The standard isn't whether someone else has it worse; the standard is whether your anxiety is interfering with your ability to live the life you want.
+              Remember that healthcare providers see anxiety regularly. It's one of the most common reasons people seek medical care. Your concerns are valid, regardless of how "severe" they might seem compared to others' experiences. The standard isn't whether someone else has it worse; the standard is whether your anxiety is interfering with your ability to live the life you want.
             </p>
             <p className="mb-6">
               If you're unsure whether your symptoms warrant professional attention, consider this: if worry and anxiety are affecting your quality of life, causing distress, or limiting your activities, that's reason enough to seek an evaluation. A healthcare provider can help determine whether what you're experiencing is within the normal range or if treatment would be beneficial.
             </p>
             <p className="mb-6">
-              The journey from anxiety to relief begins with a single conversation. Reaching out doesn't commit you to any particular course of treatment—it simply opens the door to understanding what you're experiencing and learning about your options. You deserve to feel better, and effective help is available in Austin, TX when you're ready to take that step.
+              The journey from anxiety to relief begins with a single conversation. Reaching out doesn't commit you to any particular course of treatment. It simply opens the door to understanding what you're experiencing and learning about your options. You deserve to feel better, and effective help is available in the Albuquerque area when you're ready to take that step.
             </p>
           </div>
         </div>
@@ -239,10 +246,10 @@ export default function AnxietyVsWorryPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </p>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing comprehensive, evidence-based healthcare that addresses both physical and mental wellbeing. We understand that anxiety affects the whole person, and we're here to help you find the support and treatment you need.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. He understands that anxiety affects the whole person and is here to help you find the support and treatment you need.
               </p>
             </div>
           </div>
@@ -277,7 +284,7 @@ export default function AnxietyVsWorryPage() {
             </Link>
 
             {/* Card 2 */}
-            <Link href="/services/mental-health-care" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <Link href="/conditions/anxiety-and-depression" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
               <div className="bg-gradient-to-br from-[var(--color-light)] to-[var(--color-cream)] p-8 flex items-center justify-center h-48">
                 <svg className="w-16 h-16 text-[var(--color-primary)]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -288,10 +295,10 @@ export default function AnxietyVsWorryPage() {
                   Our Services
                 </div>
                 <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  Mental Health Care
+                  Mental Health in Primary Care
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm">
-                  Learn about our comprehensive approach to mental health and emotional wellbeing.
+                  Learn how whole-person primary care looks after emotional wellbeing alongside your physical health.
                 </p>
               </div>
             </Link>
@@ -326,7 +333,7 @@ export default function AnxietyVsWorryPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

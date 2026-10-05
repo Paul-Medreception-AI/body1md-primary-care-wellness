@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'UTI Prevention and Treatment: What Women Need to Know',
-  description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
+  description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
   alternates: { canonical: '/blog/uti-prevention-and-treatment-what-women-need-to-know' },
   openGraph: {
     title: 'UTI Prevention and Treatment: What Women Need to Know',
-    description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
+    description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
     url: 'https://body1md.com/blog/uti-prevention-and-treatment-what-women-need-to-know',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/uti-prevention-and-treatment-what-women-need-to-know.jpg', alt: 'Young woman drinking a glass of water at home' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'UTI Prevention and Treatment: What Women Need to Know',
-    description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
-    images: ['/og-image.png'],
+    description: 'Learn evidence-based strategies for preventing urinary tract infections and when to seek treatment. Expert guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
+    images: ['/images/blog/uti-prevention-and-treatment-what-women-need-to-know.jpg'],
   },
 }
 
@@ -37,27 +38,34 @@ export default function BlogPost() {
             UTI Prevention and Treatment: What Women Need to Know
           </h1>
           <div className="flex gap-6 justify-center items-center text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>By Dr. Wellness Team</span>
+            <span>By Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/uti-prevention-and-treatment-what-women-need-to-know.jpg" alt="Young woman drinking a glass of water at home" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              If you've ever experienced the burning, urgent discomfort of a urinary tract infection, you know how disruptive it can be. UTIs are one of the most common bacterial infections, affecting millions of women each year—and for many, they're a recurring problem. But here's the good news: most UTIs are preventable, and with the right knowledge, you can take control of your urinary health.
+              If you've ever experienced the burning, urgent discomfort of a urinary tract infection, you know how disruptive it can be. UTIs are one of the most common bacterial infections, affecting millions of women each year, and for many, they're a recurring problem. But here's the good news: most UTIs are preventable, and with the right knowledge, you can take control of your urinary health.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
               Understanding Urinary Tract Infections
             </h2>
             <p className="mb-4">
-              A urinary tract infection occurs when bacteria—most commonly <em>E. coli</em> from the digestive tract—enter the urethra and multiply in the bladder. Women are significantly more susceptible than men due to anatomical differences: a shorter urethra means bacteria have a shorter distance to travel to reach the bladder.
+              A urinary tract infection occurs when bacteria (most commonly <em>E. coli</em> from the digestive tract) enter the urethra and multiply in the bladder. Women are significantly more susceptible than men due to anatomical differences: a shorter urethra means bacteria have a shorter distance to travel to reach the bladder.
             </p>
             <p className="mb-4">
               Classic UTI symptoms include a persistent urge to urinate, burning sensation during urination, cloudy or strong-smelling urine, and pelvic discomfort. Some women experience fever and back pain, which can signal a more serious kidney infection requiring immediate medical attention.
@@ -119,14 +127,14 @@ export default function BlogPost() {
               Hydration and Urination Habits
             </h3>
             <p className="mb-4">
-              Drinking plenty of water helps flush bacteria from your urinary tract before infection can take hold. Aim for 6-8 glasses daily, and don't ignore the urge to urinate—holding urine allows bacteria more time to multiply. Urinating after sexual activity is particularly important for clearing any bacteria that may have been introduced.
+              Drinking plenty of water helps flush bacteria from your urinary tract before infection can take hold. Aim for 6-8 glasses daily, and don't ignore the urge to urinate, since holding urine allows bacteria more time to multiply. Urinating after sexual activity is particularly important for clearing any bacteria that may have been introduced.
             </p>
 
             <h3 className="text-xl font-semibold text-[var(--color-ink)] mt-8 mb-3">
               Hygiene Practices
             </h3>
             <p className="mb-4">
-              Always wipe from front to back after using the bathroom to prevent intestinal bacteria from reaching the urethra. Avoid harsh soaps, douches, and feminine hygiene sprays in the genital area—these can disrupt protective bacterial balance. Cotton underwear and loose-fitting clothes help keep the area dry and less hospitable to harmful bacteria.
+              Always wipe from front to back after using the bathroom to prevent intestinal bacteria from reaching the urethra. Avoid harsh soaps, douches, and feminine hygiene sprays in the genital area, because these can disrupt protective bacterial balance. Cotton underwear and loose-fitting clothes help keep the area dry and less hospitable to harmful bacteria.
             </p>
 
             <h3 className="text-xl font-semibold text-[var(--color-ink)] mt-8 mb-3">
@@ -182,7 +190,7 @@ export default function BlogPost() {
               Managing Recurrent UTIs
             </h2>
             <p className="mb-4">
-              If you experience two or more UTIs within six months, or three or more within a year, you have recurrent UTIs—a frustrating condition affecting about 25% of women who've had one infection. Your healthcare provider can help develop a personalized prevention plan, which may include:
+              If you experience two or more UTIs within six months, or three or more within a year, you have recurrent UTIs, a frustrating condition affecting about 25% of women who've had one infection. Your healthcare provider can help develop a personalized prevention plan, which may include:
             </p>
             <p className="mb-4">
               Low-dose preventive antibiotics taken daily or after sexual activity, vaginal estrogen therapy for postmenopausal women, or identifying and addressing underlying risk factors like anatomical abnormalities. Some women benefit from keeping a home supply of antibiotics to start at the first sign of symptoms, under their provider's guidance.
@@ -211,9 +219,9 @@ export default function BlogPost() {
               </svg>
             </div>
             <div>
-              <div className="font-semibold text-[var(--color-ink)] mb-1">Reviewed by Body1MD Primary Care & Wellness</div>
+              <div className="font-semibold text-[var(--color-ink)] mb-1">Reviewed by Dr. Andrew Hemmen, MD</div>
               <p className="text-sm text-[var(--color-muted)] leading-relaxed">
-                Our team is dedicated to providing comprehensive, evidence-based primary care focused on your long-term health and wellness. We partner with you to address both immediate concerns and preventive care in Austin, TX.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -240,7 +248,7 @@ export default function BlogPost() {
               </div>
             </Link>
 
-            <Link href="/services/wellness-visits" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <Link href="/services" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="bg-gradient-to-br from-[var(--color-light)] to-[var(--color-cream)] p-12 flex items-center justify-center">
                 <svg className="w-16 h-16 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
@@ -278,7 +286,7 @@ export default function BlogPost() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link
             href="/contact"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"

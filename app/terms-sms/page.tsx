@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions - SMS | Body1MD Primary Care &amp; Wellness',
-  description: 'Body1MD Primary Care &amp; Wellness Terms and Conditions, including SMS messaging terms and compliance.',
+  title: 'SMS Terms and Conditions | Body1MD Primary Care & Wellness',
+  description: 'Body1MD Primary Care & Wellness Terms and Conditions, including SMS messaging terms and compliance.',
   alternates: { canonical: 'https://body1md.com/terms-sms' },
 }
 
@@ -12,7 +12,7 @@ export default function TermsSmsPage() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="container mx-auto px-6">
           <h1 className="font-cormorant text-5xl font-bold mb-4 animate-fade-up">
-            Body1MD Primary Care &amp; Wellness Terms and Conditions - SMS
+            Body1MD Primary Care &amp; Wellness SMS Terms and Conditions
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto animate-fade-up">
             Body1MD Primary Care &amp; Wellness
@@ -171,7 +171,7 @@ export default function TermsSmsPage() {
               Governing Law
             </h2>
             <p className="text-[var(--color-muted)] mb-6">
-              These Terms of Service shall be governed by and construed in accordance with the laws of the State of TX. Any dispute arising under these Terms shall be resolved exclusively through binding arbitration in that jurisdiction.
+              These Terms of Service shall be governed by and construed in accordance with the laws of the State of New Mexico. Any dispute arising under these Terms shall be resolved exclusively through binding arbitration in that jurisdiction.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">

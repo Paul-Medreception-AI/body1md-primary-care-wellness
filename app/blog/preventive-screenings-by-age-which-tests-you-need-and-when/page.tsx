@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Preventive Screenings by Age: Which Tests You Need and When',
@@ -10,13 +11,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/preventive-screenings-by-age-which-tests-you-need-and-when',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/preventive-screenings-by-age-which-tests-you-need-and-when.jpg', alt: 'Physician talking with a patient across a desk during a preventive care consultation' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Preventive Screenings by Age: Which Tests You Need and When',
     description: 'A comprehensive guide to age-appropriate preventive health screenings, from your 20s through your senior years, to help you stay ahead of potential health issues.',
-    images: ['/og-image.png']
+    images: ['/images/blog/preventive-screenings-by-age-which-tests-you-need-and-when.jpg']
   }
 }
 
@@ -51,7 +52,7 @@ export default function PreventiveScreeningsByAgePage() {
               <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-5 h-5">
@@ -63,11 +64,18 @@ export default function PreventiveScreeningsByAgePage() {
               <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/preventive-screenings-by-age-which-tests-you-need-and-when.jpg" alt="Physician talking with a patient across a desk during a preventive care consultation" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -75,7 +83,7 @@ export default function PreventiveScreeningsByAgePage() {
           {/* Opening */}
           <div className="text-[var(--color-ink)] leading-loose text-base space-y-6">
             <p>
-              When was the last time you had a comprehensive health screening? If you're struggling to remember, you're not alone. In the rush of daily life, preventive care often falls to the bottom of our priority list. Yet these routine screenings are among the most powerful tools we have for detecting serious health conditions early—when they're most treatable.
+              When was the last time you had a comprehensive health screening? If you're struggling to remember, you're not alone. In the rush of daily life, preventive care often falls to the bottom of our priority list. Yet these routine screenings are among the most powerful tools we have for detecting serious health conditions early, when they're most treatable.
             </p>
             <p>
               The truth is, your screening needs change as you age. What's essential in your 30s differs from what you need in your 60s. Understanding which tests matter at each stage of life empowers you to take control of your health and catch potential problems before they become serious. Let's walk through the preventive screenings recommended for each decade of adulthood.
@@ -94,7 +102,7 @@ export default function PreventiveScreeningsByAgePage() {
               <strong>Blood pressure</strong> should be checked at least every two years if your readings are normal (below 120/80). High blood pressure often has no symptoms but significantly increases your risk of heart disease and stroke. If you have elevated readings, your doctor may recommend more frequent monitoring.
             </p>
             <p>
-              <strong>Cholesterol screening</strong> typically begins at age 20, or earlier if you have a family history of heart disease. This simple blood test measures your total cholesterol, LDL (bad cholesterol), HDL (good cholesterol), and triglycerides—all key indicators of cardiovascular health.
+              <strong>Cholesterol screening</strong> typically begins at age 20, or earlier if you have a family history of heart disease. This simple blood test measures your total cholesterol, LDL (bad cholesterol), HDL (good cholesterol), and triglycerides, all key indicators of cardiovascular health.
             </p>
             <p>
               <strong>Diabetes screening</strong> is recommended starting at age 35, or earlier if you're overweight or have other risk factors. Type 2 diabetes can develop silently, and early detection allows for lifestyle interventions that can prevent or delay the disease.
@@ -116,7 +124,7 @@ export default function PreventiveScreeningsByAgePage() {
               <strong>Breast cancer screening</strong> is a key addition for women in this decade. Current guidelines recommend that women at average risk begin annual or biennial mammograms between ages 40 and 50, depending on individual risk factors and preferences. Discuss the right timing with your healthcare provider.
             </p>
             <p>
-              <strong>Colon cancer screening</strong> now begins at age 45 for people at average risk—lowered from age 50 in recent years due to rising rates in younger adults. Options include colonoscopy every 10 years, annual stool-based tests, or other screening methods. This screening can literally save your life, as colon cancer is highly treatable when caught early.
+              <strong>Colon cancer screening</strong> now begins at age 45 for people at average risk, lowered from age 50 in recent years due to rising rates in younger adults. Options include colonoscopy every 10 years, annual stool-based tests, or other screening methods. This screening can literally save your life, as colon cancer is highly treatable when caught early.
             </p>
             <p>
               Continue your blood pressure, cholesterol, and diabetes screenings, which may become more frequent if you develop borderline results or new risk factors. Your 40s are also the time to assess your cardiovascular risk profile comprehensively, looking at family history, lifestyle factors, and laboratory results together.
@@ -125,7 +133,7 @@ export default function PreventiveScreeningsByAgePage() {
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "Preventive screenings aren't about finding disease—they're about preserving health. Every test you complete is an investment in your future self."
+            "Preventive screenings aren't about finding disease. They're about preserving health. Every test you complete is an investment in your future self."
           </blockquote>
 
           {/* In Your 50s and 60s */}
@@ -242,7 +250,7 @@ export default function PreventiveScreeningsByAgePage() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article provides educational information about preventive health screenings. Individual screening needs may vary based on personal and family health history. Always consult with your healthcare provider to determine which screenings are right for you and when they should be performed.
@@ -280,7 +288,7 @@ export default function PreventiveScreeningsByAgePage() {
             </a>
 
             {/* Card 2 */}
-            <a href="/services/annual-physical-exams" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+            <a href="/services" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
               <div className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-dark)] h-48 flex items-center justify-center">
                 <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-16 h-16 text-white">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -329,7 +337,7 @@ export default function PreventiveScreeningsByAgePage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Our team is here to help you stay on top of your preventive care and screenings.
+            Dr. Hemmen is here to help you stay on top of your preventive care and screenings.
           </p>
           <a
             href="/contact"

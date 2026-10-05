@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Back Pain: When to Worry and When to Wait | Body1MD',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/back-pain-when-to-worry-and-when-to-wait',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/back-pain-when-to-worry-and-when-to-wait.jpg', alt: 'Man pressing a hand to his sore lower back' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Back Pain: When to Worry and When to Wait | Body1MD',
     description: 'Learn when back pain requires immediate medical attention and when it\'s safe to wait. Evidence-based guidance on red flags, warning signs, and self-care strategies.',
-    images: ['/og-image.png']
+    images: ['/images/blog/back-pain-when-to-worry-and-when-to-wait.jpg']
   }
 }
 
@@ -43,24 +44,30 @@ export default function BackPainArticle() {
           </h1>
           
           <div className="flex justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Body1MD Primary Care & Wellness</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/back-pain-when-to-worry-and-when-to-wait.jpg" alt="Man pressing a hand to his sore lower back" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              You wake up one morning and your back is screaming. Or maybe it's been a dull ache for weeks that suddenly got worse. You're not alone—back pain affects roughly 80% of adults at some point in their lives. But here's the question that keeps people up at night: Is this something serious, or will it get better on its own?
+              You wake up one morning and your back is screaming. Or maybe it's been a dull ache for weeks that suddenly got worse. You're not alone: back pain affects roughly 80% of adults at some point in their lives. But here's the question that keeps people up at night: Is this something serious, or will it get better on its own?
             </p>
             
             <p className="mb-6">
-              Knowing when to seek immediate care and when to give your body time to heal can make all the difference in your recovery—and your peace of mind. Let's walk through the signs that matter, the red flags you shouldn't ignore, and the practical steps you can take when back pain strikes.
+              Knowing when to seek immediate care and when to give your body time to heal can make all the difference in your recovery, and your peace of mind. Let's walk through the signs that matter, the red flags you shouldn't ignore, and the practical steps you can take when back pain strikes.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -68,11 +75,11 @@ export default function BackPainArticle() {
             </h2>
             
             <p className="mb-6">
-              Back pain is incredibly common, but not all back pain is created equal. Most episodes—about 85-90%—are considered "nonspecific" or "mechanical," meaning there's no serious underlying disease or structural damage. These cases typically result from muscle strain, poor posture, lifting something heavy, or simply sleeping wrong.
+              Back pain is incredibly common, but not all back pain is created equal. Most episodes (about 85-90%) are considered "nonspecific" or "mechanical," meaning there's no serious underlying disease or structural damage. These cases typically result from muscle strain, poor posture, lifting something heavy, or simply sleeping wrong.
             </p>
             
             <p className="mb-6">
-              The good news? Most acute back pain improves significantly within four to six weeks with conservative care. Your body is remarkably good at healing itself when given the right support. However, certain symptoms signal that something more serious might be going on—and those are the ones we need to watch for carefully.
+              The good news? Most acute back pain improves significantly within four to six weeks with conservative care. Your body is remarkably good at healing itself when given the right support. However, certain symptoms signal that something more serious might be going on, and those are the ones we need to watch for carefully.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -80,7 +87,7 @@ export default function BackPainArticle() {
             </h2>
             
             <p className="mb-6">
-              While most back pain is benign, certain warning signs—called "red flags" in medical terminology—indicate conditions that require prompt evaluation. These symptoms suggest possible serious causes like infection, fracture, cancer, or cauda equina syndrome (a surgical emergency).
+              While most back pain is benign, certain warning signs (called "red flags" in medical terminology) indicate conditions that require prompt evaluation. These symptoms suggest possible serious causes like infection, fracture, cancer, or cauda equina syndrome (a surgical emergency).
             </p>
             
             <div className="bg-[var(--color-cream)] rounded-lg p-6 my-8">
@@ -136,7 +143,7 @@ export default function BackPainArticle() {
             </h2>
             
             <p className="mb-6">
-              If your back pain doesn't have any red flags, it's usually safe—and often beneficial—to start with conservative self-care for the first few days to weeks. Research consistently shows that most episodes of acute back pain improve with time and simple interventions.
+              If your back pain doesn't have any red flags, it's usually safe, and often beneficial, to start with conservative self-care for the first few days to weeks. Research consistently shows that most episodes of acute back pain improve with time and simple interventions.
             </p>
             
             <p className="mb-6">
@@ -230,7 +237,7 @@ export default function BackPainArticle() {
             </p>
             
             <p className="mb-6">
-              Contrary to what many patients expect, imaging (X-rays or MRI) is often not necessary for acute back pain without red flags. Studies show that early imaging for nonspecific back pain doesn't improve outcomes and may even lead to unnecessary procedures. Your provider will order imaging only if there's a specific clinical reason—such as suspicion of fracture, infection, or neurological compromise.
+              Contrary to what many patients expect, imaging (X-rays or MRI) is often not necessary for acute back pain without red flags. Studies show that early imaging for nonspecific back pain doesn't improve outcomes and may even lead to unnecessary procedures. Your provider will order imaging only if there's a specific clinical reason, such as suspicion of fracture, infection, or neurological compromise.
             </p>
             
             <p className="mb-6">
@@ -246,7 +253,7 @@ export default function BackPainArticle() {
             </p>
             
             <p className="mb-6">
-              Regular physical activity—especially exercises that build core strength and flexibility—is one of the most effective ways to prevent recurrent back pain. Even simple activities like walking, swimming, or yoga can make a significant difference.
+              Regular physical activity, especially exercises that build core strength and flexibility, is one of the most effective ways to prevent recurrent back pain. Even simple activities like walking, swimming, or yoga can make a significant difference.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -258,7 +265,7 @@ export default function BackPainArticle() {
             </p>
             
             <p className="mb-6">
-              Most back pain improves with time and conservative care. But if you're experiencing any red flag symptoms, if pain persists beyond a month, or if you're simply worried and need reassurance, don't hesitate to reach out to your healthcare provider. In Austin, TX, we're here to help you navigate back pain with evidence-based care, clear communication, and a personalized approach that respects your concerns and your time.
+              Most back pain improves with time and conservative care. But if you're experiencing any red flag symptoms, if pain persists beyond a month, or if you're simply worried and need reassurance, don't hesitate to reach out to your healthcare provider. In the Albuquerque area, Dr. Hemmen is here to help you navigate back pain with evidence-based care, clear communication, and a personalized approach that respects your concerns and your time.
             </p>
             
             <p className="mb-6">
@@ -276,7 +283,7 @@ export default function BackPainArticle() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article is provided for educational purposes and reflects evidence-based guidance on back pain management. It is not a substitute for personalized medical advice. If you have concerns about your back pain, please schedule an appointment for a thorough evaluation.
@@ -307,7 +314,7 @@ export default function BackPainArticle() {
               </p>
             </Link>
 
-            <Link href="/services/primary-care" className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+            <Link href="/services" className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
               <div className="w-12 h-12 bg-[var(--color-light)] rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                 <svg className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -344,7 +351,7 @@ export default function BackPainArticle() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help you find relief and lasting solutions.
+            Dr. Hemmen is here to help you find relief and lasting solutions.
           </p>
           <Link
             href="/contact"

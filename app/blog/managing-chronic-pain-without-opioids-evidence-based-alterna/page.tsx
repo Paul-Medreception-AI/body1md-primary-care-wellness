@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Managing Chronic Pain Without Opioids: Evidence-Based Alternatives',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/managing-chronic-pain-without-opioids-evidence-based-alterna',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/managing-chronic-pain-without-opioids-evidence-based-alterna.jpg', alt: 'Patient doing a resistance band exercise with hands-on guidance from a therapist' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Managing Chronic Pain Without Opioids: Evidence-Based Alternatives',
     description: 'Discover evidence-based alternatives to opioids for chronic pain management, including physical therapy, behavioral techniques, and integrative approaches that work.',
-    images: ['/og-image.png']
+    images: ['/images/blog/managing-chronic-pain-without-opioids-evidence-based-alterna.jpg']
   }
 }
 
@@ -52,7 +53,7 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,11 +65,17 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/managing-chronic-pain-without-opioids-evidence-based-alterna.jpg" alt="Patient doing a resistance band exercise with hands-on guidance from a therapist" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -96,7 +103,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            Research consistently shows that multimodal approaches—combining several non-opioid strategies—often provide better long-term outcomes than medication alone, with fewer risks and greater improvements in overall function and quality of life.
+            Research consistently shows that multimodal approaches (combining several non-opioid strategies) often provide better long-term outcomes than medication alone, with fewer risks and greater improvements in overall function and quality of life.
           </p>
 
           {/* Section 2 */}
@@ -146,7 +153,7 @@ export default function BlogPost() {
           </div>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            Studies show that regular physical activity not only reduces pain intensity but also improves mood, sleep quality, and overall function—benefits that extend far beyond what medication alone can provide.
+            Studies show that regular physical activity not only reduces pain intensity but also improves mood, sleep quality, and overall function, benefits that extend far beyond what medication alone can provide.
           </p>
 
           {/* Pull Quote */}
@@ -160,7 +167,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
-            Chronic pain isn't just a physical experience—it involves complex interactions between the body, mind, and emotions. Psychological approaches don't mean the pain is "all in your head," but rather recognize that addressing the mental and emotional aspects of pain can provide real, measurable relief.
+            Chronic pain isn't just a physical experience. It involves complex interactions between the body, mind, and emotions. Psychological approaches don't mean the pain is "all in your head," but rather recognize that addressing the mental and emotional aspects of pain can provide real, measurable relief.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
@@ -255,7 +262,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
-            <strong>Sleep:</strong> Poor sleep intensifies pain, while pain disrupts sleep—creating a vicious cycle. Prioritizing sleep hygiene, maintaining consistent sleep schedules, and addressing sleep disorders can significantly improve pain levels.
+            <strong>Sleep:</strong> Poor sleep intensifies pain, while pain disrupts sleep, creating a vicious cycle. Prioritizing sleep hygiene, maintaining consistent sleep schedules, and addressing sleep disorders can significantly improve pain levels.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
@@ -267,7 +274,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            <strong>Stress management:</strong> Chronic stress amplifies pain perception. Incorporating stress-reduction practices—whether meditation, deep breathing, creative activities, or time in nature—can lower overall pain levels.
+            <strong>Stress management:</strong> Chronic stress amplifies pain perception. Incorporating stress-reduction practices (whether meditation, deep breathing, creative activities, or time in nature) can lower overall pain levels.
           </p>
 
           {/* Closing */}
@@ -276,7 +283,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
-            Managing chronic pain without opioids is not only possible—it's often more effective for long-term health and function. The most successful approaches combine multiple strategies tailored to your specific needs, preferences, and goals.
+            Managing chronic pain without opioids is not only possible. It's often more effective for long-term health and function. The most successful approaches combine multiple strategies tailored to your specific needs, preferences, and goals.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-4">
@@ -300,7 +307,7 @@ export default function BlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-1">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article is for informational purposes and does not constitute medical advice. Always consult with a qualified healthcare provider regarding your specific health concerns and treatment options.
@@ -366,7 +373,7 @@ export default function BlogPost() {
                   Schedule a Consultation
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  Ready to explore personalized pain management? Connect with our team today.
+                  Ready to explore personalized pain management? Connect with Dr. Hemmen today.
                 </p>
               </div>
             </Link>
@@ -381,7 +388,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-lg text-white/90 mb-8">
-            Our team is here to help you develop a personalized approach to managing your pain.
+            Dr. Hemmen is here to help you develop a personalized approach to managing your pain.
           </p>
           <Link 
             href="/contact"

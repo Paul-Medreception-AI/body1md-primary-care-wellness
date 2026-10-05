@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Asthma Control: Are Your Symptoms Properly Managed? | Body1MD',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/asthma-control-are-your-symptoms-properly-managed',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/asthma-control-are-your-symptoms-properly-managed.jpg', alt: 'Man holding an asthma inhaler' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Asthma Control: Are Your Symptoms Properly Managed? | Body1MD',
     description: 'Learn the signs of well-controlled asthma, when to adjust your treatment plan, and how proper management can help you breathe easier and live fully.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/asthma-control-are-your-symptoms-properly-managed.jpg'],
   },
 }
 
@@ -48,14 +49,20 @@ export default function AsthmaControlBlogPost() {
 
           {/* Meta */}
           <div className="flex justify-center items-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/asthma-control-are-your-symptoms-properly-managed.jpg" alt="Man holding an asthma inhaler" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -63,10 +70,10 @@ export default function AsthmaControlBlogPost() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              You reach for your rescue inhaler more days than not. You wake up at night struggling to catch your breath. You've started avoiding your morning jog because you know it will trigger wheezing. These moments aren't just inconveniences—they're warning signs that your asthma may not be as well-controlled as it should be.
+              You reach for your rescue inhaler more days than not. You wake up at night struggling to catch your breath. You've started avoiding your morning jog because you know it will trigger wheezing. These moments aren't just inconveniences. They're warning signs that your asthma may not be as well-controlled as it should be.
             </p>
             <p className="mb-6">
-              Living with asthma doesn't mean accepting constant symptoms or limitations. When properly managed, most people with asthma can live active, full lives with minimal disruption. Yet studies show that nearly half of people with asthma experience poorly controlled symptoms, often without realizing their condition could be managed more effectively. Understanding what good asthma control looks like—and recognizing when you're falling short—is the first step toward breathing easier.
+              Living with asthma doesn't mean accepting constant symptoms or limitations. When properly managed, most people with asthma can live active, full lives with minimal disruption. Yet studies show that nearly half of people with asthma experience poorly controlled symptoms, often without realizing their condition could be managed more effectively. Understanding what good asthma control looks like, and recognizing when you're falling short, is the first step toward breathing easier.
             </p>
           </div>
 
@@ -117,7 +124,7 @@ export default function AsthmaControlBlogPost() {
               </li>
             </ul>
             <p className="mb-6">
-              If you're falling short on any of these markers, your asthma may not be optimally controlled—even if your symptoms feel manageable or you've grown accustomed to them. Many people normalize frequent rescue inhaler use or regular nighttime coughing, not realizing that better control is possible.
+              If you're falling short on any of these markers, your asthma may not be optimally controlled, even if your symptoms feel manageable or you've grown accustomed to them. Many people normalize frequent rescue inhaler use or regular nighttime coughing, not realizing that better control is possible.
             </p>
           </div>
 
@@ -177,10 +184,10 @@ export default function AsthmaControlBlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Poor asthma control often isn't about the severity of the disease itself—it's about modifiable factors that, when addressed, can dramatically improve outcomes. Understanding these barriers is the first step toward overcoming them.
+              Poor asthma control often isn't about the severity of the disease itself. It's about modifiable factors that, when addressed, can dramatically improve outcomes. Understanding these barriers is the first step toward overcoming them.
             </p>
             <p className="mb-6">
-              <strong>Medication adherence</strong> is perhaps the most common issue. Controller medications like inhaled corticosteroids work by reducing chronic airway inflammation, but they need to be taken daily—even when you feel fine. Studies show that up to 50% of people with asthma don't use their controller medications as prescribed. Cost, complexity of regimen, forgetfulness, and fear of side effects all contribute to non-adherence.
+              <strong>Medication adherence</strong> is perhaps the most common issue. Controller medications like inhaled corticosteroids work by reducing chronic airway inflammation, but they need to be taken daily, even when you feel fine. Studies show that up to 50% of people with asthma don't use their controller medications as prescribed. Cost, complexity of regimen, forgetfulness, and fear of side effects all contribute to non-adherence.
             </p>
             <p className="mb-6">
               <strong>Inhaler technique</strong> matters more than many people realize. Research shows that 70-80% of people use their inhalers incorrectly, which means they're not getting the full dose of medication into their lungs. Common errors include not shaking the inhaler, poor timing of actuation with inhalation, and not holding the breath after inhaling. Even small technique errors can significantly reduce medication effectiveness.
@@ -189,7 +196,7 @@ export default function AsthmaControlBlogPost() {
               <strong>Trigger exposure</strong> can undermine even the best medication regimen. Common triggers include tobacco smoke, allergens (dust mites, pet dander, mold, pollen), air pollution, strong odors, cold air, and respiratory infections. Identifying and minimizing your personal triggers is a crucial component of asthma management.
             </p>
             <p className="mb-6">
-              <strong>Inadequate treatment plans</strong> or outdated prescriptions can also contribute to poor control. Asthma is a dynamic condition—what worked last year may not be sufficient now. Regular follow-up with your healthcare provider allows for ongoing assessment and adjustment of your treatment plan based on your current control status and lung function.
+              <strong>Inadequate treatment plans</strong> or outdated prescriptions can also contribute to poor control. Asthma is a dynamic condition: what worked last year may not be sufficient now. Regular follow-up with your healthcare provider allows for ongoing assessment and adjustment of your treatment plan based on your current control status and lung function.
             </p>
           </div>
 
@@ -263,10 +270,10 @@ export default function AsthmaControlBlogPost() {
           {/* Closing */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8 mt-12">
             <p className="mb-6">
-              Living with well-controlled asthma means living life fully—exercising, traveling, pursuing your goals without constant worry about your next breath. If your current reality falls short of that vision, know that better control is possible. The first step is acknowledging where you are now and reaching out for the support and resources that can help you get where you want to be.
+              Living with well-controlled asthma means living life fully: exercising, traveling, pursuing your goals without constant worry about your next breath. If your current reality falls short of that vision, know that better control is possible. The first step is acknowledging where you are now and reaching out for the support and resources that can help you get where you want to be.
             </p>
             <p className="mb-6">
-              Don't settle for "managing" your asthma with frequent rescue inhaler use and activity limitations. Partner with a healthcare provider who will take the time to optimize your treatment plan, address barriers to adherence, and support you in achieving true asthma control. Your lungs—and your life—deserve nothing less.
+              Don't settle for "managing" your asthma with frequent rescue inhaler use and activity limitations. Partner with a healthcare provider who will take the time to optimize your treatment plan, address barriers to adherence, and support you in achieving true asthma control. Your lungs, and your life, deserve nothing less.
             </p>
           </div>
         </div>
@@ -283,10 +290,10 @@ export default function AsthmaControlBlogPost() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </p>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our practice provides comprehensive primary care services in Austin, TX, including asthma management, chronic disease support, and preventive health. We believe in building long-term relationships with our patients and taking the time needed to address your health concerns thoroughly.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. Visits are designed to last up to an hour, which leaves time for asthma management, chronic disease care, and preventive health.
               </p>
             </div>
           </div>
@@ -358,7 +365,7 @@ export default function AsthmaControlBlogPost() {
                   Schedule a Consultation
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed mb-4">
-                  Connect with our team to discuss your asthma management and develop a personalized care plan.
+                  Connect with Dr. Hemmen to discuss your asthma management and develop a personalized care plan.
                 </p>
                 <span className="text-[var(--color-accent)] text-sm font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all">
                   Get in touch
@@ -379,7 +386,7 @@ export default function AsthmaControlBlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

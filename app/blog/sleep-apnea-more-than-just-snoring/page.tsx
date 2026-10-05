@@ -1,23 +1,24 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Sleep Apnea: More Than Just Snoring | Body1MD Primary Care',
-  description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Austin, TX.',
+  description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Albuquerque, NM.',
   alternates: { canonical: '/blog/sleep-apnea-more-than-just-snoring' },
   openGraph: {
     title: 'Sleep Apnea: More Than Just Snoring | Body1MD Primary Care',
-    description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Austin, TX.',
+    description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Albuquerque, NM.',
     url: 'https://body1md.com/blog/sleep-apnea-more-than-just-snoring',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/sleep-apnea-more-than-just-snoring.jpg', alt: 'Man snoring in bed while his partner lies awake beside him' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sleep Apnea: More Than Just Snoring | Body1MD Primary Care',
-    description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Learn how sleep apnea affects your health beyond snoring. Discover symptoms, risks, and treatment options for obstructive sleep apnea in Albuquerque, NM.',
+    images: ['/images/blog/sleep-apnea-more-than-just-snoring.jpg']
   }
 }
 
@@ -52,7 +53,7 @@ export default function SleepApneaBlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,21 +65,28 @@ export default function SleepApneaBlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/sleep-apnea-more-than-just-snoring.jpg" alt="Man snoring in bed while his partner lies awake beside him" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
+
       {/* Article Body */}
       <article className="bg-white py-20 max-w-3xl mx-auto px-6">
         <div className="text-[var(--color-ink)] leading-loose text-base">
           <p className="text-xl mb-6 font-light">
-            Your partner complains about your snoring. You wake up exhausted despite spending eight hours in bed. You reach for another cup of coffee by mid-morning, just to stay alert. While many dismiss these symptoms as simple snoring or poor sleep habits, they could be warning signs of obstructive sleep apnea—a serious medical condition that affects far more than just the quality of your rest.
+            Your partner complains about your snoring. You wake up exhausted despite spending eight hours in bed. You reach for another cup of coffee by mid-morning, just to stay alert. While many dismiss these symptoms as simple snoring or poor sleep habits, they could be warning signs of obstructive sleep apnea, a serious medical condition that affects far more than just the quality of your rest.
           </p>
 
           <p className="mb-6">
-            Sleep apnea is more than an inconvenience. Left untreated, it can lead to heart disease, stroke, diabetes, and a significantly diminished quality of life. Understanding what sleep apnea is, recognizing its symptoms, and seeking proper treatment can be life-changing—and potentially life-saving.
+            Sleep apnea is more than an inconvenience. Left untreated, it can lead to heart disease, stroke, diabetes, and a significantly diminished quality of life. Understanding what sleep apnea is, recognizing its symptoms, and seeking proper treatment can be life-changing, and potentially life-saving.
           </p>
 
           <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -90,7 +98,7 @@ export default function SleepApneaBlogPost() {
           </p>
 
           <p className="mb-6">
-            When your airway becomes blocked, your brain briefly wakes you up to restore normal breathing—often so briefly that you don't remember it. This cycle repeats throughout the night, fragmenting your sleep and preventing you from reaching the deep, restorative stages your body needs to function optimally.
+            When your airway becomes blocked, your brain briefly wakes you up to restore normal breathing, often so briefly that you don't remember it. This cycle repeats throughout the night, fragmenting your sleep and preventing you from reaching the deep, restorative stages your body needs to function optimally.
           </p>
 
           <p className="mb-6">
@@ -150,7 +158,7 @@ export default function SleepApneaBlogPost() {
 
           <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
             <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-              "Sleep apnea doesn't just steal your rest—it robs your body of oxygen night after night, putting strain on your heart, brain, and metabolism."
+              "Sleep apnea doesn't just steal your rest. It robs your body of oxygen night after night, putting strain on your heart, brain, and metabolism."
             </p>
           </div>
 
@@ -261,7 +269,7 @@ export default function SleepApneaBlogPost() {
           </h2>
 
           <p className="mb-6">
-            If sleep apnea is suspected, your provider will typically recommend a sleep study—either in a specialized sleep lab or with a home sleep test device. These tests monitor your breathing patterns, oxygen levels, heart rate, and sleep stages to determine the presence and severity of sleep apnea.
+            If sleep apnea is suspected, your provider will typically recommend a sleep study, either in a specialized sleep lab or with a home sleep test device. These tests monitor your breathing patterns, oxygen levels, heart rate, and sleep stages to determine the presence and severity of sleep apnea.
           </p>
 
           <p className="mb-6">
@@ -304,15 +312,15 @@ export default function SleepApneaBlogPost() {
           </h2>
 
           <p className="mb-6">
-            Sleep apnea is not a condition to ignore or dismiss as "just snoring." It's a chronic health issue with profound implications for your heart, brain, and overall well-being. The fatigue, the brain fog, the increased risk of serious disease—all of it can be addressed with proper diagnosis and treatment.
+            Sleep apnea is not a condition to ignore or dismiss as "just snoring." It's a chronic health issue with profound implications for your heart, brain, and overall well-being. The fatigue, the brain fog, the increased risk of serious disease: all of it can be addressed with proper diagnosis and treatment.
           </p>
 
           <p className="mb-6">
-            If you suspect you or a loved one might have sleep apnea, don't wait. Early intervention can prevent complications and restore the restorative sleep your body needs to thrive. Whether it's through lifestyle changes, CPAP therapy, or other treatments, help is available—and the difference it makes can be life-changing.
+            If you suspect you or a loved one might have sleep apnea, don't wait. Early intervention can prevent complications and restore the restorative sleep your body needs to thrive. Whether it's through lifestyle changes, CPAP therapy, or other treatments, help is available, and the difference it makes can be life-changing.
           </p>
 
           <p className="mb-6">
-            At Body1MD Primary Care & Wellness, we're here to guide you through every step of the process, from initial evaluation to ongoing management. Your health—and your sleep—matter. Let's work together to help you breathe easier, sleep better, and live healthier.
+            At Body1MD Primary Care & Wellness, we're here to guide you through every step of the process, from initial evaluation to ongoing management. Your health and your sleep matter. Let's work together to help you breathe easier, sleep better, and live healthier.
           </p>
         </div>
       </article>
@@ -328,10 +336,10 @@ export default function SleepApneaBlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing evidence-based, compassionate care that addresses the whole person. We believe in empowering patients with knowledge and partnering with them to achieve lasting health and wellness in Austin, TX.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -415,7 +423,7 @@ export default function SleepApneaBlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

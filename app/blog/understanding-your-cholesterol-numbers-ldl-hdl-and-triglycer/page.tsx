@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Understanding Your Cholesterol Numbers: LDL, HDL, and Triglycerides',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/understanding-your-cholesterol-numbers-ldl-hdl-and-triglycer',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/understanding-your-cholesterol-numbers-ldl-hdl-and-triglycer.jpg', alt: 'Two blood sample tubes on a light green background' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Understanding Your Cholesterol Numbers: LDL, HDL, and Triglycerides',
     description: 'Learn what your cholesterol numbers mean, the difference between LDL, HDL, and triglycerides, and how to maintain healthy levels for heart health.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/understanding-your-cholesterol-numbers-ldl-hdl-and-triglycer.jpg'],
   },
 }
 
@@ -42,20 +43,27 @@ export default function CholesterolArticlePage() {
             </h1>
             
             <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
               <span>•</span>
               <span>7 min read</span>
               <span>•</span>
-              <span>Reviewed by Body1MD Primary Care & Wellness</span>
+              <span>Reviewed by Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </section>
+
+        {/* Hero image */}
+        <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/understanding-your-cholesterol-numbers-ldl-hdl-and-triglycer.jpg" alt="Two blood sample tubes on a light green background" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          </div>
+        </div>
 
         <section className="bg-white py-20">
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-[var(--color-ink)] leading-loose text-base space-y-6">
               <p className="text-xl leading-relaxed">
-                You've just received your blood work results, and there it is: a list of cholesterol numbers that might as well be written in code. LDL, HDL, triglycerides—what do they all mean, and more importantly, why should you care? Understanding these numbers is one of the most powerful steps you can take toward protecting your heart health and preventing cardiovascular disease.
+                You've just received your blood work results, and there it is: a list of cholesterol numbers that might as well be written in code. LDL, HDL, triglycerides: what do they all mean, and more importantly, why should you care? Understanding these numbers is one of the most powerful steps you can take toward protecting your heart health and preventing cardiovascular disease.
               </p>
 
               <p>
@@ -71,7 +79,7 @@ export default function CholesterolArticlePage() {
               </p>
 
               <p>
-                The problem arises when you have too much cholesterol circulating in your blood. Because cholesterol and blood don't mix well (think oil and water), your body packages cholesterol into lipoproteins—tiny protein-covered particles that transport cholesterol through your bloodstream. The type of lipoprotein carrying your cholesterol makes all the difference in whether it helps or harms your health.
+                The problem arises when you have too much cholesterol circulating in your blood. Because cholesterol and blood don't mix well (think oil and water), your body packages cholesterol into lipoproteins, tiny protein-covered particles that transport cholesterol through your bloodstream. The type of lipoprotein carrying your cholesterol makes all the difference in whether it helps or harms your health.
               </p>
 
               <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -79,7 +87,7 @@ export default function CholesterolArticlePage() {
               </h2>
 
               <p>
-                Low-density lipoprotein (LDL) is often called "bad" cholesterol, and for good reason. LDL carries cholesterol from your liver to cells throughout your body. When you have too much LDL in your blood, it can deposit cholesterol in the walls of your arteries, forming plaque. Over time, this plaque buildup narrows your arteries and makes them less flexible—a condition called atherosclerosis.
+                Low-density lipoprotein (LDL) is often called "bad" cholesterol, and for good reason. LDL carries cholesterol from your liver to cells throughout your body. When you have too much LDL in your blood, it can deposit cholesterol in the walls of your arteries, forming plaque. Over time, this plaque buildup narrows your arteries and makes them less flexible, a condition called atherosclerosis.
               </p>
 
               <p>
@@ -88,7 +96,7 @@ export default function CholesterolArticlePage() {
 
               <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
                 <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                  "For most adults, an LDL cholesterol level below 100 mg/dL is considered optimal. If you have heart disease or diabetes, your target may be even lower—below 70 mg/dL."
+                  "For most adults, an LDL cholesterol level below 100 mg/dL is considered optimal. If you have heart disease or diabetes, your target may be even lower, below 70 mg/dL."
                 </p>
               </div>
 
@@ -101,7 +109,7 @@ export default function CholesterolArticlePage() {
               </p>
 
               <p>
-                Think of HDL as your cardiovascular system's sanitation service—the more you have, the better. Higher HDL levels are associated with a lower risk of heart attack and stroke. For men, HDL levels of 40 mg/dL or higher are considered protective; for women, the target is 50 mg/dL or higher. Levels above 60 mg/dL are considered especially beneficial and may even help offset other cardiovascular risk factors.
+                Think of HDL as your cardiovascular system's sanitation service: the more you have, the better. Higher HDL levels are associated with a lower risk of heart attack and stroke. For men, HDL levels of 40 mg/dL or higher are considered protective; for women, the target is 50 mg/dL or higher. Levels above 60 mg/dL are considered especially beneficial and may even help offset other cardiovascular risk factors.
               </p>
 
               <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -113,7 +121,7 @@ export default function CholesterolArticlePage() {
               </p>
 
               <p>
-                The problem occurs when you regularly consume more calories than you burn, especially from high-carbohydrate and high-sugar foods. This leads to elevated triglyceride levels in your blood. High triglycerides often go hand-in-hand with low HDL and small, dense LDL particles—a combination that significantly increases your risk of heart disease, stroke, and pancreatitis.
+                The problem occurs when you regularly consume more calories than you burn, especially from high-carbohydrate and high-sugar foods. This leads to elevated triglyceride levels in your blood. High triglycerides often go hand-in-hand with low HDL and small, dense LDL particles, a combination that significantly increases your risk of heart disease, stroke, and pancreatitis.
               </p>
 
               <p>
@@ -129,7 +137,7 @@ export default function CholesterolArticlePage() {
               </p>
 
               <p>
-                This is why doctors focus on your lipid panel—the breakdown of all these components—rather than just total cholesterol. Generally, a total cholesterol level below 200 mg/dL is considered desirable, 200-239 mg/dL is borderline high, and 240 mg/dL and above is high. But again, the individual components matter more than this single number.
+                This is why doctors focus on your lipid panel (the breakdown of all these components) rather than just total cholesterol. Generally, a total cholesterol level below 200 mg/dL is considered desirable, 200-239 mg/dL is borderline high, and 240 mg/dL and above is high. But again, the individual components matter more than this single number.
               </p>
 
               <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -200,15 +208,15 @@ export default function CholesterolArticlePage() {
               </p>
 
               <p>
-                When reviewing your results, don't just focus on whether your numbers are "normal." Talk to your doctor about your overall cardiovascular risk profile, which includes factors beyond cholesterol—blood pressure, blood sugar, family history, age, and lifestyle habits. Your target cholesterol levels should be personalized based on your individual risk factors.
+                When reviewing your results, don't just focus on whether your numbers are "normal." Talk to your doctor about your overall cardiovascular risk profile, which includes factors beyond cholesterol: blood pressure, blood sugar, family history, age, and lifestyle habits. Your target cholesterol levels should be personalized based on your individual risk factors.
               </p>
 
               <p>
-                Understanding your cholesterol numbers empowers you to make informed decisions about your health. These aren't just abstract figures on a lab report—they're valuable insights into your cardiovascular health and future disease risk. By partnering with your healthcare provider and committing to heart-healthy habits, you can optimize these numbers and protect your most vital organ: your heart.
+                Understanding your cholesterol numbers empowers you to make informed decisions about your health. These aren't just abstract figures on a lab report. They're valuable insights into your cardiovascular health and future disease risk. By partnering with your healthcare provider and committing to heart-healthy habits, you can optimize these numbers and protect your most vital organ: your heart.
               </p>
 
               <p className="mt-12 text-lg">
-                Ready to take charge of your heart health? At Body1MD Primary Care & Wellness, we provide comprehensive cholesterol screening, personalized risk assessment, and ongoing support to help you achieve and maintain optimal cardiovascular health. Your numbers tell a story—let's make sure it's a healthy one.
+                Ready to take charge of your heart health? At Body1MD Primary Care & Wellness, we provide comprehensive cholesterol screening, personalized risk assessment, and ongoing support to help you achieve and maintain optimal cardiovascular health. Your numbers tell a story. Let's make sure it's a healthy one.
               </p>
             </div>
           </div>
@@ -223,9 +231,9 @@ export default function CholesterolArticlePage() {
                 </svg>
               </div>
               <div>
-                <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+                <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  This article has been reviewed for medical accuracy by our care team in Austin, TX. We're committed to providing evidence-based health education that empowers our patients to make informed decisions about their wellness.
+                  This article has been reviewed for medical accuracy by Dr. Andrew Hemmen, MD, a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. Body1MD is committed to providing evidence-based health education that helps patients make informed decisions about their wellness.
                 </p>
               </div>
             </div>
@@ -295,7 +303,7 @@ export default function CholesterolArticlePage() {
                     Schedule Your Visit
                   </h4>
                   <p className="text-[var(--color-muted)] text-sm leading-relaxed mb-4">
-                    Ready to discuss your cholesterol and cardiovascular health? Book a comprehensive wellness visit with our team today.
+                    Ready to discuss your cholesterol and cardiovascular health? Book a visit with Dr. Hemmen today.
                   </p>
                   <div className="text-[var(--color-accent)] text-sm font-medium flex items-center gap-2">
                     Book appointment
@@ -312,7 +320,7 @@ export default function CholesterolArticlePage() {
         <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-            <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+            <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
             <Link
               href="/contact"
               className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl"

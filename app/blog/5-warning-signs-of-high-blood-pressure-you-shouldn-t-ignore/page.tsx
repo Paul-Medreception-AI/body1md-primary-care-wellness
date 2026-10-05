@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: '5 Warning Signs of High Blood Pressure You Shouldn\'t Ignore',
-  description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
+  description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
   alternates: { canonical: '/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore' },
   openGraph: {
     title: '5 Warning Signs of High Blood Pressure You Shouldn\'t Ignore',
-    description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
+    description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
     url: 'https://body1md.com/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore.jpg', alt: 'Clinician measuring a patient\'s blood pressure with an arm cuff and stethoscope' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: '5 Warning Signs of High Blood Pressure You Shouldn\'t Ignore',
-    description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Expert guidance from Body1MD Primary Care & Wellness in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Learn the critical warning signs of high blood pressure and when to seek medical attention. Guidance from Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, NM.',
+    images: ['/images/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore.jpg']
   }
 }
 
@@ -38,14 +39,20 @@ export default function BlogPost() {
             5 Warning Signs of High Blood Pressure You Shouldn't Ignore
           </h1>
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/5-warning-signs-of-high-blood-pressure-you-shouldn-t-ignore.jpg" alt="Clinician measuring a patient's blood pressure with an arm cuff and stethoscope" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
@@ -63,11 +70,11 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              When blood pressure spikes to dangerously high levels—a condition known as hypertensive crisis—it can cause intense, throbbing headaches that feel different from typical tension headaches or migraines. These headaches often present as a pounding sensation that may worsen with physical activity.
+              When blood pressure spikes to dangerously high levels (a condition known as hypertensive crisis), it can cause intense, throbbing headaches that feel different from typical tension headaches or migraines. These headaches often present as a pounding sensation that may worsen with physical activity.
             </p>
 
             <p className="mb-6">
-              The mechanism behind these headaches involves increased pressure on blood vessels in the brain. When your blood pressure rises significantly above 180/120 mm Hg, the force against arterial walls can trigger severe pain. If you experience a sudden, severe headache accompanied by confusion, vision problems, or difficulty speaking, seek emergency medical care immediately—these may be signs of a hypertensive emergency or even stroke.
+              The mechanism behind these headaches involves increased pressure on blood vessels in the brain. When your blood pressure rises significantly above 180/120 mm Hg, the force against arterial walls can trigger severe pain. If you experience a sudden, severe headache accompanied by confusion, vision problems, or difficulty speaking, seek emergency medical care immediately. These may be signs of a hypertensive emergency or even stroke.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -75,7 +82,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              Difficulty breathing or a feeling of tightness in your chest can signal that your heart is working overtime to pump blood against elevated pressure in your arteries. Over time, high blood pressure forces your heart muscle to work harder, which can lead to left ventricular hypertrophy—a thickening of the heart's main pumping chamber.
+              Difficulty breathing or a feeling of tightness in your chest can signal that your heart is working overtime to pump blood against elevated pressure in your arteries. Over time, high blood pressure forces your heart muscle to work harder, which can lead to left ventricular hypertrophy, a thickening of the heart's main pumping chamber.
             </p>
 
             <p className="mb-6">
@@ -93,7 +100,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="mb-6">
-              Your eyes offer a unique window into your cardiovascular health. High blood pressure can damage the tiny, delicate blood vessels in your retina—a condition called hypertensive retinopathy. When blood pressure remains elevated over time, these vessels may narrow, leak, or become blocked.
+              Your eyes offer a unique window into your cardiovascular health. High blood pressure can damage the tiny, delicate blood vessels in your retina, a condition called hypertensive retinopathy. When blood pressure remains elevated over time, these vessels may narrow, leak, or become blocked.
             </p>
 
             <p className="mb-6">
@@ -145,7 +152,7 @@ export default function BlogPost() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Age—risk increases after 45 for men and after 55 for women</span>
+                <span>Age: risk increases after 45 for men and after 55 for women</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -298,7 +305,7 @@ export default function BlogPost() {
             </svg>
           </div>
           <div>
-            <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</p>
+            <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</p>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
               This article provides general health information and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your healthcare provider about your specific health concerns and before making changes to your treatment plan.
             </p>
@@ -339,7 +346,7 @@ export default function BlogPost() {
                   Comprehensive Primary Care
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm">
-                  Preventive care and chronic disease management in Austin, TX.
+                  Preventive care and chronic disease management in Albuquerque, NM.
                 </p>
               </div>
             </Link>
@@ -370,7 +377,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help you manage your blood pressure and protect your long-term health.
+            Dr. Hemmen is here to help you manage your blood pressure and protect your long-term health.
           </p>
           <Link
             href="/contact"

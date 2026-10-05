@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Osteoporosis Prevention: Building Strong Bones at Every Age',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/osteoporosis-prevention-building-strong-bones-at-every-age',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/osteoporosis-prevention-building-strong-bones-at-every-age.jpg', alt: 'Smiling middle-aged woman doing strength training with a red dumbbell' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Osteoporosis Prevention: Building Strong Bones at Every Age',
     description: 'Learn evidence-based strategies for osteoporosis prevention across all life stages. Discover nutrition, exercise, and lifestyle tips to maintain bone density and reduce fracture risk.',
-    images: ['/og-image.png']
+    images: ['/images/blog/osteoporosis-prevention-building-strong-bones-at-every-age.jpg']
   }
 }
 
@@ -43,20 +44,27 @@ export default function OsteoporosisPreventionPage() {
           </h1>
           
           <div className="flex items-center justify-center gap-6 text-sm text-white/70">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/osteoporosis-prevention-building-strong-bones-at-every-age.jpg" alt="Smiling middle-aged woman doing strength training with a red dumbbell" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-8">
-              Every day, your bones quietly perform an invisible feat of construction and demolition. Old bone tissue breaks down while new bone forms—a delicate balance that keeps your skeleton strong and resilient. But what happens when that balance tips? For millions of Americans, the answer is osteoporosis: a silent disease that weakens bones, increases fracture risk, and can dramatically change quality of life. The good news? Prevention starts now, no matter your age.
+              Every day, your bones quietly perform an invisible feat of construction and demolition. Old bone tissue breaks down while new bone forms, a delicate balance that keeps your skeleton strong and resilient. But what happens when that balance tips? For millions of Americans, the answer is osteoporosis: a silent disease that weakens bones, increases fracture risk, and can dramatically change quality of life. The good news? Prevention starts now, no matter your age.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -64,11 +72,11 @@ export default function OsteoporosisPreventionPage() {
             </h2>
             
             <p className="mb-6">
-              Osteoporosis literally means "porous bones." It's a condition where bone density decreases and the internal structure becomes fragile, making bones susceptible to fractures from minor falls or even everyday activities. While it's often thought of as a disease of older women, osteoporosis affects men too—and the groundwork for bone health begins much earlier than most people realize.
+              Osteoporosis literally means "porous bones." It's a condition where bone density decreases and the internal structure becomes fragile, making bones susceptible to fractures from minor falls or even everyday activities. While it's often thought of as a disease of older women, osteoporosis affects men too, and the groundwork for bone health begins much earlier than most people realize.
             </p>
             
             <p className="mb-6">
-              Your bones reach peak density around age 30. After that, bone remodeling continues, but the balance gradually shifts toward more breakdown than buildup. By age 50, especially after menopause in women when estrogen levels drop, bone loss accelerates. Yet osteoporosis isn't inevitable. The habits you build throughout your life—from childhood through your golden years—significantly influence your bone strength decades later.
+              Your bones reach peak density around age 30. After that, bone remodeling continues, but the balance gradually shifts toward more breakdown than buildup. By age 50, especially after menopause in women when estrogen levels drop, bone loss accelerates. Yet osteoporosis isn't inevitable. The habits you build throughout your life, from childhood through your golden years, significantly influence your bone strength decades later.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -80,7 +88,7 @@ export default function OsteoporosisPreventionPage() {
             </p>
             
             <p className="mb-6">
-              But bone health isn't just about calcium supplements. Whole food sources are ideal: dairy products, leafy greens like kale and collard greens, sardines with bones, fortified plant milks, and almonds all provide bioavailable calcium. Vitamin D presents a unique challenge—few foods contain it naturally. Your skin produces it from sunlight exposure, but many people, especially those living in northern latitudes or spending most time indoors, need supplementation. Blood tests can determine your vitamin D status and guide appropriate dosing.
+              But bone health isn't just about calcium supplements. Whole food sources are ideal: dairy products, leafy greens like kale and collard greens, sardines with bones, fortified plant milks, and almonds all provide bioavailable calcium. Vitamin D presents a unique challenge: few foods contain it naturally. Your skin produces it from sunlight exposure, but many people, especially those living in northern latitudes or spending most time indoors, need supplementation. Blood tests can determine your vitamin D status and guide appropriate dosing.
             </p>
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
@@ -90,7 +98,7 @@ export default function OsteoporosisPreventionPage() {
             </div>
 
             <p className="mb-6">
-              Don't overlook other bone-supporting nutrients. Magnesium, vitamin K, and protein all play critical roles in bone metabolism. A balanced diet rich in fruits, vegetables, whole grains, and lean proteins provides these nutrients naturally. Conversely, excessive sodium, caffeine, and alcohol can interfere with calcium absorption or increase calcium excretion—moderation matters.
+              Don't overlook other bone-supporting nutrients. Magnesium, vitamin K, and protein all play critical roles in bone metabolism. A balanced diet rich in fruits, vegetables, whole grains, and lean proteins provides these nutrients naturally. Conversely, excessive sodium, caffeine, and alcohol can interfere with calcium absorption or increase calcium excretion. Moderation matters.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -102,11 +110,11 @@ export default function OsteoporosisPreventionPage() {
             </p>
             
             <p className="mb-6">
-              Weight-bearing exercises include walking, jogging, dancing, hiking, stair climbing, and tennis—activities where your bones and muscles work against gravity. Resistance training with weights, resistance bands, or body weight creates targeted stress that builds both muscle and bone. The National Institutes of Health recommends at least 30 minutes of weight-bearing exercise most days of the week, plus resistance training two to three times weekly.
+              Weight-bearing exercises include walking, jogging, dancing, hiking, stair climbing, and tennis: activities where your bones and muscles work against gravity. Resistance training with weights, resistance bands, or body weight creates targeted stress that builds both muscle and bone. The National Institutes of Health recommends at least 30 minutes of weight-bearing exercise most days of the week, plus resistance training two to three times weekly.
             </p>
             
             <p className="mb-6">
-              Balance and flexibility exercises like yoga and tai chi deserve special mention. While they may not build bone density as directly as weight training, they significantly reduce fall risk—crucial because fractures, not osteoporosis itself, cause the most serious health consequences. A hip fracture after age 65 dramatically increases mortality risk and often marks the beginning of disability and loss of independence.
+              Balance and flexibility exercises like yoga and tai chi deserve special mention. While they may not build bone density as directly as weight training, they significantly reduce fall risk, which is crucial because fractures, not osteoporosis itself, cause the most serious health consequences. A hip fracture after age 65 dramatically increases mortality risk and often marks the beginning of disability and loss of independence.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -130,7 +138,7 @@ export default function OsteoporosisPreventionPage() {
             </p>
             
             <p className="mb-6">
-              Men should discuss screening with their healthcare provider, particularly after age 70 or earlier if risk factors are present. Early detection enables intervention—whether through lifestyle modifications, calcium and vitamin D optimization, or medication when appropriate—before debilitating fractures occur.
+              Men should discuss screening with their healthcare provider, particularly after age 70 or earlier if risk factors are present. Early detection enables intervention (whether through lifestyle modifications, calcium and vitamin D optimization, or medication when appropriate) before debilitating fractures occur.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -152,7 +160,7 @@ export default function OsteoporosisPreventionPage() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Prioritize calcium-rich foods at each meal.</strong> Greek yogurt with breakfast, a salad with kale at lunch, salmon for dinner—small additions add up.</span>
+                <span><strong>Prioritize calcium-rich foods at each meal.</strong> Greek yogurt with breakfast, a salad with kale at lunch, salmon for dinner. Small additions add up.</span>
               </li>
               <li className="flex gap-3">
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -185,15 +193,15 @@ export default function OsteoporosisPreventionPage() {
             </h2>
             
             <p className="mb-6">
-              Osteoporosis prevention isn't about fearing the future—it's about empowering yourself with knowledge and action. The lifestyle choices you make today echo through decades, influencing your mobility, independence, and vitality in your later years. Whether you're in your twenties building peak bone mass, your forties maintaining what you've built, or your sixties working to preserve bone strength, it's never too early or too late to prioritize bone health.
+              Osteoporosis prevention isn't about fearing the future. It's about empowering yourself with knowledge and action. The lifestyle choices you make today echo through decades, influencing your mobility, independence, and vitality in your later years. Whether you're in your twenties building peak bone mass, your forties maintaining what you've built, or your sixties working to preserve bone strength, it's never too early or too late to prioritize bone health.
             </p>
             
             <p className="mb-6">
-              Strong bones support an active, independent life. They enable you to hike with grandchildren, garden without fear, travel confidently, and maintain the physical autonomy that undergirds quality of life. Prevention requires consistency and patience—bone responds slowly to lifestyle changes—but the investment pays lifelong dividends.
+              Strong bones support an active, independent life. They enable you to hike with grandchildren, garden without fear, travel confidently, and maintain the physical autonomy that undergirds quality of life. Prevention requires consistency and patience (bone responds slowly to lifestyle changes), but the investment pays lifelong dividends.
             </p>
             
             <p className="text-lg font-medium text-[var(--color-ink)] mt-8">
-              If you have concerns about your bone health, risk factors for osteoporosis, or questions about screening, our team in Austin, TX is here to help. Schedule a consultation to discuss your individual risk profile and develop a personalized prevention strategy that fits your life.
+              If you have concerns about your bone health, risk factors for osteoporosis, or questions about screening, Dr. Hemmen can help. Schedule a consultation at our Los Ranchos de Albuquerque office to discuss your individual risk profile and develop a personalized prevention strategy that fits your life.
             </p>
           </div>
         </div>
@@ -209,7 +217,7 @@ export default function OsteoporosisPreventionPage() {
             </div>
             <div>
               <div className="font-medium text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article provides general information about osteoporosis prevention and bone health. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult your healthcare provider about your individual health needs and appropriate screening.
@@ -226,7 +234,7 @@ export default function OsteoporosisPreventionPage() {
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Link href="/services/wellness-exams" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <Link href="/services" className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="aspect-[4/3] bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
@@ -301,7 +309,7 @@ export default function OsteoporosisPreventionPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Our team is here to help you build a personalized plan for lifelong bone health.
+            Dr. Hemmen is here to help you build a personalized plan for lifelong bone health.
           </p>
           <Link
             href="/contact"

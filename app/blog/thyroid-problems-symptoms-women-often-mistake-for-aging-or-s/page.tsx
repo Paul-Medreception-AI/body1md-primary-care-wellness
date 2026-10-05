@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Thyroid Problems: Symptoms Women Often Mistake for Aging or Stress',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/thyroid-problems-symptoms-women-often-mistake-for-aging-or-s',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/thyroid-problems-symptoms-women-often-mistake-for-aging-or-s.jpg', alt: 'Clinician gently examining the thyroid area of a smiling woman neck' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Thyroid Problems: Symptoms Women Often Mistake for Aging or Stress',
     description: 'Learn why thyroid symptoms in women are often dismissed as stress or aging. Discover the warning signs, when to seek help, and how proper diagnosis can restore your energy and health.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/thyroid-problems-symptoms-women-often-mistake-for-aging-or-s.jpg'],
   },
 }
 
@@ -49,21 +50,28 @@ export default function ThyroidSymptomsArticle() {
 
             {/* Meta */}
             <div className="flex items-center justify-center gap-6 text-sm text-white/70">
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
               <span>•</span>
               <span>7 min read</span>
               <span>•</span>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </section>
+
+        {/* Hero image */}
+        <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/thyroid-problems-symptoms-women-often-mistake-for-aging-or-s.jpg" alt="Clinician gently examining the thyroid area of a smiling woman neck" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          </div>
+        </div>
 
         {/* Article Body */}
         <section className="bg-white py-20">
           <div className="max-w-3xl mx-auto px-6">
             {/* Opening Hook */}
             <p className="text-[var(--color-ink)] leading-loose text-lg mb-6">
-              You're tired all the time. Your hair is thinning. You've gained weight despite eating well and exercising. Your doctor says it's stress, your friends say it's just part of getting older, and you're told to push through. But what if it's not stress or aging at all? What if your thyroid—a small, butterfly-shaped gland in your neck—is quietly malfunctioning, and no one is listening?
+              You're tired all the time. Your hair is thinning. You've gained weight despite eating well and exercising. Your doctor says it's stress, your friends say it's just part of getting older, and you're told to push through. But what if it's not stress or aging at all? What if your thyroid (a small, butterfly-shaped gland in your neck) is quietly malfunctioning, and no one is listening?
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -76,7 +84,7 @@ export default function ThyroidSymptomsArticle() {
             </h2>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-              Your thyroid gland produces hormones that regulate nearly every aspect of your metabolism—how your body uses energy, maintains temperature, and supports organ function. When your thyroid produces too much hormone (hyperthyroidism) or too little (hypothyroidism), the effects ripple through your entire body.
+              Your thyroid gland produces hormones that regulate nearly every aspect of your metabolism: how your body uses energy, maintains temperature, and supports organ function. When your thyroid produces too much hormone (hyperthyroidism) or too little (hypothyroidism), the effects ripple through your entire body.
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -167,7 +175,7 @@ export default function ThyroidSymptomsArticle() {
             </div>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-              Because these symptoms overlap with stress, depression, menopause, and simply "getting older," many women—and their doctors—don't think to test thyroid function. But a simple blood test can reveal what's really going on.
+              Because these symptoms overlap with stress, depression, menopause, and simply "getting older," many women (and their doctors) don't think to test thyroid function. But a simple blood test can reveal what's really going on.
             </p>
 
             {/* Pull Quote */}
@@ -185,7 +193,7 @@ export default function ThyroidSymptomsArticle() {
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-              Pregnancy is a particularly vulnerable time. Thyroid hormone needs increase during pregnancy, and some women develop postpartum thyroiditis—a temporary inflammation that can cause hyperthyroidism followed by hypothyroidism. Many dismiss their symptoms as typical postpartum fatigue, delaying diagnosis and treatment.
+              Pregnancy is a particularly vulnerable time. Thyroid hormone needs increase during pregnancy, and some women develop postpartum thyroiditis, a temporary inflammation that can cause hyperthyroidism followed by hypothyroidism. Many dismiss their symptoms as typical postpartum fatigue, delaying diagnosis and treatment.
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -223,7 +231,7 @@ export default function ThyroidSymptomsArticle() {
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-              Lifestyle factors also matter. Eating a balanced diet rich in selenium, zinc, and iodine (but not in excess), managing stress, getting adequate sleep, and staying physically active all support thyroid health. However, these measures complement—not replace—medical treatment.
+              Lifestyle factors also matter. Eating a balanced diet rich in selenium, zinc, and iodine (but not in excess), managing stress, getting adequate sleep, and staying physically active all support thyroid health. However, these measures complement medical treatment rather than replace it.
             </p>
 
             {/* Section 6 */}
@@ -240,12 +248,12 @@ export default function ThyroidSymptomsArticle() {
             </p>
 
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-              Proper diagnosis and treatment can be life-changing. Many women describe feeling like themselves again after years of struggling—energy returns, weight stabilizes, mood improves, and the fog lifts. You deserve that clarity and vitality.
+              Proper diagnosis and treatment can be life-changing. Many women describe feeling like themselves again after years of struggling: energy returns, weight stabilizes, mood improves, and the fog lifts. You deserve that clarity and vitality.
             </p>
 
             {/* Closing CTA */}
             <p className="text-[var(--color-ink)] leading-loose text-base mb-6 mt-12">
-              If you're experiencing unexplained fatigue, weight changes, mood shifts, or other symptoms that don't add up, it may be time to check your thyroid. At <span className="font-cormorant text-lg font-semibold text-[var(--color-primary)]">Body1MD Primary Care & Wellness</span> in Austin, TX, we take a comprehensive approach to women's health, listening to your concerns and running the tests needed to get to the root of what you're experiencing. You don't have to live with symptoms that diminish your quality of life—schedule an appointment and let's find answers together.
+              If you're experiencing unexplained fatigue, weight changes, mood shifts, or other symptoms that don't add up, it may be time to check your thyroid. At <span className="font-cormorant text-lg font-semibold text-[var(--color-primary)]">Body1MD Primary Care & Wellness</span> in Los Ranchos de Albuquerque, Dr. Hemmen takes a thorough approach, listening to your concerns and running the tests needed to get to the root of what you're experiencing. You don't have to live with symptoms that diminish your quality of life. Schedule an appointment and let's find answers together.
             </p>
           </div>
         </section>
@@ -261,7 +269,7 @@ export default function ThyroidSymptomsArticle() {
               </div>
               <div>
                 <p className="text-[var(--color-ink)] font-semibold mb-1">
-                  Reviewed by Body1MD Primary Care & Wellness
+                  Reviewed by Dr. Andrew Hemmen, MD
                 </p>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                   This article provides educational information and is not a substitute for professional medical advice. If you have questions about your thyroid health or are experiencing concerning symptoms, please schedule an appointment with a healthcare provider for personalized evaluation and care.
@@ -339,7 +347,7 @@ export default function ThyroidSymptomsArticle() {
               Ready to Take the Next Step?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Our team is here to help you feel your best. Schedule a visit and let's create a personalized care plan together.
+              Dr. Hemmen is here to help you feel your best. Schedule a visit and let's create a personalized care plan together.
             </p>
             <Link
               href="/contact"

@@ -1,13 +1,17 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
+// Route kept as /telehealth. The practice does not advertise video visits, so this page
+// describes direct phone and text access to Dr. Hemmen instead (pending client confirmation).
 export const metadata: Metadata = {
-  title: 'Telehealth Services | Body1MD Primary Care & Wellness',
-  description: 'Access your primary care physician from anywhere with convenient telehealth appointments. Get prescriptions, follow-up care, and medical advice through secure virtual visits.',
+  title: 'Direct Access Between Visits | Body1MD Primary Care & Wellness',
+  description: 'Body1MD members in Los Ranchos de Albuquerque, NM have direct access to Dr. Andrew Hemmen by phone and text between visits, plus same- or next-day appointments in most cases.',
   alternates: { canonical: '/telehealth' },
   openGraph: {
-    title: 'Telehealth Services | Body1MD Primary Care & Wellness',
-    description: 'Access your primary care physician from anywhere with convenient telehealth appointments. Get prescriptions, follow-up care, and medical advice through secure virtual visits.',
+    title: 'Direct Access Between Visits | Body1MD Primary Care & Wellness',
+    description: 'Body1MD members in Los Ranchos de Albuquerque, NM have direct access to Dr. Andrew Hemmen by phone and text between visits, plus same- or next-day appointments in most cases.',
     url: 'https://body1md.com/telehealth',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
@@ -15,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Telehealth Services | Body1MD Primary Care & Wellness',
-    description: 'Access your primary care physician from anywhere with convenient telehealth appointments. Get prescriptions, follow-up care, and medical advice through secure virtual visits.',
+    title: 'Direct Access Between Visits | Body1MD Primary Care & Wellness',
+    description: 'Body1MD members in Los Ranchos de Albuquerque, NM have direct access to Dr. Andrew Hemmen by phone and text between visits, plus same- or next-day appointments in most cases.',
     images: ['/og-image.png']
   }
 }
@@ -28,11 +32,25 @@ export default function TelehealthPage() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-24 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="font-cormorant text-5xl md:text-6xl font-light mb-6">
-            Telehealth Services
+            Direct Access Between Visits
           </h1>
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-            Access your primary care physician from anywhere with convenient virtual appointments. Get the care you need without leaving your home or office.
+            Health questions do not wait for your next appointment. As a Body1MD member, you can reach Dr. Hemmen directly by phone and text.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-cream)] pt-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/stock/telehealth.jpg"
+              alt="A man at home on a phone call, taking notes at his table"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </div>
         </div>
       </section>
 
@@ -41,10 +59,10 @@ export default function TelehealthPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-[var(--color-primary)] mb-4">
-              How Telehealth Works
+              How Direct Access Works
             </h2>
             <p className="text-lg text-[var(--color-muted)] max-w-3xl mx-auto">
-              Simple, secure virtual visits with your primary care physician
+              A physician who knows you, a phone call or text away
             </p>
           </div>
 
@@ -54,10 +72,10 @@ export default function TelehealthPage() {
                 <span className="font-cormorant text-3xl font-semibold text-[var(--color-primary)]">01</span>
               </div>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-4">
-                Schedule Your Visit
+                Reach Out
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Contact us to schedule a telehealth appointment at a time that works for you. We'll send you secure video link instructions.
+                Call or text Dr. Hemmen with your question or concern. As a member, you have direct access to your physician.
               </p>
             </div>
 
@@ -66,10 +84,10 @@ export default function TelehealthPage() {
                 <span className="font-cormorant text-3xl font-semibold text-[var(--color-primary)]">02</span>
               </div>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-4">
-                Connect With Your Doctor
+                Talk It Through
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                At your appointment time, click the secure video link from any device. Your doctor will join you for a private, face-to-face consultation.
+                Dr. Hemmen already knows your history, so the conversation starts from what he knows about you. Some questions can be answered right there. Others need a closer look.
               </p>
             </div>
 
@@ -78,15 +96,15 @@ export default function TelehealthPage() {
                 <span className="font-cormorant text-3xl font-semibold text-[var(--color-primary)]">03</span>
               </div>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-4">
-                Get Care & Follow-Up
+                Get the Right Next Step
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Receive medical advice, prescriptions, and follow-up instructions. Schedule any needed in-person visits or lab work seamlessly.
+                Dr. Hemmen will advise whether a virtual check-in is appropriate or whether you should come in. When you need to be seen, same- or next-day appointments are available in most cases.
               </p>
             </div>
           </div>
 
-          {/* What's Available */}
+          {/* When to reach out vs. come in */}
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-sm animate-fade-up">
               <div className="flex items-start mb-6">
@@ -95,32 +113,32 @@ export default function TelehealthPage() {
                 </svg>
                 <div>
                   <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-4">
-                    Available via Telehealth
+                    Good Reasons to Reach Out
                   </h3>
                   <ul className="space-y-3 text-[var(--color-muted)]">
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Follow-up visits for chronic conditions</span>
+                      <span>A new symptom you are not sure about</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Medication refills and adjustments</span>
+                      <span>Questions about a medication or a side effect</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Acute illness consultations</span>
+                      <span>Questions about lab or test results</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Lab and test result reviews</span>
+                      <span>Checking in on a chronic condition</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Wellness counseling and lifestyle guidance</span>
+                      <span>Following up after a recent visit</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Prescription management</span>
+                      <span>Deciding whether you need to be seen</span>
                     </li>
                   </ul>
                 </div>
@@ -134,37 +152,40 @@ export default function TelehealthPage() {
                 </svg>
                 <div>
                   <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-4">
-                    Requires In-Person Visit
+                    Best Handled in the Office
                   </h3>
                   <ul className="space-y-3 text-[var(--color-muted)]">
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Annual comprehensive physical examinations</span>
+                      <span>Your first visit as a new member</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>New patient initial consultations</span>
+                      <span>Adult physicals and preventive exams</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>In-office procedures and testing</span>
+                      <span>Anything that needs a hands-on examination</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Laboratory specimen collection</span>
+                      <span>Screenings and procedures</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Physical examinations requiring hands-on assessment</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[var(--color-accent)] mr-2">•</span>
-                      <span>Diagnostic procedures</span>
+                      <span>Reviewing imaging and results together on the exam room display</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-12 rounded-2xl border border-[var(--color-border)] bg-white p-6 text-center animate-fade-up">
+            <p className="text-[var(--color-ink)] font-semibold mb-1">Not for emergencies</p>
+            <p className="text-[var(--color-muted)] text-sm leading-relaxed">
+              For chest pain, trouble breathing, signs of a stroke, or any life-threatening emergency, call 911 or go to the nearest emergency room.
+            </p>
           </div>
         </div>
       </section>
@@ -174,59 +195,35 @@ export default function TelehealthPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-[var(--color-primary)] mb-4">
-              Benefits of Telehealth
+              Why Direct Access Matters
             </h2>
             <p className="text-lg text-[var(--color-muted)] max-w-3xl mx-auto">
-              Convenient, high-quality care that fits your busy lifestyle
+              Care that keeps going between appointments
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
               <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
+                Phone and Text
+              </h3>
+              <p className="text-[var(--color-muted)] leading-relaxed">
+                Reach your physician the way you already communicate, with a call or a text.
+              </p>
+            </div>
+
+            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
+              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Save Time
+                Available Most of the Year
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                No commute, no parking, no waiting room. Connect from wherever you are and get back to your day quickly.
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
-              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
-              </svg>
-              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Care From Home
-              </h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">
-                Receive quality medical care from the comfort and privacy of your own home or office.
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
-              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-              </svg>
-              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Works on Any Device
-              </h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">
-                Connect from your smartphone, tablet, or computer with a simple, easy-to-use interface.
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
-              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-              </svg>
-              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Secure & Private
-              </h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">
-                HIPAA-compliant video platform ensures your health information stays completely confidential and protected.
+                Dr. Hemmen is available to members 24/7 most of the year.
               </p>
             </div>
 
@@ -235,10 +232,34 @@ export default function TelehealthPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
               </svg>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Your Regular Doctor
+                Your Own Physician
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                See your own primary care physician who knows your complete medical history and health goals.
+                You talk with the physician who knows your history and your goals, not someone meeting you for the first time.
+              </p>
+            </div>
+
+            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
+              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
+                Seen Quickly When Needed
+              </h3>
+              <p className="text-[var(--color-muted)] leading-relaxed">
+                If you need to come in, same- or next-day appointments are available in most cases.
+              </p>
+            </div>
+
+            <div className="bg-[var(--color-cream)] rounded-2xl p-8 animate-fade-up transition-all duration-300 hover:shadow-lg">
+              <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-[var(--color-accent)] mb-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+              <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
+                Continuity of Care
+              </h3>
+              <p className="text-[var(--color-muted)] leading-relaxed">
+                Questions between visits stay part of one ongoing relationship, so your plan stays connected from one appointment to the next.
               </p>
             </div>
 
@@ -247,29 +268,29 @@ export default function TelehealthPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
               </svg>
               <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mb-3">
-                Full Medical Care
+                Unhurried Visits
               </h3>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Receive prescriptions, referrals, and complete medical documentation just like an in-office visit.
+                When you do come in, initial and follow-up visits are designed to last up to an hour.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What You Need */}
+      {/* Tips */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-[var(--color-light)] rounded-2xl p-12 max-w-3xl mx-auto animate-fade-up">
             <div className="text-center mb-12">
               <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-16 h-16 text-[var(--color-accent)] mx-auto mb-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>
               <h2 className="font-cormorant text-4xl font-light text-[var(--color-primary)] mb-4">
-                What You Need for Your Visit
+                Before You Call or Text
               </h2>
               <p className="text-lg text-[var(--color-muted)]">
-                Simple requirements for a smooth telehealth experience
+                A few details help Dr. Hemmen give you a clear answer
               </p>
             </div>
 
@@ -279,9 +300,9 @@ export default function TelehealthPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Device with Camera & Microphone</h3>
+                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">When It Started</h3>
                   <p className="text-[var(--color-muted)]">
-                    Smartphone, tablet, or computer with working camera and microphone for video communication.
+                    Note when your symptoms began and whether they are getting better, worse, or staying the same.
                   </p>
                 </div>
               </div>
@@ -291,9 +312,9 @@ export default function TelehealthPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Reliable Internet Connection</h3>
+                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Any Readings You Have</h3>
                   <p className="text-[var(--color-muted)]">
-                    Stable broadband or mobile data connection for clear video quality. Wi-Fi or 4G/5G recommended.
+                    If you check your temperature, blood pressure, or blood sugar at home, have the recent numbers handy.
                   </p>
                 </div>
               </div>
@@ -303,9 +324,9 @@ export default function TelehealthPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Private, Quiet Space</h3>
+                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Your Medications</h3>
                   <p className="text-[var(--color-muted)]">
-                    Find a confidential location where you can speak freely without interruptions or distractions.
+                    Keep your current medication list nearby, including anything new you have started.
                   </p>
                 </div>
               </div>
@@ -315,21 +336,9 @@ export default function TelehealthPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Good Lighting</h3>
+                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Your Pharmacy</h3>
                   <p className="text-[var(--color-muted)]">
-                    Position yourself in a well-lit area so your doctor can see you clearly during the examination.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mr-4 mt-1">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                  <h3 className="font-semibold text-[var(--color-ink)] mb-2">Updated Web Browser</h3>
-                  <p className="text-[var(--color-muted)]">
-                    Recent version of Chrome, Safari, Firefox, or Edge. Most modern browsers work seamlessly.
+                    Know the name and location of the pharmacy you use.
                   </p>
                 </div>
               </div>
@@ -337,7 +346,7 @@ export default function TelehealthPage() {
 
             <div className="mt-10 pt-10 border-t border-[var(--color-border)]">
               <p className="text-sm text-[var(--color-muted)] text-center">
-                Need technical assistance? Contact our office before your appointment and we'll help you get set up.
+                Not a member yet? Call <a href={SITE.phoneHref} className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">{SITE.phone}</a> to learn about membership.
               </p>
             </div>
           </div>
@@ -348,19 +357,19 @@ export default function TelehealthPage() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-cormorant text-4xl md:text-5xl font-light text-white mb-6">
-            Ready to Experience Convenient Care?
+            Ready for a Doctor You Can Reach?
           </h2>
           <p className="text-xl text-white/90 mb-10 leading-relaxed">
-            Schedule your telehealth appointment and connect with your physician from anywhere.
+            Become a member and get direct access to Dr. Hemmen. Call {SITE.phone} or send a message to get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               href="/contact"
               className="inline-block bg-[var(--color-accent)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[var(--color-accent-dark)] transition-all duration-300 hover:scale-105"
             >
-              Schedule Your Consultation
+              Contact Us
             </Link>
-            <Link 
+            <Link
               href="/services"
               className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all duration-300"
             >

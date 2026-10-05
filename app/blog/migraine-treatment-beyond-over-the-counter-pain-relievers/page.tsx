@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Migraine Treatment Beyond Over-the-Counter Pain Relievers',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/migraine-treatment-beyond-over-the-counter-pain-relievers',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/migraine-treatment-beyond-over-the-counter-pain-relievers.jpg', alt: 'Woman with closed eyes pressing her temples during a migraine' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Migraine Treatment Beyond Over-the-Counter Pain Relievers',
     description: 'Discover effective migraine treatments beyond OTC medications, from prescription options to lifestyle interventions and preventive strategies for lasting relief.',
-    images: ['/og-image.png']
+    images: ['/images/blog/migraine-treatment-beyond-over-the-counter-pain-relievers.jpg']
   }
 }
 
@@ -52,7 +53,7 @@ export default function MigraineTreatmentArticle() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 15, 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,22 +65,29 @@ export default function MigraineTreatmentArticle() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/migraine-treatment-beyond-over-the-counter-pain-relievers.jpg" alt="Woman with closed eyes pressing her temples during a migraine" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           {/* Opening */}
           <p className="text-[var(--color-ink)] leading-loose text-lg mb-6">
-            You're familiar with the warning signs: the visual disturbances, the sensitivity to light and sound, the throbbing pain that makes even the simplest tasks feel impossible. For millions of Americans living with migraines, over-the-counter pain relievers offer only temporary—and often incomplete—relief. If you've found yourself taking ibuprofen or acetaminophen more frequently, experiencing diminishing returns, or suffering through attacks that last for days, it's time to explore the comprehensive treatment options that modern medicine has to offer.
+            You're familiar with the warning signs: the visual disturbances, the sensitivity to light and sound, the throbbing pain that makes even the simplest tasks feel impossible. For millions of Americans living with migraines, over-the-counter pain relievers offer only temporary (and often incomplete) relief. If you've found yourself taking ibuprofen or acetaminophen more frequently, experiencing diminishing returns, or suffering through attacks that last for days, it's time to explore the comprehensive treatment options that modern medicine has to offer.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-8">
-            Migraines are not just bad headaches. They're a complex neurological condition that affects approximately 39 million Americans, with women being three times more likely to experience them than men. Understanding that migraines require specialized treatment—not just symptom management—is the first step toward finding lasting relief.
+            Migraines are not just bad headaches. They're a complex neurological condition that affects approximately 39 million Americans, with women being three times more likely to experience them than men. Understanding that migraines require specialized treatment, not just symptom management, is the first step toward finding lasting relief.
           </p>
 
           {/* Section 1 */}
@@ -92,12 +100,12 @@ export default function MigraineTreatmentArticle() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            First, frequent use of OTC medications can lead to medication overuse headaches (also called rebound headaches), creating a vicious cycle where the very medications you're taking to relieve pain actually trigger more frequent attacks. Second, these medications don't address the underlying mechanisms of migraines—they simply mask symptoms temporarily. Third, for moderate to severe migraines, OTC options often lack the potency needed to provide meaningful relief.
+            First, frequent use of OTC medications can lead to medication overuse headaches (also called rebound headaches), creating a vicious cycle where the very medications you're taking to relieve pain actually trigger more frequent attacks. Second, these medications don't address the underlying mechanisms of migraines. They simply mask symptoms temporarily. Third, for moderate to severe migraines, OTC options often lack the potency needed to provide meaningful relief.
           </p>
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "Effective migraine treatment isn't just about stopping the pain—it's about reducing frequency, severity, and the impact on your daily life."
+            "Effective migraine treatment isn't just about stopping the pain. It's about reducing frequency, severity, and the impact on your daily life."
           </blockquote>
 
           {/* Section 2 */}
@@ -110,7 +118,7 @@ export default function MigraineTreatmentArticle() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Medications like sumatriptan, rizatriptan, and eletriptan have been shown in clinical trials to provide complete pain relief for many patients within two hours. They're most effective when taken at the first sign of a migraine, before the pain becomes severe. Triptans are available in multiple forms—tablets, nasal sprays, and injections—allowing for personalized treatment based on your symptoms and preferences.
+            Medications like sumatriptan, rizatriptan, and eletriptan have been shown in clinical trials to provide complete pain relief for many patients within two hours. They're most effective when taken at the first sign of a migraine, before the pain becomes severe. Triptans are available in multiple forms (tablets, nasal sprays, and injections), allowing for personalized treatment based on your symptoms and preferences.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -197,7 +205,7 @@ export default function MigraineTreatmentArticle() {
                 <svg className="w-5 h-5 text-[var(--color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <p className="text-[var(--color-ink)] leading-relaxed">Maintain consistent sleep schedules—both insufficient and excessive sleep can trigger migraines</p>
+                <p className="text-[var(--color-ink)] leading-relaxed">Maintain consistent sleep schedules, since both insufficient and excessive sleep can trigger migraines</p>
               </div>
               <div className="flex gap-3 items-start">
                 <svg className="w-5 h-5 text-[var(--color-primary)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -264,9 +272,9 @@ export default function MigraineTreatmentArticle() {
               </svg>
             </div>
             <div>
-              <h3 className="font-cormorant text-xl text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</h3>
+              <h3 className="font-cormorant text-xl text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</h3>
               <p className="text-[var(--color-muted)] leading-relaxed text-sm">
-                Our team is dedicated to providing evidence-based patient education and comprehensive care in Austin, TX. We believe in empowering patients with the knowledge and resources they need to make informed decisions about their health.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -314,7 +322,7 @@ export default function MigraineTreatmentArticle() {
               </div>
               <div className="p-6">
                 <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">Schedule a Consultation</h4>
-                <p className="text-[var(--color-muted)] text-sm leading-relaxed">Discuss your migraine treatment options with our team.</p>
+                <p className="text-[var(--color-muted)] text-sm leading-relaxed">Discuss your migraine treatment options with Dr. Hemmen.</p>
               </div>
             </Link>
           </div>
@@ -325,7 +333,7 @@ export default function MigraineTreatmentArticle() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-lg font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105 hover:shadow-xl"

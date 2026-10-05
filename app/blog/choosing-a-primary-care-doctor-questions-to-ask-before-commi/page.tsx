@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Choosing a Primary Care Doctor: Questions to Ask Before Committing',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/choosing-a-primary-care-doctor-questions-to-ask-before-commi',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/choosing-a-primary-care-doctor-questions-to-ask-before-commi.jpg', alt: 'Doctor and patient talking across a desk during a consultation' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Choosing a Primary Care Doctor: Questions to Ask Before Committing',
     description: 'Learn the essential questions to ask when selecting a primary care physician. Discover what to look for in a doctor, key factors to consider, and how to find the right fit for your healthcare needs.',
-    images: ['/og-image.png']
+    images: ['/images/blog/choosing-a-primary-care-doctor-questions-to-ask-before-commi.jpg']
   }
 }
 
@@ -48,14 +49,20 @@ export default function ChoosingPrimaryCareDoctor() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/choosing-a-primary-care-doctor-questions-to-ask-before-commi.jpg" alt="Doctor and patient talking across a desk during a consultation" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -63,10 +70,10 @@ export default function ChoosingPrimaryCareDoctor() {
           {/* Opening */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Your primary care doctor is one of the most important relationships you'll have in your healthcare journey. This is the person who will coordinate your care, track your health over time, and serve as your advocate when you need specialized treatment. Yet many people choose their primary care physician based on convenience alone—whoever's closest, whoever has the quickest appointment, or whoever their insurance lists first.
+              Your primary care doctor is one of the most important relationships you'll have in your healthcare journey. This is the person who will coordinate your care, track your health over time, and serve as your advocate when you need specialized treatment. Yet many people choose their primary care physician based on convenience alone: whoever's closest, whoever has the quickest appointment, or whoever their insurance lists first.
             </p>
             <p className="mb-6">
-              Finding the right fit requires more intention. A good primary care relationship is built on trust, communication, and shared goals. Before you commit to a new doctor, it's worth taking the time to ask the right questions. The answers will help you determine whether this physician can truly meet your needs—not just today, but for years to come.
+              Finding the right fit requires more intention. A good primary care relationship is built on trust, communication, and shared goals. Before you commit to a new doctor, it's worth taking the time to ask the right questions. The answers will help you determine whether this physician can truly meet your needs, not just today but for years to come.
             </p>
           </div>
 
@@ -76,10 +83,10 @@ export default function ChoosingPrimaryCareDoctor() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Primary care is the foundation of your health. Research consistently shows that people who have a regular primary care provider experience better health outcomes, lower healthcare costs, and fewer emergency room visits. A good primary care doctor doesn't just treat illness—they help you prevent it. They understand your medical history, your family background, your lifestyle, and your goals.
+              Primary care is the foundation of your health. Research consistently shows that people who have a regular primary care provider experience better health outcomes, lower healthcare costs, and fewer emergency room visits. A good primary care doctor doesn't just treat illness. They help you prevent it. They understand your medical history, your family background, your lifestyle, and your goals.
             </p>
             <p className="mb-6">
-              But not all primary care practices are the same. Some doctors are rushed and overwhelmed, managing large patient panels with little time for individualized care. Others practice in models that prioritize time, accessibility, and prevention. The questions you ask upfront can reveal which type of practice you're walking into—and whether it aligns with what you need.
+              But not all primary care practices are the same. Some doctors are rushed and overwhelmed, managing large patient panels with little time for individualized care. Others practice in models that prioritize time, accessibility, and prevention. The questions you ask upfront can reveal which type of practice you're walking into, and whether it aligns with what you need.
             </p>
           </div>
 
@@ -124,7 +131,7 @@ export default function ChoosingPrimaryCareDoctor() {
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "A good primary care relationship is built on trust, communication, and shared goals. The answers to your questions will reveal whether this physician can truly meet your needs—not just today, but for years to come."
+            "A good primary care relationship is built on trust, communication, and shared goals. The answers to your questions will reveal whether this physician can truly meet your needs, not just today but for years to come."
           </blockquote>
 
           {/* Section 3 */}
@@ -256,14 +263,14 @@ export default function ChoosingPrimaryCareDoctor() {
               These impressions matter. Research shows that patients who trust their doctors are more likely to follow treatment plans, attend follow-up appointments, and experience better health outcomes. If something feels off during your initial visit, it's okay to keep looking. Your health is too important to settle for a relationship that doesn't feel right.
             </p>
             <p>
-              At the same time, recognize that no doctor is perfect. Look for someone who is competent, communicative, and genuinely invested in your well-being. The right primary care physician will be a partner in your health for years to come—someone who knows you, advocates for you, and helps you navigate every stage of life with confidence.
+              At the same time, recognize that no doctor is perfect. Look for someone who is competent, communicative, and genuinely invested in your well-being. The right primary care physician will be a partner in your health for years to come: someone who knows you, advocates for you, and helps you navigate every stage of life with confidence.
             </p>
           </div>
 
           {/* Closing */}
           <div className="text-[var(--color-ink)] leading-loose text-base mt-12 pt-8 border-t border-[var(--color-border)]">
             <p className="mb-6">
-              If you're in Austin, TX, and searching for a primary care practice that prioritizes accessibility, personalized attention, and proactive wellness, we're here to help. At Body1MD Primary Care & Wellness, we believe healthcare should be built on trust, time, and meaningful relationships. We'd be honored to earn yours.
+              If you're in the Albuquerque area and searching for a primary care practice that prioritizes accessibility, personalized attention, and proactive wellness, Body1MD may be the right fit. Dr. Andrew Hemmen keeps a deliberately limited patient panel, so you see the same physician at every visit, visits are designed to last up to an hour, and same- or next-day appointments are available in most cases. We'd be honored to earn your trust.
             </p>
           </div>
         </div>
@@ -278,10 +285,10 @@ export default function ChoosingPrimaryCareDoctor() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <div className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing compassionate, evidence-based care that empowers patients to take control of their health. We believe in building lasting relationships founded on trust, accessibility, and personalized attention.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His practice is built on lasting relationships founded on trust, accessibility, and personalized attention.
               </div>
             </div>
           </div>
@@ -359,7 +366,7 @@ export default function ChoosingPrimaryCareDoctor() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Wellness Programs That Actually Work: Science vs Marketing',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/wellness-programs-that-actually-work-science-vs-marketing',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/wellness-programs-that-actually-work-science-vs-marketing.jpg', alt: 'Adults of different ages standing in a yoga class with hands pressed together' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wellness Programs That Actually Work: Science vs Marketing',
     description: 'Learn to distinguish evidence-based wellness programs from marketing hype. Discover what research says about workplace wellness, weight loss programs, and preventive care.',
-    images: ['/og-image.png']
+    images: ['/images/blog/wellness-programs-that-actually-work-science-vs-marketing.jpg']
   }
 }
 
@@ -47,14 +48,21 @@ export default function WellnessProgramsArticle() {
 
             {/* Meta */}
             <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
               <span>•</span>
               <span>7 min read</span>
               <span>•</span>
-              <span>Body1MD Primary Care & Wellness</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </section>
+
+        {/* Hero image */}
+        <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/wellness-programs-that-actually-work-science-vs-marketing.jpg" alt="Adults of different ages standing in a yoga class with hands pressed together" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          </div>
+        </div>
 
         {/* Article Body */}
         <section className="bg-white py-20">
@@ -63,10 +71,10 @@ export default function WellnessProgramsArticle() {
             {/* Opening */}
             <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
               <p className="mb-6">
-                You've seen the ads: miraculous transformations in 30 days, toxins flushed from your body, stress melted away with a simple supplement. The wellness industry generates billions annually with promises that sound too good to be true—because many of them are. Yet buried beneath the marketing hype, there are wellness programs backed by rigorous research that genuinely improve health outcomes. The challenge is knowing which is which.
+                You've seen the ads: miraculous transformations in 30 days, toxins flushed from your body, stress melted away with a simple supplement. The wellness industry generates billions annually with promises that sound too good to be true, because many of them are. Yet buried beneath the marketing hype, there are wellness programs backed by rigorous research that genuinely improve health outcomes. The challenge is knowing which is which.
               </p>
               <p className="mb-6">
-                As physicians, we watch patients invest time, money, and hope into wellness programs that range from evidence-based interventions to outright snake oil. The difference matters profoundly—not just for your wallet, but for your health. Let's cut through the noise and examine what science actually says about wellness programs.
+                In primary care, we see patients invest time, money, and hope into wellness programs that range from evidence-based interventions to outright snake oil. The difference matters profoundly, not just for your wallet but for your health. Let's cut through the noise and examine what science actually says about wellness programs.
               </p>
             </div>
 
@@ -79,7 +87,7 @@ export default function WellnessProgramsArticle() {
                 The global wellness market exceeds $4.5 trillion, encompassing everything from meditation apps to corporate wellness initiatives to elaborate detox retreats. This industry operates largely outside the regulatory framework that governs medicine, meaning products and programs can make bold claims without the clinical trials required for pharmaceuticals.
               </p>
               <p className="mb-6">
-                Evidence-based wellness, by contrast, refers to interventions supported by peer-reviewed research, randomized controlled trials, and systematic reviews. These programs may be less flashy—they rarely promise overnight transformations—but they deliver measurable, sustainable improvements in health markers, quality of life, and longevity.
+                Evidence-based wellness, by contrast, refers to interventions supported by peer-reviewed research, randomized controlled trials, and systematic reviews. These programs may be less flashy (they rarely promise overnight transformations), but they deliver measurable, sustainable improvements in health markers, quality of life, and longevity.
               </p>
               <p className="mb-6">
                 The key distinction? Evidence-based programs acknowledge that health is complex, multifactorial, and requires sustained effort. Marketing-driven programs oversimplify, promising shortcuts that biology simply doesn't allow.
@@ -95,7 +103,7 @@ export default function WellnessProgramsArticle() {
                 Corporate wellness programs are ubiquitous, with approximately 80% of large employers offering some form of health promotion initiative. The pitch sounds compelling: healthier employees mean lower healthcare costs and higher productivity. But does the science support this?
               </p>
               <p className="mb-6">
-                A landmark 2019 study published in JAMA found that comprehensive workplace wellness programs showed no significant effects on clinical measures like blood pressure, BMI, or glucose levels after 18 months. Participation rates were disappointingly low, and those who did participate tended to be healthier to begin with—a classic example of selection bias.
+                A landmark 2019 study published in JAMA found that comprehensive workplace wellness programs showed no significant effects on clinical measures like blood pressure, BMI, or glucose levels after 18 months. Participation rates were disappointingly low, and those who did participate tended to be healthier to begin with, a classic example of selection bias.
               </p>
               <p className="mb-6">
                 However, not all workplace wellness is created equal. Programs that succeed share specific characteristics:
@@ -137,7 +145,7 @@ export default function WellnessProgramsArticle() {
             {/* Pull Quote */}
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "The programs that genuinely move the needle on health aren't the ones promising quick fixes—they're the ones addressing the underlying systems that shape our daily choices."
+                "The programs that genuinely move the needle on health aren't the ones promising quick fixes. They're the ones addressing the underlying systems that shape our daily choices."
               </p>
             </div>
 
@@ -147,10 +155,10 @@ export default function WellnessProgramsArticle() {
             </h2>
             <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
               <p className="mb-6">
-                The weight loss industry is perhaps the most saturated with pseudoscience, from detox teas to extreme fasting protocols to expensive supplements with proprietary blends. Meanwhile, decades of research point to what actually works—and it's less profitable to market.
+                The weight loss industry is perhaps the most saturated with pseudoscience, from detox teas to extreme fasting protocols to expensive supplements with proprietary blends. Meanwhile, decades of research point to what actually works, and it's less profitable to market.
               </p>
               <p className="mb-6">
-                The National Weight Control Registry, tracking over 10,000 individuals who've maintained significant weight loss for at least a year, reveals common patterns: regular physical activity (about 60 minutes daily), consistent eating patterns, breakfast consumption, weekly weight monitoring, and limited television viewing. No magic pills, no secret foods—just sustained behavioral changes.
+                The National Weight Control Registry, tracking over 10,000 individuals who've maintained significant weight loss for at least a year, reveals common patterns: regular physical activity (about 60 minutes daily), consistent eating patterns, breakfast consumption, weekly weight monitoring, and limited television viewing. No magic pills, no secret foods, just sustained behavioral changes.
               </p>
               <p className="mb-6">
                 Structured programs with the strongest evidence share these features:
@@ -188,7 +196,7 @@ export default function WellnessProgramsArticle() {
                 </li>
               </ul>
               <p className="mb-6">
-                Programs like the Diabetes Prevention Program—a lifestyle intervention proven to reduce diabetes risk by 58%—exemplify evidence-based weight management. They're not glamorous, but they work.
+                Programs like the Diabetes Prevention Program, a lifestyle intervention proven to reduce diabetes risk by 58%, exemplify evidence-based weight management. They're not glamorous, but they work.
               </p>
             </div>
 
@@ -198,13 +206,13 @@ export default function WellnessProgramsArticle() {
             </h2>
             <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
               <p className="mb-6">
-                Mental wellness programs have exploded in popularity, from meditation apps to corporate resilience training. Here, the science is more encouraging—but context matters enormously.
+                Mental wellness programs have exploded in popularity, from meditation apps to corporate resilience training. Here, the science is more encouraging, but context matters enormously.
               </p>
               <p className="mb-6">
                 Mindfulness-based stress reduction (MBSR) has been extensively studied since Jon Kabat-Zinn developed the program in 1979. Meta-analyses consistently show moderate benefits for anxiety, depression, and stress across diverse populations. Cognitive-behavioral therapy (CBT) remains the gold standard for many conditions, with robust evidence across decades of research.
               </p>
               <p className="mb-6">
-                However, app-based interventions show far more variable results. While convenient and affordable, their effectiveness depends heavily on engagement—and dropout rates are staggeringly high. A 2019 systematic review found that fewer than 4% of users were still active after 15 days.
+                However, app-based interventions show far more variable results. While convenient and affordable, their effectiveness depends heavily on engagement, and dropout rates are staggeringly high. A 2019 systematic review found that fewer than 4% of users were still active after 15 days.
               </p>
               <p className="mb-6">
                 Programs that demonstrate lasting mental health benefits typically include:
@@ -243,13 +251,13 @@ export default function WellnessProgramsArticle() {
             </h2>
             <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
               <p className="mb-6">
-                Perhaps the most evidence-based wellness program is also the least marketed: routine preventive care. Cancer screenings, vaccinations, blood pressure monitoring, cholesterol management—these interventions have prevented millions of deaths and extend both lifespan and healthspan.
+                Perhaps the most evidence-based wellness program is also the least marketed: routine preventive care. Cancer screenings, vaccinations, blood pressure monitoring, cholesterol management: these interventions have prevented millions of deaths and extend both lifespan and healthspan.
               </p>
               <p className="mb-6">
-                The U.S. Preventive Services Task Force systematically reviews evidence and issues recommendations graded by strength of evidence. These aren't based on testimonials or proprietary research—they represent consensus from independent experts analyzing all available data.
+                The U.S. Preventive Services Task Force systematically reviews evidence and issues recommendations graded by strength of evidence. These aren't based on testimonials or proprietary research. They represent consensus from independent experts analyzing all available data.
               </p>
               <p className="mb-6">
-                Yet preventive care suffers from a perception problem. It's not exciting. It doesn't promise transformation. It requires patience—sometimes years—to see benefits. And it's often entirely invisible; we never know which cancer screening saved our life because we never developed that cancer.
+                Yet preventive care suffers from a perception problem. It's not exciting. It doesn't promise transformation. It requires patience (sometimes years) to see benefits. And it's often entirely invisible; we never know which cancer screening saved our life because we never developed that cancer.
               </p>
               <p className="mb-6">
                 This is precisely why evidence-based medicine matters. The interventions that work often lack the immediate gratification and dramatic narratives that drive marketing campaigns. But they're the ones that fundamentally alter population health trajectories.
@@ -316,13 +324,13 @@ export default function WellnessProgramsArticle() {
             {/* Closing */}
             <div className="text-[var(--color-ink)] leading-loose text-base mb-8 mt-12">
               <p className="mb-6">
-                The good news is that evidence-based wellness doesn't require expensive programs or exotic interventions. The fundamentals—regular physical activity, balanced nutrition, adequate sleep, stress management, social connection, and preventive medical care—remain the most powerful tools we have for optimizing health.
+                The good news is that evidence-based wellness doesn't require expensive programs or exotic interventions. The fundamentals (regular physical activity, balanced nutrition, adequate sleep, stress management, social connection, and preventive medical care) remain the most powerful tools we have for optimizing health.
               </p>
               <p className="mb-6">
-                The challenge is that these fundamentals require exactly what wellness marketing tries to circumvent: time, consistency, and patience. There are no shortcuts to sustainable health improvement. But when you invest in evidence-based approaches, you're building a foundation that genuinely works—not just creating the illusion of progress.
+                The challenge is that these fundamentals require exactly what wellness marketing tries to circumvent: time, consistency, and patience. There are no shortcuts to sustainable health improvement. But when you invest in evidence-based approaches, you're building a foundation that genuinely works, not just creating the illusion of progress.
               </p>
               <p className="mb-6">
-                If you're navigating wellness programs and need guidance distinguishing science from marketing, that's precisely where primary care excels. We can help you evaluate programs, set realistic goals, and design a sustainable approach tailored to your specific health needs. Your wellness journey deserves to be built on evidence, not hype.
+                If you're navigating wellness programs and need guidance distinguishing science from marketing, that's precisely where primary care excels. Dr. Hemmen can help you evaluate programs, set realistic goals, and design a sustainable approach tailored to your specific health needs. Your wellness journey deserves to be built on evidence, not hype.
               </p>
             </div>
 
@@ -339,9 +347,9 @@ export default function WellnessProgramsArticle() {
                 </svg>
               </div>
               <div>
-                <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+                <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  Our team is dedicated to providing evidence-based primary care and patient education. We combine the latest medical research with personalized, compassionate care to help our patients in Austin, TX make informed decisions about their health and wellness.
+                  Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
                 </p>
               </div>
             </div>
@@ -403,7 +411,7 @@ export default function WellnessProgramsArticle() {
                     Schedule a Consultation
                   </h4>
                   <p className="text-[var(--color-muted)] text-sm">
-                    Connect with our team to discuss your health goals and wellness plan.
+                    Connect with Dr. Hemmen to discuss your health goals and wellness plan.
                   </p>
                 </div>
               </Link>
@@ -416,7 +424,7 @@ export default function WellnessProgramsArticle() {
         <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-            <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+            <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
             <Link 
               href="/contact"
               className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"

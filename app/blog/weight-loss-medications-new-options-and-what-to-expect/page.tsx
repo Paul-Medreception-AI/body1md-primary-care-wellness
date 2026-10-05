@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Weight Loss Medications: New Options and What to Expect',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/weight-loss-medications-new-options-and-what-to-expect',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/weight-loss-medications-new-options-and-what-to-expect.jpg', alt: 'Woman using an injection pen on her abdomen at home' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Weight Loss Medications: New Options and What to Expect',
     description: 'Explore the latest weight loss medications including GLP-1 agonists, who they help, what to expect, and how to achieve sustainable results with medical support.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/weight-loss-medications-new-options-and-what-to-expect.jpg'],
   },
 }
 
@@ -48,14 +49,21 @@ export default function WeightLossMedicationsPage() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Reviewed by Body1MD Primary Care & Wellness</span>
+            <span>Reviewed by Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/weight-loss-medications-new-options-and-what-to-expect.jpg" alt="Woman using an injection pen on her abdomen at home" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -90,7 +98,7 @@ export default function WeightLossMedicationsPage() {
           {/* Pull Quote */}
           <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
             <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-              "These medications aren't about vanity or quick fixes—they're medical tools that address the biological drivers of obesity, giving people a real chance to achieve and maintain a healthier weight."
+              "These medications aren't about vanity or quick fixes. They're medical tools that address the biological drivers of obesity, giving people a real chance to achieve and maintain a healthier weight."
             </p>
           </div>
 
@@ -131,7 +139,7 @@ export default function WeightLossMedicationsPage() {
             </ul>
 
             <p>
-              It's important to understand that these medications work best as part of a comprehensive approach. They're not magic pills that work alone—they're tools that make it easier to stick with the healthy eating and activity changes that lead to lasting weight loss. Your provider will evaluate your overall health, medical history, and weight loss goals to determine if medication is appropriate for you.
+              It's important to understand that these medications work best as part of a comprehensive approach. They're not magic pills that work alone. They're tools that make it easier to stick with the healthy eating and activity changes that lead to lasting weight loss. Your provider will evaluate your overall health, medical history, and weight loss goals to determine if medication is appropriate for you.
             </p>
           </div>
 
@@ -147,7 +155,7 @@ export default function WeightLossMedicationsPage() {
               Treatment typically starts with a low dose that's gradually increased over several weeks or months. This gradual approach helps minimize side effects and allows your body to adjust. You'll have regular follow-up appointments to monitor your progress, adjust your dose if needed, and address any concerns.
             </p>
             <p>
-              Weight loss is usually gradual—typically 1-2 pounds per week once you reach an effective dose. You may notice changes in your appetite within the first few weeks, but visible weight loss takes time. Most people see their most significant results between months 3-6 of treatment, with continued gradual loss through the first year.
+              Weight loss is usually gradual, typically 1 to 2 pounds per week once you reach an effective dose. You may notice changes in your appetite within the first few weeks, but visible weight loss takes time. Most people see their most significant results between months 3-6 of treatment, with continued gradual loss through the first year.
             </p>
             <p>
               Beyond the number on the scale, many patients report other benefits: fewer cravings, less food noise (the constant thinking about eating), improved energy levels, better blood sugar control, and reduced joint pain from carrying less weight. These quality-of-life improvements can be just as meaningful as the weight loss itself.
@@ -166,7 +174,7 @@ export default function WeightLossMedicationsPage() {
               To minimize side effects, your provider will start you on a low dose and increase gradually. Eating smaller, more frequent meals, avoiding high-fat foods, and staying well-hydrated can help. If side effects are bothersome, your provider can adjust your dose or recommend strategies to manage them.
             </p>
             <p>
-              More serious side effects are rare but can include pancreatitis, gallbladder problems, or changes in vision for people with diabetic retinopathy. This is why medical supervision is essential—your provider will monitor you throughout treatment and help you watch for any concerning symptoms.
+              More serious side effects are rare but can include pancreatitis, gallbladder problems, or changes in vision for people with diabetic retinopathy. This is why medical supervision is essential: your provider will monitor you throughout treatment and help you watch for any concerning symptoms.
             </p>
           </div>
 
@@ -195,10 +203,10 @@ export default function WeightLossMedicationsPage() {
               One of the most important things to understand about weight loss medications is that they work best when combined with lifestyle changes. The medication makes it easier to eat less and make healthier choices, but you still need to actually make those choices.
             </p>
             <p>
-              This means working on nutrition—learning to choose foods that nourish your body, eating mindfully, and developing a healthy relationship with food. It means incorporating physical activity that you enjoy and can sustain. It means addressing sleep, stress, and other factors that affect weight. The medication gives you a window of opportunity to build these habits while your appetite is reduced and weight is coming off.
+              This means working on nutrition: learning to choose foods that nourish your body, eating mindfully, and developing a healthy relationship with food. It means incorporating physical activity that you enjoy and can sustain. It means addressing sleep, stress, and other factors that affect weight. The medication gives you a window of opportunity to build these habits while your appetite is reduced and weight is coming off.
             </p>
             <p>
-              Many people wonder how long they'll need to stay on medication. The honest answer is that for most people, this is a long-term or potentially lifelong treatment. Obesity is a chronic medical condition, and when medication is stopped, many people experience weight regain as appetite increases and metabolism adjusts. However, the health benefits you gain while losing weight—improved blood pressure, blood sugar, cholesterol, and reduced disease risk—have lasting value even if some weight returns.
+              Many people wonder how long they'll need to stay on medication. The honest answer is that for most people, this is a long-term or potentially lifelong treatment. Obesity is a chronic medical condition, and when medication is stopped, many people experience weight regain as appetite increases and metabolism adjusts. However, the health benefits you gain while losing weight (improved blood pressure, blood sugar, cholesterol, and reduced disease risk) have lasting value even if some weight returns.
             </p>
           </div>
 
@@ -250,13 +258,13 @@ export default function WeightLossMedicationsPage() {
           {/* Closing */}
           <div className="text-[var(--color-ink)] leading-loose text-base space-y-6 mt-12">
             <p>
-              Weight loss medications represent a genuine breakthrough for people struggling with obesity. They're not about shortcuts or vanity—they're medical tools that address the biological factors driving weight gain and making weight loss so difficult. When used appropriately under medical supervision and combined with lifestyle changes, they can help people achieve healthier weights and reduce their risk of serious health conditions.
+              Weight loss medications represent a genuine breakthrough for people struggling with obesity. They're not about shortcuts or vanity. They're medical tools that address the biological factors driving weight gain and making weight loss so difficult. When used appropriately under medical supervision and combined with lifestyle changes, they can help people achieve healthier weights and reduce their risk of serious health conditions.
             </p>
             <p>
-              If you've been struggling with weight and wondering if medication might be right for you, the best first step is a conversation with a healthcare provider who understands obesity medicine. They can evaluate your individual situation, discuss your goals, review your medical history, and help you make an informed decision about whether weight loss medication is appropriate for your situation.
+              If you've been struggling with weight and wondering if medication might be right for you, the best first step is a conversation with a healthcare provider who understands obesity medicine. They can evaluate your individual situation, discuss your goals, review your medical history, and help you make an informed decision about whether weight loss medication is appropriate for your situation. At Body1MD, Dr. Hemmen offers medically guided weight management, including GLP-1 monitoring, as part of his Weight Loss and Metabolic Health care.
             </p>
             <p className="font-medium">
-              Remember, everyone's weight loss journey is different. What matters most is finding an approach that's medically sound, sustainable for you, and supported by a care team who understands that weight management is about your health and wellbeing, not just a number on the scale.
+              Remember, everyone's weight loss journey is different. What matters most is finding an approach that's medically sound, sustainable for you, and supported by a physician who understands that weight management is about your health and wellbeing, not just a number on the scale.
             </p>
           </div>
         </div>
@@ -273,10 +281,10 @@ export default function WeightLossMedicationsPage() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing comprehensive, evidence-based primary care in Austin, TX. We believe in taking time to understand each patient's unique health needs and partnering with you to achieve your wellness goals through personalized, accessible care.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -372,7 +380,7 @@ export default function WeightLossMedicationsPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Our team is here to help you explore your options and develop a personalized plan for achieving your health goals.
+            Dr. Hemmen is here to help you explore your options and develop a personalized plan for achieving your health goals.
           </p>
           <Link
             href="/contact"

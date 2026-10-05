@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Insomnia Treatment: Getting Better Sleep Without Dependency',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/insomnia-treatment-getting-better-sleep-without-dependency',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/insomnia-treatment-getting-better-sleep-without-dependency.jpg', alt: 'Man sitting awake on the edge of his bed in the middle of the night' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Insomnia Treatment: Getting Better Sleep Without Dependency',
     description: 'Discover evidence-based approaches to treating insomnia without relying on sleep medications. Learn about cognitive behavioral therapy, sleep hygiene, and natural strategies for better rest.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/insomnia-treatment-getting-better-sleep-without-dependency.jpg'],
   },
 }
 
@@ -38,19 +39,25 @@ export default function InsomniaTreatmentPage() {
             Insomnia Treatment: Getting Better Sleep Without Dependency
           </h1>
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
 
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/insomnia-treatment-getting-better-sleep-without-dependency.jpg" alt="Man sitting awake on the edge of his bed in the middle of the night" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
+
       <article className="bg-white py-20 max-w-3xl mx-auto px-6">
         <div className="text-[var(--color-ink)] leading-loose text-base">
           <p className="text-xl font-light mb-8">
-            The clock reads 2:47 AM. You've tried counting sheep, adjusting your pillow for the hundredth time, and scrolling through your phone in desperation. You're exhausted, but sleep refuses to come. If this scenario sounds familiar, you're not alone—roughly 30% of adults experience symptoms of insomnia, and many feel trapped between sleepless nights and the fear of becoming dependent on sleep medications.
+            The clock reads 2:47 AM. You've tried counting sheep, adjusting your pillow for the hundredth time, and scrolling through your phone in desperation. You're exhausted, but sleep refuses to come. If this scenario sounds familiar, you're not alone: roughly 30% of adults experience symptoms of insomnia, and many feel trapped between sleepless nights and the fear of becoming dependent on sleep medications.
           </p>
 
           <p className="mb-6">
@@ -62,11 +69,11 @@ export default function InsomniaTreatmentPage() {
           </h2>
 
           <p className="mb-6">
-            Insomnia isn't just about difficulty falling asleep. It includes trouble staying asleep, waking too early, or experiencing non-restorative sleep—even when you seem to sleep through the night. What makes insomnia particularly challenging is that it often becomes a vicious cycle: worry about not sleeping makes it harder to fall asleep, which creates more anxiety the next night.
+            Insomnia isn't just about difficulty falling asleep. It includes trouble staying asleep, waking too early, or experiencing non-restorative sleep, even when you seem to sleep through the night. What makes insomnia particularly challenging is that it often becomes a vicious cycle: worry about not sleeping makes it harder to fall asleep, which creates more anxiety the next night.
           </p>
 
           <p className="mb-6">
-            Chronic insomnia, lasting three months or longer and occurring at least three nights per week, affects approximately 10-15% of adults. It's linked to increased risks of depression, anxiety, cardiovascular disease, and impaired daytime functioning. The impact extends beyond tiredness—it affects your mood, concentration, relationships, and overall quality of life.
+            Chronic insomnia, lasting three months or longer and occurring at least three nights per week, affects approximately 10-15% of adults. It's linked to increased risks of depression, anxiety, cardiovascular disease, and impaired daytime functioning. The impact extends beyond tiredness. It affects your mood, concentration, relationships, and overall quality of life.
           </p>
 
           <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -122,7 +129,7 @@ export default function InsomniaTreatmentPage() {
 
           <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
             <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-              "The goal isn't perfect sleep every night—it's breaking the cycle of anxiety around sleep and building confidence in your body's natural ability to rest."
+              "The goal isn't perfect sleep every night. It's breaking the cycle of anxiety around sleep and building confidence in your body's natural ability to rest."
             </p>
           </div>
 
@@ -164,7 +171,7 @@ export default function InsomniaTreatmentPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <div>
-                <strong>Create a wind-down routine:</strong> Spend 30-60 minutes before bed doing calming activities—reading, gentle stretching, or listening to quiet music.
+                <strong>Create a wind-down routine:</strong> Spend 30-60 minutes before bed doing calming activities, such as reading, gentle stretching, or listening to quiet music.
               </div>
             </div>
             <div className="flex gap-3 items-start">
@@ -172,7 +179,7 @@ export default function InsomniaTreatmentPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <div>
-                <strong>Optimize your bedroom:</strong> Keep it cool (65-68°F is ideal), dark, and quiet. Invest in your sleep environment—you spend a third of your life there.
+                <strong>Optimize your bedroom:</strong> Keep it cool (65-68°F is ideal), dark, and quiet. Invest in your sleep environment, since you spend a third of your life there.
               </div>
             </div>
             <div className="flex gap-3 items-start">
@@ -190,7 +197,7 @@ export default function InsomniaTreatmentPage() {
           </h2>
 
           <p className="mb-6">
-            Insomnia is often secondary to other conditions, which is why a comprehensive evaluation is crucial. Medical conditions like sleep apnea, restless leg syndrome, chronic pain, or thyroid disorders can all disrupt sleep. Mental health conditions—particularly anxiety and depression—have a bidirectional relationship with insomnia, each one potentially triggering or worsening the other.
+            Insomnia is often secondary to other conditions, which is why a comprehensive evaluation is crucial. Medical conditions like sleep apnea, restless leg syndrome, chronic pain, or thyroid disorders can all disrupt sleep. Mental health conditions, particularly anxiety and depression, have a bidirectional relationship with insomnia, each one potentially triggering or worsening the other.
           </p>
 
           <p className="mb-6">
@@ -206,7 +213,7 @@ export default function InsomniaTreatmentPage() {
           </h2>
 
           <p className="mb-6">
-            While the goal is to avoid long-term dependency on sleep medications, there are situations where short-term use can be appropriate—during acute stress, after a significant life event, or while establishing behavioral changes through CBT-I.
+            While the goal is to avoid long-term dependency on sleep medications, there are situations where short-term use can be appropriate: during acute stress, after a significant life event, or while establishing behavioral changes through CBT-I.
           </p>
 
           <p className="mb-6">
@@ -214,7 +221,7 @@ export default function InsomniaTreatmentPage() {
           </p>
 
           <p className="mb-6">
-            The key is using medication as a bridge, not a destination—a temporary support while building sustainable sleep skills.
+            The key is using medication as a bridge, not a destination: a temporary support while building sustainable sleep skills.
           </p>
 
           <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -222,7 +229,7 @@ export default function InsomniaTreatmentPage() {
           </h2>
 
           <p className="mb-6">
-            Recovery from chronic insomnia isn't about achieving perfect sleep every night—it's about reducing the frequency and severity of poor sleep, and more importantly, reducing your distress and anxiety about sleep. As your relationship with sleep improves, so does the sleep itself.
+            Recovery from chronic insomnia isn't about achieving perfect sleep every night. It's about reducing the frequency and severity of poor sleep, and more importantly, reducing your distress and anxiety about sleep. As your relationship with sleep improves, so does the sleep itself.
           </p>
 
           <p className="mb-6">
@@ -230,11 +237,11 @@ export default function InsomniaTreatmentPage() {
           </p>
 
           <p className="mb-6">
-            Many people find that improving their sleep has ripple effects throughout their lives—better mood, sharper thinking, more patience, improved physical health, and greater resilience to stress. Investing in sleep is investing in your overall wellbeing.
+            Many people find that improving their sleep has ripple effects throughout their lives: better mood, sharper thinking, more patience, improved physical health, and greater resilience to stress. Investing in sleep is investing in your overall wellbeing.
           </p>
 
           <p className="mb-6">
-            If you've been struggling with insomnia, know that you don't have to choose between sleepless nights and lifelong medication. Effective, dependency-free treatments exist, and with the right support, restful sleep is within reach. The journey may take time, but the destination—sustainable, natural sleep—is worth it.
+            If you've been struggling with insomnia, know that you don't have to choose between sleepless nights and lifelong medication. Effective, dependency-free treatments exist, and with the right support, restful sleep is within reach. The journey may take time, but the destination (sustainable, natural sleep) is worth it.
           </p>
         </div>
       </article>
@@ -246,7 +253,7 @@ export default function InsomniaTreatmentPage() {
           </svg>
         </div>
         <div>
-          <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+          <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
           <p className="text-[var(--color-muted)] text-sm leading-relaxed">
             This article provides general information about sleep health and insomnia treatment approaches. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider about your specific sleep concerns and treatment options.
           </p>
@@ -315,7 +322,7 @@ export default function InsomniaTreatmentPage() {
                   Schedule a Consultation
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed mb-4">
-                  Discuss your sleep concerns with our care team
+                  Discuss your sleep concerns with Dr. Hemmen
                 </p>
                 <div className="text-[var(--color-accent)] text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
                   Get started 
@@ -332,7 +339,7 @@ export default function InsomniaTreatmentPage() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl text-white/90 mb-8">Our team is here to help.</p>
+          <p className="text-xl text-white/90 mb-8">Dr. Hemmen is here to help.</p>
           <Link
             href="/contact"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl"

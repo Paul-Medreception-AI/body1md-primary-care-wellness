@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Managing Multiple Chronic Conditions: A Coordinated Care Approach',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr.jpg', alt: 'Older man talking with a physician about his health' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Managing Multiple Chronic Conditions: A Coordinated Care Approach',
     description: 'Learn how coordinated primary care helps patients effectively manage multiple chronic conditions with personalized treatment plans, better outcomes, reduced healthcare complexity.',
-    images: ['/og-image.png']
+    images: ['/images/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr.jpg']
   }
 }
 
@@ -41,20 +42,26 @@ export default function BlogPost() {
           </h1>
           
           <div className="flex justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/managing-multiple-chronic-conditions-a-coordinated-care-appr.jpg" alt="Older man talking with a physician about his health" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              Living with multiple chronic conditions—what healthcare professionals call multimorbidity—affects nearly half of all adults over 65 and an increasing number of younger Americans. When you're managing diabetes, hypertension, arthritis, and perhaps heart disease or COPD simultaneously, healthcare can quickly become overwhelming. Yet with the right coordinated care approach, it's entirely possible to not just manage these conditions, but to thrive.
+              Living with multiple chronic conditions (what healthcare professionals call multimorbidity) affects nearly half of all adults over 65 and an increasing number of younger Americans. When you're managing diabetes, hypertension, arthritis, and perhaps heart disease or COPD simultaneously, healthcare can quickly become overwhelming. Yet with the right coordinated care approach, it's entirely possible to not just manage these conditions, but to thrive.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -64,14 +71,14 @@ export default function BlogPost() {
               Multiple chronic conditions, or multimorbidity, refers to the presence of two or more long-term health conditions in a single individual. These might include diabetes, cardiovascular disease, chronic kidney disease, arthritis, depression, asthma, or any combination thereof. According to the Centers for Disease Control and Prevention, approximately 6 in 10 American adults have at least one chronic condition, and 4 in 10 have two or more.
             </p>
             <p className="mb-4">
-              The challenge isn't simply additive—it's exponential. Each condition comes with its own medications, specialists, appointments, lifestyle modifications, and monitoring requirements. Without proper coordination, patients can find themselves navigating conflicting treatment recommendations, dangerous drug interactions, and an exhausting calendar of medical appointments.
+              The challenge isn't simply additive. It's exponential. Each condition comes with its own medications, specialists, appointments, lifestyle modifications, and monitoring requirements. Without proper coordination, patients can find themselves navigating conflicting treatment recommendations, dangerous drug interactions, and a draining calendar of medical appointments.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
               The Hidden Costs of Fragmented Care
             </h2>
             <p className="mb-4">
-              Traditional healthcare often operates in silos. Your cardiologist focuses on your heart, your endocrinologist manages your diabetes, and your rheumatologist treats your arthritis—but who's looking at you as a whole person? This fragmentation leads to predictable problems:
+              Traditional healthcare often operates in silos. Your cardiologist focuses on your heart, your endocrinologist manages your diabetes, and your rheumatologist treats your arthritis, but who's looking at you as a whole person? This fragmentation leads to predictable problems:
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex gap-3">
@@ -102,7 +109,7 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Coordinated care isn't just convenient—it's clinically superior. Studies show that patients with multiple chronic conditions who receive integrated care experience fewer hospitalizations, better medication adherence, and improved quality of life."
+                "Coordinated care isn't just convenient. It's clinically superior. Studies show that patients with multiple chronic conditions who receive integrated care experience fewer hospitalizations, better medication adherence, and improved quality of life."
               </p>
             </div>
 
@@ -152,7 +159,7 @@ export default function BlogPost() {
               The Role of Direct Primary Care
             </h2>
             <p className="mb-4">
-              Direct Primary Care (DPC) models are particularly well-suited for managing multiple chronic conditions. By removing insurance barriers and limiting patient panels, DPC physicians can spend more time with each patient—typically 30 to 60 minutes per visit instead of the rushed 7-minute appointments common in traditional practices.
+              Direct Primary Care (DPC) models are particularly well-suited for managing multiple chronic conditions. By removing insurance barriers and limiting patient panels, DPC physicians can spend more time with each patient, typically 30 to 60 minutes per visit instead of the rushed 7-minute appointments common in traditional practices.
             </p>
             <p className="mb-4">
               This extended time allows for thorough medication reviews, detailed lifestyle counseling, and the kind of relationship-building that makes it easier for patients to discuss symptoms, ask questions, and stay engaged with their care. Many DPC practices also offer same-day or next-day appointments, 24/7 phone or text access to your physician, and lower overall healthcare costs through reduced emergency room visits and hospitalizations.
@@ -219,7 +226,7 @@ export default function BlogPost() {
             </ul>
 
             <p className="text-lg mt-8">
-              Managing multiple chronic conditions doesn't have to be an overwhelming burden. With a coordinated care approach centered on a knowledgeable, accessible primary care physician, you can simplify your healthcare, reduce risks, and focus on what matters most—living your life to the fullest. The key is finding a healthcare partner who sees you as a whole person, not a collection of diagnoses, and who has the time and expertise to guide you through the complexity.
+              Managing multiple chronic conditions doesn't have to be an overwhelming burden. With a coordinated care approach centered on a knowledgeable, accessible primary care physician, you can simplify your healthcare, reduce risks, and focus on what matters most: living your life to the fullest. The key is finding a healthcare partner who sees you as a whole person, not a collection of diagnoses, and who has the time and expertise to guide you through the complexity.
             </p>
           </div>
         </div>
@@ -231,7 +238,7 @@ export default function BlogPost() {
             </svg>
           </div>
           <div>
-            <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</p>
+            <p className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</p>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
               This article provides educational information about managing multiple chronic conditions through coordinated primary care. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult your healthcare provider with questions about your specific health needs.
             </p>
@@ -301,7 +308,7 @@ export default function BlogPost() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"

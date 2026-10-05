@@ -3,7 +3,7 @@ const config = {
   content: ["./app/**/*.{ts,tsx,js,jsx}", "./components/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
-      colors: { primary: "#0070c0", dark: "#00497d", light: "#d9eaf6", ink: "#1a2030", cream: "#f7fbfd", muted: "#64748b", border: "#cce5f7" },
+      colors: { primary: "#0B2D64", dark: "#06142C", light: "#E4F4FC", ink: "#06152E", cream: "#F7F8F5", muted: "#55606F", border: "#D5E6F1", teal: "#1AA7E3", accent: "#E76F25" },
       fontFamily: { cormorant: ["var(--font-cormorant)", "Georgia", "serif"], sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"] },
     },
   },

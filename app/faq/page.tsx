@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Body1MD Primary Care & Wellness',
-  description: 'Get answers to common questions about our direct primary care practice, membership plans, appointments, insurance, and how we provide personalized healthcare in Austin, TX.',
+  description: 'Answers to common questions about Body1MD direct primary care in Los Ranchos de Albuquerque, NM: membership pricing, appointments, insurance, and direct access to Dr. Hemmen.',
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'Frequently Asked Questions | Body1MD Primary Care & Wellness',
-    description: 'Get answers to common questions about our direct primary care practice, membership plans, appointments, insurance, and how we provide personalized healthcare in Austin, TX.',
+    description: 'Answers to common questions about Body1MD direct primary care in Los Ranchos de Albuquerque, NM: membership pricing, appointments, insurance, and direct access to Dr. Hemmen.',
     url: 'https://body1md.com/faq',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
@@ -16,10 +18,95 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Frequently Asked Questions | Body1MD Primary Care & Wellness',
-    description: 'Get answers to common questions about our direct primary care practice, membership plans, appointments, insurance, and how we provide personalized healthcare in Austin, TX.',
+    description: 'Answers to common questions about Body1MD direct primary care in Los Ranchos de Albuquerque, NM: membership pricing, appointments, insurance, and direct access to Dr. Hemmen.',
     images: ['/og-image.png'],
   },
 }
+
+// Every answer here must match the practice's verified facts (single physician, real prices,
+// visits up to an hour, same- or next-day in most cases, no insurance billing).
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: 'What is Direct Primary Care (DPC)?',
+    a: `Direct Primary Care is a membership model: you pay a monthly fee directly to your physician's practice instead of having your primary care billed through insurance. Without insurance billing in the middle, a practice can keep a smaller patient panel, offer longer visits, and give members direct access to their doctor. At Body1MD that means visits designed to last up to an hour, same- or next-day appointments in most cases, and direct access to Dr. Hemmen by phone and text. Many people keep insurance alongside a DPC membership for hospital, specialist, and emergency care.`,
+  },
+  {
+    q: 'Do you accept insurance?',
+    a: `Body1MD does not bill insurance. Members pay the practice directly through a monthly membership, which keeps the focus on patients rather than insurance paperwork. As general guidance, most people should still keep health insurance, or a high-deductible plan, for hospital care, specialists, emergencies, and other care outside the office. If you have questions about how a membership fits with your coverage, call ${SITE.phone}.`,
+  },
+  {
+    q: 'How much does membership cost?',
+    a: `Membership is $100 per month if you are under 50 and $150 per month if you are 50 or older. It is month-to-month, with no annual contract and no annual concierge retainer. Body1MD's Founding 50 offer is open to those who join by December 31, 2026, or before all 50 founder memberships are taken, and founding-member pricing is protected for as long as your membership stays active. Optional Wellness and Performance services are separately contracted and priced.`,
+  },
+  {
+    q: 'What services are included in my membership?',
+    a: `Membership is your primary care relationship with Dr. Hemmen, a board-certified internal medicine physician. That covers primary care for your health at every stage, from preventive screenings to managing complex conditions, with visits designed to last up to an hour and direct access to Dr. Hemmen between visits. Optional Wellness and Performance services, such as hormone optimization or peptide therapies where warranted, are separately contracted and priced. For specifics, such as how outside labs and imaging are handled, call the office at ${SITE.phone}.`,
+  },
+  {
+    q: 'How do I become a new patient?',
+    a: `Call the office at ${SITE.phone} or send a message through the contact page. You are welcome to ask questions about membership before you join. Online booking through a secure patient portal is coming soon. Once you join, your first visit is designed to last up to an hour, with time to review your health history, your current concerns, and your goals.`,
+  },
+  {
+    q: 'What should I expect during my first visit?',
+    a: `Your first visit is designed to last up to an hour. Dr. Hemmen begins with a comprehensive, head-to-toe look at your health so he understands your history and your goals. From there, he makes sure your core primary care is up to date, including preventive screenings, cholesterol, and blood pressure, and builds a personalized plan with you. The exam rooms have large-format displays where you and Dr. Andy can review imaging and results together, and there is time to ask every question on your mind.`,
+  },
+  {
+    q: 'How quickly can I get an appointment?',
+    a: `In most cases, the same or next day. Body1MD keeps a deliberately limited patient panel, so when you need to be seen you should not have to wait weeks. Office hours are Monday to Friday, 8am to 5pm, with Saturday by appointment. Between visits, members have direct access to Dr. Hemmen by phone and text, and he is available 24/7 most of the year.`,
+  },
+  {
+    q: 'Do you offer telemedicine or virtual visits?',
+    a: `Members have direct access to Dr. Hemmen by phone and text between visits. When something comes up, reach out, and he will advise whether it can be handled over the phone, whether a virtual check-in is appropriate, or whether you should come in. When you need to be seen, same- or next-day appointments are available in most cases.`,
+  },
+  {
+    q: 'Can you prescribe medications?',
+    a: `Yes. Dr. Hemmen prescribes medications as part of your primary care and sends prescriptions to the pharmacy you choose. He also reviews your full medication list with you, checking that each medication is still appropriate and watching for interactions. If a medication question or side effect comes up between visits, you can reach him directly by phone or text.`,
+  },
+  {
+    q: 'What if I need a specialist or hospitalization?',
+    a: `Dr. Hemmen helps guide your care when you need a specialist, imaging, or a hospital stay. He can refer you to specialists in the Albuquerque area, help you understand what to expect, and review their recommendations with you so your care fits together. He spent more than 20 years caring for hospitalized patients, including serving as Chief Hospitalist during the opening of Presbyterian Rust Medical Center, so he knows hospital care from the inside. Specialists and hospitals bill for their own services, which is one reason most members keep insurance.`,
+  },
+  {
+    q: 'Do you provide lab testing?',
+    a: `Dr. Hemmen orders the lab work and screening tests your care calls for, from preventive screening to monitoring chronic conditions, and reviews the results with you, often on the large-format displays in the exam room. For how a specific test is collected and what it costs, call the office at ${SITE.phone}.`,
+  },
+  {
+    q: 'What happens if I have a medical emergency?',
+    a: `For a life-threatening emergency, such as chest pain, difficulty breathing, severe bleeding, loss of consciousness, or signs of a stroke, call 911 or go to the nearest emergency room. Direct Primary Care does not replace emergency services or insurance coverage for emergency and hospital care. For concerns that are not emergencies, you can reach Dr. Hemmen directly by phone or text, and he can help you decide whether you need emergency care, a same- or next-day office visit, or advice by phone.`,
+  },
+  {
+    q: 'Can I cancel my membership?',
+    a: `Membership is month-to-month, with no annual contract. If your circumstances change, call the office to discuss ending your membership. Keep in mind that Founding 50 pricing is protected only as long as your membership stays active. If you move your care to another physician, Body1MD can send your medical records so your care continues without gaps.`,
+  },
+  {
+    q: 'How is this different from concierge medicine?',
+    a: `Concierge practices typically charge a large annual retainer, often while still billing insurance for visits. Body1MD is a Direct Primary Care membership instead: $100 per month under 50 or $150 per month at 50 and older, month-to-month, with no annual concierge retainer and no insurance billing. You get concierge-level access, including longer visits, same- or next-day appointments in most cases, and direct access to your physician, through a straightforward monthly membership.`,
+  },
+  {
+    q: 'Do you treat children and families?',
+    a: `Dr. Hemmen is board-certified in internal medicine, the specialty focused on the care of adults, and Body1MD's membership pricing is set by adult age: $100 per month under 50 and $150 per month at 50 and older. If you have a question about care for another member of your household, call the office at ${SITE.phone}.`,
+  },
+  {
+    q: 'What payment methods do you accept?',
+    a: `Members pay Body1MD directly each month, and the practice does not bill insurance. For accepted payment methods, call the office at ${SITE.phone}. Whether HSA or FSA funds can be used depends on your plan, so check with your plan administrator as well.`,
+  },
+  {
+    q: 'How do I access my medical records?',
+    a: `Under federal law you have the right to a copy of your medical records. Ask the office and your records will be prepared for you. If you are moving your care to another physician, Body1MD can send your records so your care continues without gaps. A secure patient portal is coming soon.`,
+  },
+  {
+    q: 'What if I need care while traveling?',
+    a: `Your direct access to Dr. Hemmen by phone and text does not end at the city limits. If you get sick while away from Albuquerque, reach out, and he can give you advice and help you decide whether you need to be seen where you are. Because he knows your history, that conversation starts from what he already knows about you. For anything serious or urgent, use local emergency or urgent care, then let him know so he can help with follow-up when you are home.`,
+  },
+  {
+    q: 'Can you help manage multiple chronic conditions?',
+    a: `Yes. Chronic disease management is one of Body1MD's core services, and internal medicine is well suited to patients managing more than one condition. Dr. Hemmen cares for conditions such as diabetes, high blood pressure, high cholesterol, heart disease, asthma, and arthritis, drawing on more than two decades of complex-care experience. Visits designed to last up to an hour leave time to go through your symptoms, medications, and goals, and direct access between visits helps catch problems early.`,
+  },
+  {
+    q: 'Is Direct Primary Care right for me?',
+    a: `Direct Primary Care works well for people who want more time with their physician, want to be seen quickly when something comes up, and want a doctor they can reach directly. It can be a good fit if you manage one or more chronic conditions, are focused on prevention and long-term health, or want help with goals like weight, fitness, and nutrition. Because Body1MD does not bill insurance, most members keep insurance for hospital, specialist, and emergency care. The best way to find out is a conversation: call ${SITE.phone} or reach out through the contact page.`,
+  },
+]
 
 export default function FAQPage() {
   return (
@@ -35,255 +122,41 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl opacity-90">
-            Everything you need to know about our practice and services
+            Everything you need to know about Body1MD and direct primary care
           </p>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-cream)] pt-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/caring-hands.jpg"
+              alt="A clinician gently holding a patient's hands in reassurance"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </div>
         </div>
       </section>
 
       <section className="bg-[var(--color-cream)] py-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="space-y-3">
-            
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What is Direct Primary Care (DPC)?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Direct Primary Care is a healthcare model where patients pay a simple monthly membership fee directly to their primary care physician, eliminating insurance companies from routine care. This allows us to spend more time with each patient, offer same-day appointments, and provide 24/7 access to your doctor. There are no copays, deductibles, or surprise bills for primary care services included in your membership. DPC empowers a true doctor-patient relationship focused on your health, not insurance paperwork. While you may still want insurance for catastrophic events and specialists, your day-to-day primary care becomes simple, affordable, and accessible.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Do you accept insurance?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                We do not bill insurance for our membership-based primary care services, which is what allows us to keep our practice patient-centered rather than insurance-centered. Your monthly membership covers all primary care visits, consultations, and care coordination. However, many patients choose to maintain high-deductible or catastrophic insurance plans for emergencies, hospitalizations, surgeries, and specialist care. We provide itemized receipts that some patients submit to Health Savings Accounts (HSAs) or for out-of-network reimbursement. This approach actually saves most patients money while dramatically improving their access to care and quality of service.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                How much does membership cost?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Our membership pricing is transparent and straightforward, with different tiers based on age and family size. Individual adult memberships typically range from $75-150 per month, with discounted rates for children and families. This single monthly fee covers unlimited office visits, same-day appointments, extended consultation time, 24/7 direct access to your physician, basic in-office procedures, and care coordination. There are no copays, no deductibles, and no surprise bills for services included in your membership. We're happy to discuss specific pricing during your consultation and help you understand how DPC often costs less than traditional insurance premiums and copays combined.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What services are included in my membership?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Your membership includes comprehensive primary care services: unlimited office visits for acute and chronic conditions, annual wellness exams, preventive care and health screenings, chronic disease management, acute illness treatment, minor in-office procedures, telemedicine consultations, basic laboratory testing performed in our office, medication management, care coordination with specialists, and 24/7 direct access to your physician via phone, text, or email. We also provide longer appointment times—typically 30-60 minutes instead of the rushed 10-15 minutes common in traditional practices. Certain services like advanced imaging, specialty labs, and procedures requiring outside facilities are available at transparent, negotiated rates that are often lower than insurance-negotiated prices.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                How do I become a new patient?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Becoming a patient is simple and begins with scheduling an initial consultation where we discuss your health history, current concerns, and wellness goals. You can contact us through our website, by phone, or by visiting our Austin office to learn about membership options and ask any questions. Once you choose the membership plan that fits your needs, we'll schedule your comprehensive first appointment—typically 60-90 minutes with your physician. We'll obtain your medical records from previous providers, establish baseline health metrics, and create a personalized care plan. Most new patients are able to join within a week and immediately gain access to same-day appointments and 24/7 physician communication.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What should I expect during my first visit?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Your first appointment is a comprehensive 60-90 minute consultation where we take time to truly understand your health. We'll review your complete medical history, current medications, family history, lifestyle factors, and health goals. Your physician will perform a thorough physical examination and discuss any current health concerns or chronic conditions. We'll order appropriate baseline screening tests, review preventive care recommendations, and create a personalized wellness plan tailored to your unique needs. Unlike rushed traditional appointments, you'll have ample time to ask questions and discuss anything on your mind. This extended initial visit establishes the foundation for a long-term partnership focused on keeping you healthy and addressing concerns before they become serious problems.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                How quickly can I get an appointment?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                One of the greatest benefits of our Direct Primary Care model is immediate access to your physician. We offer same-day appointments for urgent concerns, and most routine visits can be scheduled within 24-48 hours based on your preference. Because our patient panel is intentionally limited—typically 600 patients per physician instead of the 2,500+ common in traditional practices—we always have availability for our members. You can reach your doctor directly 24/7 via phone, text, or email for medical questions that don't require an in-person visit. No more waiting weeks for an appointment or spending hours in an urgent care waiting room when you suddenly fall ill.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Do you offer telemedicine or virtual visits?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Yes, telemedicine consultations are included in your membership at no additional cost and are ideal for many follow-up visits, medication refills, lab result discussions, and acute illness consultations. You can connect with your physician via secure video call from your home, office, or anywhere you have internet access. Because we already have an established relationship and comprehensive knowledge of your medical history, virtual visits are often just as effective as in-person appointments for appropriate situations. Your doctor will let you know if an in-person examination is necessary. We also offer direct communication via phone, text, and email 24/7, so you always have multiple ways to reach your physician whenever questions or concerns arise.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Can you prescribe medications?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Yes, our board-certified physicians can prescribe all necessary medications as part of your comprehensive primary care. We send prescriptions electronically to your pharmacy of choice and help you find the most affordable options, whether through insurance, manufacturer discount programs, or wholesale pricing partnerships. Many members save significantly on medications because we have time to research cost-effective alternatives and aren't restricted by insurance formularies. We also provide medication management services, reviewing all your prescriptions regularly to ensure they're still appropriate, checking for interactions, and eliminating unnecessary medications. Our 24/7 access means you can reach your doctor quickly when medication questions or side effects arise.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What if I need a specialist or hospitalization?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                We provide comprehensive care coordination when you need specialists, advanced imaging, procedures, or hospitalization. Your physician will refer you to trusted specialists in Austin, help you understand what to expect, and communicate directly with them about your care. We review specialist recommendations, help you make informed decisions, and ensure all your providers are working together effectively. If you're hospitalized, we coordinate with hospital physicians and are available to answer your questions throughout the process. After specialist visits or hospitalizations, we integrate all findings into your ongoing care plan. This care coordination is included in your membership and ensures you never feel lost navigating complex healthcare situations.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Do you provide lab testing?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Yes, we perform many common laboratory tests right in our office at no additional charge to members, including blood glucose, cholesterol panels, urinalysis, rapid strep tests, flu tests, and more. This convenient in-office testing saves you time and provides immediate results during your visit. For more comprehensive lab work that requires outside facilities, we've negotiated wholesale pricing that is often 80-90% less expensive than what insurance companies pay. We'll always discuss costs upfront so there are no surprises, and help you understand which tests are truly necessary for your health. Lab result discussions are included in your membership and can be conducted via telemedicine or in person based on your preference.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What happens if I have a medical emergency?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                For true life-threatening emergencies such as chest pain, difficulty breathing, severe bleeding, loss of consciousness, or stroke symptoms, always call 911 or go directly to the nearest emergency room. Direct Primary Care does not replace emergency services or catastrophic insurance coverage. However, many situations that people think require an ER visit can actually be handled through same-day appointments in our office or via immediate telemedicine consultation with your physician. Your 24/7 access to your doctor means you can quickly determine the appropriate level of care needed. We'll guide you on whether your situation requires emergency care, can wait for a same-day office visit, or can be managed remotely, potentially saving you thousands in unnecessary ER costs.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Can I cancel my membership?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Your membership operates on a simple month-to-month basis with no long-term contracts or commitments. If you need to cancel, we require 30 days notice, and you're free to discontinue at any time without penalties or cancellation fees. We're confident that once you experience the difference of unhurried appointments, same-day access, and true continuity of care, you'll want to remain a member. However, we understand that circumstances change—whether due to relocation, financial situations, or other reasons. If you do cancel, we'll provide copies of your medical records and help facilitate the transition to another provider to ensure your healthcare continuity isn't disrupted.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                How is this different from concierge medicine?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                While Direct Primary Care and concierge medicine share some similarities like enhanced access and longer appointments, there are important differences. Concierge practices typically charge an annual retainer fee on top of billing insurance for each visit, meaning you still deal with copays, deductibles, and insurance paperwork. DPC eliminates insurance from primary care entirely with a simple monthly membership that covers all primary care services. This makes DPC more affordable for most people—often costing less than traditional insurance premiums alone. Both models limit patient panels to provide better access and service, but DPC's insurance-free approach creates true price transparency and allows physicians to focus entirely on patient care rather than insurance requirements and billing complexity.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Do you treat children and families?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Yes, we welcome patients of all ages and offer discounted family membership rates that make comprehensive primary care affordable for your entire household. Having your whole family see the same physician creates continuity of care and allows us to understand your family's health history, genetic factors, and home environment. We provide well-child visits, school and sports physicals, immunizations, and treatment for common childhood illnesses. Parents especially appreciate our 24/7 access when children fall ill unexpectedly—you can text or call your doctor directly rather than searching for after-hours care or making unnecessary ER visits. Our family-friendly approach means less stress, better preventive care, and one trusted physician who knows everyone in your family.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What payment methods do you accept?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                We accept all major credit cards, debit cards, Health Savings Account (HSA) cards, and Flexible Spending Account (FSA) cards for monthly membership fees. Your membership is billed automatically each month on the date you choose, making budgeting simple and predictable. Many patients use their HSA or FSA funds to pay membership fees, and we provide itemized receipts for your records. We also offer convenient electronic payment options and can adjust billing dates if needed to align with your pay schedule. For any additional services outside your membership—such as specialty lab work or procedures requiring outside facilities—we provide transparent pricing upfront and accept the same payment methods.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justice-between items-center">
-                How do I access my medical records?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Your medical records are always available to you and remain your property. We maintain secure electronic health records and can provide copies in various formats based on your needs—whether for personal records, specialist referrals, insurance claims, or second opinions. Simply request your records through our office, and we'll prepare them promptly at no charge. We also communicate detailed visit summaries, lab results, and care plans directly to you via secure messaging, so you're always informed about your health status. If you're transferring care to another provider for any reason, we'll coordinate the complete transfer of your medical history to ensure seamless continuity of care.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                What if I need care while traveling?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Your membership includes 24/7 access to your physician even when you're traveling, which is one of the most valued benefits of Direct Primary Care. If you become ill while away from Austin, you can contact your doctor via phone, text, or telemedicine consultation to receive medical advice, prescriptions sent to a local pharmacy, and guidance on whether you need in-person care. Because your physician knows your complete medical history, this remote consultation is far superior to visiting an unfamiliar urgent care or emergency room. For minor issues, we can often manage your care remotely and save you significant time and expense. For more serious situations, we'll help you find appropriate local care and coordinate with those providers to ensure you receive quality treatment.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Can you help manage multiple chronic conditions?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Yes, comprehensive chronic disease management is one of our core strengths and a perfect fit for the Direct Primary Care model. We provide expert ongoing care for diabetes, hypertension, heart disease, asthma, COPD, thyroid disorders, arthritis, and other long-term conditions. Our extended appointment times allow thorough discussions about your symptoms, medications, lifestyle factors, and treatment goals. Regular monitoring, medication adjustments, and preventive strategies help you avoid complications and maintain the best possible quality of life. Because you can reach your physician 24/7 and schedule same-day visits when issues arise, we catch problems early before they escalate. Many patients with chronic conditions find that DPC dramatically improves their health outcomes while actually reducing their overall healthcare costs through better disease control and fewer emergency interventions.
-              </div>
-            </details>
-
-            <details className="border border-[var(--color-border)] rounded-xl bg-white group">
-              <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
-                Is Direct Primary Care right for me?
-                <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
-                Direct Primary Care works exceptionally well for individuals and families who value their time, want deeper relationships with their physician, and are frustrated with traditional healthcare's limitations. It's ideal if you struggle to get timely appointments, feel rushed during visits, can't reach your doctor when questions arise, or are tired of insurance hassles and surprise bills. DPC particularly benefits those with chronic conditions requiring ongoing management, busy professionals who need flexible scheduling, families seeking comprehensive care for all ages, and anyone prioritizing preventive health and wellness. If you want a physician who truly knows you, has time to listen, and is available when you need them, DPC offers a better way. We invite you to schedule a consultation to discuss your specific situation and learn how our approach can improve your healthcare experience.
-              </div>
-            </details>
-
+            {FAQS.map((item) => (
+              <details key={item.q} className="border border-[var(--color-border)] rounded-xl bg-white group">
+                <summary className="cursor-pointer p-6 font-semibold text-[var(--color-ink)] font-cormorant text-xl list-none flex justify-between items-center">
+                  {item.q}
+                  <svg className="w-6 h-6 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6 text-[var(--color-muted)] leading-relaxed text-sm">
+                  {item.a}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -294,14 +167,22 @@ export default function FAQPage() {
             Still Have Questions?
           </h2>
           <p className="text-lg mb-8 opacity-90">
-            We're here to help you understand how Direct Primary Care can transform your healthcare experience
+            Call {SITE.phone} or send a message, and we will help you decide whether Direct Primary Care is right for you.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-lg font-semibold transition-colors"
-          >
-            Contact Us Today
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+            >
+              Contact Us Today
+            </Link>
+            <a
+              href={SITE.phoneHref}
+              className="inline-block bg-white hover:bg-white/90 text-[var(--color-primary)] px-8 py-4 rounded-lg font-semibold transition-colors"
+            >
+              Call {SITE.phone}
+            </a>
+          </div>
         </div>
       </section>
     </main>

@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Lab Work Explained: What Your Annual Blood Tests Reveal',
-  description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from our primary care experts.',
+  description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from Body1MD Primary Care & Wellness.',
   alternates: { canonical: '/blog/lab-work-explained-what-your-annual-blood-tests-reveal' },
   openGraph: {
     title: 'Lab Work Explained: What Your Annual Blood Tests Reveal',
-    description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from our primary care experts.',
+    description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from Body1MD Primary Care & Wellness.',
     url: 'https://body1md.com/blog/lab-work-explained-what-your-annual-blood-tests-reveal',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/lab-work-explained-what-your-annual-blood-tests-reveal.jpg', alt: 'Gloved hand holding two blood sample tubes' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lab Work Explained: What Your Annual Blood Tests Reveal',
-    description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from our primary care experts.',
-    images: ['/og-image.png'],
+    description: 'Understand what your routine blood work measures and why these annual tests matter for your health. Learn about CBC, metabolic panels, lipids, and more from Body1MD Primary Care & Wellness.',
+    images: ['/images/blog/lab-work-explained-what-your-annual-blood-tests-reveal.jpg'],
   },
 }
 
@@ -43,24 +44,30 @@ export default function LabWorkExplainedPage() {
           </h1>
           
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/lab-work-explained-what-your-annual-blood-tests-reveal.jpg" alt="Gloved hand holding two blood sample tubes" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              You sit in the exam room, waiting for your doctor to review your lab results. The numbers on the paper look like a foreign language—CBC, LDL, A1C, TSH. What do they all mean? More importantly, what story do they tell about your health?
+              You sit in the exam room, waiting for your doctor to review your lab results. The numbers on the paper look like a foreign language: CBC, LDL, A1C, TSH. What do they all mean? More importantly, what story do they tell about your health?
             </p>
             
             <p className="mb-6">
-              Annual blood work is one of the most powerful tools in preventive medicine. These tests offer a window into how your body is functioning at a cellular level, often revealing problems years before symptoms appear. Understanding what your labs measure—and what the results mean—empowers you to take charge of your health and have more meaningful conversations with your healthcare provider.
+              Annual blood work is one of the most powerful tools in preventive medicine. These tests offer a window into how your body is functioning at a cellular level, often revealing problems years before symptoms appear. Understanding what your labs measure, and what the results mean, empowers you to take charge of your health and have more meaningful conversations with your healthcare provider.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -85,7 +92,7 @@ export default function LabWorkExplainedPage() {
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Lab work doesn't just diagnose disease—it catches problems in their earliest, most treatable stages. A single blood test can reveal risks you didn't know existed."
+                "Lab work doesn't just diagnose disease. It catches problems in their earliest, most treatable stages. A single blood test can reveal risks you didn't know existed."
               </p>
             </div>
 
@@ -146,7 +153,7 @@ export default function LabWorkExplainedPage() {
             </p>
             
             <p className="mb-6">
-              An A1C below 5.7% is normal. Levels between 5.7% and 6.4% indicate prediabetes—a crucial window when lifestyle changes can prevent progression to diabetes. An A1C of 6.5% or higher on two separate tests means diabetes.
+              An A1C below 5.7% is normal. Levels between 5.7% and 6.4% indicate prediabetes, a crucial window when lifestyle changes can prevent progression to diabetes. An A1C of 6.5% or higher on two separate tests means diabetes.
             </p>
             
             <p className="mb-6">
@@ -237,7 +244,7 @@ export default function LabWorkExplainedPage() {
             </div>
 
             <p className="mt-8 mb-6">
-              Your annual lab work is more than just a routine checkbox—it's a comprehensive health report that can detect problems years before they become serious. The numbers on those pages tell a story about your current health and predict your future risk. By understanding what these tests measure and what your results mean, you become an active partner in your healthcare rather than a passive recipient.
+              Your annual lab work is more than just a routine checkbox. It's a comprehensive health report that can detect problems years before they become serious. The numbers on those pages tell a story about your current health and predict your future risk. By understanding what these tests measure and what your results mean, you become an active partner in your healthcare rather than a passive recipient.
             </p>
             
             <p className="mb-6">
@@ -255,7 +262,7 @@ export default function LabWorkExplainedPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </p>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article is for informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare provider for diagnosis and treatment recommendations tailored to your individual needs.
@@ -312,7 +319,7 @@ export default function LabWorkExplainedPage() {
                   Schedule Your Visit
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  Ready to get your lab work done? Contact us to schedule your comprehensive evaluation.
+                  Have questions about your lab results? Contact us to schedule a comprehensive evaluation.
                 </p>
               </div>
             </Link>
@@ -326,7 +333,7 @@ export default function LabWorkExplainedPage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help you understand your health and create a personalized care plan.
+            Dr. Hemmen is here to help you understand your health and create a personalized care plan.
           </p>
           <Link
             href="/contact"

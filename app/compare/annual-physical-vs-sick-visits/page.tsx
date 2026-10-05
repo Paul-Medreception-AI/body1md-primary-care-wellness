@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Annual Physical vs Sick Visits: Why Preventive Care Matters',
-  description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Austin, TX.',
+  description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Albuquerque, NM.',
   alternates: { canonical: '/compare/annual-physical-vs-sick-visits' },
   openGraph: {
     title: 'Annual Physical vs Sick Visits: Why Preventive Care Matters',
-    description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Austin, TX.',
+    description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Albuquerque, NM.',
     url: 'https://body1md.com/compare/annual-physical-vs-sick-visits',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Annual Physical vs Sick Visits: Why Preventive Care Matters',
-    description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Austin, TX.',
+    description: 'Compare annual physical exams and sick visits. Learn when preventive care saves time, money, and improves long-term health outcomes in Albuquerque, NM.',
     images: ['/og-image.png'],
   },
 }
@@ -29,21 +30,29 @@ export default function AnnualPhysicalVsSickVisitsPage() {
           <nav className="flex items-center justify-center gap-2 text-sm mb-8 opacity-90">
             <Link href="/" className="hover:underline">Home</Link>
             <span>›</span>
-            <span>Resources</span>
-            <span>›</span>
             <span>Comparison</span>
           </nav>
           <h1 className="font-cormorant text-5xl md:text-6xl font-light mb-6 animate-fade-up">
             Annual Physical vs Sick Visits: Why Preventive Care Matters
           </h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto animate-fade-up">
-            Understanding the critical difference between reactive sick visits and proactive annual physicals for your long-term health in Austin, TX
+            Understanding the critical difference between reactive sick visits and proactive annual physicals for your long-term health in Albuquerque, NM
           </p>
         </div>
       </section>
 
       <section className="bg-[var(--color-cream)] py-24 px-6">
         <div className="max-w-4xl mx-auto">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl mb-16">
+            <Image
+              src="/images/stock/compare-annual-physical-vs-sick-visits.jpg"
+              alt="Physician pointing to highlighted values on a printed lab results report"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+              priority
+            />
+          </div>
           <h2 className="font-cormorant text-4xl md:text-5xl text-[var(--color-ink)] text-center mb-12 animate-fade-up">
             Side-by-Side Comparison
           </h2>
@@ -81,20 +90,20 @@ export default function AnnualPhysicalVsSickVisitsPage() {
             
             <div className="grid grid-cols-3 p-4 border-b border-[var(--color-border)]">
               <div className="px-4 py-3 font-semibold text-[var(--color-ink)]">Long-term Impact</div>
-              <div className="px-4 py-3 text-[var(--color-muted)]">Catches issues early, reduces ER visits by 30%</div>
+              <div className="px-4 py-3 text-[var(--color-muted)]">Catches issues early, before they become emergencies</div>
               <div className="px-4 py-3 text-[var(--color-muted)]">Addresses immediate concern only</div>
             </div>
             
             <div className="grid grid-cols-3 p-4 bg-[var(--color-cream)] border-b border-[var(--color-border)]">
               <div className="px-4 py-3 font-semibold text-[var(--color-ink)]">Cost Effectiveness</div>
-              <div className="px-4 py-3 text-[var(--color-muted)]">Often fully covered by insurance; prevents expensive treatments</div>
-              <div className="px-4 py-3 text-[var(--color-muted)]">Copay per visit; may require follow-ups</div>
+              <div className="px-4 py-3 text-[var(--color-muted)]">Under most insurance plans, covered as preventive care; helps prevent expensive treatment later</div>
+              <div className="px-4 py-3 text-[var(--color-muted)]">With insurance, usually a copay per visit; may require follow-ups</div>
             </div>
             
             <div className="grid grid-cols-3 p-4 border-b border-[var(--color-border)]">
               <div className="px-4 py-3 font-semibold text-[var(--color-ink)]">Time Commitment</div>
-              <div className="px-4 py-3 text-[var(--color-muted)]">45-60 minutes once per year</div>
-              <div className="px-4 py-3 text-[var(--color-muted)]">15-30 minutes per illness</div>
+              <div className="px-4 py-3 text-[var(--color-muted)]">A longer visit once per year (at Body1MD, designed to last up to an hour)</div>
+              <div className="px-4 py-3 text-[var(--color-muted)]">Often a short, focused visit per illness</div>
             </div>
             
             <div className="grid grid-cols-3 p-4 bg-[var(--color-cream)]">
@@ -113,10 +122,10 @@ export default function AnnualPhysicalVsSickVisitsPage() {
               The Annual Physical: Your Health Insurance Policy
             </h2>
             <p className="text-lg text-[var(--color-muted)] mb-4">
-              An annual physical exam is the cornerstone of preventive medicine. During this comprehensive visit, your primary care physician in Austin evaluates your overall health status through a systematic review of body systems, vital signs, laboratory tests, and age-appropriate cancer screenings. This isn't just a checkbox exercise—it's a strategic health investment.
+              An annual physical exam is the cornerstone of preventive medicine. During this comprehensive visit, your primary care physician evaluates your overall health status through a systematic review of body systems, vital signs, laboratory tests, and age-appropriate cancer screenings. This isn't just a checkbox exercise. It's a strategic health investment.
             </p>
             <p className="text-lg text-[var(--color-muted)] mb-4">
-              Studies show that patients who receive regular annual physicals detect conditions like diabetes, hypertension, and high cholesterol an average of 3-5 years earlier than those who only visit when sick. This early detection window is often the difference between simple lifestyle modifications and complex medication regimens or surgical interventions.
+              Regular annual physicals make it far more likely that conditions like diabetes, hypertension, and high cholesterol are found early, often years before they cause symptoms, rather than only after you feel sick. This early detection window is often the difference between simple lifestyle modifications and complex medication regimens or surgical interventions.
             </p>
             <p className="text-lg text-[var(--color-muted)]">
               Beyond screenings, the annual physical establishes a baseline for your health trajectory. Your physician tracks changes in weight, blood pressure, cholesterol, and other biomarkers over time, identifying subtle trends that might indicate emerging problems. This longitudinal perspective is impossible to achieve through episodic sick visits alone.
@@ -128,13 +137,13 @@ export default function AnnualPhysicalVsSickVisitsPage() {
               Sick Visits: Necessary but Reactive
             </h2>
             <p className="text-lg text-[var(--color-muted)] mb-4">
-              Sick visits serve an essential purpose: addressing acute medical concerns that require immediate attention. Whether you're dealing with the flu, a urinary tract infection, allergic reactions, or a minor injury, same-day sick visits provide focused, symptom-specific care. They're designed for efficiency—get in, diagnose the problem, receive treatment, and recover.
+              Sick visits serve an essential purpose: addressing acute medical concerns that require immediate attention. Whether you're dealing with the flu, a urinary tract infection, allergic reactions, or a minor injury, prompt sick visits provide focused, symptom-specific care. They're designed for efficiency: get in, diagnose the problem, receive treatment, and recover.
             </p>
             <p className="text-lg text-[var(--color-muted)] mb-4">
-              However, sick visits by nature are reactive. You're already symptomatic, which means the condition has already developed. While your physician can treat the immediate problem effectively, there's limited time during a 15-minute sick visit to discuss nutrition, stress management, exercise habits, or screening schedules—the very factors that prevent future illness.
+              However, sick visits by nature are reactive. You're already symptomatic, which means the condition has already developed. While your physician can treat the immediate problem effectively, there's limited time during a typical 15-minute sick visit to discuss nutrition, stress management, exercise habits, or screening schedules, the very factors that prevent future illness.
             </p>
             <p className="text-lg text-[var(--color-muted)]">
-              Patients who rely exclusively on sick visits often miss the opportunity to address risk factors before they become diseases. A 2019 study published in the Journal of General Internal Medicine found that patients without regular physicals were 2.4 times more likely to be diagnosed with advanced-stage cancers compared to those with consistent preventive care relationships.
+              Patients who rely exclusively on sick visits often miss the opportunity to address risk factors before they become diseases. Many cancers, for example, are far more treatable when an age-appropriate screening finds them early than when they are discovered only after symptoms appear.
             </p>
           </div>
 
@@ -143,13 +152,13 @@ export default function AnnualPhysicalVsSickVisitsPage() {
               The Preventive Care Advantage
             </h2>
             <p className="text-lg text-[var(--color-muted)] mb-4">
-              The true power of annual physicals lies in their ability to shift your health paradigm from reactive to proactive. When you establish a relationship with a primary care physician in Austin through regular annual visits, you're not just getting one exam per year—you're building a comprehensive health partnership.
+              The true power of annual physicals lies in their ability to shift your health paradigm from reactive to proactive. When you establish a relationship with a primary care physician in Albuquerque through regular annual visits, you're not just getting one exam per year. You're building a comprehensive health partnership.
             </p>
             <p className="text-lg text-[var(--color-muted)] mb-4">
               Your physician learns your health history, family risk factors, lifestyle patterns, and health goals. This context enables personalized recommendations that go far beyond generic advice. If you have a family history of heart disease, your annual physical becomes an opportunity to implement aggressive cholesterol management and cardiac risk reduction strategies before any symptoms appear.
             </p>
             <p className="text-lg text-[var(--color-muted)]">
-              Economically, preventive care through annual physicals generates significant savings. The CDC estimates that every dollar spent on preventive services saves $5.60 in future medical costs. When you factor in lost productivity from illness, emergency room visits, and specialist consultations that could have been avoided, the return on investment for annual physicals becomes even more compelling.
+              Economically, preventive care can also make sense. Services such as blood pressure checks, cholesterol screening, and vaccines are widely considered among the most cost-effective care in medicine. When you factor in lost productivity from illness, emergency room visits, and specialist consultations that could have been avoided, the return on investment for annual physicals becomes even more compelling.
             </p>
           </div>
         </div>
@@ -204,7 +213,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                   <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
-                  <span>You want to establish a relationship with a primary care physician in Austin before you need urgent care</span>
+                  <span>You want to establish a relationship with a primary care physician before you need urgent care</span>
                 </li>
               </ul>
             </div>
@@ -249,7 +258,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                 The Best Approach: Both
               </p>
               <p className="text-[var(--color-muted)]">
-                Optimal healthcare isn't choosing between preventive and acute care—it's utilizing both strategically. Schedule your annual physical to maintain baseline health and catch problems early, then use sick visits as needed for unexpected issues. This combination provides comprehensive coverage for both prevention and treatment.
+                Optimal healthcare isn't choosing between preventive and acute care. It's using both strategically. Schedule your annual physical to maintain baseline health and catch problems early, then use sick visits as needed for unexpected issues. This combination provides comprehensive coverage for both prevention and treatment.
               </p>
             </div>
           </div>
@@ -283,7 +292,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)]">
-                <p>Under the Affordable Care Act, most insurance plans cover one annual preventive care visit per year at 100% with no copay or deductible—this includes your annual physical and age-appropriate screenings. Sick visits typically require a copay and count toward your deductible. However, if you discuss new symptoms during your preventive visit, your insurer may apply sick visit charges. At Body1MD, we help patients understand billing implications before their appointment to avoid surprises.</p>
+                <p>Under the Affordable Care Act, most insurance plans cover one annual preventive care visit per year with no copay or deductible, including your annual physical and age-appropriate screenings. Sick visits typically require a copay and count toward your deductible, and if you discuss new symptoms during a preventive visit, your insurer may apply sick visit charges. Body1MD works differently: it does not bill insurance, so your visit is never coded as preventive or sick for an insurer. Members pay a flat monthly membership ($100 per month under age 50, $150 per month at 50 and up), month-to-month. Dr. Hemmen's office can explain how outside labs, imaging and prescriptions are handled before you join.</p>
               </div>
             </details>
 
@@ -295,7 +304,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)]">
-                <p>The recommendation is every 12 months for adults, regardless of how healthy you feel. Even if you're young, active, and symptom-free, annual physicals establish health baselines and detect silent conditions like hypertension or prediabetes before they cause damage. After age 40, or if you have chronic conditions, your Austin primary care physician may recommend more frequent monitoring visits between annual physicals to track specific health markers.</p>
+                <p>The recommendation is every 12 months for adults, regardless of how healthy you feel. Even if you're young, active, and symptom-free, annual physicals establish health baselines and detect silent conditions like hypertension or prediabetes before they cause damage. After age 40, or if you have chronic conditions, your primary care physician may recommend more frequent monitoring visits between annual physicals to track specific health markers.</p>
               </div>
             </details>
 
@@ -307,7 +316,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)]">
-                <p>A thorough annual physical includes: detailed medical history review, family history assessment, vital signs (blood pressure, heart rate, temperature, respiratory rate), physical examination of all body systems, vision and hearing screening, comprehensive metabolic panel (blood work), lipid panel (cholesterol), diabetes screening, thyroid function tests, urinalysis, age-appropriate cancer screenings (colonoscopy referral, mammogram referral, skin check, prostate screening), immunization updates, and personalized lifestyle counseling. Your Austin physician tailors screenings based on your age, gender, and risk factors.</p>
+                <p>A thorough annual physical typically includes: detailed medical history review, family history assessment, vital signs (blood pressure, heart rate, temperature, respiratory rate), physical examination of all body systems, vision and hearing screening, and ordered blood work as appropriate, such as a comprehensive metabolic panel, lipid panel (cholesterol), diabetes screening, thyroid function tests, and urinalysis, along with age-appropriate cancer screenings (colonoscopy referral, mammogram referral, skin check, prostate screening), immunization updates, and personalized lifestyle counseling. Dr. Hemmen tailors screenings based on your age, sex, and risk factors.</p>
               </div>
             </details>
 
@@ -319,7 +328,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
                 </svg>
               </summary>
               <div className="px-6 pb-6 text-[var(--color-muted)]">
-                <p>Schedule a sick visit whenever acute symptoms arise—don't wait for your next annual physical. Early treatment prevents complications and improves outcomes. At Body1MD in Austin, we offer same-day and next-day sick visit appointments for established patients. If you're unsure whether your concern warrants immediate attention, call our office for guidance. We'd rather evaluate you promptly than have you delay care or resort to urgent care centers or emergency rooms.</p>
+                <p>Schedule a sick visit whenever acute symptoms arise. Don't wait for your next annual physical. Early treatment prevents complications and improves outcomes. At Body1MD, members can be seen same- or next-day in most cases and can reach Dr. Hemmen directly by phone and text. If you're unsure whether your concern warrants immediate attention, call the office at (505) 645-5451 for guidance. We'd rather evaluate you promptly than have you delay care or resort to urgent care centers or emergency rooms.</p>
               </div>
             </details>
           </div>
@@ -332,7 +341,7 @@ export default function AnnualPhysicalVsSickVisitsPage() {
             Ready to Prioritize Prevention?
           </h2>
           <p className="text-xl opacity-90 mb-8">
-            Schedule your annual physical with Body1MD Primary Care & Wellness in Austin and establish a proactive approach to your health
+            Schedule your annual physical with Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque and establish a proactive approach to your health
           </p>
           <Link 
             href="/contact"

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Medication Management: Getting the Most From Your Prescriptions',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/medication-management-getting-the-most-from-your-prescriptio',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/medication-management-getting-the-most-from-your-prescriptio.jpg', alt: 'Hands sorting pills into a weekly pill organizer' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Medication Management: Getting the Most From Your Prescriptions',
     description: 'Learn essential strategies for safe, effective medication management. Discover how to optimize your prescriptions, avoid interactions, and achieve better health outcomes.',
-    images: ['/og-image.png']
+    images: ['/images/blog/medication-management-getting-the-most-from-your-prescriptio.jpg']
   }
 }
 
@@ -42,20 +43,26 @@ export default function MedicationManagementArticle() {
             </h1>
             
             <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-              <span>Published January 2025</span>
+              <span>Published October 2026</span>
               <span>•</span>
               <span>7 min read</span>
               <span>•</span>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </header>
+
+        <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/medication-management-getting-the-most-from-your-prescriptio.jpg" alt="Hands sorting pills into a weekly pill organizer" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          </div>
+        </div>
 
         <div className="bg-white py-20">
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-[var(--color-ink)] leading-loose text-base space-y-6">
               <p className="text-xl font-light text-[var(--color-muted)] mb-8">
-                Every day, millions of Americans take prescription medications to manage chronic conditions, fight infections, and improve their quality of life. Yet studies show that nearly half of all patients don't take their medications as prescribed. The consequences can be serious: worsening symptoms, preventable complications, and increased healthcare costs. Understanding how to manage your medications effectively isn't just about following instructions—it's about partnering with your healthcare provider to achieve the best possible outcomes.
+                Every day, millions of Americans take prescription medications to manage chronic conditions, fight infections, and improve their quality of life. Yet studies show that nearly half of all patients don't take their medications as prescribed. The consequences can be serious: worsening symptoms, preventable complications, and increased healthcare costs. Understanding how to manage your medications effectively isn't just about following instructions. It's about partnering with your healthcare provider to achieve the best possible outcomes.
               </p>
 
               <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -72,7 +79,7 @@ export default function MedicationManagementArticle() {
 
               <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
                 <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                  "Taking medication correctly isn't just about compliance—it's about collaboration. When patients understand their treatment plan and feel supported, adherence improves dramatically."
+                  "Taking medication correctly isn't just about compliance. It's about collaboration. When patients understand their treatment plan and feel supported, adherence improves dramatically."
                 </p>
               </div>
 
@@ -93,7 +100,7 @@ export default function MedicationManagementArticle() {
               </p>
 
               <p>
-                <strong>Side effects</strong> can be discouraging enough to make patients stop treatment altogether. If a medication makes you feel worse before it makes you feel better—or causes uncomfortable symptoms that aren't adequately addressed—it's natural to question whether it's worth continuing.
+                <strong>Side effects</strong> can be discouraging enough to make patients stop treatment altogether. If a medication makes you feel worse before it makes you feel better (or causes uncomfortable symptoms that aren't adequately addressed), it's natural to question whether it's worth continuing.
               </p>
 
               <p>
@@ -105,7 +112,7 @@ export default function MedicationManagementArticle() {
               </h2>
 
               <p>
-                Taking control of your medication routine doesn't require perfection—it requires practical strategies that fit your life. Here are evidence-based approaches that make a real difference:
+                Taking control of your medication routine doesn't require perfection. It requires practical strategies that fit your life. Here are evidence-based approaches that make a real difference:
               </p>
 
               <div className="my-8 space-y-4">
@@ -141,7 +148,7 @@ export default function MedicationManagementArticle() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong>Ask questions about every new prescription.</strong> Make sure you understand what it treats, how to take it, what side effects to watch for, and how long you'll need it. If something is unclear, ask again—your healthcare provider wants you to understand.
+                    <strong>Ask questions about every new prescription.</strong> Make sure you understand what it treats, how to take it, what side effects to watch for, and how long you'll need it. If something is unclear, ask again. Your healthcare provider wants you to understand.
                   </div>
                 </div>
 
@@ -177,7 +184,7 @@ export default function MedicationManagementArticle() {
               </p>
 
               <p>
-                This is why it's critical to use one pharmacy consistently when possible—pharmacists have sophisticated systems to screen for interactions—and to inform every provider about everything you take, including "natural" supplements. Many patients assume that because something is sold over-the-counter, it can't cause problems. That's not true. Herbal supplements, vitamins, and OTC medications can all interact significantly with prescription drugs.
+                This is why it's critical to use one pharmacy consistently when possible (pharmacists have sophisticated systems to screen for interactions) and to inform every provider about everything you take, including "natural" supplements. Many patients assume that because something is sold over-the-counter, it can't cause problems. That's not true. Herbal supplements, vitamins, and OTC medications can all interact significantly with prescription drugs.
               </p>
 
               <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -189,7 +196,7 @@ export default function MedicationManagementArticle() {
               </p>
 
               <p>
-                This process, sometimes called "deprescribing," is particularly important for older adults who may have accumulated medications over years of treatment. Research shows that simplifying medication regimens—eliminating duplicates, stopping medications that no longer provide benefit, and consolidating doses—improves adherence and reduces side effects without compromising health outcomes.
+                This process, sometimes called "deprescribing," is particularly important for older adults who may have accumulated medications over years of treatment. Research shows that simplifying medication regimens (eliminating duplicates, stopping medications that no longer provide benefit, and consolidating doses) improves adherence and reduces side effects without compromising health outcomes.
               </p>
 
               <p>
@@ -205,7 +212,7 @@ export default function MedicationManagementArticle() {
               </p>
 
               <p>
-                In Austin, TX, many primary care practices now offer comprehensive medication management services. These may include extended consultations to review all your medications, education about each drug's purpose and proper use, coordination with pharmacists, and regular follow-up to ensure your regimen continues to work for you.
+                In the Albuquerque area, many primary care practices now offer comprehensive medication management services. These may include extended consultations to review all your medications, education about each drug's purpose and proper use, coordination with pharmacists, and regular follow-up to ensure your regimen continues to work for you.
               </p>
 
               <p>
@@ -213,7 +220,7 @@ export default function MedicationManagementArticle() {
               </p>
 
               <p className="text-lg font-light text-[var(--color-ink)] mt-12 pt-8 border-t border-[var(--color-border)]">
-                Effective medication management can be the difference between simply treating illness and truly achieving wellness. If you're struggling with your medication routine, feeling overwhelmed by multiple prescriptions, or simply want to ensure you're getting the most benefit from your treatment plan, professional guidance can help. Our team is here to work with you to create a medication strategy that fits your life and supports your health goals.
+                Effective medication management can be the difference between simply treating illness and truly achieving wellness. If you're struggling with your medication routine, feeling overwhelmed by multiple prescriptions, or simply want to ensure you're getting the most benefit from your treatment plan, professional guidance can help. Dr. Hemmen is here to work with you to create a medication strategy that fits your life and supports your health goals.
               </p>
             </div>
           </div>
@@ -229,7 +236,7 @@ export default function MedicationManagementArticle() {
               </div>
               <div>
                 <div className="font-semibold text-[var(--color-ink)] mb-1">
-                  Reviewed by Body1MD Primary Care & Wellness
+                  Reviewed by Dr. Andrew Hemmen, MD
                 </div>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                   This article is provided for educational purposes and reflects current evidence-based practices in medication management and patient safety. Always consult with your healthcare provider for personalized medical advice.
@@ -303,7 +310,7 @@ export default function MedicationManagementArticle() {
               Ready to Take the Next Step?
             </h2>
             <p className="text-xl text-white/90 mb-8 font-light">
-              Our team is here to help.
+              Dr. Hemmen is here to help.
             </p>
             <Link
               href="/contact"

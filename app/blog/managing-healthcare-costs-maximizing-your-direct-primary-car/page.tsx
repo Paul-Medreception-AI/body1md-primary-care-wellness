@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Managing Healthcare Costs: Maximizing Your Direct Primary Care Membership',
-  description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Austin, TX.',
+  description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Albuquerque, NM.',
   alternates: { canonical: '/blog/managing-healthcare-costs-maximizing-your-direct-primary-car' },
   openGraph: {
     title: 'Managing Healthcare Costs: Maximizing Your Direct Primary Care Membership',
-    description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Austin, TX.',
+    description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Albuquerque, NM.',
     url: 'https://body1md.com/blog/managing-healthcare-costs-maximizing-your-direct-primary-car',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/managing-healthcare-costs-maximizing-your-direct-primary-car.jpg', alt: 'Hand dropping a coin into a clear piggy bank beside dollar bills' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Managing Healthcare Costs: Maximizing Your Direct Primary Care Membership',
-    description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Learn how to get the most value from your Direct Primary Care membership with practical strategies to reduce healthcare costs while improving access to quality primary care in Albuquerque, NM.',
+    images: ['/images/blog/managing-healthcare-costs-maximizing-your-direct-primary-car.jpg']
   }
 }
 
@@ -52,7 +53,7 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
-              <span>January 2025</span>
+              <span>October 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -64,11 +65,17 @@ export default function BlogPost() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span>Dr. Wellness Team</span>
+              <span>Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/managing-healthcare-costs-maximizing-your-direct-primary-car.jpg" alt="Hand dropping a coin into a clear piggy bank beside dollar bills" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -79,7 +86,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Direct Primary Care is revolutionizing how patients approach healthcare costs. By paying a simple monthly membership fee, you gain unlimited access to your primary care provider without the confusion of copays, deductibles, or surprise bills. But simply having a DPC membership isn't enough—understanding how to fully utilize it is key to getting the most value for your investment.
+            Direct Primary Care is revolutionizing how patients approach healthcare costs. By paying a simple monthly membership fee, you gain direct access to your primary care physician without the confusion of copays, deductibles, or surprise bills. But simply having a DPC membership isn't enough. Understanding how to fully utilize it is key to getting the most value for your investment.
           </p>
 
           {/* Section 1 */}
@@ -101,7 +108,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            One of the most powerful ways to maximize your DPC membership is to shift from reactive to preventive care. In traditional healthcare, many patients avoid routine checkups because of cost. With DPC, your membership covers unlimited visits, making it financially smart to see your doctor regularly—before problems develop.
+            One of the most powerful ways to maximize your DPC membership is to shift from reactive to preventive care. In traditional healthcare, many patients avoid routine checkups because of cost. With DPC, your membership covers your primary care relationship, making it easier to see your doctor regularly, before problems develop.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -159,9 +166,8 @@ export default function BlogPost() {
 
           <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
             <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-              "The ability to text my doctor when my daughter had a fever at 10 PM saved us a $300 emergency room visit. She got the care she needed from someone who knows her medical history, and we stayed home. That's when I realized the true value of our DPC membership."
+              "When you can reach a physician who already knows your history, an evening question can often be answered before it turns into an urgent care or emergency room visit. That is where much of the value of a DPC membership shows up."
             </p>
-            <p className="text-[var(--color-muted)] text-sm mt-4">— DPC Member, Austin, TX</p>
           </div>
 
           {/* Section 4 */}
@@ -170,7 +176,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Many DPC practices offer services in-office that would typically require separate appointments and facility fees elsewhere. These might include basic procedures, laboratory tests, minor surgical procedures, and diagnostic services—all available at wholesale or near-cost pricing.
+            Many DPC practices offer services in-office that would typically require separate appointments and facility fees elsewhere. These might include basic procedures, laboratory tests, minor surgical procedures, and diagnostic services, all available at wholesale or near-cost pricing.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -187,7 +193,7 @@ export default function BlogPost() {
           </h2>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            DPC is not insurance—it's a membership for primary care services. For catastrophic coverage (major surgeries, hospitalizations, specialist care), many DPC members pair their membership with a health sharing plan or a high-deductible health plan (HDHP) with a low monthly premium.
+            DPC is not insurance. It's a membership for primary care services. For catastrophic coverage (major surgeries, hospitalizations, specialist care), many DPC members pair their membership with a health sharing plan or a high-deductible health plan (HDHP) with a low monthly premium.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
@@ -195,7 +201,7 @@ export default function BlogPost() {
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            For example, a family might pay $2,000/month for traditional comprehensive insurance. By switching to a $600/month catastrophic plan plus a $200/month DPC membership for the whole family, they save $1,200 monthly—$14,400 per year. Even if they hit their higher deductible once, they're still thousands ahead.
+            For example, a family might pay $2,000/month for traditional comprehensive insurance. By switching to a $600/month catastrophic plan plus a $200/month DPC membership for the whole family, they save $1,200 monthly, or $14,400 per year. Even if they hit their higher deductible once, they're still thousands ahead.
           </p>
 
           {/* Section 6 */}
@@ -259,15 +265,15 @@ export default function BlogPost() {
 
           {/* Closing */}
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            Healthcare costs don't have to be overwhelming or unpredictable. Direct Primary Care offers a refreshingly simple alternative: transparent pricing, unlimited access to your doctor, and a care model that prioritizes your health over insurance paperwork. But like any investment, you only get out what you put in.
+            Healthcare costs don't have to be overwhelming or unpredictable. Direct Primary Care offers a refreshingly simple alternative: transparent pricing, direct access to your doctor, and a care model that prioritizes your health over insurance paperwork. But like any investment, you only get out what you put in.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base mb-6">
-            By fully utilizing your DPC membership—embracing preventive care, taking advantage of direct access, leveraging wholesale pricing, and building a strong doctor-patient relationship—you can dramatically reduce your healthcare costs while improving your health outcomes. The question isn't whether you can afford Direct Primary Care; it's whether you can afford not to maximize it.
+            By fully utilizing your DPC membership (embracing preventive care, taking advantage of direct access, leveraging wholesale pricing, and building a strong doctor-patient relationship), you can dramatically reduce your healthcare costs while improving your health outcomes. The question isn't whether you can afford Direct Primary Care; it's whether you can afford not to maximize it.
           </p>
 
           <p className="text-[var(--color-ink)] leading-loose text-base">
-            If you're interested in learning more about how Direct Primary Care can transform your healthcare experience and help you take control of your medical expenses, reach out to our practice. We're here to answer your questions and help you understand exactly how DPC can work for you and your family in Austin, TX.
+            If you're interested in learning more about how Direct Primary Care can transform your healthcare experience and help you take control of your medical expenses, reach out to Body1MD. Dr. Hemmen is happy to answer your questions and help you understand exactly how DPC can work for you in the Albuquerque area.
           </p>
         </div>
       </article>
@@ -283,10 +289,10 @@ export default function BlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                Our practice is dedicated to providing comprehensive, patient-centered care that prioritizes your long-term health and wellness. We believe in transparent pricing, unlimited access, and building meaningful relationships with every patient we serve in Austin, TX.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. His practice is built on transparent monthly pricing, direct access to your physician, and meaningful relationships with every patient.
               </p>
             </div>
           </div>
@@ -301,7 +307,7 @@ export default function BlogPost() {
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <Link href="/services/direct-primary-care" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <Link href="/new-patients" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] h-48 flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -312,7 +318,7 @@ export default function BlogPost() {
                   Direct Primary Care Services
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                  Discover how our membership-based model provides unlimited access to comprehensive primary care with transparent, affordable pricing.
+                  Discover how membership-based care gives you direct access to your physician with transparent monthly pricing.
                 </p>
               </div>
             </Link>
@@ -361,7 +367,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help you understand how Direct Primary Care can transform your healthcare experience.
+            Dr. Hemmen is here to help you understand how Direct Primary Care can transform your healthcare experience.
           </p>
           <Link
             href="/contact"

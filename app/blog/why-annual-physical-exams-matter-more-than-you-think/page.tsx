@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Why Annual Physical Exams Matter More Than You Think',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/why-annual-physical-exams-matter-more-than-you-think',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/why-annual-physical-exams-matter-more-than-you-think.jpg', alt: 'Physician listening to an older man heart with a stethoscope in an exam room' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Why Annual Physical Exams Matter More Than You Think',
     description: 'Discover the critical role annual physicals play in preventive care, early disease detection, and long-term health outcomes. Learn what to expect and why skipping your checkup could be costly.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/why-annual-physical-exams-matter-more-than-you-think.jpg'],
   },
 }
 
@@ -52,10 +53,17 @@ export default function BlogPost() {
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/why-annual-physical-exams-matter-more-than-you-think.jpg" alt="Physician listening to an older man heart with a stethoscope in an exam room" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -63,13 +71,13 @@ export default function BlogPost() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              You feel fine. You're busy. You haven't had symptoms in months—maybe years. So why bother scheduling an annual physical exam? It's a question millions of Americans ask themselves each year, and the answer could literally save your life.
+              You feel fine. You're busy. You haven't had symptoms in months, maybe years. So why bother scheduling an annual physical exam? It's a question millions of Americans ask themselves each year, and the answer could literally save your life.
             </p>
             <p className="mb-6">
               Annual physical exams are far more than a routine formality. They're your frontline defense against silent health threats, a cornerstone of preventive medicine, and an opportunity to build a meaningful relationship with your healthcare provider. Yet nearly half of American adults skip their yearly checkup, often discovering health problems only when symptoms become impossible to ignore.
             </p>
             <p>
-              Let's explore why that annual visit deserves a permanent spot on your calendar—and what you might be missing if you skip it.
+              Let's explore why that annual visit deserves a permanent spot on your calendar, and what you might be missing if you skip it.
             </p>
           </div>
 
@@ -82,16 +90,16 @@ export default function BlogPost() {
               Many serious health conditions develop silently over years. High blood pressure, elevated cholesterol, prediabetes, and even certain cancers often produce no symptoms in their early stages. By the time you feel something is wrong, the disease may have progressed significantly.
             </p>
             <p className="mb-6">
-              Annual physical exams include comprehensive screenings designed to catch these conditions early—when they're most treatable. Routine blood work can reveal cholesterol levels creeping into dangerous territory. Blood pressure checks identify hypertension before it damages your heart or kidneys. Screening tests can detect cancer at Stage I rather than Stage IV, dramatically improving survival rates.
+              Annual physical exams include comprehensive screenings designed to catch these conditions early, when they're most treatable. Routine blood work can reveal cholesterol levels creeping into dangerous territory. Blood pressure checks identify hypertension before it damages your heart or kidneys. Screening tests can detect cancer at Stage I rather than Stage IV, dramatically improving survival rates.
             </p>
             <p>
-              The numbers speak for themselves: early detection of colorectal cancer increases five-year survival rates to over 90%. Catching high blood pressure early can prevent heart attacks, strokes, and kidney disease. These aren't abstract statistics—they represent real people who gained years of healthy life because a routine checkup uncovered a hidden problem.
+              The numbers speak for themselves: early detection of colorectal cancer increases five-year survival rates to over 90%. Catching high blood pressure early can prevent heart attacks, strokes, and kidney disease. These aren't abstract statistics. They represent real people who gained years of healthy life because a routine checkup uncovered a hidden problem.
             </p>
           </div>
 
           {/* Pull Quote */}
           <blockquote className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8 text-[var(--color-ink)] italic text-xl font-cormorant">
-            "An annual physical isn't just about finding disease—it's about partnering with your doctor to optimize your health trajectory before problems begin."
+            "An annual physical isn't just about finding disease. It's about partnering with your doctor to optimize your health trajectory before problems begin."
           </blockquote>
 
           {/* Section 2 */}
@@ -103,7 +111,7 @@ export default function BlogPost() {
               Your body changes gradually over time. Weight fluctuates, blood pressure shifts, and metabolic markers evolve. When you see your doctor only when you're sick, there's no baseline for comparison. Is that slightly elevated blood sugar a new concern, or has it been trending upward for three years?
             </p>
             <p className="mb-6">
-              Annual exams create a longitudinal health record—a detailed map of your body's patterns and trends. This baseline becomes invaluable when interpreting new symptoms or test results. Your doctor can identify subtle changes that might signal emerging problems, often years before they become clinically significant.
+              Annual exams create a longitudinal health record, a detailed map of your body's patterns and trends. This baseline becomes invaluable when interpreting new symptoms or test results. Your doctor can identify subtle changes that might signal emerging problems, often years before they become clinically significant.
             </p>
             <p>
               Think of it like maintaining a car: regular inspections catch small issues before they become expensive repairs. Your body deserves at least the same level of preventive attention.
@@ -116,7 +124,7 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              Prevention is always easier—and less expensive—than treatment. Annual physicals provide the perfect opportunity to stay current with preventive care guidelines and immunizations that protect your health.
+              Prevention is always easier (and less expensive) than treatment. Annual physicals provide the perfect opportunity to stay current with preventive care guidelines and immunizations that protect your health.
             </p>
             <p className="mb-6">
               During your visit, your provider can review your vaccination status and recommend updates based on your age, health history, and risk factors. Adults need boosters for tetanus, protection against shingles, annual flu vaccines, and other immunizations that many people overlook after childhood.
@@ -204,10 +212,10 @@ export default function BlogPost() {
               We know that busy schedules, cost concerns, and even anxiety about potential findings can keep people from scheduling their annual exam. But the cost of skipping preventive care almost always exceeds the investment in staying proactive.
             </p>
             <p className="mb-6">
-              Most insurance plans cover annual wellness visits at no cost to you. Direct primary care models offer even more accessibility with unlimited visits for a flat monthly fee, removing financial barriers entirely. As for time, consider this: one hour per year is a small investment compared to weeks or months managing a preventable disease.
+              Most insurance plans cover annual wellness visits at no cost to you. Direct primary care models offer even more accessibility with direct physician access for a flat monthly fee, removing financial barriers entirely. As for time, consider this: one hour per year is a small investment compared to weeks or months managing a preventable disease.
             </p>
             <p>
-              If you're nervous about what your doctor might find, remember that knowledge is power. Finding a problem early gives you options and control. Ignoring warning signs doesn't make them disappear—it just makes them harder to treat.
+              If you're nervous about what your doctor might find, remember that knowledge is power. Finding a problem early gives you options and control. Ignoring warning signs doesn't make them disappear. It just makes them harder to treat.
             </p>
           </div>
 
@@ -234,10 +242,10 @@ export default function BlogPost() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is committed to providing evidence-based patient education that empowers you to make informed decisions about your health. We believe in the power of preventive medicine and building lasting relationships with our patients in Austin, TX.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -306,7 +314,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Our team is here to help you prioritize your health with comprehensive, personalized care.
+            Dr. Hemmen is here to help you prioritize your health with comprehensive, personalized care.
           </p>
           <Link
             href="/contact"

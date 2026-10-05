@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'The Role of Exercise in Managing Chronic Disease | Body1MD',
-  description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Austin primary care experts.',
+  description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Body1MD in Albuquerque, NM.',
   alternates: { canonical: '/blog/the-role-of-exercise-in-managing-chronic-disease' },
   openGraph: {
     title: 'The Role of Exercise in Managing Chronic Disease | Body1MD',
-    description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Austin primary care experts.',
+    description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Body1MD in Albuquerque, NM.',
     url: 'https://body1md.com/blog/the-role-of-exercise-in-managing-chronic-disease',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/the-role-of-exercise-in-managing-chronic-disease.jpg', alt: 'Older couple walking together on a park trail on a spring day' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Role of Exercise in Managing Chronic Disease | Body1MD',
-    description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Austin primary care experts.',
-    images: ['/og-image.png']
+    description: 'Discover how regular physical activity helps manage chronic conditions like diabetes, heart disease, and arthritis. Evidence-based guidance from Body1MD in Albuquerque, NM.',
+    images: ['/images/blog/the-role-of-exercise-in-managing-chronic-disease.jpg']
   }
 }
 
@@ -48,14 +49,21 @@ export default function ExerciseChronicDiseasePage() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/the-role-of-exercise-in-managing-chronic-disease.jpg" alt="Older couple walking together on a park trail on a spring day" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -66,7 +74,7 @@ export default function ExerciseChronicDiseasePage() {
               Living with a chronic disease can feel overwhelming. Whether you're managing diabetes, heart disease, arthritis, or another long-term condition, the daily challenges can take a toll on both your physical and mental well-being. But here's the encouraging news: regular physical activity is one of the most powerful tools you have to take control of your health and improve your quality of life.
             </p>
             <p className="mb-6">
-              Exercise isn't just about fitness or weight loss—it's medicine. Research consistently shows that appropriate physical activity can reduce symptoms, slow disease progression, prevent complications, and help you feel better in countless ways. Let's explore how movement becomes healing when you're managing chronic illness.
+              Exercise isn't just about fitness or weight loss. It's medicine. Research consistently shows that appropriate physical activity can reduce symptoms, slow disease progression, prevent complications, and help you feel better in countless ways. Let's explore how movement becomes healing when you're managing chronic illness.
             </p>
           </div>
 
@@ -76,7 +84,7 @@ export default function ExerciseChronicDiseasePage() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              The concept of "exercise as medicine" isn't metaphorical—it's literal. When you move your body, you trigger cascading biological responses that directly impact disease processes. Your muscles release proteins that reduce inflammation. Your cardiovascular system becomes more efficient. Your cells improve their ability to use insulin. Your brain produces chemicals that elevate mood and reduce pain perception.
+              The concept of "exercise as medicine" isn't metaphorical. It's literal. When you move your body, you trigger cascading biological responses that directly impact disease processes. Your muscles release proteins that reduce inflammation. Your cardiovascular system becomes more efficient. Your cells improve their ability to use insulin. Your brain produces chemicals that elevate mood and reduce pain perception.
             </p>
             <p className="mb-6">
               For people with chronic conditions, these effects translate into measurable health improvements. Studies show that regular exercise can lower blood sugar levels in diabetes, reduce blood pressure in hypertension, decrease joint pain in arthritis, improve lung function in COPD, and reduce the risk of heart attacks in cardiovascular disease.
@@ -153,7 +161,7 @@ export default function ExerciseChronicDiseasePage() {
                 <svg className="w-6 h-6 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span><strong>Stay hydrated.</strong> Drink water before, during, and after physical activity, especially in Austin's warm climate.</span>
+                <span><strong>Stay hydrated.</strong> Drink water before, during, and after physical activity, especially in New Mexico's dry, high desert climate.</span>
               </div>
             </div>
           </div>
@@ -167,7 +175,7 @@ export default function ExerciseChronicDiseasePage() {
               Consistency matters more than intensity. Research shows that even modest amounts of regular physical activity provide significant health benefits. The goal is to build exercise into your life in a way that feels manageable and sustainable.
             </p>
             <p className="mb-6">
-              Current guidelines recommend at least 150 minutes of moderate-intensity aerobic activity per week for most adults, which breaks down to just 30 minutes five days a week. You can further divide this into shorter sessions—three 10-minute walks throughout the day count just as much as one 30-minute walk.
+              Current guidelines recommend at least 150 minutes of moderate-intensity aerobic activity per week for most adults, which breaks down to just 30 minutes five days a week. You can further divide this into shorter sessions: three 10-minute walks throughout the day count just as much as one 30-minute walk.
             </p>
             <p className="mb-6">
               Beyond aerobic exercise, include strength training at least twice a week to maintain muscle mass, bone density, and functional independence. Flexibility and balance exercises are also important, especially for preventing falls and maintaining mobility.
@@ -211,7 +219,7 @@ export default function ExerciseChronicDiseasePage() {
               Be honest about your current activity level and any barriers you face. Share your goals and preferences. Together, you can create a realistic plan that fits your life and gradually helps you build strength, endurance, and confidence.
             </p>
             <p className="mb-6">
-              Keep your provider updated on your progress and any problems you encounter. They can adjust your plan as needed, celebrate your successes, and help you navigate setbacks. Remember that progress isn't always linear—what matters is the overall trend toward better health.
+              Keep your provider updated on your progress and any problems you encounter. They can adjust your plan as needed, celebrate your successes, and help you navigate setbacks. Remember that progress isn't always linear. What matters is the overall trend toward better health.
             </p>
             <p>
               If you're managing multiple chronic conditions, coordinated care becomes especially important. Your provider can help you understand how different conditions interact and ensure your exercise plan supports all aspects of your health safely.
@@ -221,7 +229,7 @@ export default function ExerciseChronicDiseasePage() {
           {/* Closing */}
           <div className="text-[var(--color-ink)] leading-loose text-base mt-12 pt-8 border-t border-[var(--color-border)]">
             <p className="mb-6">
-              Living with chronic disease doesn't mean accepting declining health. Regular physical activity offers a powerful way to take an active role in your care, improve how you feel day to day, and reduce your risk of complications. The benefits extend far beyond the physical—exercise enhances mental health, sleep quality, energy levels, and overall quality of life.
+              Living with chronic disease doesn't mean accepting declining health. Regular physical activity offers a powerful way to take an active role in your care, improve how you feel day to day, and reduce your risk of complications. The benefits extend far beyond the physical: exercise enhances mental health, sleep quality, energy levels, and overall quality of life.
             </p>
             <p>
               At Body1MD Primary Care & Wellness, we believe in comprehensive, personalized care that addresses your whole health. If you're ready to explore how exercise can fit into your chronic disease management plan, we're here to guide you every step of the way. Together, we can develop an approach that's safe, effective, and tailored to your unique needs and goals.
@@ -241,7 +249,7 @@ export default function ExerciseChronicDiseasePage() {
             </div>
             <div>
               <div className="font-semibold text-[var(--color-ink)] mb-2">
-                Reviewed by Body1MD Primary Care & Wellness
+                Reviewed by Dr. Andrew Hemmen, MD
               </div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                 This article provides general health information and is not a substitute for personalized medical advice. We encourage you to discuss any questions about your specific health needs with your healthcare provider.
@@ -260,7 +268,7 @@ export default function ExerciseChronicDiseasePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <Link
-              href="/blog/understanding-diabetes-prevention-and-management"
+              href="/blog/prediabetes-your-wake-up-call-to-prevent-type-2-diabetes"
               className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-[var(--color-light)] rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
@@ -269,7 +277,7 @@ export default function ExerciseChronicDiseasePage() {
                 </svg>
               </div>
               <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                Understanding Diabetes Prevention and Management
+                Prediabetes: Your Wake-Up Call to Prevent Type 2 Diabetes
               </h4>
               <p className="text-[var(--color-muted)] text-sm">
                 Learn evidence-based strategies for preventing and managing diabetes through lifestyle and medical care.
@@ -296,7 +304,7 @@ export default function ExerciseChronicDiseasePage() {
 
             {/* Card 3 */}
             <Link
-              href="/blog/nutrition-basics-for-better-health"
+              href="/blog/type-2-diabetes-reversal-what-science-says-about-diet-and-li"
               className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-[var(--color-light)] rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
@@ -305,7 +313,7 @@ export default function ExerciseChronicDiseasePage() {
                 </svg>
               </div>
               <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                Nutrition Basics for Better Health
+                Type 2 Diabetes Reversal: What Science Says About Diet
               </h4>
               <p className="text-[var(--color-muted)] text-sm">
                 Explore practical nutrition guidance that complements exercise for optimal chronic disease management.
@@ -322,7 +330,7 @@ export default function ExerciseChronicDiseasePage() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-lg mb-8 text-white/90">
-            Our team is here to help you develop a personalized exercise plan that supports your health goals.
+            Dr. Hemmen is here to help you develop a personalized exercise plan that supports your health goals.
           </p>
           <Link
             href="/contact"

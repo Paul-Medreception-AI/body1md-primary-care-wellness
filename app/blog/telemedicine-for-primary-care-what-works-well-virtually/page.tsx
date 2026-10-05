@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Telemedicine for Primary Care: What Works Well Virtually',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/telemedicine-for-primary-care-what-works-well-virtually',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/telemedicine-for-primary-care-what-works-well-virtually.jpg', alt: 'Physician in a white coat on a video call with a patient on a laptop' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Telemedicine for Primary Care: What Works Well Virtually',
     description: 'Discover which primary care services work best through telemedicine, from chronic disease management to mental health support, and when virtual visits are most effective.',
-    images: ['/og-image.png']
+    images: ['/images/blog/telemedicine-for-primary-care-what-works-well-virtually.jpg']
   }
 }
 
@@ -38,24 +39,31 @@ export default function TelemedicinePrimaryCareArticle() {
             Telemedicine for Primary Care: What Works Well Virtually
           </h1>
           <div className="flex justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/telemedicine-for-primary-care-what-works-well-virtually.jpg" alt="Physician in a white coat on a video call with a patient on a laptop" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       <article className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-[var(--color-ink)] leading-loose text-base">
             <p className="text-xl mb-6">
-              The morning alarm goes off. Your throat feels scratchy, your head aches, and you know you need medical advice—but the thought of sitting in a waiting room, taking time off work, and exposing yourself to other illnesses feels overwhelming. Enter telemedicine: the ability to connect with your primary care provider from the comfort of home, often within hours rather than days.
+              The morning alarm goes off. Your throat feels scratchy, your head aches, and you know you need medical advice, but the thought of sitting in a waiting room, taking time off work, and exposing yourself to other illnesses feels overwhelming. Enter telemedicine: the ability to connect with your primary care provider from the comfort of home, often within hours rather than days.
             </p>
 
             <p className="mb-6">
-              Telemedicine has transformed from a convenience into an essential healthcare delivery method. But which types of primary care visits truly work well virtually? Understanding what can be effectively addressed through a screen—and what still requires an in-person visit—empowers you to make informed decisions about your care while maximizing convenience and access.
+              Telemedicine has transformed from a convenience into an essential healthcare delivery method. But which types of primary care visits truly work well virtually? Understanding what can be effectively addressed through a screen, and what still requires an in-person visit, empowers you to make informed decisions about your care while maximizing convenience and access.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -63,11 +71,11 @@ export default function TelemedicinePrimaryCareArticle() {
             </h2>
 
             <p className="mb-6">
-              Telemedicine in primary care refers to video or phone consultations with your doctor for evaluation, diagnosis, treatment, and ongoing management of health conditions. Unlike urgent care apps that connect you with random providers, virtual primary care maintains the continuity of your existing doctor-patient relationship—your provider knows your history, medications, and health goals.
+              Telemedicine in primary care refers to video or phone consultations with your doctor for evaluation, diagnosis, treatment, and ongoing management of health conditions. Unlike urgent care apps that connect you with random providers, virtual primary care maintains the continuity of your existing doctor-patient relationship: your provider knows your history, medications, and health goals.
             </p>
 
             <p className="mb-6">
-              This continuity makes virtual visits particularly effective for many common primary care needs. Your doctor can review your medical record, discuss symptoms in detail, prescribe medications, order lab tests, and coordinate specialist referrals—all through a secure video platform.
+              This continuity makes virtual visits particularly effective for many common primary care needs. Your doctor can review your medical record, discuss symptoms in detail, prescribe medications, order lab tests, and coordinate specialist referrals, all through a secure video platform.
             </p>
 
             <h2 className="font-cormorant text-3xl text-[var(--color-ink)] mt-12 mb-4">
@@ -93,7 +101,7 @@ export default function TelemedicinePrimaryCareArticle() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
-                  <strong className="text-[var(--color-ink)]">Chronic disease management:</strong> Follow-up visits for diabetes, hypertension, high cholesterol, and thyroid disorders work remarkably well virtually. Providers can review home blood pressure readings, discuss blood glucose logs, adjust medications, and order refill prescriptions—all without requiring you to take time off work.
+                  <strong className="text-[var(--color-ink)]">Chronic disease management:</strong> Follow-up visits for diabetes, hypertension, high cholesterol, and thyroid disorders work remarkably well virtually. Providers can review home blood pressure readings, discuss blood glucose logs, adjust medications, and order refill prescriptions, all without requiring you to take time off work.
                 </div>
               </div>
 
@@ -136,7 +144,7 @@ export default function TelemedicinePrimaryCareArticle() {
 
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "Telemedicine doesn't replace the doctor-patient relationship—it extends it, making care more accessible while maintaining the continuity and personalization that define quality primary care."
+                "Telemedicine doesn't replace the doctor-patient relationship. It extends it, making care more accessible while maintaining the continuity and personalization that define quality primary care."
               </p>
             </div>
 
@@ -157,7 +165,7 @@ export default function TelemedicinePrimaryCareArticle() {
             </p>
 
             <p className="mb-4">
-              <strong>Acute emergencies:</strong> Chest pain, difficulty breathing, severe bleeding, signs of stroke, or severe allergic reactions require immediate emergency care—call 911 rather than scheduling any type of appointment.
+              <strong>Acute emergencies:</strong> Chest pain, difficulty breathing, severe bleeding, signs of stroke, or severe allergic reactions require immediate emergency care. Call 911 rather than scheduling any type of appointment.
             </p>
 
             <p className="mb-6">
@@ -221,7 +229,7 @@ export default function TelemedicinePrimaryCareArticle() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <div>
-                  <strong className="text-[var(--color-ink)]">Be descriptive:</strong> Since your provider can't physically examine you, clear descriptions of symptoms—including location, severity, timing, and what makes them better or worse—become especially important.
+                  <strong className="text-[var(--color-ink)]">Be descriptive:</strong> Since your provider can't physically examine you, clear descriptions of symptoms (including location, severity, timing, and what makes them better or worse) become especially important.
                 </div>
               </div>
 
@@ -240,7 +248,7 @@ export default function TelemedicinePrimaryCareArticle() {
             </h2>
 
             <p className="mb-6">
-              The most effective approach to primary care increasingly involves a hybrid model—combining virtual visits for appropriate situations with in-person care when physical examination or procedures are needed. This flexibility allows you to access care when and how you need it, reducing barriers while maintaining quality.
+              The most effective approach to primary care increasingly involves a hybrid model, combining virtual visits for appropriate situations with in-person care when physical examination or procedures are needed. This flexibility allows you to access care when and how you need it, reducing barriers while maintaining quality.
             </p>
 
             <p className="mb-6">
@@ -248,7 +256,7 @@ export default function TelemedicinePrimaryCareArticle() {
             </p>
 
             <p className="mb-6">
-              Telemedicine has proven to be far more than a pandemic-era workaround—it's a valuable tool that expands access, improves convenience, and maintains care quality for a wide range of primary care needs. By understanding what works well virtually and when in-person care is preferable, you can make informed decisions about your health while benefiting from the flexibility that modern technology provides. If you're curious about incorporating virtual visits into your primary care routine, reach out to discuss which services might work best for your individual health needs and preferences.
+              Telemedicine has proven to be far more than a pandemic-era workaround. It's a valuable tool that expands access, improves convenience, and maintains care quality for a wide range of primary care needs. By understanding what works well virtually and when in-person care is preferable, you can make informed decisions about your health while benefiting from the flexibility that modern technology provides. At Body1MD, members have direct access to Dr. Hemmen by phone and text between visits, which covers many of the quick questions described above. Reach out to learn how that access works and when an in-person visit is the better choice.
             </p>
           </div>
         </div>
@@ -263,9 +271,9 @@ export default function TelemedicinePrimaryCareArticle() {
               </svg>
             </div>
             <div>
-              <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
+              <div className="font-semibold text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
               <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-                Our team is dedicated to providing evidence-based information and compassionate care guidance to help you make informed decisions about your health and wellness.
+                Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
               </p>
             </div>
           </div>
@@ -276,7 +284,7 @@ export default function TelemedicinePrimaryCareArticle() {
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="font-cormorant text-3xl text-[var(--color-ink)] mb-8 text-center">Related Resources</h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <Link href="/blog/direct-primary-care-model-explained" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
+            <Link href="/blog/direct-primary-care-vs-traditional-insurance-which-saves-you" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[var(--color-light)] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                   <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors">
@@ -284,7 +292,7 @@ export default function TelemedicinePrimaryCareArticle() {
                   </svg>
                 </div>
                 <h4 className="font-cormorant text-xl text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  Direct Primary Care Model Explained
+                  Direct Primary Care vs Traditional Insurance
                 </h4>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed">
                   Learn how the direct primary care model works and why it may offer better access and more personalized attention.
@@ -292,7 +300,7 @@ export default function TelemedicinePrimaryCareArticle() {
               </div>
             </Link>
 
-            <Link href="/blog/when-to-see-primary-care-vs-urgent-care" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
+            <Link href="/blog/when-to-use-urgent-care-vs-your-primary-care-doctor" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[var(--color-light)] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                   <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors">
@@ -308,7 +316,7 @@ export default function TelemedicinePrimaryCareArticle() {
               </div>
             </Link>
 
-            <Link href="/blog/preventive-care-annual-physical-importance" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
+            <Link href="/blog/why-annual-physical-exams-matter-more-than-you-think" className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[var(--color-light)] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                   <svg stroke="currentColor" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors">
@@ -330,7 +338,7 @@ export default function TelemedicinePrimaryCareArticle() {
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-          <p className="text-xl mb-8 text-white/90">Our team is here to help.</p>
+          <p className="text-xl mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link 
             href="/contact"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold hover:bg-[var(--color-cream)] transition-colors"

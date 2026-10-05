@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Pneumonia Prevention and Early Detection in At-Risk Adults',
-  description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in Austin, TX.',
+  description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in the Albuquerque area.',
   alternates: { canonical: '/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults' },
   openGraph: {
     title: 'Pneumonia Prevention and Early Detection in At-Risk Adults',
-    description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in Austin, TX.',
+    description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in the Albuquerque area.',
     url: 'https://body1md.com/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }]
+    images: [{ url: '/images/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults.jpg', alt: 'Physician reviewing a chest X-ray with a patient in an exam room' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pneumonia Prevention and Early Detection in At-Risk Adults',
-    description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in Austin, TX.',
-    images: ['/og-image.png']
+    description: 'Learn evidence-based strategies for preventing pneumonia and recognizing early warning signs in vulnerable populations. Essential guidance for at-risk adults in the Albuquerque area.',
+    images: ['/images/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults.jpg']
   }
 }
 
@@ -49,14 +50,21 @@ export default function PneumoniaPreventionArticle() {
 
             {/* Meta */}
             <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-              <span>Published December 2024</span>
+              <span>Published October 2026</span>
               <span>•</span>
               <span>7 min read</span>
               <span>•</span>
-              <span>Reviewed by Body1MD Primary Care & Wellness</span>
+              <span>Reviewed by Dr. Andrew Hemmen, MD</span>
             </div>
           </div>
         </section>
+
+        {/* Hero image */}
+        <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+            <Image src="/images/blog/pneumonia-prevention-and-early-detection-in-at-risk-adults.jpg" alt="Physician reviewing a chest X-ray with a patient in an exam room" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+          </div>
+        </div>
 
         {/* Article Body */}
         <section className="bg-white py-20">
@@ -64,7 +72,7 @@ export default function PneumoniaPreventionArticle() {
             {/* Opening Hook */}
             <div className="text-[var(--color-ink)] leading-loose text-lg mb-8">
               <p className="mb-6">
-                Every year, more than a million Americans are hospitalized with pneumonia, and for vulnerable adults—those over 65, living with chronic conditions, or with weakened immune systems—this common respiratory infection can quickly become life-threatening. Yet many cases are preventable, and early detection dramatically improves outcomes. Understanding your risk factors and knowing the warning signs can make all the difference between a manageable illness and a medical emergency.
+                Every year, more than a million Americans are hospitalized with pneumonia, and for vulnerable adults (those over 65, living with chronic conditions, or with weakened immune systems), this common respiratory infection can quickly become life-threatening. Yet many cases are preventable, and early detection dramatically improves outcomes. Understanding your risk factors and knowing the warning signs can make all the difference between a manageable illness and a medical emergency.
               </p>
             </div>
 
@@ -133,10 +141,10 @@ export default function PneumoniaPreventionArticle() {
               
               <h3 className="text-xl font-semibold text-[var(--color-ink)] mt-6 mb-3">Vaccination: Your First Line of Defense</h3>
               <p className="mb-4">
-                Pneumococcal vaccines protect against the bacteria responsible for most serious pneumonia cases. The CDC recommends that adults 65 and older receive both PCV20 (one dose) or PCV15 followed by PPSV23. Younger adults with certain chronic conditions should also be vaccinated. Studies show these vaccines reduce the risk of invasive pneumococcal disease by 50-85% in eligible populations.
+                Pneumococcal vaccines protect against the bacteria responsible for most serious pneumonia cases. The CDC recommends pneumococcal vaccination for all adults 50 and older, given either as a single dose of PCV20 or PCV21, or as PCV15 followed by PPSV23. Younger adults with certain chronic conditions should also be vaccinated. Studies show these vaccines reduce the risk of invasive pneumococcal disease by 50-85% in eligible populations.
               </p>
               <p className="mb-4">
-                Annual flu shots are equally important—influenza is a leading precursor to bacterial pneumonia, particularly in older adults. Getting your flu vaccine every fall significantly reduces your pneumonia risk throughout the respiratory illness season.
+                Annual flu shots are equally important, because influenza is a leading precursor to bacterial pneumonia, particularly in older adults. Getting your flu vaccine every fall significantly reduces your pneumonia risk throughout the respiratory illness season.
               </p>
 
               <h3 className="text-xl font-semibold text-[var(--color-ink)] mt-6 mb-3">Lifestyle Modifications That Matter</h3>
@@ -180,7 +188,7 @@ export default function PneumoniaPreventionArticle() {
             {/* Pull Quote */}
             <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
               <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-                "For vulnerable adults, recognizing pneumonia early—ideally within the first 24 to 48 hours of symptoms—can be the difference between outpatient treatment and hospitalization."
+                "For vulnerable adults, recognizing pneumonia early, ideally within the first 24 to 48 hours of symptoms, can be the difference between outpatient treatment and hospitalization."
               </p>
             </div>
 
@@ -274,7 +282,7 @@ export default function PneumoniaPreventionArticle() {
             </h2>
             <div className="text-[var(--color-ink)] leading-loose mb-8">
               <p className="mb-4">
-                If you're in an at-risk category and develop any concerning respiratory symptoms, contact your healthcare provider promptly—don't wait to see if symptoms improve on their own. Early diagnosis allows for outpatient treatment in many cases, while delayed care often leads to hospitalization.
+                If you're in an at-risk category and develop any concerning respiratory symptoms, contact your healthcare provider promptly. Don't wait to see if symptoms improve on their own. Early diagnosis allows for outpatient treatment in many cases, while delayed care often leads to hospitalization.
               </p>
               <p className="mb-4">
                 Seek immediate emergency care if you experience:
@@ -360,7 +368,7 @@ export default function PneumoniaPreventionArticle() {
                 </li>
               </ul>
               <p className="mb-4">
-                In a direct primary care model, the enhanced accessibility and extended visit times allow for more thorough discussions about prevention strategies and earlier intervention when concerning symptoms arise—critical advantages for patients at elevated pneumonia risk.
+                In a direct primary care model, the enhanced accessibility and extended visit times allow for more thorough discussions about prevention strategies and earlier intervention when concerning symptoms arise. Both are critical advantages for patients at elevated pneumonia risk.
               </p>
             </div>
 
@@ -384,9 +392,9 @@ export default function PneumoniaPreventionArticle() {
               </div>
               <div>
                 <div className="text-sm uppercase tracking-wider text-[var(--color-muted)] mb-2">Medical Review</div>
-                <div className="font-cormorant text-2xl text-[var(--color-ink)] mb-2">Reviewed by Body1MD Primary Care & Wellness</div>
-                <p className="text-[var(--color-ink)]/80 leading-relaxed">
-                  Our team is dedicated to providing comprehensive primary care focused on prevention, early detection, and personalized treatment plans for patients in Austin, TX.
+                <div className="font-cormorant text-2xl text-[var(--color-ink)] mb-2">Reviewed by Dr. Andrew Hemmen, MD</div>
+                <p className="text-ink/80 leading-relaxed">
+                  Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care.
                 </p>
               </div>
             </div>
@@ -405,7 +413,7 @@ export default function PneumoniaPreventionArticle() {
                   <h4 className="font-cormorant text-2xl text-[var(--color-ink)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                     More Patient Education Articles
                   </h4>
-                  <p className="text-[var(--color-ink)]/70 mb-4 leading-relaxed">
+                  <p className="text-ink/70 mb-4 leading-relaxed">
                     Explore our library of evidence-based health information.
                   </p>
                   <div className="flex items-center text-[var(--color-accent)] text-sm font-semibold">
@@ -424,7 +432,7 @@ export default function PneumoniaPreventionArticle() {
                   <h4 className="font-cormorant text-2xl text-[var(--color-ink)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                     Our Services
                   </h4>
-                  <p className="text-[var(--color-ink)]/70 mb-4 leading-relaxed">
+                  <p className="text-ink/70 mb-4 leading-relaxed">
                     Comprehensive primary care services designed around your needs.
                   </p>
                   <div className="flex items-center text-[var(--color-accent)] text-sm font-semibold">
@@ -443,8 +451,8 @@ export default function PneumoniaPreventionArticle() {
                   <h4 className="font-cormorant text-2xl text-[var(--color-ink)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                     Schedule a Visit
                   </h4>
-                  <p className="text-[var(--color-ink)]/70 mb-4 leading-relaxed">
-                    Connect with our team to discuss your health goals.
+                  <p className="text-ink/70 mb-4 leading-relaxed">
+                    Connect with Dr. Hemmen to discuss your health goals.
                   </p>
                   <div className="flex items-center text-[var(--color-accent)] text-sm font-semibold">
                     Contact us
@@ -462,7 +470,7 @@ export default function PneumoniaPreventionArticle() {
         <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
-            <p className="text-xl text-white/90 mb-8">Our team is here to help.</p>
+            <p className="text-xl text-white/90 mb-8">Dr. Hemmen is here to help.</p>
             <Link 
               href="/contact" 
               className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold hover:bg-[var(--color-cream)] transition-colors duration-300"

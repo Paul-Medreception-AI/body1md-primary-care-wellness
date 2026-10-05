@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'COPD Management: Breathing Easier With Proper Treatment',
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://body1md.com/blog/copd-management-breathing-easier-with-proper-treatment',
     siteName: 'Body1MD Primary Care & Wellness',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/images/blog/copd-management-breathing-easier-with-proper-treatment.jpg', alt: 'Older man breathing deeply outdoors with a hand on his chest' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'COPD Management: Breathing Easier With Proper Treatment',
     description: 'Learn effective COPD management strategies, treatment options, and lifestyle modifications to improve breathing and quality of life with chronic obstructive pulmonary disease.',
-    images: ['/og-image.png'],
+    images: ['/images/blog/copd-management-breathing-easier-with-proper-treatment.jpg'],
   },
 }
 
@@ -48,14 +49,20 @@ export default function BlogPost() {
 
           {/* Meta */}
           <div className="flex items-center justify-center gap-6 text-sm text-white/80">
-            <span>Published January 2025</span>
+            <span>Published October 2026</span>
             <span>•</span>
             <span>7 min read</span>
             <span>•</span>
-            <span>Dr. Wellness Team</span>
+            <span>Dr. Andrew Hemmen, MD</span>
           </div>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-10">
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <Image src="/images/blog/copd-management-breathing-easier-with-proper-treatment.jpg" alt="Older man breathing deeply outdoors with a hand on his chest" fill priority className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+        </div>
+      </div>
 
       {/* Article Body */}
       <article className="bg-white py-20">
@@ -63,7 +70,7 @@ export default function BlogPost() {
           {/* Opening Hook */}
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              The simple act of breathing—something most of us take for granted—becomes a daily challenge for millions living with chronic obstructive pulmonary disease (COPD). Whether it's climbing stairs, playing with grandchildren, or simply walking to the mailbox, shortness of breath can transform routine activities into exhausting ordeals. But here's the hopeful truth: with proper management, many people with COPD can breathe easier, stay more active, and enjoy a significantly better quality of life.
+              The simple act of breathing, something most of us take for granted, becomes a daily challenge for millions living with chronic obstructive pulmonary disease (COPD). Whether it's climbing stairs, playing with grandchildren, or simply walking to the mailbox, shortness of breath can transform routine activities into draining ordeals. But here's the hopeful truth: with proper management, many people with COPD can breathe easier, stay more active, and enjoy a significantly better quality of life.
             </p>
             <p className="mb-6">
               COPD is a progressive lung disease that makes it increasingly difficult to breathe, but it doesn't have to define your life. Understanding your condition and working with your healthcare team to develop a comprehensive management plan can make all the difference between feeling limited by your lungs and living fully despite them.
@@ -76,7 +83,7 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              COPD is an umbrella term that includes chronic bronchitis and emphysema—two conditions that often occur together. In chronic bronchitis, the airways become inflamed and produce excess mucus, leading to a persistent cough. Emphysema damages the tiny air sacs in the lungs, making it harder to breathe out completely. Together, these conditions create the characteristic symptoms of COPD: shortness of breath, chronic cough, wheezing, and chest tightness.
+              COPD is an umbrella term that includes chronic bronchitis and emphysema, two conditions that often occur together. In chronic bronchitis, the airways become inflamed and produce excess mucus, leading to a persistent cough. Emphysema damages the tiny air sacs in the lungs, making it harder to breathe out completely. Together, these conditions create the characteristic symptoms of COPD: shortness of breath, chronic cough, wheezing, and chest tightness.
             </p>
             <p className="mb-6">
               While smoking is the leading cause of COPD, accounting for about 85-90% of cases, it's not the only risk factor. Long-term exposure to secondhand smoke, air pollution, workplace dust and chemicals, or genetic factors can also contribute. In rare cases, a genetic condition called alpha-1 antitrypsin deficiency leads to COPD, even in non-smokers.
@@ -111,7 +118,7 @@ export default function BlogPost() {
           {/* Pull Quote */}
           <div className="bg-[var(--color-light)] border-l-4 border-[var(--color-primary)] p-6 my-8">
             <p className="text-[var(--color-ink)] italic text-xl font-cormorant">
-              "COPD management isn't about accepting limitations—it's about strategically working within your lung capacity to maximize what you can do and enjoy."
+              "COPD management isn't about accepting limitations. It's about strategically working within your lung capacity to maximize what you can do and enjoy."
             </p>
           </div>
 
@@ -169,7 +176,7 @@ export default function BlogPost() {
           </h2>
           <div className="text-[var(--color-ink)] leading-loose text-base mb-8">
             <p className="mb-6">
-              COPD exacerbations—sudden worsening of symptoms—are serious events that require prompt attention. They can be triggered by respiratory infections, air pollution, or sometimes occur without an obvious cause. Learning to recognize the warning signs can help you get treatment faster and potentially avoid hospitalization.
+              COPD exacerbations (sudden worsening of symptoms) are serious events that require prompt attention. They can be triggered by respiratory infections, air pollution, or sometimes occur without an obvious cause. Learning to recognize the warning signs can help you get treatment faster and potentially avoid hospitalization.
             </p>
             <p className="mb-6">
               Warning signs of an exacerbation include increased shortness of breath, changes in mucus color or amount, more frequent or severe coughing, increased wheezing, fatigue, confusion, or swelling in ankles and feet. If you experience these symptoms, contact your healthcare provider right away.
@@ -191,7 +198,7 @@ export default function BlogPost() {
               Regular check-ups allow your doctor to monitor lung function through spirometry tests, adjust medications as needed, screen for complications, and address other health conditions that commonly occur alongside COPD, such as heart disease, osteoporosis, depression, and anxiety.
             </p>
             <p className="mb-6">
-              Your provider can also ensure you're using inhalers correctly—studies show that up to 70% of patients don't use their inhalers properly, which significantly reduces their effectiveness. Proper inhaler technique is a simple fix that can dramatically improve symptom control.
+              Your provider can also ensure you're using inhalers correctly. Studies show that up to 70% of patients don't use their inhalers properly, which significantly reduces their effectiveness. Proper inhaler technique is a simple fix that can dramatically improve symptom control.
             </p>
             <p className="mb-6">
               Additionally, your healthcare team can connect you with specialists when needed, such as pulmonologists for advanced disease management or nutritionists to address dietary concerns affecting your breathing and energy levels.
@@ -210,7 +217,7 @@ export default function BlogPost() {
               Energy conservation techniques can help you accomplish daily tasks without becoming overly breathless. This might mean sitting while getting dressed, organizing your home to minimize stair climbing, or pacing activities throughout the day rather than doing everything at once.
             </p>
             <p className="mb-6">
-              Mental health is equally important. Living with a chronic condition can feel overwhelming at times, and depression and anxiety are common among people with COPD. Don't hesitate to talk with your provider about these concerns—treatment for mood disorders can improve both your emotional well-being and your ability to manage COPD effectively.
+              Mental health is equally important. Living with a chronic condition can feel overwhelming at times, and depression and anxiety are common among people with COPD. Don't hesitate to talk with your provider about these concerns, because treatment for mood disorders can improve both your emotional well-being and your ability to manage COPD effectively.
             </p>
             <p className="mb-6">
               Support groups, whether in-person or online, provide valuable opportunities to connect with others who understand what you're going through. Sharing experiences, tips, and encouragement with fellow COPD patients can reduce feelings of isolation and provide practical insights for daily management.
@@ -234,10 +241,10 @@ export default function BlogPost() {
           </div>
           <div>
             <p className="font-semibold text-[var(--color-ink)] mb-2">
-              Reviewed by Body1MD Primary Care & Wellness
+              Reviewed by Dr. Andrew Hemmen, MD
             </p>
             <p className="text-[var(--color-muted)] text-sm leading-relaxed">
-              Our team is dedicated to providing comprehensive, evidence-based care that helps patients manage chronic conditions and optimize their health. We believe in personalized medicine that treats the whole person, not just symptoms.
+              Dr. Andrew Hemmen is a board-certified internal medicine physician who has cared for patients in New Mexico since 2008. At Body1MD in Los Ranchos de Albuquerque, he provides evidence-based patient education and direct primary care. He helps patients manage chronic conditions with personalized care that treats the whole person, not just symptoms.
             </p>
           </div>
         </div>
@@ -311,7 +318,7 @@ export default function BlogPost() {
             Ready to Take the Next Step?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Our team is here to help.
+            Dr. Hemmen is here to help.
           </p>
           <Link
             href="/contact"
