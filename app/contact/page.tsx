@@ -67,6 +67,19 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="font-cormorant text-4xl text-[var(--color-ink)] mb-6">Find us</h2>
+          <div className="relative w-full h-96 rounded-2xl overflow-hidden border border-[var(--color-border)] shadow-sm">
+            <iframe src={SITE.mapsEmbed} title="Map to Body1MD, 7203 4th St NW, Los Ranchos de Albuquerque" className="absolute inset-0 w-full h-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          </div>
+          <div className="flex flex-wrap gap-4 mt-6">
+            <a href={SITE.mapsHref} target="_blank" rel="noopener noreferrer" className="bg-[var(--color-primary)] hover:bg-[var(--color-dark)] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors">Open in Google Maps</a>
+            <a href={SITE.reviewHref} target="_blank" rel="noopener noreferrer" className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-xl font-semibold text-sm">Leave a Google review</a>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[var(--color-dark)] text-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-cormorant text-4xl mb-4">Confidence starts with understanding</h2>

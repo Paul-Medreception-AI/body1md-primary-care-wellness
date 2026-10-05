@@ -19,6 +19,9 @@ const nextConfig = {
       { source: '/thank-you', destination: '/contact', permanent: true },
       { source: '/legal', destination: '/privacy-sms', permanent: true },
       { source: '/category/services', destination: '/services', permanent: true },
+      { source: '/category/:slug/feed', destination: '/blog', permanent: true },
+      { source: '/feed', destination: '/blog', permanent: true },
+      { source: '/author/:slug', destination: '/team', permanent: true },
     ];
   },
 };

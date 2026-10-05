@@ -32,6 +32,7 @@ export default function SiteFooter() {
               <li><Link href="/team" className="text-gray-300 hover:text-white transition-colors">Dr. Andrew Hemmen</Link></li>
               <li><Link href="/office" className="text-gray-300 hover:text-white transition-colors">Our Office</Link></li>
               <li><Link href="/reviews" className="text-gray-300 hover:text-white transition-colors">Patient Reviews</Link></li>
+              <li><a href={SITE.reviewHref} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Review us on Google</a></li>
               <li><Link href="/locations" className="text-gray-300 hover:text-white transition-colors">Areas We Serve</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>

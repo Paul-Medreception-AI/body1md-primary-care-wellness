@@ -27,6 +27,8 @@ const PRACTICE_LD = {
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '17:00' }],
   employee: { '@type': 'Physician', name: 'Andrew Hemmen, MD', medicalSpecialty: 'InternalMedicine' },
   areaServed: ['Los Ranchos de Albuquerque', 'Albuquerque', 'Corrales', 'Rio Rancho'],
+  hasMap: SITE.mapsHref,
+  geo: { '@type': 'GeoCoordinates', latitude: 35.1652667, longitude: -106.6364411 },
 }
 
 

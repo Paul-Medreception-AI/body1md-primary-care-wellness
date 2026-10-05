@@ -27,6 +27,7 @@ const CARE = [
     href: '/services',
     img: '/images/dr-hemmen-exam-room.jpg',
     alt: 'Dr. Andrew Hemmen in a Body1MD exam room',
+    pos: 'object-top',
   },
   {
     title: 'Wellness & Performance',
@@ -34,6 +35,7 @@ const CARE = [
     href: '/services/wellness-and-performance',
     img: '/images/couple-running.jpg',
     alt: 'Two people running outdoors',
+    pos: 'object-[center_30%]',
   },
   {
     title: 'Specialized Care',
@@ -41,6 +43,7 @@ const CARE = [
     href: '/services/internal-medicine',
     img: '/images/exam-room.jpg',
     alt: 'A private Body1MD exam room with a large display screen',
+    pos: 'object-center',
   },
 ]
 
@@ -53,12 +56,10 @@ const STEPS = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero: the practice's real front desk */}
-      <section className="relative min-h-[88vh] flex items-center text-white overflow-hidden">
-        <Image src="/images/office-reception.jpg" alt="The Body1MD front desk and waiting area in Los Ranchos de Albuquerque" fill priority sizes="100vw" className="object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-primary/80 to-primary/40" />
-        <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
-          <div className="max-w-2xl">
+      {/* Hero: text beside the practice's real front desk photo, not over it. */}
+      <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
             <p className="uppercase tracking-[0.2em] text-sm text-[var(--color-teal)] font-semibold mb-5">Direct Primary Care in Los Ranchos de Albuquerque</p>
             <h1 className="font-cormorant text-6xl sm:text-7xl font-light leading-tight">Your body comes first.</h1>
             <p className="text-xl text-white/90 mt-6 leading-relaxed">
@@ -72,6 +73,9 @@ export default function HomePage() {
                 Call {SITE.phone}
               </a>
             </div>
+          </div>
+          <div>
+            <Image src="/images/office-reception.jpg" alt="The Body1MD front desk and waiting area in Los Ranchos de Albuquerque" width={2000} height={1500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/10" />
           </div>
         </div>
       </section>
@@ -145,8 +149,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {CARE.map((c) => (
               <Link key={c.title} href={c.href} className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="relative w-full h-56">
-                  <Image src={c.img} alt={c.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="relative w-full h-80 overflow-hidden">
+                  <Image src={c.img} alt={c.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className={`object-cover ${c.pos} group-hover:scale-105 transition-transform duration-500`} />
                 </div>
                 <div className="p-8">
                   <h3 className="font-cormorant text-3xl font-semibold text-[var(--color-ink)]">{c.title}</h3>
@@ -212,15 +216,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative py-24 text-white text-center overflow-hidden">
-        <Image src="/images/friends-outdoors.jpg" alt="Friends smiling together outdoors" fill sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-dark/80" />
-        <div className="relative max-w-3xl mx-auto px-6">
-          <h2 className="font-cormorant text-5xl font-light mb-6">Health care at a higher level.</h2>
-          <p className="text-white/85 mb-10">Contact us to learn more about membership and how we can support your health goals.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold px-10 py-4 rounded-xl transition-colors">Contact Us</Link>
-            <a href={SITE.phoneHref} className="border-2 border-white text-white font-semibold px-10 py-4 rounded-xl hover:bg-white/10 transition-colors">Call {SITE.phone}</a>
+      <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] text-white py-20">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="font-cormorant text-5xl font-light mb-6">Health care at a higher level.</h2>
+            <p className="text-white/85 mb-10">Contact us to learn more about membership and how we can support your health goals.</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="text-center bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold px-10 py-4 rounded-xl transition-colors">Contact Us</Link>
+              <a href={SITE.phoneHref} className="text-center border-2 border-white text-white font-semibold px-10 py-4 rounded-xl hover:bg-white/10 transition-colors">Call {SITE.phone}</a>
+            </div>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <Image src="/images/friends-outdoors.jpg" alt="Friends smiling together outdoors" width={650} height={650} sizes="(max-width: 768px) 100vw, 420px" className="w-full max-w-[420px] h-auto rounded-3xl shadow-2xl ring-1 ring-white/10" />
           </div>
         </div>
       </section>

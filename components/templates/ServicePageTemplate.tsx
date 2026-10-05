@@ -27,7 +27,9 @@ export type ServicePageContent = {
   relatedLinks?: RelatedLink[]
   metaTitle?: string
   heroSubhead?: string
-  heroImage?: { src: string; alt: string }
+  // width/height = the file's real pixel size. When present the hero shows the WHOLE photo at its
+  // own shape instead of cropping it into a fixed box (a fixed box cut Dr. Hemmen's head off).
+  heroImage?: { src: string; alt: string; width?: number; height?: number }
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
   intro?: string[]
@@ -116,11 +118,15 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
               <h1 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight">{c.headline}</h1>
               <p className="text-xl opacity-95 max-w-3xl leading-relaxed">{c.heroSubhead || c.description}</p>
             </div>
-            {c.heroImage && (
+            {c.heroImage && (c.heroImage.width && c.heroImage.height ? (
+              <div className="w-full max-w-md lg:w-2/5 lg:max-w-none">
+                <Image src={c.heroImage.src} alt={c.heroImage.alt} width={c.heroImage.width} height={c.heroImage.height} priority quality={90} sizes="(max-width: 1024px) 448px, 40vw" className="w-auto h-auto max-w-full max-h-[34rem] mx-auto rounded-2xl shadow-2xl" />
+              </div>
+            ) : (
               <div className="relative w-full max-w-md lg:w-2/5 lg:max-w-none h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl">
                 <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className="object-cover" />
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>

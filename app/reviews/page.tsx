@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import PageHero from '@/components/PageHero'
+import { SITE } from '@/lib/site'
 
 const TITLE = 'Patient Experiences | Body1MD Albuquerque'
 const DESC = 'What patients and colleagues say about Dr. Andrew Hemmen and Body1MD, a direct primary care practice in Los Ranchos de Albuquerque.'
@@ -61,9 +62,15 @@ export default function ReviewsPage() {
           <div>
             <h2 className="font-cormorant text-4xl text-[var(--color-ink)] mb-4">Share your experience</h2>
             <p className="text-lg text-[var(--color-muted)] mb-8 leading-relaxed">
-              Body1MD is a growing practice, built one patient at a time. If you have experienced our care, we would be honored to hear from you.
+              Body1MD is a new office, built one patient at a time. If you have experienced our care, a Google review helps neighbors in the Albuquerque area find us. It takes about a minute.
             </p>
-            <Link href="/contact" className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-xl font-bold transition-colors">Contact Us</Link>
+            <div className="flex flex-wrap gap-4">
+              <a href={SITE.reviewHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-xl font-bold transition-colors">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                Leave a Google review
+              </a>
+              <Link href="/contact" className="inline-block border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-8 py-4 rounded-xl font-semibold">Contact Us</Link>
+            </div>
           </div>
         </div>
       </section>

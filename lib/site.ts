@@ -17,7 +17,12 @@ export const SITE = {
   city: 'Los Ranchos de Albuquerque',
   region: 'NM',
   postal: '87107',
-  mapsHref: 'https://www.google.com/maps/search/?api=1&query=7203+4th+St+NW,+Los+Ranchos+de+Albuquerque,+NM+87107',
+  // The practice's Google Business Profile (place 0x872273851a83fb09:0x6e725f4c6c3eb848, CID below).
+  mapsHref: 'https://www.google.com/maps/place/Body1MD/@35.1652667,-106.6364411,17z/data=!4m6!3m5!1s0x872273851a83fb09:0x6e725f4c6c3eb848!8m2!3d35.1652667!4d-106.6364411!16s%2Fg%2F11zxf1s1_d',
+  mapsEmbed: 'https://www.google.com/maps?q=Body1MD,+7203+4th+St+NW,+Los+Ranchos+de+Albuquerque,+NM+87107&output=embed',
+  // Opens Google's "write a review" dialog for the profile (the ,3 suffix on lrd). No reviews exist
+  // yet (new office), so the site asks for the first ones and shows no rating.
+  reviewHref: 'https://www.google.com/search?hl=en-US&gl=us&q=Body1MD,+7203+4th+St+NW,+Los+Ranchos+de+Albuquerque,+NM+87107&ludocid=7958528273355290696#lrd=0x872273851a83fb09:0x6e725f4c6c3eb848,3',
   hours: [
     { days: 'Monday to Friday', time: '8am to 5pm' },
     { days: 'Saturday', time: 'By appointment' },
