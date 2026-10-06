@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import BookingFlow from '@/components/booking/BookingFlow'
 import { SITE } from '@/lib/site'
@@ -21,6 +22,9 @@ export default function BookPage() {
     <>
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-24 sm:pt-14 sm:pb-28 text-center">
+          <div className="relative mx-auto mb-4 h-20 w-20 rounded-full overflow-hidden ring-4 ring-white/20 shadow-xl">
+            <Image src="/images/dr-hemmen-portrait.jpg" alt="Dr. Andrew Hemmen, MD" fill priority sizes="80px" className="object-cover object-top" />
+          </div>
           <p className="uppercase tracking-[0.2em] text-xs text-[var(--color-teal)] font-semibold mb-3">Body1MD, Los Ranchos de Albuquerque</p>
           <h1 className="font-cormorant text-4xl sm:text-6xl font-light leading-tight">Book a visit with Dr. Hemmen</h1>
           <p className="text-white/85 mt-3 text-lg">Five quick steps. No account or login needed.</p>
