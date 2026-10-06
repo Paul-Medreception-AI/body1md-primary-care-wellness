@@ -30,6 +30,16 @@ export default function NewPatientsPage() {
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="font-cormorant text-5xl font-light mb-6">New Patients</h1>
           <p className="text-xl text-white/90">Everything you need to know before your first visit</p>
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/book" className="text-center bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-3.5 rounded-xl shadow-xl transition-colors">
+              <span className="block font-bold text-lg">Book your first visit</span>
+              <span className="block text-xs text-white/85">Pick a day and time online, no login needed</span>
+            </Link>
+            <a href={SITE.phoneHref} className="text-center border-2 border-white text-white hover:bg-white/10 px-8 py-3.5 rounded-xl transition-colors">
+              <span className="block font-bold text-lg">Call the Practice</span>
+              <span className="block text-xs text-white/80">{SITE.phone}</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -54,7 +64,7 @@ export default function NewPatientsPage() {
             <div className="bg-white rounded-xl p-8 shadow-sm animate-fade-up">
               <div className="font-cormorant text-6xl font-light text-[var(--color-accent)] mb-4">01</div>
               <h3 className="font-cormorant text-2xl text-[var(--color-ink)] mb-3">Reach Out</h3>
-              <p className="text-[var(--color-muted)] leading-relaxed">Call <a href={SITE.phoneHref} className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">{SITE.phone}</a> or send a message through our <Link href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">contact page</Link>. Ask anything you like about membership before you join. Online booking is coming soon.</p>
+              <p className="text-[var(--color-muted)] leading-relaxed">Call <a href={SITE.phoneHref} className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">{SITE.phone}</a> or send a message through our <Link href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">contact page</Link>. Ask anything you like about membership before you join, or <Link href="/book" className="text-[var(--color-accent)] hover:text-[var(--color-accent-dark)] transition-colors">book your first visit online</Link> and Body1MD will confirm it with you.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-sm animate-fade-up">
               <div className="font-cormorant text-6xl font-light text-[var(--color-accent)] mb-4">02</div>

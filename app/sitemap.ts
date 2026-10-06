@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page('/services', 0.9, 'weekly'),
     page('/conditions', 0.9, 'weekly'),
     page('/new-patients', 0.9, 'monthly'),
+    page('/book', 0.9, 'monthly'),
     page('/about', 0.8, 'monthly'),
     page('/team', 0.8, 'monthly'),
     page('/office', 0.7, 'monthly'),

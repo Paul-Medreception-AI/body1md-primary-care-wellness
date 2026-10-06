@@ -18,14 +18,35 @@
 //   email          kept on the card
 //   message        the card body
 // Any other key (page_path here) is kept verbatim in the card's details; `site` is dropped.
+//
+// The /book flow (app/api/book/route.ts) posts here too, as studio_source "web_booking": a
+// 'details' post when the patient has given a name, phone and date of birth, and a 'booked' post
+// with book: true at confirm, both carrying the page's dedupe_key so Studio keeps ONE card. Studio
+// answers the 'booked' post with what became of it ({ ok: true, booking: { status } }), which is
+// why deliver() returns the reply instead of nothing.
 
 const DEFAULT_URL = 'https://studio.medreception.ai/api/v1/web/submission'
 const ATTEMPT_TIMEOUT_MS = 9_000
 const RETRY_DELAY_MS = 600
 
-// web_form is the only sink this site uses. Studio also knows web_widget and
-// web_widget_appointment (different card titles); listed so a future form picks deliberately.
-export type Sink = 'web_form' | 'web_widget' | 'web_widget_appointment'
+// web_form is the contact form; web_booking is the /book flow (Studio files it as an appointment
+// request and, for a 'booked' post with book: true, tries to book it). Studio also knows
+// web_widget and web_widget_appointment (different card titles); listed so a future form picks
+// deliberately.
+export type Sink = 'web_form' | 'web_booking' | 'web_widget' | 'web_widget_appointment'
+
+/** Per-call tuning. The defaults are the contact form's: 9s, no retry after a timeout. */
+export type DeliverOptions = {
+  /** Per attempt. */
+  timeoutMs?: number
+  /**
+   * Try once more after a TIMEOUT as well as after a network failure or a 502/503/504. Only for a
+   * post carrying a dedupe key Studio honours (the booking flow's confirm): Studio's booking waits
+   * on the EHR write, a timed-out attempt may well have finished, and the same key is how the
+   * retry finds that booking instead of making a second one. Never after any other 4xx/5xx.
+   */
+  retryOnTimeout?: boolean
+}
 
 /** No token configured: nothing can accept the message. */
 export class NotConfiguredError extends Error {}
@@ -65,11 +86,18 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
  *
  * One retry, only for a network failure or a 502/503/504 (Studio wraps its own exceptions in a
  * 502). That is safe because Studio dedupes an identical submission for ten minutes. A timeout
- * is not retried: Studio is slow, not down, and the patient is waiting.
+ * is not retried unless the caller says so (retryOnTimeout): for a form, Studio is slow, not
+ * down, and the patient is waiting.
+ *
+ * Returns Studio's reply (its parsed JSON object, always with ok: true).
  *
  * Never logs: the payload is what a patient typed. Errors carry a status, never the body.
  */
-export async function deliver(source: Sink, payload: Record<string, unknown>): Promise<void> {
+export async function deliver(
+  source: Sink,
+  payload: Record<string, unknown>,
+  { timeoutMs = ATTEMPT_TIMEOUT_MS, retryOnTimeout = false }: DeliverOptions = {},
+): Promise<Record<string, unknown>> {
   const url = process.env.STUDIO_INGEST_URL || DEFAULT_URL
   const token = process.env.STUDIO_INGEST_TOKEN
   if (!token) throw new NotConfiguredError('STUDIO_INGEST_TOKEN is not set')
@@ -85,11 +113,11 @@ export async function deliver(source: Sink, payload: Record<string, unknown>): P
         headers: { 'Content-Type': 'application/json', 'x-studio-token': token },
         body,
         cache: 'no-store',
-        signal: AbortSignal.timeout(ATTEMPT_TIMEOUT_MS),
+        signal: AbortSignal.timeout(timeoutMs),
       })
     } catch (err) {
       const timedOut = err instanceof Error && (err.name === 'TimeoutError' || err.name === 'AbortError')
-      if (!timedOut && attempt < 2) {
+      if ((!timedOut || retryOnTimeout) && attempt < 2) {
         await sleep(RETRY_DELAY_MS)
         continue
       }
@@ -105,8 +133,8 @@ export async function deliver(source: Sink, payload: Record<string, unknown>): P
     }
     // A 200 that is not Studio's own { ok: true } (a proxy page, a captive portal) is not a
     // delivery. Treat it as a failure so the patient is told to call.
-    const out = (await res.json().catch(() => null)) as { ok?: unknown } | null
-    if (!out || out.ok !== true) throw new StudioRejectedError(res.status)
-    return
+    const out = (await res.json().catch(() => null)) as Record<string, unknown> | null
+    if (!out || typeof out !== 'object' || out.ok !== true) throw new StudioRejectedError(res.status)
+    return out
   }
 }

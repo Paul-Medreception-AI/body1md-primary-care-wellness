@@ -76,7 +76,7 @@ const FAQ_LD = {
 function JoinButtons({ light = false }: { light?: boolean }) {
   return (
     <div className="flex flex-col sm:flex-row gap-4">
-      <Link href="/new-patients" className="text-center bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-3.5 rounded-xl shadow-xl transition-colors">
+      <Link href="/book" className="text-center bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-3.5 rounded-xl shadow-xl transition-colors">
         <span className="block font-bold text-lg">Join for $100/month</span>
         <span className="block text-xs text-white/85">Age 50+: $150/month · month-to-month</span>
       </Link>

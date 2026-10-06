@@ -53,8 +53,8 @@ export default function SiteHeader() {
 
         <div className="hidden xl:flex items-center gap-4 flex-shrink-0">
           <a href={SITE.phoneHref} className="text-sm font-semibold text-[var(--color-primary)] whitespace-nowrap">{SITE.phone}</a>
-          <Link href="/contact" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap">
-            Become a Member
+          <Link href="/book" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap">
+            Book a Visit
           </Link>
         </div>
 
@@ -86,7 +86,7 @@ export default function SiteHeader() {
               )}
               <div className="pt-3 grid grid-cols-2 gap-3">
                 <a href={SITE.phoneHref} className="text-center border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-4 py-3 rounded-xl font-semibold text-sm">Call {SITE.phone}</a>
-                <Link href="/contact" className="text-center bg-[var(--color-accent)] text-white px-4 py-3 rounded-xl font-semibold text-sm">Become a Member</Link>
+                <Link href="/book" className="text-center bg-[var(--color-accent)] text-white px-4 py-3 rounded-xl font-semibold text-sm">Book a Visit</Link>
               </div>
             </div>
           </div>
