@@ -47,7 +47,7 @@ const COMPARE = [
 ]
 
 const STEPS = [
-  { n: '1', title: 'Join', body: 'Call the practice or send us a message. Membership is month-to-month, with no annual contract and no concierge retainer.' },
+  { n: '1', title: 'Join', body: 'Book your first visit online in a few minutes, or call the practice. Membership is month-to-month, with no annual contract and no concierge retainer.' },
   { n: '2', title: 'Your first visit', body: 'A comprehensive consultation of up to an hour, looking at your health from head to toe: your history, your goals, and your preventive care.' },
   { n: '3', title: 'Ongoing care and direct access', body: 'A personalized plan, same- or next-day visits when you need them, and a physician you can reach directly who stays involved.' },
 ]

@@ -370,7 +370,7 @@ export default function BlogPost() {
             Dr. Hemmen is here to help you understand how Direct Primary Care can transform your healthcare experience.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold hover:bg-[var(--color-light)] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Schedule a Consultation

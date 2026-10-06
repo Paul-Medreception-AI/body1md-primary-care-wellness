@@ -44,7 +44,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How do I become a new patient?',
-    a: `Call the office at ${SITE.phone} or send a message through the contact page. You are welcome to ask questions about membership before you join. Online booking through a secure patient portal is coming soon. Once you join, your first visit is designed to last up to an hour, with time to review your health history, your current concerns, and your goals.`,
+    a: `Call the office at ${SITE.phone} or send a message through the contact page. You are welcome to ask questions about membership before you join. You can request your first visit online at body1md.com/book, with no account or login. Once you join, your first visit is designed to last up to an hour, with time to review your health history, your current concerns, and your goals.`,
   },
   {
     q: 'What should I expect during my first visit?',

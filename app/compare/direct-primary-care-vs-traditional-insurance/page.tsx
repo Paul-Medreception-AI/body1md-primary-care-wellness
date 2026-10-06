@@ -477,7 +477,7 @@ export default function ComparePage() {
             Schedule a consultation with Dr. Hemmen at Body1MD in Los Ranchos de Albuquerque to explore whether Direct Primary Care is the right choice for your health and budget.
           </p>
           <Link 
-            href="/contact"
+            href="/book"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-xl"
           >
             Schedule Your Consultation

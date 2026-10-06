@@ -383,7 +383,7 @@ export default function WeightLossMedicationsPage() {
             Dr. Hemmen is here to help you explore your options and develop a personalized plan for achieving your health goals.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"
           >
             Schedule a Consultation

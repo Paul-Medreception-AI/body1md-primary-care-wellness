@@ -333,7 +333,7 @@ export default function ExerciseChronicDiseasePage() {
             Dr. Hemmen is here to help you develop a personalized exercise plan that supports your health goals.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Schedule Your Consultation

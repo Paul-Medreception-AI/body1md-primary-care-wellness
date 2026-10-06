@@ -227,7 +227,7 @@ export default function AnemiaArticlePage() {
               </p>
             </Link>
 
-            <Link href="/contact" className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group animate-fade-up">
+            <Link href="/book" className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group animate-fade-up">
               <div className="w-12 h-12 bg-[var(--color-light)] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
                 <svg className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />

@@ -377,7 +377,7 @@ export default function TeleMedicineVsInPersonPage() {
             At Body1MD Primary Care & Wellness in Los Ranchos de Albuquerque, you get unhurried office visits and direct phone and text access to Dr. Hemmen between them.
           </p>
           <Link 
-            href="/contact"
+            href="/book"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:scale-105 hover:shadow-xl animate-fade-up"
           >
             Schedule a Consultation

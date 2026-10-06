@@ -426,7 +426,7 @@ export default function PrediabetesArticle() {
             Dr. Hemmen is here to help.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-flex items-center gap-2 bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             Schedule Your Consultation

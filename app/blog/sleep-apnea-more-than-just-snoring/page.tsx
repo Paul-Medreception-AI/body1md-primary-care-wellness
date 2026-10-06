@@ -426,7 +426,7 @@ export default function SleepApneaBlogPost() {
             Dr. Hemmen is here to help.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Schedule Your Consultation

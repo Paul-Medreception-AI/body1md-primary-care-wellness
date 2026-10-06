@@ -273,7 +273,7 @@ export default function BlogPost() {
           <h2 className="font-cormorant text-4xl font-light mb-4">Ready to Take the Next Step?</h2>
           <p className="text-lg mb-8 text-white/90">Dr. Hemmen is here to help.</p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Schedule a Consultation

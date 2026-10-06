@@ -64,7 +64,7 @@ export default function ContactPage() {
               <div className="mt-3 space-y-1 text-[var(--color-ink)]">
                 {SITE.hours.map((h) => <p key={h.days}><span className="font-semibold">{h.days}:</span> {h.time}</p>)}
               </div>
-              <p className="text-sm text-[var(--color-muted)] mt-4">Members have direct access to Dr. Hemmen, available 24/7 most of the year. Online booking through our secure patient portal is coming soon.</p>
+              <p className="text-sm text-[var(--color-muted)] mt-4">Members have direct access to Dr. Hemmen, available 24/7 most of the year. You can also <a href="/book" className="text-[var(--color-primary)] font-semibold underline">book a visit online</a>, no account needed.</p>
             </div>
           </div>
 

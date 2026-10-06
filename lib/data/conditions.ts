@@ -1,6 +1,6 @@
 import type { ConditionPageContent } from '@/components/templates/ConditionPageTemplate'
 
-const BASE = {"siteUrl":"https://body1md.com","siteName":"Body1MD Primary Care & Wellness","ctaLabel":"Schedule an Appointment","ctaHref":"/contact","hubLabel":"Conditions","hubHref":"/conditions"};
+const BASE = {"siteUrl":"https://body1md.com","siteName":"Body1MD Primary Care & Wellness","ctaLabel":"Book a Visit","ctaHref":"/book","hubLabel":"Conditions","hubHref":"/conditions"};
 
 // Optional card crop for the /conditions hub (a CSS object-position value). It is a plain
 // string applied as an inline style, because Tailwind does not scan lib/ for class names.

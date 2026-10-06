@@ -377,7 +377,7 @@ export default function UrgentCareVsPrimaryCarePage() {
             Whether you need urgent care guidance or want to establish a primary care relationship with comprehensive access and continuity, we're here to help you make informed decisions about your health in the Albuquerque area. Call (505) 645-5451.
           </p>
           <Link 
-            href="/contact" 
+            href="/book" 
             className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-lg"
           >
             Schedule a Consultation

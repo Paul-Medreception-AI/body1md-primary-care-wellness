@@ -312,7 +312,7 @@ export default function OsteoporosisPreventionPage() {
             Dr. Hemmen is here to help you build a personalized plan for lifelong bone health.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-full font-medium transition-all hover:gap-3 shadow-lg"
           >
             Schedule a Consultation

@@ -94,7 +94,7 @@ export default function TeamPage() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/new-patients" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-xl font-bold transition-colors">Become a Member</Link>
+              <Link href="/book" className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-8 py-4 rounded-xl font-bold transition-colors">Book a Visit</Link>
               <Link href="/contact" className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-8 py-4 rounded-xl font-semibold">Contact Us</Link>
             </div>
           </div>

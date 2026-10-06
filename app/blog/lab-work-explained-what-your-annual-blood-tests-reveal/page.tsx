@@ -336,7 +336,7 @@ export default function LabWorkExplainedPage() {
             Dr. Hemmen is here to help you understand your health and create a personalized care plan.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-[var(--color-accent)] text-white px-8 py-4 rounded-full font-medium hover:bg-[var(--color-accent-dark)] transition-all duration-300 hover:scale-105"
           >
             Schedule Your Consultation
