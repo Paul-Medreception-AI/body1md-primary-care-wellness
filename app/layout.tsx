@@ -34,6 +34,7 @@ const PRACTICE_LD = {
 
 
 export const metadata: Metadata = {
+  verification: { google: 'D5-3A_9Dp3CJJyXolsVFVus7CyMFa09mBZNTXQpu4dk' },
   title: 'Body1MD | Direct Primary Care in Albuquerque, NM',
   description: 'Direct primary care from Dr. Andrew Hemmen, a board-certified internal medicine physician in Los Ranchos de Albuquerque. Visits up to an hour, direct access, and a simple monthly membership.',
   metadataBase: new URL('https://body1md.com'),
