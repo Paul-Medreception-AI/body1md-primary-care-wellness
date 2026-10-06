@@ -67,6 +67,13 @@ export default function SiteFooter() {
               <Link href="/terms-sms#sms-terms" className="hover:text-white transition-colors">SMS Terms</Link>
             </div>
           </div>
+          {/* Credits, kept quiet. Pexels' API terms ask for a visible credit; the MedReception link is a
+              plain branded link (Paul, 2026-10-06: attribution is part of the website agreement). */}
+          <p className="mt-6 text-center sm:text-left text-xs text-gray-500">
+            Photos by <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline hover:text-gray-300">Pexels</a>
+            {' · '}
+            Website built by <a href="https://www.medreception.ai/" target="_blank" rel="noopener" className="underline-offset-2 hover:underline hover:text-gray-300">MedReception AI</a>
+          </p>
         </div>
       </div>
     </footer>
