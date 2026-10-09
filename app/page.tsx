@@ -64,7 +64,7 @@ const FAQ = [
   { q: 'Do you take insurance?', a: 'Body1MD does not bill insurance; members pay the practice directly. Many people keep insurance, or a high-deductible plan, for hospital, specialist and emergency care.' },
   { q: 'How quickly can I be seen?', a: 'With a deliberately limited patient panel and three exam rooms, we can almost always offer same-day or next-day appointments.' },
   { q: 'Who is my physician?', a: 'Dr. Andrew Hemmen, MD, a board-certified internal medicine physician who has cared for patients in New Mexico since 2008, including more than 20 years of hospital medicine.' },
-  { q: 'Where are you located?', a: `${SITE.street}, ${SITE.city}, ${SITE.region} ${SITE.postal}, in Albuquerque's North Valley. Members come from across Albuquerque, Corrales and Rio Rancho. Hours are Monday to Friday 8am to 5pm, Saturday by appointment.` },
+  { q: 'Where are you located?', a: `${SITE.street}, ${SITE.city}, ${SITE.region} ${SITE.postal}, in Albuquerque's North Valley. Members come from across Albuquerque, Corrales and Rio Rancho. Hours are Monday to Friday 8am to 5pm, closed Saturday and Sunday.` },
 ]
 
 const FAQ_LD = {
@@ -304,7 +304,7 @@ export default function HomePage() {
               Private exam rooms with large displays where you and Dr. Andy review your results together, in a calm office designed around comfort and privacy.
             </p>
             <p className="text-white/85 mb-1">{SITE.street}, {SITE.city}, {SITE.region} {SITE.postal}</p>
-            <p className="text-white/70 text-sm mb-8">Monday to Friday 8am to 5pm · Saturday by appointment</p>
+            <p className="text-white/70 text-sm mb-8">Monday to Friday 8am to 5pm · Closed weekends</p>
             <JoinButtons light />
           </div>
           <Image src="/images/reception-logo-wall.jpg" alt="The Body1MD reception desk and logo wall" width={1800} height={1344} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/10" />

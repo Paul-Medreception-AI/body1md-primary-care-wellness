@@ -52,7 +52,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How quickly can I get an appointment?',
-    a: `In most cases, the same or next day. Body1MD keeps a deliberately limited patient panel, so when you need to be seen you should not have to wait weeks. Office hours are Monday to Friday, 8am to 5pm, with Saturday by appointment. Between visits, members have direct access to Dr. Hemmen by phone and text, and he is available 24/7 most of the year.`,
+    a: `In most cases, the same or next day. Body1MD keeps a deliberately limited patient panel, so when you need to be seen you should not have to wait weeks. Office hours are Monday to Friday, 8am to 5pm; the office is closed Saturday and Sunday. Between visits, members have direct access to Dr. Hemmen by phone and text, and he is available 24/7 most of the year.`,
   },
   {
     q: 'Do you offer telemedicine or virtual visits?',

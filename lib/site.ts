@@ -25,7 +25,7 @@ export const SITE = {
   reviewHref: 'https://www.google.com/search?hl=en-US&gl=us&q=Body1MD,+7203+4th+St+NW,+Los+Ranchos+de+Albuquerque,+NM+87107&ludocid=7958528273355290696#lrd=0x872273851a83fb09:0x6e725f4c6c3eb848,3',
   hours: [
     { days: 'Monday to Friday', time: '8am to 5pm' },
-    { days: 'Saturday', time: 'By appointment' },
+    { days: 'Saturday', time: 'Closed' },
     { days: 'Sunday', time: 'Closed' },
   ],
 }

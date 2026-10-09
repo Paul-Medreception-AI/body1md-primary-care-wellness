@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 import { SITE } from '@/lib/site'
 
 const TITLE = 'Contact Body1MD | Los Ranchos de Albuquerque, NM'
-const DESC = 'Call (505) 645-5451 or email andy@body1md.com. Body1MD is at 7203 4th St NW, Los Ranchos de Albuquerque, NM 87107. Monday to Friday 8am to 5pm, Saturday by appointment.'
+const DESC = 'Call (505) 645-5451 or email andy@body1md.com. Body1MD is at 7203 4th St NW, Los Ranchos de Albuquerque, NM 87107. Monday to Friday 8am to 5pm, closed Saturday and Sunday.'
 
 export const metadata: Metadata = {
   title: TITLE,
