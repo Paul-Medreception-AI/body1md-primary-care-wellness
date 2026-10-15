@@ -65,6 +65,8 @@ export default function SiteFooter() {
               <Link href="/terms-sms" className="hover:text-white transition-colors">Terms of Service</Link>
               <span>|</span>
               <Link href="/terms-sms#sms-terms" className="hover:text-white transition-colors">SMS Terms</Link>
+              <span>|</span>
+              <Link href="/patient-form-sms" className="hover:text-white transition-colors">Text Message Sign-Up</Link>
             </div>
           </div>
           {/* Credits, kept quiet. Pexels' API terms ask for a visible credit; the MedReception link is a

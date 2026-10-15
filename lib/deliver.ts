@@ -33,7 +33,9 @@ const RETRY_DELAY_MS = 600
 // request and, for a 'booked' post with book: true, tries to book it). Studio also knows
 // web_widget and web_widget_appointment (different card titles); listed so a future form picks
 // deliberately.
-export type Sink = 'web_form' | 'web_booking' | 'web_widget' | 'web_widget_appointment'
+// sms_consent: /patient-form-sms (app/api/sms-consent). Studio files it as a website message with the
+// consent flags and the exact sentences agreed to in the card's details.
+export type Sink = 'web_form' | 'web_booking' | 'web_widget' | 'web_widget_appointment' | 'sms_consent'
 
 /** Per-call tuning. The defaults are the contact form's: 9s, no retry after a timeout. */
 export type DeliverOptions = {
