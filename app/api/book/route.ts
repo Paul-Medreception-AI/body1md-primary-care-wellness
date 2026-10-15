@@ -131,7 +131,7 @@ function validate(b: Record<string, unknown>, now: Date): Valid | Invalid {
  * title; patient_type sets the board's New/Existing tag; everything else (date_of_birth,
  * treatment, requested_start, reason_for_visit) is kept verbatim in the card's details.
  */
-function studioPayload(v: Valid, treatmentId?: string): Record<string, unknown> {
+function studioPayload(v: Valid, treatmentId?: string, slotProvider?: string): Record<string, unknown> {
   const type = PATIENT_TYPES[v.patientType]
   const reasons = reasonsText(v.reasons, v.other)
   const when = wallClockLabel(v.start, 'short')
@@ -159,7 +159,13 @@ function studioPayload(v: Valid, treatmentId?: string): Record<string, unknown> 
       : `Booking in progress on the website (${type.desk}). Reason for visit: ${reasons}. Asked for ${when} Mountain Time. A booking request follows if they finish.${unchecked}`,
     source: `body1md.com/book/${v.stage}`,
     // 🔴 THE SWITCH. Studio books only a 'booked' post that says book: true (the JSON literal).
-    ...(v.stage === 'booked' ? { book: true, ...(treatmentId ? { treatment_id: treatmentId } : {}) } : {}),
+    // slot_provider: whose time it was, as Studio named it when it re-checked the time. Hint books
+    // only under a named calendar user, so a booking naming nobody is refused there.
+    ...(v.stage === 'booked' ? {
+      book: true,
+      ...(treatmentId ? { treatment_id: treatmentId } : {}),
+      ...(treatmentId && slotProvider ? { slot_provider: slotProvider } : {}),
+    } : {}),
   }
 }
 
@@ -206,6 +212,7 @@ export async function POST(request: Request): Promise<Response> {
 
     // Hint's visit id, for a time Studio offered and still has open (see the header).
     let treatmentId: string | undefined
+    let slotProvider: string | undefined
     let sending = v
     if (v.stage === 'booked' && v.slotSource === 'studio') {
       const id = visitTypeId(v.patientType === 'new')
@@ -215,12 +222,13 @@ export async function POST(request: Request): Promise<Response> {
         const open = live.find((s) => {
           const start = s && typeof s === 'object' ? (s as { start?: unknown }).start : undefined
           return typeof start === 'string' && new Date(start).getTime() === at
-        }) as { minutes?: unknown } | undefined
+        }) as { minutes?: unknown; provider?: unknown } | undefined
         if (!open) {
           console.info('[book] booked: the time is no longer open in studio; asked to choose again')
           return json({ ok: false, error: 'slot_taken', message: 'Sorry, that time was just taken. Please choose another time.' }, 409)
         }
         treatmentId = id
+        if (typeof open.provider === 'string' && open.provider.trim()) slotProvider = open.provider.trim().slice(0, 80)
         // The length Hint will book, from Studio, over whatever the page carried.
         if (Number.isInteger(open.minutes) && (open.minutes as number) >= 5 && (open.minutes as number) <= 240) {
           sending = { ...v, minutes: open.minutes as number }
@@ -234,7 +242,7 @@ export async function POST(request: Request): Promise<Response> {
     try {
       reply = await deliver(
         'web_booking',
-        studioPayload(sending, treatmentId),
+        studioPayload(sending, treatmentId, slotProvider),
         v.stage === 'booked' ? { timeoutMs: BOOKED_TIMEOUT_MS, retryOnTimeout: true } : {},
       )
     } catch (err) {

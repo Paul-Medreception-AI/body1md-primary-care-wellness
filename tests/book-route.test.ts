@@ -142,7 +142,7 @@ test('booked: a time from office hours never carries treatment_id, even with the
 // ── a time Studio offered: re-checked at confirm, then booked by Hint's id ──────────────────
 const NEW_ID = 'appty-400f4e1725efaf77'
 const EXISTING_ID = 'appty-04087b50616ba9e6'
-const open = (...starts: string[]) => studio(200, { connected: true, slots: starts.map((start) => ({ start, minutes: 45 })) })
+const open = (...starts: string[]) => studio(200, { connected: true, slots: starts.map((start) => ({ start, minutes: 45, provider: 'Andrew Hemmen' })) })
 
 test('booked from Studio: still open -> treatment_id for the patient type, Studio\'s length', async () => {
   process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
@@ -155,9 +155,19 @@ test('booked from Studio: still open -> treatment_id for the patient type, Studi
   assert.deepEqual(availCalls, [{ treatment_id: NEW_ID, days: 31, new_patient: true },
     { treatment_id: EXISTING_ID, days: 31, new_patient: false }])
   assert.equal(sent(0).treatment_id, NEW_ID)
+  assert.equal(sent(0).slot_provider, 'Andrew Hemmen') // whose time it was: Hint refuses a booking naming nobody
   assert.equal(sent(0).duration_min, 45) // Hint's length, not the page's 60
   assert.equal(sent(1).treatment_id, EXISTING_ID)
   assert.ok(!/could not be checked|office hours/.test(sent(0).message))
+})
+
+test('booked from Studio: a slot that names nobody sends no slot_provider', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  availReplies.push(studio(200, { connected: true, slots: [{ start: slot.start, minutes: 45 }] }))
+  replies.push(studio(200, { ok: true, booking: { status: 'booked' } }))
+  await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+  assert.equal(sent().treatment_id, NEW_ID)
+  assert.ok(!('slot_provider' in sent()))
 })
 
 test('booked from Studio: the same instant in another offset still matches', async () => {
@@ -189,7 +199,7 @@ for (const [what, r] of [
     replies.push(studio(200, { ok: true, booking: { status: 'failed' } }))
     const res = await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
     assert.deepEqual(await res.json(), { ok: true, stage: 'booked', outcome: 'request' })
-    assert.ok(!('treatment_id' in sent()))
+    assert.ok(!('treatment_id' in sent()) && !('slot_provider' in sent()))
     assert.match(sent().message, /could not be checked again when the patient confirmed/)
   })
 }
