@@ -1,7 +1,8 @@
 // The practice's bookable hours, for the /book flow when Studio has no live calendar to offer.
 //
-// Body1MD's EHR (Hint) is not connected to Studio yet, so there is no real availability to read.
-// Until it is, /api/book/slots offers the practice's own schedule: Monday to Friday, a 60-minute
+// The fallback only: /api/book/slots offers Dr. Hemmen's real Hint times from Studio
+// (lib/studio-availability.ts) whenever Studio can answer. When it cannot, it offers the
+// practice's own schedule: Monday to Friday, a 60-minute
 // visit starting on the hour from 8:00 to 16:00 (the last one ends at 5pm, when the office
 // closes), in Albuquerque time. Times offered from here are REQUESTS: nothing has checked them
 // against the calendar, so the page words them as "confirmed by the office", never as booked.

@@ -6,6 +6,7 @@ import {
   type BookResponse, type PatientType,
 } from '@/lib/booking'
 import { isPracticeWallClock, practiceDate, practiceWhenLabel } from '@/lib/booking-schedule'
+import { studioSlots, visitTypeId } from '@/lib/studio-availability'
 
 // POST /api/book: the /book flow's two posts, delivered to Body1MD's MedReception Studio board
 // (studio_source "web_booking"), modelled on Vivere Drip Therapy's Studio-only booking route.
@@ -21,12 +22,14 @@ import { isPracticeWallClock, practiceDate, practiceWhenLabel } from '@/lib/book
 // (store._web_booking_write moves it forward, never back) and makes a retried confirm safe: the
 // same key finds the booking the first attempt made instead of making a second.
 //
-// 🔴 TODAY NOTHING IS BOOKED INTO THE EHR. Studio needs treatment_id (the EHR's visit-type id) to
-// place a booking (store._web_book_inputs). It comes from BODY1MD_EHR_VISIT_TYPE_NEW /
-// BODY1MD_EHR_VISIT_TYPE_EXISTING, which are unset until the Hint integration is live, so Studio
-// answers "failed" and files an urgent "Booked online, NOT in Hint" card for the desk to book by
-// hand. The patient is told "Request received ... Body1MD will call or text you to confirm":
-// the page only ever says "booked" when Studio says booked.
+// 🔴 WHAT GOES INTO HINT. Studio books into Hint only when the post carries treatment_id, Hint's
+// id for the visit (BODY1MD_EHR_VISIT_TYPE_NEW / _EXISTING). This route sends it ONLY for a time
+// Studio itself offered (slotSource 'studio') AND only after asking Studio again, at confirm,
+// that the time is still open: a time somebody took since the page loaded is answered
+// slot_taken and nothing is sent. A time from office hours ('schedule'), or one Studio cannot
+// re-check, goes without it: Studio files an urgent "Booked online, NOT in Hint" card for the
+// desk and the patient is told "Request received ... Body1MD will call or text you to confirm".
+// The page only ever says "booked" when Studio says booked.
 //
 // NEVER logs the body or any field (it holds health information): outcome codes only.
 // NEVER a 500: every path answers with our own JSON, and failures carry the phone number.
@@ -42,6 +45,8 @@ const BOOKED_TIMEOUT_MS = 25_000
 const LIMIT = { body: 8_000, name: 120, email: 254 }
 /** How far ahead a requested time may be. Studio offers 14 open days, about three weeks. */
 const MAX_AHEAD_MS = 45 * 24 * 60 * 60 * 1000
+/** Open days asked for when a confirm re-checks its time: Studio's most, past MAX_AHEAD_MS. */
+const RECHECK_DAYS = 31
 
 type Valid = {
   stage: 'details' | 'booked'
@@ -126,16 +131,15 @@ function validate(b: Record<string, unknown>, now: Date): Valid | Invalid {
  * title; patient_type sets the board's New/Existing tag; everything else (date_of_birth,
  * treatment, requested_start, reason_for_visit) is kept verbatim in the card's details.
  */
-function studioPayload(v: Valid): Record<string, unknown> {
+function studioPayload(v: Valid, treatmentId?: string): Record<string, unknown> {
   const type = PATIENT_TYPES[v.patientType]
   const reasons = reasonsText(v.reasons, v.other)
   const when = wallClockLabel(v.start, 'short')
   const unchecked = v.slotSource === 'schedule'
     ? ' The time was picked from office hours on the website and has not been checked against the calendar.'
-    : ''
-  const treatmentId = (v.patientType === 'new'
-    ? process.env.BODY1MD_EHR_VISIT_TYPE_NEW
-    : process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING)?.trim()
+    : v.stage === 'booked' && !treatmentId
+      ? " The time was offered from Dr. Hemmen's calendar, but it could not be checked again when the patient confirmed."
+      : ''
 
   return {
     dedupe_key: v.dedupeKey,
@@ -200,11 +204,37 @@ export async function POST(request: Request): Promise<Response> {
       return json({ ok: false, error: 'invalid', field: v.field, message: v.message }, 400)
     }
 
+    // Hint's visit id, for a time Studio offered and still has open (see the header).
+    let treatmentId: string | undefined
+    let sending = v
+    if (v.stage === 'booked' && v.slotSource === 'studio') {
+      const id = visitTypeId(v.patientType === 'new')
+      const live = id ? await studioSlots(v.patientType === 'new', RECHECK_DAYS, 'book') : null
+      if (live) {
+        const at = new Date(v.start).getTime()
+        const open = live.find((s) => {
+          const start = s && typeof s === 'object' ? (s as { start?: unknown }).start : undefined
+          return typeof start === 'string' && new Date(start).getTime() === at
+        }) as { minutes?: unknown } | undefined
+        if (!open) {
+          console.info('[book] booked: the time is no longer open in studio; asked to choose again')
+          return json({ ok: false, error: 'slot_taken', message: 'Sorry, that time was just taken. Please choose another time.' }, 409)
+        }
+        treatmentId = id
+        // The length Hint will book, from Studio, over whatever the page carried.
+        if (Number.isInteger(open.minutes) && (open.minutes as number) >= 5 && (open.minutes as number) <= 240) {
+          sending = { ...v, minutes: open.minutes as number }
+        }
+      } else if (id) {
+        console.warn('[book] booked: studio could not re-check the time; sent for the desk')
+      }
+    }
+
     let reply: Record<string, unknown>
     try {
       reply = await deliver(
         'web_booking',
-        studioPayload(v),
+        studioPayload(sending, treatmentId),
         v.stage === 'booked' ? { timeoutMs: BOOKED_TIMEOUT_MS, retryOnTimeout: true } : {},
       )
     } catch (err) {

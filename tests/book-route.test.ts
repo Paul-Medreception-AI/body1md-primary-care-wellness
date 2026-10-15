@@ -5,7 +5,9 @@ import assert from 'node:assert/strict'
 import { scheduleDays } from '@/lib/booking-schedule'
 
 const TEST_URL = 'https://studio.invalid/api/v1/web/submission'
+const AVAIL_URL = 'https://studio.invalid/api/v1/web/availability'
 process.env.STUDIO_INGEST_URL = TEST_URL
+process.env.STUDIO_AVAILABILITY_URL = AVAIL_URL
 process.env.STUDIO_INGEST_TOKEN = 'test-token'
 delete process.env.BODY1MD_EHR_VISIT_TYPE_NEW
 delete process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING
@@ -14,6 +16,8 @@ delete process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING
 type Call = { url: string; headers: Record<string, string>; body: string }
 let calls: Call[] = []
 let replies: Array<() => Response | Promise<Response>> = []
+let availCalls: Record<string, unknown>[] = []
+let availReplies: Array<() => Response | Promise<Response>> = []
 const studio = (status: number, body: unknown) => () =>
   new Response(typeof body === 'string' ? body : JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
 const timeout = () => () => {
@@ -22,6 +26,12 @@ const timeout = () => () => {
 
 globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
   const url = String(input)
+  if (url === AVAIL_URL) {
+    availCalls.push(JSON.parse(String(init?.body)))
+    const next = availReplies.shift()
+    if (!next) throw new Error('no scripted Studio availability reply left')
+    return next()
+  }
   if (url !== TEST_URL) throw new Error(`test made a real network call to ${url}`)
   calls.push({ url, headers: Object.fromEntries(new Headers(init?.headers).entries()), body: String(init?.body) })
   const next = replies.shift()
@@ -68,6 +78,8 @@ const sent = (i = 0) => JSON.parse(calls[i].body)
 beforeEach(() => {
   calls = []
   replies = []
+  availCalls = []
+  availReplies = []
   delete process.env.BODY1MD_EHR_VISIT_TYPE_NEW
   delete process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING
   process.env.STUDIO_INGEST_TOKEN = 'test-token'
@@ -119,16 +131,82 @@ test('booked: book: true, same dedupe key, NO treatment_id while the EHR ids are
   assert.match(b.message, /^Booking request from the website \(new patient, wants to become a member\)\. Reason for visit: /)
 })
 
-test('booked: treatment_id comes from the env var for the patient type, when set', async () => {
-  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = '123'
-  process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING = '456'
+test('booked: a time from office hours never carries treatment_id, even with the ids set', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = 'appty-400f4e1725efaf77'
+  replies.push(studio(200, { ok: true, booking: { status: 'failed' } }))
+  await post({ ...PATIENT, stage: 'booked', slotSource: 'schedule' })
+  assert.ok(!('treatment_id' in sent()))
+  assert.equal(availCalls.length, 0) // nothing to re-check: Studio never offered it
+})
+
+// ── a time Studio offered: re-checked at confirm, then booked by Hint's id ──────────────────
+const NEW_ID = 'appty-400f4e1725efaf77'
+const EXISTING_ID = 'appty-04087b50616ba9e6'
+const open = (...starts: string[]) => studio(200, { connected: true, slots: starts.map((start) => ({ start, minutes: 45 })) })
+
+test('booked from Studio: still open -> treatment_id for the patient type, Studio\'s length', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING = EXISTING_ID
+  availReplies.push(open(slot.start), open(slot.start))
   replies.push(studio(200, { ok: true, booking: { status: 'booked' } }), studio(200, { ok: true, booking: { status: 'booked' } }))
-  await post({ ...PATIENT, stage: 'booked' })
-  await post({ ...PATIENT, stage: 'booked', patientType: 'existing' })
-  assert.equal(sent(0).treatment_id, '123')
-  assert.equal(sent(1).treatment_id, '456')
-  assert.equal(sent(1).patient_type, 'Existing patient')
-  assert.equal(sent(1).treatment, 'Member visit')
+  const res = await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+  assert.deepEqual(await res.json(), { ok: true, stage: 'booked', outcome: 'booked' })
+  await post({ ...PATIENT, stage: 'booked', slotSource: 'studio', patientType: 'existing' })
+  assert.deepEqual(availCalls, [{ treatment_id: NEW_ID, days: 31, new_patient: true },
+    { treatment_id: EXISTING_ID, days: 31, new_patient: false }])
+  assert.equal(sent(0).treatment_id, NEW_ID)
+  assert.equal(sent(0).duration_min, 45) // Hint's length, not the page's 60
+  assert.equal(sent(1).treatment_id, EXISTING_ID)
+  assert.ok(!/could not be checked|office hours/.test(sent(0).message))
+})
+
+test('booked from Studio: the same instant in another offset still matches', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  availReplies.push(open(new Date(slot.start).toISOString()))
+  replies.push(studio(200, { ok: true, booking: { status: 'booked' } }))
+  await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+  assert.equal(sent().treatment_id, NEW_ID)
+})
+
+test('booked from Studio: no longer open -> 409 slot_taken, NOTHING sent to Studio', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  const other = scheduleDays(new Date())[2].slots[4].start
+  availReplies.push(open(other))
+  const res = await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+  assert.equal(res.status, 409)
+  assert.equal((await res.json()).error, 'slot_taken')
+  assert.equal(calls.length, 0)
+})
+
+for (const [what, r] of [
+  ['unreachable', () => { throw new TypeError('fetch failed') }],
+  ['not connected', studio(200, { connected: false, slots: [] })],
+  ['a 502', studio(502, { detail: 'x' })],
+] as const) {
+  test(`booked from Studio: availability ${what} -> sent for the desk, no treatment_id`, async () => {
+    process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+    availReplies.push(r as () => Response)
+    replies.push(studio(200, { ok: true, booking: { status: 'failed' } }))
+    const res = await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+    assert.deepEqual(await res.json(), { ok: true, stage: 'booked', outcome: 'request' })
+    assert.ok(!('treatment_id' in sent()))
+    assert.match(sent().message, /could not be checked again when the patient confirmed/)
+  })
+}
+
+test('booked from Studio with no visit id configured -> no re-check, no treatment_id', async () => {
+  replies.push(studio(200, { ok: true, booking: { status: 'failed' } }))
+  await post({ ...PATIENT, stage: 'booked', slotSource: 'studio' })
+  assert.equal(availCalls.length, 0)
+  assert.ok(!('treatment_id' in sent()))
+})
+
+test('details from Studio: never re-checked, never carries treatment_id', async () => {
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  replies.push(studio(200, { ok: true }))
+  await post({ ...PATIENT, stage: 'details', slotSource: 'studio' })
+  assert.equal(availCalls.length, 0)
+  assert.ok(!('treatment_id' in sent()) && !('book' in sent()))
 })
 
 // ── what each Studio outcome becomes ──────────────────────────────────────────────────────

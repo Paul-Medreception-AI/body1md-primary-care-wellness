@@ -2,22 +2,18 @@ import {
   DAYS_OFFERED, SLOT_MINUTES, dayLabel, hourLabel, isPracticeWallClock, scheduleDays,
 } from '@/lib/booking-schedule'
 import type { SlotsResponse } from '@/lib/booking'
+import { studioSlots } from '@/lib/studio-availability'
 
 // The times /book offers: GET /api/book/slots?patient=new|existing
 //
 // SOURCE ORDER, and the answer always says which one it used (`source`) so the page can word it
 // honestly:
-//   1. "studio": STUDIO_AVAILABILITY_URL is set AND Studio says the EHR is connected AND its answer
-//      parses. These are real openings in Dr. Hemmen's calendar.
-//   2. "schedule": everything else, including today (Body1MD's EHR, Hint, is not connected yet).
-//      Office hours from lib/booking-schedule.ts. A time picked from these is a REQUEST the office
-//      confirms, and the page says so.
-//
-// Studio contract (server to server; the token is the practice's web-ingest secret and also its
-// routing key, exactly as for /api/v1/web/submission):
-//   POST $STUDIO_AVAILABILITY_URL   x-studio-token: $STUDIO_INGEST_TOKEN
-//   { "days": 14, "new_patient": true }
-//   -> { "connected": true, "slots": [{ "start": "2026-10-06T08:00:00-06:00", "minutes": 60 }] }
+//   1. "studio": STUDIO_AVAILABILITY_URL and the visit type id are set AND Studio says the EHR is
+//      connected AND its answer parses. These are real openings in Dr. Hemmen's Hint calendar, at
+//      the length of the visit the patient will be booked as (lib/studio-availability.ts).
+//   2. "schedule": everything else. Office hours from lib/booking-schedule.ts. A time picked from
+//      these is a REQUEST the office confirms, and the page says so; /api/book never sends Hint a
+//      visit id for one.
 //
 // Never a 500: any failure on the Studio side falls back to the schedule. Logs carry outcome codes
 // only (no patient data passes through here, but the rule is the same as the booking route's).
@@ -25,8 +21,6 @@ import type { SlotsResponse } from '@/lib/booking'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 export const maxDuration = 15
-
-const STUDIO_TIMEOUT_MS = 6_000
 
 type Day = SlotsResponse['days'][number]
 
@@ -39,44 +33,13 @@ function json(body: SlotsResponse): Response {
 
 /** Studio's live openings grouped by day, or null when they cannot be used. */
 async function fromStudio(newPatient: boolean, now: Date): Promise<Day[] | null> {
-  const url = process.env.STUDIO_AVAILABILITY_URL
-  if (!url) return null
-  const token = process.env.STUDIO_INGEST_TOKEN
-  if (!token) {
-    console.error('[book/slots] STUDIO_AVAILABILITY_URL is set but STUDIO_INGEST_TOKEN is not; using the schedule')
-    return null
-  }
-  let res: Response
-  try {
-    res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-studio-token': token },
-      body: JSON.stringify({ days: DAYS_OFFERED, new_patient: newPatient }),
-      cache: 'no-store',
-      signal: AbortSignal.timeout(STUDIO_TIMEOUT_MS),
-    })
-  } catch (err) {
-    console.warn(`[book/slots] studio availability unreachable (${err instanceof Error ? err.name : 'error'}); using the schedule`)
-    return null
-  }
-  if (!res.ok) {
-    console.warn(`[book/slots] studio availability ${res.status}; using the schedule`)
-    return null
-  }
-  const out = (await res.json().catch(() => null)) as { connected?: unknown; slots?: unknown } | null
-  if (!out || typeof out !== 'object' || out.connected !== true) {
-    console.info('[book/slots] studio availability not connected; using the schedule')
-    return null
-  }
-  if (!Array.isArray(out.slots)) {
-    console.warn('[book/slots] studio availability answer did not parse; using the schedule')
-    return null
-  }
+  const slots = await studioSlots(newPatient, DAYS_OFFERED, 'book/slots')
+  if (!slots) return null
 
   const byDate = new Map<string, Day>()
   const seen = new Set<string>()
   let dropped = 0
-  const valid = out.slots
+  const valid = slots
     .map((s) => {
       const start = s && typeof s === 'object' ? (s as { start?: unknown }).start : undefined
       const minutes = s && typeof s === 'object' ? (s as { minutes?: unknown }).minutes : undefined
@@ -95,8 +58,8 @@ async function fromStudio(newPatient: boolean, now: Date): Promise<Day[] | null>
     .filter((s) => s.at > now.getTime())
     .sort((a, b) => a.at - b.at)
 
-  if (out.slots.length && !valid.length && dropped) {
-    console.warn(`[book/slots] studio availability: none of ${out.slots.length} slots parsed; using the schedule`)
+  if (slots.length && !valid.length && dropped) {
+    console.warn(`[book/slots] studio availability: none of ${slots.length} slots parsed; using the schedule`)
     return null
   }
   if (dropped) console.warn(`[book/slots] studio availability: dropped ${dropped} unparseable slots`)

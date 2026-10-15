@@ -5,6 +5,8 @@ import { scheduleDays } from '@/lib/booking-schedule'
 
 const AVAIL_URL = 'https://studio.invalid/api/v1/web/availability'
 process.env.STUDIO_INGEST_TOKEN = 'test-token'
+const NEW_ID = 'appty-400f4e1725efaf77'
+const EXISTING_ID = 'appty-04087b50616ba9e6'
 
 type Call = { url: string; headers: Record<string, string>; body: string }
 let calls: Call[] = []
@@ -39,6 +41,8 @@ beforeEach(() => {
   calls = []
   replies = []
   process.env.STUDIO_AVAILABILITY_URL = AVAIL_URL
+  process.env.BODY1MD_EHR_VISIT_TYPE_NEW = NEW_ID
+  process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING = EXISTING_ID
 })
 
 test('no STUDIO_AVAILABILITY_URL -> the schedule, 14 days, no network', async () => {
@@ -60,13 +64,20 @@ test('connected Studio -> its slots, grouped by day, with the request it expects
   assert.equal(out.days[0].slots[1].minutes, 60) // missing minutes -> 60
   assert.equal(out.days[1].slots[0].minutes, 30)
   assert.equal(calls[0].headers['x-studio-token'], 'test-token')
-  assert.deepEqual(JSON.parse(calls[0].body), { days: 14, new_patient: false })
+  assert.deepEqual(JSON.parse(calls[0].body), { treatment_id: EXISTING_ID, days: 14, new_patient: false })
 })
 
 test('new patients are asked for as new_patient: true', async () => {
   replies.push(reply(200, { connected: true, slots: [{ start: A, minutes: 60 }] }))
   await get('?patient=new')
-  assert.deepEqual(JSON.parse(calls[0].body), { days: 14, new_patient: true })
+  assert.deepEqual(JSON.parse(calls[0].body), { treatment_id: NEW_ID, days: 14, new_patient: true })
+})
+
+test('no visit id for the patient type -> the schedule, Studio not asked', async () => {
+  delete process.env.BODY1MD_EHR_VISIT_TYPE_EXISTING
+  const out = await get('?patient=existing')
+  assert.equal(out.source, 'schedule')
+  assert.equal(calls.length, 0)
 })
 
 test('connected with no openings -> studio, no days (the page offers the phone)', async () => {
