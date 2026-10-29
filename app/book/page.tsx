@@ -4,7 +4,7 @@ import BookingFlow from '@/components/booking/BookingFlow'
 import { SITE } from '@/lib/site'
 
 const TITLE = 'Book a Visit | Body1MD Direct Primary Care, Albuquerque'
-const DESC = 'Book a visit with Dr. Andrew Hemmen at Body1MD in Los Ranchos de Albuquerque. Choose a day and time, tell us the reason for your visit, and Body1MD confirms it with you. No login needed.'
+const DESC = 'Book a visit with Dr. Andrew Hemmen at Body1MD in Los Ranchos de Albuquerque. Choose a day and time and Body1MD confirms it with you. No login needed.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -27,7 +27,7 @@ export default function BookPage() {
           </div>
           <p className="uppercase tracking-[0.2em] text-xs text-[var(--color-teal)] font-semibold mb-3">Body1MD, Los Ranchos de Albuquerque</p>
           <h1 className="font-cormorant text-4xl sm:text-6xl font-light leading-tight">Book a visit with Dr. Hemmen</h1>
-          <p className="text-white/85 mt-3 text-lg">Five quick steps. No account or login needed.</p>
+          <p className="text-white/85 mt-3 text-lg">Four quick steps. No account or login needed.</p>
         </div>
       </section>
 

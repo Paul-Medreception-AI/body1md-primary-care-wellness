@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
-  EMAIL_RE, OTHER_ID, OTHER_MAX, PATIENT_TYPES, REASONS,
-  dobFromParts, dobProblem, formatUsPhone, makeDedupeKey, reasonsText, toUsE164, wallClockLabel,
+  EMAIL_RE, PATIENT_TYPES,
+  dobFromParts, dobProblem, formatUsPhone, makeDedupeKey, toUsE164, wallClockLabel,
   type BookRequest, type BookResponse, type PatientType, type SlotsResponse,
 } from '@/lib/booking'
 import { practiceDate } from '@/lib/booking-schedule'
@@ -14,9 +14,11 @@ import { practiceDate } from '@/lib/booking-schedule'
  *   1. new or existing        (new patients see the membership price here)
  *   2. day and time           (from /api/book/slots: Studio's live calendar when the EHR is
  *                              connected, otherwise office hours, worded as a request)
- *   3. reason for visit       (six quick picks, any number, plus Other with a write-in)
- *   4. name, date of birth, mobile, optional email
- *   5. review, then "Confirm my visit"
+ *   3. name, date of birth, mobile, optional email
+ *   4. review, then "Confirm my visit"
+ *
+ * There was a reason-for-visit step between 2 and 3 until 2026-10-29; Dr. Hemmen asked for it to
+ * go ("it does not need to be there and is confusing"). /api/book still accepts reasons if sent.
  *
  * Modelled on Vivere Drip Therapy's Studio-only flow: the same two posts to the server ('details'
  * the moment name + mobile + date of birth are valid, so a booking abandoned at the last step is
@@ -30,14 +32,14 @@ import { practiceDate } from '@/lib/booking-schedule'
  */
 
 type Slot = SlotsResponse['days'][number]['slots'][number]
-type StepN = 1 | 2 | 3 | 4 | 5
+type StepN = 1 | 2 | 3 | 4
 type Result =
   | { kind: 'booked'; when: string }
   | { kind: 'request'; when: string }
   | { kind: 'already'; when: string | null }
 
-const STEP_NAMES = ['Visit type', 'Day and time', 'Reason', 'Your details', 'Confirm'] as const
-const STEPS = 5
+const STEP_NAMES = ['Visit type', 'Day and time', 'Your details', 'Confirm'] as const
+const STEPS = 4
 
 const BTN_PRIMARY =
   'inline-flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-dark)] text-white px-8 py-3.5 font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-teal)]/40'
@@ -60,7 +62,7 @@ const dobLong = (dob: string) =>
 
 /** Which step fixes a field the server refused. */
 const FIELD_STEP: Record<string, StepN> = {
-  patient_type: 1, start: 2, reasons: 3, other: 3, name: 4, dob: 4, under_18: 4, phone: 4, email: 4,
+  patient_type: 1, start: 2, name: 3, dob: 3, under_18: 3, phone: 3, email: 3,
 }
 
 export default function BookingFlow({ phone, phoneHref, address }: { phone: string; phoneHref: string; address: string }) {
@@ -75,10 +77,6 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
   const [slot, setSlot] = useState<Slot | null>(null)
   const [taken, setTaken] = useState<string[]>([])
   const [slotNotice, setSlotNotice] = useState('')
-
-  const [reasons, setReasons] = useState<string[]>([])
-  const [other, setOther] = useState('')
-  const [reasonTried, setReasonTried] = useState(false)
 
   const [name, setName] = useState('')
   const [dobM, setDobM] = useState('')
@@ -158,16 +156,12 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
   const e164 = toUsE164(mobile)
   const emailOk = !email.trim() || EMAIL_RE.test(email.trim())
   const nameOk = name.trim().length >= 2 && /\p{L}/u.test(name)
-  const otherOk = !reasons.includes(OTHER_ID) || !!other.trim()
-  const reasonsOk = reasons.length > 0 && otherOk
   const detailsOk = nameOk && !!dob && !dobIssue && !!e164 && emailOk
 
   const body = useCallback((stage: BookRequest['stage']): BookRequest => ({
     stage,
     dedupeKey: dedupeKey.current,
     patientType: patientType as PatientType,
-    reasons,
-    other: reasons.includes(OTHER_ID) ? other.trim() : '',
     name: name.trim(),
     dob: dob ?? '',
     phone: e164 ?? mobile,
@@ -176,14 +170,14 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
     minutes: slot?.minutes ?? 60,
     slotSource: slots?.source === 'studio' ? 'studio' : 'schedule',
     hp_leave_blank: hp,
-  }), [patientType, reasons, other, name, dob, e164, mobile, email, emailOk, slot, slots, hp])
+  }), [patientType, name, dob, e164, mobile, email, emailOk, slot, slots, hp])
 
   // 'details' goes as soon as name + mobile + date of birth are valid, and again only if they
   // change. Silent: a failure here is not the patient's problem, the confirm still carries all.
   const captured = useRef('')
   const capturing = useRef(false)
   const capture = useCallback(async () => {
-    if (!detailsOk || !reasonsOk || !slot || !patientType || capturing.current || !dedupeKey.current) return
+    if (!detailsOk || !slot || !patientType || capturing.current || !dedupeKey.current) return
     const b = body('details')
     const sig = JSON.stringify({ ...b, stage: '' })
     if (sig === captured.current) return
@@ -200,13 +194,13 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
     } finally {
       capturing.current = false
     }
-  }, [detailsOk, reasonsOk, slot, patientType, body])
+  }, [detailsOk, slot, patientType, body])
 
   // ── navigation ────────────────────────────────────────────────────────────────────────
-  const allOk = !!patientType && !!slot && reasonsOk && detailsOk
+  const allOk = !!patientType && !!slot && detailsOk
   function advance(from: StepN) {
     setSubmitError(null)
-    if (returnToReview && allOk) setStep(5)
+    if (returnToReview && allOk) setStep(4)
     else setStep((from + 1) as StepN)
   }
   function back() {
@@ -224,7 +218,7 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
     const changed = t !== patientType
     setPatientType(t)
     void loadSlots(t)
-    if (returnToReview && !changed && allOk) setStep(5)
+    if (returnToReview && !changed && allOk) setStep(4)
     else setStep(2)
   }
 
@@ -347,7 +341,7 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
             Step {step} of {STEPS}<span className="hidden sm:inline">: {STEP_NAMES[step - 1]}</span>
           </p>
         </div>
-        <div className="mt-3 grid grid-cols-5 gap-1.5" role="progressbar" aria-label="Booking progress" aria-valuemin={1} aria-valuemax={STEPS} aria-valuenow={step} aria-valuetext={`Step ${step} of ${STEPS}, ${STEP_NAMES[step - 1]}`}>
+        <div className="mt-3 grid grid-cols-4 gap-1.5" role="progressbar" aria-label="Booking progress" aria-valuemin={1} aria-valuemax={STEPS} aria-valuenow={step} aria-valuetext={`Step ${step} of ${STEPS}, ${STEP_NAMES[step - 1]}`}>
           {STEP_NAMES.map((n, i) => (
             <span key={n} className={`h-1.5 rounded-full transition-colors ${i < step ? 'bg-[var(--color-teal)]' : 'bg-[var(--color-border)]'}`} />
           ))}
@@ -456,56 +450,14 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
           </section>
         )}
 
-        {/* 3. Reason for visit */}
+        {/* 3. Your details */}
         {step === 3 && (
-          <form noValidate aria-labelledby="bk-h" onSubmit={(e) => { e.preventDefault(); setReasonTried(true); if (reasonsOk) advance(3) }}>
-            <h2 id="bk-h" ref={headingRef} tabIndex={-1} className="font-cormorant text-3xl sm:text-4xl text-[var(--color-ink)] leading-tight focus:outline-none">What is the reason for your visit?</h2>
-            <p className="mt-2 text-[var(--color-muted)]">Choose one or more.</p>
-            <fieldset className="mt-6" aria-describedby={reasonTried && !reasonsOk ? 'bk-reason-err' : undefined}>
-              <legend className="sr-only">Reason for visit</legend>
-              <div className="grid sm:grid-cols-2 gap-2.5">
-                {[...REASONS, { id: OTHER_ID, label: 'Other' }].map((r) => {
-                  const on = reasons.includes(r.id)
-                  return (
-                    <label key={r.id} className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-3.5 transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-[var(--color-teal)]/40 ${on ? 'border-[var(--color-primary)] bg-[var(--color-light)]' : 'border-[var(--color-border)] hover:border-[var(--color-primary)]'}`}>
-                      <input type="checkbox" className="sr-only" checked={on}
-                        onChange={() => setReasons((rs) => (rs.includes(r.id) ? rs.filter((x) => x !== r.id) : [...rs, r.id]))} />
-                      <span aria-hidden="true" className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md border-2 ${on ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white' : 'border-[var(--color-border)] bg-white'}`}>
-                        {on && <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>}
-                      </span>
-                      <span className="font-medium text-[var(--color-ink)]">{r.label}</span>
-                    </label>
-                  )
-                })}
-              </div>
-            </fieldset>
-            {reasons.includes(OTHER_ID) && (
-              <div className="mt-4">
-                <label htmlFor="bk-other" className={LABEL}>Tell us a little more</label>
-                <input id="bk-other" type="text" value={other} maxLength={OTHER_MAX} autoFocus
-                  onChange={(e) => setOther(e.target.value)} aria-describedby="bk-other-count"
-                  aria-invalid={reasonTried && !other.trim()} className={FIELD} />
-                <p id="bk-other-count" className="mt-1.5 text-xs text-[var(--color-muted)]">{other.length}/{OTHER_MAX} characters. Please keep detailed medical history for your visit.</p>
-              </div>
-            )}
-            {reasonTried && !reasonsOk && (
-              <p id="bk-reason-err" role="alert" className="mt-4 text-sm font-medium text-red-700">
-                {reasons.length ? 'Please tell us a little about the other reason.' : 'Please choose at least one reason.'}
-              </p>
-            )}
-            <p className="mt-5 rounded-xl bg-[var(--color-cream)] px-4 py-3 text-sm font-medium text-[var(--color-ink)]">If this is an emergency, call 911.</p>
-            <div className="mt-8"><button type="submit" className={BTN_PRIMARY}>Continue</button></div>
-          </form>
-        )}
-
-        {/* 4. Your details */}
-        {step === 4 && (
           <form noValidate aria-labelledby="bk-h" onSubmit={(e) => {
             e.preventDefault()
             setDetailsTried(true)
             if (detailsOk) {
               void capture()
-              advance(4)
+              advance(3)
             }
           }}>
             <h2 id="bk-h" ref={headingRef} tabIndex={-1} className="font-cormorant text-3xl sm:text-4xl text-[var(--color-ink)] leading-tight focus:outline-none">Your details</h2>
@@ -583,19 +535,18 @@ export default function BookingFlow({ phone, phoneHref, address }: { phone: stri
           </form>
         )}
 
-        {/* 5. Review and confirm */}
-        {step === 5 && slot && patientType && (
+        {/* 4. Review and confirm */}
+        {step === 4 && slot && patientType && (
           <section aria-labelledby="bk-h">
             <h2 id="bk-h" ref={headingRef} tabIndex={-1} className="font-cormorant text-3xl sm:text-4xl text-[var(--color-ink)] leading-tight focus:outline-none">Review and confirm</h2>
             <dl className="mt-6 divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
               {([
                 ['Visit', <>{PATIENT_TYPES[patientType].label}{patientType === 'new' && <span className="block text-sm text-[var(--color-muted)]">Becoming a member: $100/month under 50, $150/month 50+</span>}</>, 1],
                 ['Day and time', <>{wallClockLabel(slot.start)}<span className="block text-sm text-[var(--color-muted)]">Mountain Time{fromSchedule ? '. Requested time, confirmed by the office.' : ''}</span></>, 2],
-                ['Reason', <>{reasonsText(reasons, other)}</>, 3],
-                ['Name', <>{name.trim()}</>, 4],
-                ['Date of birth', <>{dob ? dobLong(dob) : ''}</>, 4],
-                ['Mobile', <>{e164 ? formatUsPhone(e164) : mobile}</>, 4],
-                ...(email.trim() && emailOk ? [['Email', <>{email.trim()}</>, 4] as const] : []),
+                ['Name', <>{name.trim()}</>, 3],
+                ['Date of birth', <>{dob ? dobLong(dob) : ''}</>, 3],
+                ['Mobile', <>{e164 ? formatUsPhone(e164) : mobile}</>, 3],
+                ...(email.trim() && emailOk ? [['Email', <>{email.trim()}</>, 3] as const] : []),
               ] as const).map(([label, value, to]) => (
                 // Phone: label and Change on one line, the answer full width beneath. From sm up:
                 // label | answer | Change. A fixed label column at 390px squeezed the answer

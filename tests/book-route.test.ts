@@ -328,7 +328,6 @@ const INVALID: [string, Record<string, unknown>, string][] = [
   ['date of birth in the wrong shape', { dob: '03/09/1971' }, 'dob'],
   ['under 18', { dob: tooYoung }, 'under_18'],
   ['bad email', { email: 'zeb@' }, 'email'],
-  ['no reasons', { reasons: [] }, 'reasons'],
   ['unknown reason', { reasons: ['diabetes', 'botox'] }, 'reasons'],
   ['other with no write-in', { reasons: ['other'], other: '  ' }, 'other'],
   ['other over 200 characters', { reasons: ['other'], other: 'x'.repeat(201) }, 'other'],
@@ -361,6 +360,29 @@ test('an Other reason of exactly 200 characters is accepted', async () => {
   replies.push(studio(200, { ok: true }))
   const res = await post({ ...PATIENT, stage: 'details', other: 'y'.repeat(200) })
   assert.equal(res.status, 200)
+})
+
+// 2026-10-29: Dr. Hemmen asked for the reason step to go, so the page sends none.
+test('no reasons (the page no longer asks): details and booked are accepted, and the card names no reason', async () => {
+  const { reasons: _r, other: _o, ...noReason } = PATIENT
+  for (const [stage, reply, start] of [
+    ['details', { ok: true }, /^Booking in progress on the website \(new patient, wants to become a member\)\. Asked for /],
+    ['booked', { ok: true, booking: { status: 'failed' } }, /^Booking request from the website \(new patient, wants to become a member\)\. Requested /],
+  ] as const) {
+    calls.length = 0
+    replies.push(studio(200, reply))
+    const res = await post({ ...noReason, stage })
+    assert.equal(res.status, 200, stage)
+    const b = sent()
+    assert.ok(!('reason_for_visit' in b), `${stage}: no reason_for_visit key`)
+    assert.match(b.message, start)
+    assert.ok(!/reason/i.test(b.message), `${stage}: ${b.message}`)
+  }
+  for (const empty of [[], undefined]) {
+    calls.length = 0
+    replies.push(studio(200, { ok: true }))
+    assert.equal((await post({ ...noReason, stage: 'details', reasons: empty })).status, 200, JSON.stringify(empty))
+  }
 })
 
 test('not JSON, an array, or an empty body -> 400, nothing sent', async () => {

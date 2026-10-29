@@ -86,12 +86,13 @@ function validate(b: Record<string, unknown>, now: Date): Valid | Invalid {
   const patientType = b.patientType === 'new' || b.patientType === 'existing' ? b.patientType : null
   if (!patientType) return invalid('patient_type', 'Please tell us whether you are new to Body1MD.')
 
+  // Optional since 2026-10-29 (the page no longer asks; Dr. Hemmen found the step confusing).
+  // A page loaded before then may still send them, so anything sent is still checked.
   const raw = Array.isArray(b.reasons) ? b.reasons : []
   if (raw.length > REASON_IDS.size || raw.some((r) => typeof r !== 'string' || !REASON_IDS.has(r))) {
     return invalid('reasons', 'Please choose the reason for your visit again.')
   }
   const reasons = [...new Set(raw as string[])]
-  if (!reasons.length) return invalid('reasons', 'Please choose at least one reason for your visit.')
   const other = reasons.includes(OTHER_ID) ? oneLine(b.other) : ''
   if (reasons.includes(OTHER_ID) && !other) return invalid('other', 'Please tell us a little about the other reason for your visit.')
   if (other.length > OTHER_MAX) return invalid('other', `Please keep the other reason to ${OTHER_MAX} characters or fewer.`)
@@ -133,7 +134,8 @@ function validate(b: Record<string, unknown>, now: Date): Valid | Invalid {
  */
 function studioPayload(v: Valid, treatmentId?: string, slotProvider?: string): Record<string, unknown> {
   const type = PATIENT_TYPES[v.patientType]
-  const reasons = reasonsText(v.reasons, v.other)
+  const reasons = v.reasons.length ? reasonsText(v.reasons, v.other) : ''
+  const why = reasons ? ` Reason for visit: ${reasons}.` : ''
   const when = wallClockLabel(v.start, 'short')
   const unchecked = v.slotSource === 'schedule'
     ? ' The time was picked from office hours on the website and has not been checked against the calendar.'
@@ -150,13 +152,13 @@ function studioPayload(v: Valid, treatmentId?: string, slotProvider?: string): R
     date_of_birth: v.dob,
     patient_type: type.studio,
     treatment: type.treatment,
-    reason_for_visit: reasons,
+    ...(reasons ? { reason_for_visit: reasons } : {}),
     requested_start: v.start,
     duration_min: v.minutes,
     ehr: EHR_NAME,
     message: v.stage === 'booked'
-      ? `Booking request from the website (${type.desk}). Reason for visit: ${reasons}. Requested ${when} Mountain Time, ${v.minutes} minutes.${unchecked}`
-      : `Booking in progress on the website (${type.desk}). Reason for visit: ${reasons}. Asked for ${when} Mountain Time. A booking request follows if they finish.${unchecked}`,
+      ? `Booking request from the website (${type.desk}).${why} Requested ${when} Mountain Time, ${v.minutes} minutes.${unchecked}`
+      : `Booking in progress on the website (${type.desk}).${why} Asked for ${when} Mountain Time. A booking request follows if they finish.${unchecked}`,
     source: `body1md.com/book/${v.stage}`,
     // 🔴 THE SWITCH. Studio books only a 'booked' post that says book: true (the JSON literal).
     // slot_provider: whose time it was, as Studio named it when it re-checked the time. Hint books

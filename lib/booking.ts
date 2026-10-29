@@ -124,8 +124,9 @@ export type BookRequest = {
   stage: 'details' | 'booked'
   dedupeKey: string
   patientType: PatientType
-  reasons: string[]
-  other: string
+  /** Optional since 2026-10-29: Andy asked for the reason step to go. Validated if sent. */
+  reasons?: string[]
+  other?: string
   name: string
   dob: string
   phone: string
