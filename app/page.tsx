@@ -108,7 +108,7 @@ export default function HomePage() {
             <div className="mt-9"><JoinButtons light /></div>
           </div>
           <div>
-            <Image src="/images/dr-hemmen-with-patient.jpg" alt="Dr. Andrew Hemmen explaining heart anatomy to a patient on a large exam-room display at Body1MD" width={1440} height={900} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/10" />
+            <Image src="/images/dr-hemmen-chest-xray-patient.jpg" alt="Dr. Andrew Hemmen reviewing a chest X-ray with a patient on a large exam-room display at Body1MD" width={1536} height={1024} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/10" />
           </div>
         </div>
       </section>
