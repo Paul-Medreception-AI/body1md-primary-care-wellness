@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: '/' },
-  openGraph: { title: TITLE, description: DESC, url: 'https://body1md.com/', siteName: 'Body1MD Primary Care & Wellness', type: 'website', images: [{ url: '/images/dr-hemmen-with-patient.jpg', width: 1440, height: 900 }] },
-  twitter: { card: 'summary_large_image', title: TITLE, description: DESC, images: ['/images/dr-hemmen-with-patient.jpg'] },
+  openGraph: { title: TITLE, description: DESC, url: 'https://body1md.com/', siteName: 'Body1MD Primary Care & Wellness', type: 'website', images: [{ url: '/images/dr-hemmen-chest-xray-patient.jpg', width: 1536, height: 1024 }] },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESC, images: ['/images/dr-hemmen-chest-xray-patient.jpg'] },
 }
 
 // Conversion order (Paul, 2026-10-05): what is this, why is it better, how much, can I get in,
