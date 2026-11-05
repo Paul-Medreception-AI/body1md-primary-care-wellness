@@ -6,7 +6,9 @@ const BASE = {"siteUrl":"https://body1md.com","siteName":"Body1MD Primary Care &
 // string applied as an inline style, because Tailwind does not scan lib/ for class names.
 type WithCardFocus<T extends { heroImage?: unknown }> = T & { heroImage?: NonNullable<T['heroImage']> & { focus?: string } }
 
-export const SERVICES: WithCardFocus<ServicePageContent>[] = [
+type ServiceEntry = WithCardFocus<ServicePageContent>
+
+export const SERVICES: ServiceEntry[] = [
   {
     ...BASE,
     slug: "internal-medicine",

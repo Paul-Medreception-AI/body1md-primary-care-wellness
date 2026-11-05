@@ -6,7 +6,9 @@ const BASE = {"siteUrl":"https://body1md.com","siteName":"Body1MD Primary Care &
 // string applied as an inline style, because Tailwind does not scan lib/ for class names.
 type WithCardFocus<T extends { heroImage?: unknown }> = T & { heroImage?: NonNullable<T['heroImage']> & { focus?: string } }
 
-export const CONDITIONS: WithCardFocus<ConditionPageContent>[] = [
+type ConditionEntry = WithCardFocus<ConditionPageContent>
+
+export const CONDITIONS: ConditionEntry[] = [
   {
     ...BASE,
     slug: "hypertension-high-blood-pressure",
